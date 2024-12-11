@@ -1,0 +1,46 @@
+use uo;
+use os;
+
+include ":attributes:attributes";
+include "include/say";
+include ":death:death";
+include ":mounts:mounts";
+include ":death:settings";
+include ":attributes:vitals";
+include ":timedScripts:timedScripts";
+include ":fls_core:packets";
+
+program formaHumana(params)
+	var who := params[1];
+
+    if(GetObjProperty(who, "metamorfose") != error)
+        sendsysmessage(who, "Você volta a sua forma humana.");
+        TS_LowerDuration(who, "metamorfosedruida", 10000);
+        SendBuff(who, 0, 0);
+        // var metamorfose := GetObjProperty(who, "metamorfose");
+        // who.color := metamorfose.originalcolor;
+        // who.graphic := metamorfose.originalgraphic;
+        // // who.truegraphic := metamorfose.originalgraphic;
+        // //who.squelch(0);
+
+        // var namechar:=GetObjProperty(who,"charname");
+
+        // EraseObjProperty(who, "skill_a");
+        // EraseObjProperty(who, "skill_d");
+        // EraseObjProperty(who, "dicedmg");
+        
+        // //Alterado por Edmond
+        // SetName(who,namechar);
+
+        // var hitsmod := cint(getObjProperty(who, "polymorphhitsmod"));
+        // setobjproperty(who, "hitsmod", cint(getobjproperty(who,"hitsmod")) - hitsmod);
+        // var resist := cint(GetObjProperty(who, "resitmod"));
+
+        // who.resist_physical_mod := who.resist_physical_mod - resist;
+
+        // EraseObjProperty(who, "metamorfose");
+        // EraseObjProperty(who, "polymorphhitsmod");
+        // EraseObjProperty(who,"namechar");
+    endif
+
+endprogram

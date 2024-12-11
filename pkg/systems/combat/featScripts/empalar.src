@@ -1,0 +1,50 @@
+use os;
+use cfgfile;
+
+include "include/say";
+include "include/utils";
+include ":timedscripts:timedScripts";
+include ":ghaia:ghaiaUtil";
+include "include/damage";
+include ":combat:combat";
+
+program startTalent(param)
+   var who := param[1];
+   var spellinfo := param[2];
+
+   var loc := struct{ "x" := who.x, "y" := who.y, "z" := who.z };
+   PushBack(who, 5, 35);
+   if (CheckGender(who) == 2)
+	   PlaySoundEffect(who, 0x514);
+   else
+	   PlaySoundEffect(who, 0x515);
+   endif
+
+   var hostiles := ListHostiles(who);
+   var already_hit := array{};
+
+   who.warmode := 1;
+   var mod := GetModByFacing(who.facing);
+   for i := 1 to 5
+      var x := mod[1] * i;
+      var y := mod[2] * i;
+      if (who.x == loc.x+x && who.y == loc.y+x)
+         return 1;
+      endif
+
+      foreach mobile in (ListMobilesNearLocationEx( loc.x+x, loc.y+y, loc.z, 0, LISTEX_FLAG_NORMAL|LISTEX_FLAG_HIDDEN))
+         sleepms(2);
+         if (mobile in already_hit || mobile == who || mobile in who.party.members || (!mobile.npctemplate && !(mobile in hostiles)))
+            continue;
+         endif
+            DamageFLS(mobile, spellinfo.PowerMod[1], DMG_PHYSICAL, who);
+            already_hit.append(mobile);
+      endforeach
+      sleepms(2);
+   endfor
+
+   who.setFacing(InverseFacing(who.facing));
+   var weapon_cfg := GetItemCfgInfo(who, who.weapon);
+	PlayAttackAnimation(who);
+   return 1;
+endprogram

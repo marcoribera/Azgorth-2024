@@ -1,0 +1,16 @@
+use uo;
+use os;
+use util;
+include ":charactercreation:habilidades";
+include ":tn:cooldown";
+include ":attributes:attributes";
+
+program TimedScript_Paralysis(params)
+	var who := params[1];
+	
+	PrintTextAbove(who, "*uiva*");
+
+
+	return 1;
+endprogram
+

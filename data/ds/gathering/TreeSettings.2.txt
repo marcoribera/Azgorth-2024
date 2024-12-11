@@ -1,0 +1,7835 @@
+Element britannia 1005x1280
+{
+	Amount i15
+}
+
+Element britannia 1010x1293
+{
+	Amount i15
+}
+
+Element britannia 1011x1257
+{
+	Amount i15
+}
+
+Element britannia 1012x1267
+{
+	Amount i15
+}
+
+Element britannia 1013x1251
+{
+	Amount i15
+}
+
+Element britannia 1018x1237
+{
+	Amount i15
+}
+
+Element britannia 1021x1275
+{
+	Amount i15
+}
+
+Element britannia 1027x1241
+{
+	Amount i15
+}
+
+Element britannia 1027x1883
+{
+	Amount i15
+}
+
+Element britannia 1028x1227
+{
+	Amount i15
+}
+
+Element britannia 1030x1275
+{
+	Amount i15
+}
+
+Element britannia 1035x1242
+{
+	Amount i15
+}
+
+Element britannia 1039x1234
+{
+	Amount i15
+}
+
+Element britannia 1043x1736
+{
+	Amount i15
+}
+
+Element britannia 1046x1227
+{
+	Amount i15
+}
+
+Element britannia 1047x1239
+{
+	Amount i15
+}
+
+Element britannia 1054x1228
+{
+	Amount i15
+}
+
+Element britannia 1058x1227
+{
+	Amount i15
+}
+
+Element britannia 1059x1258
+{
+	Amount i15
+}
+
+Element britannia 1060x1223
+{
+	Amount i15
+}
+
+Element britannia 1063x1555
+{
+	Amount i15
+}
+
+Element britannia 1077x840
+{
+	Amount i15
+}
+
+Element britannia 1078x1004
+{
+	Amount i15
+}
+
+Element britannia 1078x839
+{
+	Amount i15
+}
+
+Element britannia 1080x1003
+{
+	Amount i15
+}
+
+Element britannia 1081x842
+{
+	Amount i15
+}
+
+Element britannia 1082x1003
+{
+	Amount i15
+}
+
+Element britannia 1110x1247
+{
+	Amount i15
+}
+
+Element britannia 1119x1254
+{
+	Amount i15
+}
+
+Element britannia 1121x1244
+{
+	Amount i15
+}
+
+Element britannia 1121x922
+{
+	Amount i15
+}
+
+Element britannia 1125x1419
+{
+	Amount i15
+}
+
+Element britannia 1125x1423
+{
+	Amount i15
+}
+
+Element britannia 1126x1249
+{
+	Amount i15
+}
+
+Element britannia 1126x1415
+{
+	Amount i15
+}
+
+Element britannia 1128x1244
+{
+	Amount i15
+}
+
+Element britannia 1128x910
+{
+	Amount i15
+}
+
+Element britannia 1129x1424
+{
+	Amount i15
+}
+
+Element britannia 1130x1414
+{
+	Amount i15
+}
+
+Element britannia 1133x1423
+{
+	Amount i15
+}
+
+Element britannia 1134x1416
+{
+	Amount i15
+}
+
+Element britannia 1135x1420
+{
+	Amount i15
+}
+
+Element britannia 1136x1232
+{
+	Amount i15
+}
+
+Element britannia 1137x1211
+{
+	Amount i15
+}
+
+Element britannia 1137x1220
+{
+	Amount i15
+}
+
+Element britannia 1138x1201
+{
+	Amount i15
+}
+
+Element britannia 1138x1204
+{
+	Amount i15
+}
+
+Element britannia 1138x1226
+{
+	Amount i15
+}
+
+Element britannia 1140x1201
+{
+	Amount i15
+}
+
+Element britannia 1140x1215
+{
+	Amount i15
+}
+
+Element britannia 1141x1246
+{
+	Amount i15
+}
+
+Element britannia 1143x1197
+{
+	Amount i15
+}
+
+Element britannia 1143x1200
+{
+	Amount i15
+}
+
+Element britannia 1144x839
+{
+	Amount i15
+}
+
+Element britannia 1145x838
+{
+	Amount i15
+}
+
+Element britannia 1146x1213
+{
+	Amount i15
+}
+
+Element britannia 1152x1212
+{
+	Amount i15
+}
+
+Element britannia 1154x1226
+{
+	Amount i15
+}
+
+Element britannia 1155x1220
+{
+	Amount i15
+}
+
+Element britannia 1158x1217
+{
+	Amount i15
+}
+
+Element britannia 1158x1226
+{
+	Amount i15
+}
+
+Element britannia 1163x1220
+{
+	Amount i15
+}
+
+Element britannia 1163x1224
+{
+	Amount i15
+}
+
+Element britannia 1188x881
+{
+	Amount i15
+}
+
+Element britannia 1194x876
+{
+	Amount i15
+}
+
+Element britannia 1196x1213
+{
+	Amount i15
+}
+
+Element britannia 1198x1212
+{
+	Amount i15
+}
+
+Element britannia 1200x1223
+{
+	Amount i15
+}
+
+Element britannia 1200x1239
+{
+	Amount i15
+}
+
+Element britannia 1201x1235
+{
+	Amount i15
+}
+
+Element britannia 1201x1244
+{
+	Amount i15
+}
+
+Element britannia 1203x1222
+{
+	Amount i15
+}
+
+Element britannia 1204x1210
+{
+	Amount i15
+}
+
+Element britannia 1204x897
+{
+	Amount i15
+}
+
+Element britannia 1205x895
+{
+	Amount i15
+}
+
+Element britannia 1206x1222
+{
+	Amount i15
+}
+
+Element britannia 1206x1226
+{
+	Amount i15
+}
+
+Element britannia 1206x749
+{
+	Amount i15
+}
+
+Element britannia 1206x893
+{
+	Amount i15
+}
+
+Element britannia 1206x908
+{
+	Amount i15
+}
+
+Element britannia 1207x907
+{
+	Amount i15
+}
+
+Element britannia 1208x904
+{
+	Amount i15
+}
+
+Element britannia 1208x906
+{
+	Amount i15
+}
+
+Element britannia 1208x913
+{
+	Amount i15
+}
+
+Element britannia 1209x1213
+{
+	Amount i15
+}
+
+Element britannia 1209x891
+{
+	Amount i15
+}
+
+Element britannia 1209x901
+{
+	Amount i15
+}
+
+Element britannia 1209x904
+{
+	Amount i15
+}
+
+Element britannia 1210x744
+{
+	Amount i15
+}
+
+Element britannia 1210x884
+{
+	Amount i15
+}
+
+Element britannia 1210x909
+{
+	Amount i15
+}
+
+Element britannia 1210x941
+{
+	Amount i15
+}
+
+Element britannia 1211x1220
+{
+	Amount i15
+}
+
+Element britannia 1211x881
+{
+	Amount i15
+}
+
+Element britannia 1211x888
+{
+	Amount i15
+}
+
+Element britannia 1211x901
+{
+	Amount i15
+}
+
+Element britannia 1211x908
+{
+	Amount i15
+}
+
+Element britannia 1211x909
+{
+	Amount i15
+}
+
+Element britannia 1211x912
+{
+	Amount i15
+}
+
+Element britannia 1213x883
+{
+	Amount i15
+}
+
+Element britannia 1213x885
+{
+	Amount i15
+}
+
+Element britannia 1213x886
+{
+	Amount i15
+}
+
+Element britannia 1213x897
+{
+	Amount i15
+}
+
+Element britannia 1213x898
+{
+	Amount i15
+}
+
+Element britannia 1213x943
+{
+	Amount i15
+}
+
+Element britannia 1214x886
+{
+	Amount i15
+}
+
+Element britannia 1214x901
+{
+	Amount i15
+}
+
+Element britannia 1214x904
+{
+	Amount i15
+}
+
+Element britannia 1214x911
+{
+	Amount i15
+}
+
+Element britannia 1214x927
+{
+	Amount i15
+}
+
+Element britannia 1215x1212
+{
+	Amount i15
+}
+
+Element britannia 1215x877
+{
+	Amount i15
+}
+
+Element britannia 1215x880
+{
+	Amount i15
+}
+
+Element britannia 1215x881
+{
+	Amount i15
+}
+
+Element britannia 1215x884
+{
+	Amount i15
+}
+
+Element britannia 1215x885
+{
+	Amount i15
+}
+
+Element britannia 1215x901
+{
+	Amount i15
+}
+
+Element britannia 1215x905
+{
+	Amount i15
+}
+
+Element britannia 1216x876
+{
+	Amount i15
+}
+
+Element britannia 1216x879
+{
+	Amount i15
+}
+
+Element britannia 1216x894
+{
+	Amount i15
+}
+
+Element britannia 1216x896
+{
+	Amount i15
+}
+
+Element britannia 1216x905
+{
+	Amount i15
+}
+
+Element britannia 1216x908
+{
+	Amount i15
+}
+
+Element britannia 1216x912
+{
+	Amount i15
+}
+
+Element britannia 1216x943
+{
+	Amount i15
+}
+
+Element britannia 1217x1210
+{
+	Amount i15
+}
+
+Element britannia 1217x875
+{
+	Amount i15
+}
+
+Element britannia 1217x879
+{
+	Amount i15
+}
+
+Element britannia 1217x880
+{
+	Amount i15
+}
+
+Element britannia 1217x883
+{
+	Amount i15
+}
+
+Element britannia 1217x898
+{
+	Amount i15
+}
+
+Element britannia 1217x899
+{
+	Amount i15
+}
+
+Element britannia 1217x903
+{
+	Amount i15
+}
+
+Element britannia 1217x908
+{
+	Amount i15
+}
+
+Element britannia 1217x913
+{
+	Amount i15
+}
+
+Element britannia 1217x914
+{
+	Amount i15
+}
+
+Element britannia 1218x900
+{
+	Amount i15
+}
+
+Element britannia 1218x906
+{
+	Amount i15
+}
+
+Element britannia 1218x907
+{
+	Amount i15
+}
+
+Element britannia 1219x870
+{
+	Amount i15
+}
+
+Element britannia 1219x873
+{
+	Amount i15
+}
+
+Element britannia 1219x874
+{
+	Amount i15
+}
+
+Element britannia 1219x881
+{
+	Amount i15
+}
+
+Element britannia 1219x893
+{
+	Amount i15
+}
+
+Element britannia 1219x896
+{
+	Amount i15
+}
+
+Element britannia 1219x905
+{
+	Amount i15
+}
+
+Element britannia 1219x906
+{
+	Amount i15
+}
+
+Element britannia 1219x910
+{
+	Amount i15
+}
+
+Element britannia 1219x916
+{
+	Amount i15
+}
+
+Element britannia 1219x917
+{
+	Amount i15
+}
+
+Element britannia 1219x918
+{
+	Amount i15
+}
+
+Element britannia 1220x871
+{
+	Amount i15
+}
+
+Element britannia 1220x874
+{
+	Amount i15
+}
+
+Element britannia 1220x877
+{
+	Amount i15
+}
+
+Element britannia 1220x879
+{
+	Amount i15
+}
+
+Element britannia 1220x880
+{
+	Amount i15
+}
+
+Element britannia 1220x902
+{
+	Amount i15
+}
+
+Element britannia 1220x913
+{
+	Amount i15
+}
+
+Element britannia 1220x914
+{
+	Amount i15
+}
+
+Element britannia 1221x878
+{
+	Amount i15
+}
+
+Element britannia 1221x890
+{
+	Amount i15
+}
+
+Element britannia 1221x891
+{
+	Amount i15
+}
+
+Element britannia 1221x894
+{
+	Amount i15
+}
+
+Element britannia 1221x896
+{
+	Amount i15
+}
+
+Element britannia 1221x905
+{
+	Amount i15
+}
+
+Element britannia 1222x1331
+{
+	Amount i15
+}
+
+Element britannia 1222x893
+{
+	Amount i15
+}
+
+Element britannia 1222x902
+{
+	Amount i15
+}
+
+Element britannia 1222x916
+{
+	Amount i15
+}
+
+Element britannia 1222x944
+{
+	Amount i15
+}
+
+Element britannia 1223x1216
+{
+	Amount i15
+}
+
+Element britannia 1223x890
+{
+	Amount i15
+}
+
+Element britannia 1223x891
+{
+	Amount i15
+}
+
+Element britannia 1223x894
+{
+	Amount i15
+}
+
+Element britannia 1223x896
+{
+	Amount i15
+}
+
+Element britannia 1223x903
+{
+	Amount i15
+}
+
+Element britannia 1223x905
+{
+	Amount i15
+}
+
+Element britannia 1223x906
+{
+	Amount i15
+}
+
+Element britannia 1224x895
+{
+	Amount i15
+}
+
+Element britannia 1224x899
+{
+	Amount i15
+}
+
+Element britannia 1224x900
+{
+	Amount i15
+}
+
+Element britannia 1224x904
+{
+	Amount i15
+}
+
+Element britannia 1225x895
+{
+	Amount i15
+}
+
+Element britannia 1225x897
+{
+	Amount i15
+}
+
+Element britannia 1225x909
+{
+	Amount i15
+}
+
+Element britannia 1225x914
+{
+	Amount i15
+}
+
+Element britannia 1226x1327
+{
+	Amount i15
+}
+
+Element britannia 1226x893
+{
+	Amount i15
+}
+
+Element britannia 1226x897
+{
+	Amount i15
+}
+
+Element britannia 1226x899
+{
+	Amount i15
+}
+
+Element britannia 1226x903
+{
+	Amount i15
+}
+
+Element britannia 1226x909
+{
+	Amount i15
+}
+
+Element britannia 1226x912
+{
+	Amount i15
+}
+
+Element britannia 1226x913
+{
+	Amount i15
+}
+
+Element britannia 1227x890
+{
+	Amount i15
+}
+
+Element britannia 1227x893
+{
+	Amount i15
+}
+
+Element britannia 1227x903
+{
+	Amount i15
+}
+
+Element britannia 1227x906
+{
+	Amount i15
+}
+
+Element britannia 1228x893
+{
+	Amount i15
+}
+
+Element britannia 1228x896
+{
+	Amount i15
+}
+
+Element britannia 1228x908
+{
+	Amount i15
+}
+
+Element britannia 1229x904
+{
+	Amount i15
+}
+
+Element britannia 1229x910
+{
+	Amount i15
+}
+
+Element britannia 1230x899
+{
+	Amount i15
+}
+
+Element britannia 1230x901
+{
+	Amount i15
+}
+
+Element britannia 1231x896
+{
+	Amount i15
+}
+
+Element britannia 1231x905
+{
+	Amount i15
+}
+
+Element britannia 1231x908
+{
+	Amount i15
+}
+
+Element britannia 1231x911
+{
+	Amount i15
+}
+
+Element britannia 1232x816
+{
+	Amount i15
+}
+
+Element britannia 1232x909
+{
+	Amount i15
+}
+
+Element britannia 1232x911
+{
+	Amount i15
+}
+
+Element britannia 1233x897
+{
+	Amount i15
+}
+
+Element britannia 1233x898
+{
+	Amount i15
+}
+
+Element britannia 1233x900
+{
+	Amount i15
+}
+
+Element britannia 1233x906
+{
+	Amount i15
+}
+
+Element britannia 1233x911
+{
+	Amount i15
+}
+
+Element britannia 1234x815
+{
+	Amount i15
+}
+
+Element britannia 1234x900
+{
+	Amount i15
+}
+
+Element britannia 1234x903
+{
+	Amount i15
+}
+
+Element britannia 1235x818
+{
+	Amount i15
+}
+
+Element britannia 1235x896
+{
+	Amount i15
+}
+
+Element britannia 1235x912
+{
+	Amount i15
+}
+
+Element britannia 1236x820
+{
+	Amount i15
+}
+
+Element britannia 1236x902
+{
+	Amount i15
+}
+
+Element britannia 1236x903
+{
+	Amount i15
+}
+
+Element britannia 1236x905
+{
+	Amount i15
+}
+
+Element britannia 1236x906
+{
+	Amount i15
+}
+
+Element britannia 1236x910
+{
+	Amount i15
+}
+
+Element britannia 1237x780
+{
+	Amount i15
+}
+
+Element britannia 1237x822
+{
+	Amount i15
+}
+
+Element britannia 1237x910
+{
+	Amount i15
+}
+
+Element britannia 1237x913
+{
+	Amount i15
+}
+
+Element britannia 1238x1220
+{
+	Amount i15
+}
+
+Element britannia 1238x785
+{
+	Amount i15
+}
+
+Element britannia 1238x911
+{
+	Amount i15
+}
+
+Element britannia 1239x858
+{
+	Amount i15
+}
+
+Element britannia 1240x789
+{
+	Amount i15
+}
+
+Element britannia 1241x857
+{
+	Amount i15
+}
+
+Element britannia 1241x908
+{
+	Amount i15
+}
+
+Element britannia 1242x857
+{
+	Amount i15
+}
+
+Element britannia 1244x909
+{
+	Amount i15
+}
+
+Element britannia 1245x854
+{
+	Amount i15
+}
+
+Element britannia 1245x856
+{
+	Amount i15
+}
+
+Element britannia 1246x734
+{
+	Amount i15
+}
+
+Element britannia 1247x906
+{
+	Amount i15
+}
+
+Element britannia 1247x910
+{
+	Amount i15
+}
+
+Element britannia 1248x909
+{
+	Amount i15
+}
+
+Element britannia 1249x850
+{
+	Amount i15
+}
+
+Element britannia 1249x851
+{
+	Amount i15
+}
+
+Element britannia 1250x1234
+{
+	Amount i15
+}
+
+Element britannia 1250x1245
+{
+	Amount i15
+}
+
+Element britannia 1250x902
+{
+	Amount i15
+}
+
+Element britannia 1250x919
+{
+	Amount i15
+}
+
+Element britannia 1251x733
+{
+	Amount i15
+}
+
+Element britannia 1252x1239
+{
+	Amount i15
+}
+
+Element britannia 1252x778
+{
+	Amount i15
+}
+
+Element britannia 1252x848
+{
+	Amount i15
+}
+
+Element britannia 1252x904
+{
+	Amount i15
+}
+
+Element britannia 1253x902
+{
+	Amount i15
+}
+
+Element britannia 1254x1368
+{
+	Amount i15
+}
+
+Element britannia 1254x848
+{
+	Amount i15
+}
+
+Element britannia 1254x850
+{
+	Amount i15
+}
+
+Element britannia 1255x848
+{
+	Amount i15
+}
+
+Element britannia 1255x849
+{
+	Amount i15
+}
+
+Element britannia 1255x850
+{
+	Amount i15
+}
+
+Element britannia 1267x855
+{
+	Amount i15
+}
+
+Element britannia 1268x1230
+{
+	Amount i15
+}
+
+Element britannia 1270x1228
+{
+	Amount i15
+}
+
+Element britannia 1271x1223
+{
+	Amount i15
+}
+
+Element britannia 1272x1223
+{
+	Amount i15
+}
+
+Element britannia 1273x1226
+{
+	Amount i15
+}
+
+Element britannia 1273x1234
+{
+	Amount i15
+}
+
+Element britannia 1274x1231
+{
+	Amount i15
+}
+
+Element britannia 1275x1266
+{
+	Amount i15
+}
+
+Element britannia 1276x1228
+{
+	Amount i15
+}
+
+Element britannia 1276x1231
+{
+	Amount i15
+}
+
+Element britannia 1277x1260
+{
+	Amount i15
+}
+
+Element britannia 1278x1230
+{
+	Amount i15
+}
+
+Element britannia 1279x1238
+{
+	Amount i15
+}
+
+Element britannia 1279x1278
+{
+	Amount i15
+}
+
+Element britannia 1279x1285
+{
+	Amount i15
+}
+
+Element britannia 1279x1326
+{
+	Amount i15
+}
+
+Element britannia 1279x1327
+{
+	Amount i15
+}
+
+Element britannia 1279x1360
+{
+	Amount i15
+}
+
+Element britannia 1280x1260
+{
+	Amount i15
+}
+
+Element britannia 1280x1332
+{
+	Amount i15
+}
+
+Element britannia 1280x1359
+{
+	Amount i15
+}
+
+Element britannia 1281x1227
+{
+	Amount i15
+}
+
+Element britannia 1281x1275
+{
+	Amount i15
+}
+
+Element britannia 1281x1285
+{
+	Amount i15
+}
+
+Element britannia 1281x1289
+{
+	Amount i15
+}
+
+Element britannia 1281x1338
+{
+	Amount i15
+}
+
+Element britannia 1281x1356
+{
+	Amount i15
+}
+
+Element britannia 1282x1259
+{
+	Amount i15
+}
+
+Element britannia 1282x1296
+{
+	Amount i15
+}
+
+Element britannia 1282x1323
+{
+	Amount i15
+}
+
+Element britannia 1282x1326
+{
+	Amount i15
+}
+
+Element britannia 1282x1338
+{
+	Amount i15
+}
+
+Element britannia 1282x1368
+{
+	Amount i15
+}
+
+Element britannia 1282x1373
+{
+	Amount i15
+}
+
+Element britannia 1283x1266
+{
+	Amount i15
+}
+
+Element britannia 1283x1318
+{
+	Amount i15
+}
+
+Element britannia 1283x1355
+{
+	Amount i15
+}
+
+Element britannia 1284x1225
+{
+	Amount i15
+}
+
+Element britannia 1284x1242
+{
+	Amount i15
+}
+
+Element britannia 1284x1334
+{
+	Amount i15
+}
+
+Element britannia 1284x1347
+{
+	Amount i15
+}
+
+Element britannia 1284x1354
+{
+	Amount i15
+}
+
+Element britannia 1284x1364
+{
+	Amount i15
+}
+
+Element britannia 1285x1273
+{
+	Amount i15
+}
+
+Element britannia 1285x1275
+{
+	Amount i15
+}
+
+Element britannia 1285x1303
+{
+	Amount i15
+}
+
+Element britannia 1286x1225
+{
+	Amount i15
+}
+
+Element britannia 1286x1356
+{
+	Amount i15
+}
+
+Element britannia 1287x1230
+{
+	Amount i15
+}
+
+Element britannia 1287x1265
+{
+	Amount i15
+}
+
+Element britannia 1287x1271
+{
+	Amount i15
+}
+
+Element britannia 1287x1287
+{
+	Amount i15
+}
+
+Element britannia 1287x1341
+{
+	Amount i15
+}
+
+Element britannia 1287x1347
+{
+	Amount i15
+}
+
+Element britannia 1287x1348
+{
+	Amount i15
+}
+
+Element britannia 1288x1312
+{
+	Amount i15
+}
+
+Element britannia 1288x1352
+{
+	Amount i15
+}
+
+Element britannia 1288x1354
+{
+	Amount i15
+}
+
+Element britannia 1289x1280
+{
+	Amount i15
+}
+
+Element britannia 1289x1283
+{
+	Amount i15
+}
+
+Element britannia 1289x1300
+{
+	Amount i15
+}
+
+Element britannia 1289x1335
+{
+	Amount i15
+}
+
+Element britannia 1289x1368
+{
+	Amount i15
+}
+
+Element britannia 1290x1245
+{
+	Amount i15
+}
+
+Element britannia 1291x1258
+{
+	Amount i15
+}
+
+Element britannia 1291x1298
+{
+	Amount i15
+}
+
+Element britannia 1291x1370
+{
+	Amount i15
+}
+
+Element britannia 1291x1379
+{
+	Amount i15
+}
+
+Element britannia 1293x1299
+{
+	Amount i15
+}
+
+Element britannia 1294x1231
+{
+	Amount i15
+}
+
+Element britannia 1294x1279
+{
+	Amount i15
+}
+
+Element britannia 1294x1297
+{
+	Amount i15
+}
+
+Element britannia 1294x1311
+{
+	Amount i15
+}
+
+Element britannia 1294x1347
+{
+	Amount i15
+}
+
+Element britannia 1294x1367
+{
+	Amount i15
+}
+
+Element britannia 1295x1261
+{
+	Amount i15
+}
+
+Element britannia 1295x1265
+{
+	Amount i15
+}
+
+Element britannia 1295x1276
+{
+	Amount i15
+}
+
+Element britannia 1295x1375
+{
+	Amount i15
+}
+
+Element britannia 1296x1225
+{
+	Amount i15
+}
+
+Element britannia 1296x1248
+{
+	Amount i15
+}
+
+Element britannia 1296x1258
+{
+	Amount i15
+}
+
+Element britannia 1296x1269
+{
+	Amount i15
+}
+
+Element britannia 1296x1274
+{
+	Amount i15
+}
+
+Element britannia 1296x1309
+{
+	Amount i15
+}
+
+Element britannia 1296x1371
+{
+	Amount i15
+}
+
+Element britannia 1297x1234
+{
+	Amount i15
+}
+
+Element britannia 1297x1257
+{
+	Amount i15
+}
+
+Element britannia 1297x1343
+{
+	Amount i15
+}
+
+Element britannia 1297x1368
+{
+	Amount i15
+}
+
+Element britannia 1298x1235
+{
+	Amount i15
+}
+
+Element britannia 1298x1246
+{
+	Amount i15
+}
+
+Element britannia 1298x1271
+{
+	Amount i15
+}
+
+Element britannia 1298x1306
+{
+	Amount i15
+}
+
+Element britannia 1299x1302
+{
+	Amount i15
+}
+
+Element britannia 1300x1296
+{
+	Amount i15
+}
+
+Element britannia 1300x1342
+{
+	Amount i15
+}
+
+Element britannia 1301x1232
+{
+	Amount i15
+}
+
+Element britannia 1301x1261
+{
+	Amount i15
+}
+
+Element britannia 1301x1346
+{
+	Amount i15
+}
+
+Element britannia 1301x787
+{
+	Amount i15
+}
+
+Element britannia 1302x1271
+{
+	Amount i15
+}
+
+Element britannia 1302x785
+{
+	Amount i15
+}
+
+Element britannia 1303x1235
+{
+	Amount i15
+}
+
+Element britannia 1303x1244
+{
+	Amount i15
+}
+
+Element britannia 1303x1248
+{
+	Amount i15
+}
+
+Element britannia 1303x1261
+{
+	Amount i15
+}
+
+Element britannia 1303x1278
+{
+	Amount i15
+}
+
+Element britannia 1303x1284
+{
+	Amount i15
+}
+
+Element britannia 1303x1365
+{
+	Amount i15
+}
+
+Element britannia 1304x1258
+{
+	Amount i15
+}
+
+Element britannia 1304x1270
+{
+	Amount i15
+}
+
+Element britannia 1304x1283
+{
+	Amount i15
+}
+
+Element britannia 1304x1306
+{
+	Amount i15
+}
+
+Element britannia 1304x1336
+{
+	Amount i15
+}
+
+Element britannia 1305x1229
+{
+	Amount i15
+}
+
+Element britannia 1305x1264
+{
+	Amount i15
+}
+
+Element britannia 1306x1313
+{
+	Amount i15
+}
+
+Element britannia 1307x1290
+{
+	Amount i15
+}
+
+Element britannia 1307x1310
+{
+	Amount i15
+}
+
+Element britannia 1308x1246
+{
+	Amount i15
+}
+
+Element britannia 1308x1248
+{
+	Amount i15
+}
+
+Element britannia 1308x1249
+{
+	Amount i15
+}
+
+Element britannia 1308x1334
+{
+	Amount i15
+}
+
+Element britannia 1308x1365
+{
+	Amount i15
+}
+
+Element britannia 1309x1233
+{
+	Amount i15
+}
+
+Element britannia 1309x1236
+{
+	Amount i15
+}
+
+Element britannia 1309x1245
+{
+	Amount i15
+}
+
+Element britannia 1309x1292
+{
+	Amount i15
+}
+
+Element britannia 1309x1302
+{
+	Amount i15
+}
+
+Element britannia 1309x1313
+{
+	Amount i15
+}
+
+Element britannia 1309x1341
+{
+	Amount i15
+}
+
+Element britannia 1309x1351
+{
+	Amount i15
+}
+
+Element britannia 1309x1354
+{
+	Amount i15
+}
+
+Element britannia 1309x1363
+{
+	Amount i15
+}
+
+Element britannia 1309x1369
+{
+	Amount i15
+}
+
+Element britannia 1309x1405
+{
+	Amount i15
+}
+
+Element britannia 1310x1282
+{
+	Amount i15
+}
+
+Element britannia 1310x1291
+{
+	Amount i15
+}
+
+Element britannia 1310x1308
+{
+	Amount i15
+}
+
+Element britannia 1310x1320
+{
+	Amount i15
+}
+
+Element britannia 1310x1400
+{
+	Amount i15
+}
+
+Element britannia 1311x1229
+{
+	Amount i15
+}
+
+Element britannia 1311x1239
+{
+	Amount i15
+}
+
+Element britannia 1311x1260
+{
+	Amount i15
+}
+
+Element britannia 1311x1302
+{
+	Amount i15
+}
+
+Element britannia 1311x1313
+{
+	Amount i15
+}
+
+Element britannia 1311x1328
+{
+	Amount i15
+}
+
+Element britannia 1311x1332
+{
+	Amount i15
+}
+
+Element britannia 1311x784
+{
+	Amount i15
+}
+
+Element britannia 1312x1268
+{
+	Amount i15
+}
+
+Element britannia 1312x1285
+{
+	Amount i15
+}
+
+Element britannia 1312x1319
+{
+	Amount i15
+}
+
+Element britannia 1312x1327
+{
+	Amount i15
+}
+
+Element britannia 1312x1333
+{
+	Amount i15
+}
+
+Element britannia 1312x1383
+{
+	Amount i15
+}
+
+Element britannia 1312x1390
+{
+	Amount i15
+}
+
+Element britannia 1312x1400
+{
+	Amount i15
+}
+
+Element britannia 1313x1239
+{
+	Amount i15
+}
+
+Element britannia 1313x1321
+{
+	Amount i15
+}
+
+Element britannia 1313x1326
+{
+	Amount i15
+}
+
+Element britannia 1313x1358
+{
+	Amount i15
+}
+
+Element britannia 1313x1365
+{
+	Amount i15
+}
+
+Element britannia 1314x1239
+{
+	Amount i15
+}
+
+Element britannia 1314x1250
+{
+	Amount i15
+}
+
+Element britannia 1314x1258
+{
+	Amount i15
+}
+
+Element britannia 1314x1352
+{
+	Amount i15
+}
+
+Element britannia 1314x1366
+{
+	Amount i15
+}
+
+Element britannia 1315x1237
+{
+	Amount i15
+}
+
+Element britannia 1315x1277
+{
+	Amount i15
+}
+
+Element britannia 1315x1280
+{
+	Amount i15
+}
+
+Element britannia 1315x1346
+{
+	Amount i15
+}
+
+Element britannia 1315x1356
+{
+	Amount i15
+}
+
+Element britannia 1315x1362
+{
+	Amount i15
+}
+
+Element britannia 1316x1271
+{
+	Amount i15
+}
+
+Element britannia 1316x1307
+{
+	Amount i15
+}
+
+Element britannia 1316x1344
+{
+	Amount i15
+}
+
+Element britannia 1316x1382
+{
+	Amount i15
+}
+
+Element britannia 1317x1292
+{
+	Amount i15
+}
+
+Element britannia 1317x1305
+{
+	Amount i15
+}
+
+Element britannia 1317x1334
+{
+	Amount i15
+}
+
+Element britannia 1317x1336
+{
+	Amount i15
+}
+
+Element britannia 1317x1337
+{
+	Amount i15
+}
+
+Element britannia 1318x1237
+{
+	Amount i15
+}
+
+Element britannia 1318x1247
+{
+	Amount i15
+}
+
+Element britannia 1318x1292
+{
+	Amount i15
+}
+
+Element britannia 1318x1302
+{
+	Amount i15
+}
+
+Element britannia 1318x1320
+{
+	Amount i15
+}
+
+Element britannia 1318x1366
+{
+	Amount i15
+}
+
+Element britannia 1319x1228
+{
+	Amount i15
+}
+
+Element britannia 1319x1233
+{
+	Amount i15
+}
+
+Element britannia 1319x1266
+{
+	Amount i15
+}
+
+Element britannia 1319x1275
+{
+	Amount i15
+}
+
+Element britannia 1319x1284
+{
+	Amount i15
+}
+
+Element britannia 1319x1301
+{
+	Amount i15
+}
+
+Element britannia 1319x1316
+{
+	Amount i15
+}
+
+Element britannia 1319x1346
+{
+	Amount i15
+}
+
+Element britannia 1319x1351
+{
+	Amount i15
+}
+
+Element britannia 1320x1237
+{
+	Amount i15
+}
+
+Element britannia 1320x1320
+{
+	Amount i15
+}
+
+Element britannia 1320x1357
+{
+	Amount i15
+}
+
+Element britannia 1321x1245
+{
+	Amount i15
+}
+
+Element britannia 1321x1270
+{
+	Amount i15
+}
+
+Element britannia 1321x1314
+{
+	Amount i15
+}
+
+Element britannia 1321x1322
+{
+	Amount i15
+}
+
+Element britannia 1321x1328
+{
+	Amount i15
+}
+
+Element britannia 1321x1366
+{
+	Amount i15
+}
+
+Element britannia 1321x1378
+{
+	Amount i15
+}
+
+Element britannia 1322x1295
+{
+	Amount i15
+}
+
+Element britannia 1322x1300
+{
+	Amount i15
+}
+
+Element britannia 1322x1346
+{
+	Amount i15
+}
+
+Element britannia 1323x1238
+{
+	Amount i15
+}
+
+Element britannia 1323x1283
+{
+	Amount i15
+}
+
+Element britannia 1323x1301
+{
+	Amount i15
+}
+
+Element britannia 1323x1313
+{
+	Amount i15
+}
+
+Element britannia 1323x1358
+{
+	Amount i15
+}
+
+Element britannia 1323x1376
+{
+	Amount i15
+}
+
+Element britannia 1324x1266
+{
+	Amount i15
+}
+
+Element britannia 1324x1326
+{
+	Amount i15
+}
+
+Element britannia 1324x1343
+{
+	Amount i15
+}
+
+Element britannia 1324x1379
+{
+	Amount i15
+}
+
+Element britannia 1325x1298
+{
+	Amount i15
+}
+
+Element britannia 1326x1291
+{
+	Amount i15
+}
+
+Element britannia 1326x1294
+{
+	Amount i15
+}
+
+Element britannia 1326x1310
+{
+	Amount i15
+}
+
+Element britannia 1326x1312
+{
+	Amount i15
+}
+
+Element britannia 1326x1314
+{
+	Amount i15
+}
+
+Element britannia 1327x1244
+{
+	Amount i15
+}
+
+Element britannia 1327x1308
+{
+	Amount i15
+}
+
+Element britannia 1327x1364
+{
+	Amount i15
+}
+
+Element britannia 1327x1377
+{
+	Amount i15
+}
+
+Element britannia 1328x1262
+{
+	Amount i15
+}
+
+Element britannia 1328x1288
+{
+	Amount i15
+}
+
+Element britannia 1328x1289
+{
+	Amount i15
+}
+
+Element britannia 1328x1298
+{
+	Amount i15
+}
+
+Element britannia 1328x1307
+{
+	Amount i15
+}
+
+Element britannia 1328x1339
+{
+	Amount i15
+}
+
+Element britannia 1328x1369
+{
+	Amount i15
+}
+
+Element britannia 1329x1268
+{
+	Amount i15
+}
+
+Element britannia 1329x1302
+{
+	Amount i15
+}
+
+Element britannia 1330x1261
+{
+	Amount i15
+}
+
+Element britannia 1330x1263
+{
+	Amount i15
+}
+
+Element britannia 1330x1274
+{
+	Amount i15
+}
+
+Element britannia 1330x1278
+{
+	Amount i15
+}
+
+Element britannia 1330x1377
+{
+	Amount i15
+}
+
+Element britannia 1331x1240
+{
+	Amount i15
+}
+
+Element britannia 1331x1277
+{
+	Amount i15
+}
+
+Element britannia 1331x1291
+{
+	Amount i15
+}
+
+Element britannia 1331x1339
+{
+	Amount i15
+}
+
+Element britannia 1331x1357
+{
+	Amount i15
+}
+
+Element britannia 1332x1286
+{
+	Amount i15
+}
+
+Element britannia 1332x1307
+{
+	Amount i15
+}
+
+Element britannia 1332x1325
+{
+	Amount i15
+}
+
+Element britannia 1332x1329
+{
+	Amount i15
+}
+
+Element britannia 1332x1337
+{
+	Amount i15
+}
+
+Element britannia 1333x1234
+{
+	Amount i15
+}
+
+Element britannia 1333x1245
+{
+	Amount i15
+}
+
+Element britannia 1333x1258
+{
+	Amount i15
+}
+
+Element britannia 1333x1285
+{
+	Amount i15
+}
+
+Element britannia 1333x1288
+{
+	Amount i15
+}
+
+Element britannia 1333x1294
+{
+	Amount i15
+}
+
+Element britannia 1333x1354
+{
+	Amount i15
+}
+
+Element britannia 1333x1371
+{
+	Amount i15
+}
+
+Element britannia 1334x1230
+{
+	Amount i15
+}
+
+Element britannia 1334x1240
+{
+	Amount i15
+}
+
+Element britannia 1334x1241
+{
+	Amount i15
+}
+
+Element britannia 1334x1374
+{
+	Amount i15
+}
+
+Element britannia 1335x1258
+{
+	Amount i15
+}
+
+Element britannia 1335x1298
+{
+	Amount i15
+}
+
+Element britannia 1335x1350
+{
+	Amount i15
+}
+
+Element britannia 1335x1370
+{
+	Amount i15
+}
+
+Element britannia 1336x1232
+{
+	Amount i15
+}
+
+Element britannia 1336x1255
+{
+	Amount i15
+}
+
+Element britannia 1336x1276
+{
+	Amount i15
+}
+
+Element britannia 1336x1293
+{
+	Amount i15
+}
+
+Element britannia 1336x1306
+{
+	Amount i15
+}
+
+Element britannia 1336x1308
+{
+	Amount i15
+}
+
+Element britannia 1336x1349
+{
+	Amount i15
+}
+
+Element britannia 1337x1233
+{
+	Amount i15
+}
+
+Element britannia 1337x1240
+{
+	Amount i15
+}
+
+Element britannia 1337x1286
+{
+	Amount i15
+}
+
+Element britannia 1337x1298
+{
+	Amount i15
+}
+
+Element britannia 1337x1315
+{
+	Amount i15
+}
+
+Element britannia 1337x1356
+{
+	Amount i15
+}
+
+Element britannia 1338x1244
+{
+	Amount i15
+}
+
+Element britannia 1338x1281
+{
+	Amount i15
+}
+
+Element britannia 1338x1351
+{
+	Amount i15
+}
+
+Element britannia 1338x1363
+{
+	Amount i15
+}
+
+Element britannia 1338x1451
+{
+	Amount i15
+}
+
+Element britannia 1339x1241
+{
+	Amount i15
+}
+
+Element britannia 1339x1263
+{
+	Amount i15
+}
+
+Element britannia 1339x1267
+{
+	Amount i15
+}
+
+Element britannia 1339x1315
+{
+	Amount i15
+}
+
+Element britannia 1339x1367
+{
+	Amount i15
+}
+
+Element britannia 1339x1378
+{
+	Amount i15
+}
+
+Element britannia 1339x1382
+{
+	Amount i15
+}
+
+Element britannia 1339x1429
+{
+	Amount i15
+}
+
+Element britannia 1340x1259
+{
+	Amount i15
+}
+
+Element britannia 1340x1266
+{
+	Amount i15
+}
+
+Element britannia 1340x1275
+{
+	Amount i15
+}
+
+Element britannia 1340x1276
+{
+	Amount i15
+}
+
+Element britannia 1340x1295
+{
+	Amount i15
+}
+
+Element britannia 1340x1369
+{
+	Amount i15
+}
+
+Element britannia 1340x1381
+{
+	Amount i15
+}
+
+Element britannia 1340x1388
+{
+	Amount i15
+}
+
+Element britannia 1340x1429
+{
+	Amount i15
+}
+
+Element britannia 1340x1437
+{
+	Amount i15
+}
+
+Element britannia 1341x1295
+{
+	Amount i15
+}
+
+Element britannia 1341x1346
+{
+	Amount i15
+}
+
+Element britannia 1342x1297
+{
+	Amount i15
+}
+
+Element britannia 1342x1359
+{
+	Amount i15
+}
+
+Element britannia 1343x1354
+{
+	Amount i15
+}
+
+Element britannia 1343x1361
+{
+	Amount i15
+}
+
+Element britannia 1344x1297
+{
+	Amount i15
+}
+
+Element britannia 1344x1302
+{
+	Amount i15
+}
+
+Element britannia 1344x1345
+{
+	Amount i15
+}
+
+Element britannia 1344x1348
+{
+	Amount i15
+}
+
+Element britannia 1344x1351
+{
+	Amount i15
+}
+
+Element britannia 1344x1363
+{
+	Amount i15
+}
+
+Element britannia 1344x1365
+{
+	Amount i15
+}
+
+Element britannia 1344x1366
+{
+	Amount i15
+}
+
+Element britannia 1344x1367
+{
+	Amount i15
+}
+
+Element britannia 1344x1369
+{
+	Amount i15
+}
+
+Element britannia 1345x1304
+{
+	Amount i15
+}
+
+Element britannia 1345x1310
+{
+	Amount i15
+}
+
+Element britannia 1345x1359
+{
+	Amount i15
+}
+
+Element britannia 1345x1422
+{
+	Amount i15
+}
+
+Element britannia 1346x1239
+{
+	Amount i15
+}
+
+Element britannia 1346x1243
+{
+	Amount i15
+}
+
+Element britannia 1346x1310
+{
+	Amount i15
+}
+
+Element britannia 1346x1372
+{
+	Amount i15
+}
+
+Element britannia 1346x1382
+{
+	Amount i15
+}
+
+Element britannia 1346x1386
+{
+	Amount i15
+}
+
+Element britannia 1346x1421
+{
+	Amount i15
+}
+
+Element britannia 1348x1358
+{
+	Amount i15
+}
+
+Element britannia 1349x1311
+{
+	Amount i15
+}
+
+Element britannia 1349x1359
+{
+	Amount i15
+}
+
+Element britannia 1349x1416
+{
+	Amount i15
+}
+
+Element britannia 1350x1354
+{
+	Amount i15
+}
+
+Element britannia 1350x1384
+{
+	Amount i15
+}
+
+Element britannia 1351x1387
+{
+	Amount i15
+}
+
+Element britannia 1351x1389
+{
+	Amount i15
+}
+
+Element britannia 1352x1373
+{
+	Amount i15
+}
+
+Element britannia 1352x1418
+{
+	Amount i15
+}
+
+Element britannia 1352x1520
+{
+	Amount i15
+}
+
+Element britannia 1353x1358
+{
+	Amount i15
+}
+
+Element britannia 1353x1361
+{
+	Amount i15
+}
+
+Element britannia 1353x1372
+{
+	Amount i15
+}
+
+Element britannia 1353x1395
+{
+	Amount i15
+}
+
+Element britannia 1354x1417
+{
+	Amount i15
+}
+
+Element britannia 1355x1372
+{
+	Amount i15
+}
+
+Element britannia 1355x1385
+{
+	Amount i15
+}
+
+Element britannia 1356x1358
+{
+	Amount i15
+}
+
+Element britannia 1356x1454
+{
+	Amount i15
+}
+
+Element britannia 1358x1382
+{
+	Amount i15
+}
+
+Element britannia 1359x1350
+{
+	Amount i15
+}
+
+Element britannia 1359x1457
+{
+	Amount i15
+}
+
+Element britannia 1360x1364
+{
+	Amount i15
+}
+
+Element britannia 1361x1374
+{
+	Amount i15
+}
+
+Element britannia 1361x1409
+{
+	Amount i15
+}
+
+Element britannia 1361x1419
+{
+	Amount i15
+}
+
+Element britannia 1361x1453
+{
+	Amount i15
+}
+
+Element britannia 1361x805
+{
+	Amount i15
+}
+
+Element britannia 1362x1380
+{
+	Amount i15
+}
+
+Element britannia 1362x1416
+{
+	Amount i15
+}
+
+Element britannia 1362x1453
+{
+	Amount i15
+}
+
+Element britannia 1363x1347
+{
+	Amount i15
+}
+
+Element britannia 1363x1348
+{
+	Amount i15
+}
+
+Element britannia 1363x1349
+{
+	Amount i15
+}
+
+Element britannia 1363x1351
+{
+	Amount i15
+}
+
+Element britannia 1363x1369
+{
+	Amount i15
+}
+
+Element britannia 1363x1456
+{
+	Amount i15
+}
+
+Element britannia 1364x1355
+{
+	Amount i15
+}
+
+Element britannia 1364x1377
+{
+	Amount i15
+}
+
+Element britannia 1365x1363
+{
+	Amount i15
+}
+
+Element britannia 1365x1368
+{
+	Amount i15
+}
+
+Element britannia 1365x1372
+{
+	Amount i15
+}
+
+Element britannia 1365x1394
+{
+	Amount i15
+}
+
+Element britannia 1365x1395
+{
+	Amount i15
+}
+
+Element britannia 1366x1387
+{
+	Amount i15
+}
+
+Element britannia 1367x1349
+{
+	Amount i15
+}
+
+Element britannia 1367x1360
+{
+	Amount i15
+}
+
+Element britannia 1367x1411
+{
+	Amount i15
+}
+
+Element britannia 1368x1349
+{
+	Amount i15
+}
+
+Element britannia 1368x1361
+{
+	Amount i15
+}
+
+Element britannia 1368x1365
+{
+	Amount i15
+}
+
+Element britannia 1368x1378
+{
+	Amount i15
+}
+
+Element britannia 1369x1347
+{
+	Amount i15
+}
+
+Element britannia 1369x1456
+{
+	Amount i15
+}
+
+Element britannia 1370x1372
+{
+	Amount i15
+}
+
+Element britannia 1371x1364
+{
+	Amount i15
+}
+
+Element britannia 1371x1368
+{
+	Amount i15
+}
+
+Element britannia 1372x1383
+{
+	Amount i15
+}
+
+Element britannia 1372x1386
+{
+	Amount i15
+}
+
+Element britannia 1372x1405
+{
+	Amount i15
+}
+
+Element britannia 1372x1407
+{
+	Amount i15
+}
+
+Element britannia 1373x1248
+{
+	Amount i15
+}
+
+Element britannia 1373x1254
+{
+	Amount i15
+}
+
+Element britannia 1373x1350
+{
+	Amount i15
+}
+
+Element britannia 1373x1360
+{
+	Amount i15
+}
+
+Element britannia 1373x1377
+{
+	Amount i15
+}
+
+Element britannia 1374x1299
+{
+	Amount i15
+}
+
+Element britannia 1374x1341
+{
+	Amount i15
+}
+
+Element britannia 1374x1351
+{
+	Amount i15
+}
+
+Element britannia 1374x1355
+{
+	Amount i15
+}
+
+Element britannia 1374x1372
+{
+	Amount i15
+}
+
+Element britannia 1374x1390
+{
+	Amount i15
+}
+
+Element britannia 1374x1403
+{
+	Amount i15
+}
+
+Element britannia 1374x1454
+{
+	Amount i15
+}
+
+Element britannia 1375x1068
+{
+	Amount i15
+}
+
+Element britannia 1375x1087
+{
+	Amount i15
+}
+
+Element britannia 1375x1364
+{
+	Amount i15
+}
+
+Element britannia 1375x1381
+{
+	Amount i15
+}
+
+Element britannia 1375x1393
+{
+	Amount i15
+}
+
+Element britannia 1376x1085
+{
+	Amount i15
+}
+
+Element britannia 1376x1300
+{
+	Amount i15
+}
+
+Element britannia 1376x1302
+{
+	Amount i15
+}
+
+Element britannia 1376x1364
+{
+	Amount i15
+}
+
+Element britannia 1376x1406
+{
+	Amount i15
+}
+
+Element britannia 1377x1273
+{
+	Amount i15
+}
+
+Element britannia 1377x1298
+{
+	Amount i15
+}
+
+Element britannia 1377x1349
+{
+	Amount i15
+}
+
+Element britannia 1377x1363
+{
+	Amount i15
+}
+
+Element britannia 1377x1401
+{
+	Amount i15
+}
+
+Element britannia 1378x1078
+{
+	Amount i15
+}
+
+Element britannia 1378x1079
+{
+	Amount i15
+}
+
+Element britannia 1378x1082
+{
+	Amount i15
+}
+
+Element britannia 1378x1083
+{
+	Amount i15
+}
+
+Element britannia 1378x1263
+{
+	Amount i15
+}
+
+Element britannia 1378x1359
+{
+	Amount i15
+}
+
+Element britannia 1378x1363
+{
+	Amount i15
+}
+
+Element britannia 1378x1381
+{
+	Amount i15
+}
+
+Element britannia 1378x1386
+{
+	Amount i15
+}
+
+Element britannia 1379x1081
+{
+	Amount i15
+}
+
+Element britannia 1379x1337
+{
+	Amount i15
+}
+
+Element britannia 1379x1340
+{
+	Amount i15
+}
+
+Element britannia 1379x1347
+{
+	Amount i15
+}
+
+Element britannia 1379x1351
+{
+	Amount i15
+}
+
+Element britannia 1379x1397
+{
+	Amount i15
+}
+
+Element britannia 1379x1449
+{
+	Amount i15
+}
+
+Element britannia 1380x1254
+{
+	Amount i15
+}
+
+Element britannia 1380x1275
+{
+	Amount i15
+}
+
+Element britannia 1380x1299
+{
+	Amount i15
+}
+
+Element britannia 1380x1347
+{
+	Amount i15
+}
+
+Element britannia 1380x1349
+{
+	Amount i15
+}
+
+Element britannia 1380x1351
+{
+	Amount i15
+}
+
+Element britannia 1380x1372
+{
+	Amount i15
+}
+
+Element britannia 1380x835
+{
+	Amount i15
+}
+
+Element britannia 1381x1301
+{
+	Amount i15
+}
+
+Element britannia 1381x1302
+{
+	Amount i15
+}
+
+Element britannia 1381x1339
+{
+	Amount i15
+}
+
+Element britannia 1381x1381
+{
+	Amount i15
+}
+
+Element britannia 1382x1316
+{
+	Amount i15
+}
+
+Element britannia 1382x1317
+{
+	Amount i15
+}
+
+Element britannia 1382x1362
+{
+	Amount i15
+}
+
+Element britannia 1382x1379
+{
+	Amount i15
+}
+
+Element britannia 1382x1391
+{
+	Amount i15
+}
+
+Element britannia 1382x1394
+{
+	Amount i15
+}
+
+Element britannia 1382x1405
+{
+	Amount i15
+}
+
+Element britannia 1382x802
+{
+	Amount i15
+}
+
+Element britannia 1383x1243
+{
+	Amount i15
+}
+
+Element britannia 1383x1305
+{
+	Amount i15
+}
+
+Element britannia 1383x1306
+{
+	Amount i15
+}
+
+Element britannia 1383x1308
+{
+	Amount i15
+}
+
+Element britannia 1383x1355
+{
+	Amount i15
+}
+
+Element britannia 1383x1368
+{
+	Amount i15
+}
+
+Element britannia 1383x1385
+{
+	Amount i15
+}
+
+Element britannia 1383x1403
+{
+	Amount i15
+}
+
+Element britannia 1384x1298
+{
+	Amount i15
+}
+
+Element britannia 1384x1302
+{
+	Amount i15
+}
+
+Element britannia 1384x1329
+{
+	Amount i15
+}
+
+Element britannia 1384x1347
+{
+	Amount i15
+}
+
+Element britannia 1384x1409
+{
+	Amount i15
+}
+
+Element britannia 1385x1313
+{
+	Amount i15
+}
+
+Element britannia 1385x1323
+{
+	Amount i15
+}
+
+Element britannia 1385x1326
+{
+	Amount i15
+}
+
+Element britannia 1385x1337
+{
+	Amount i15
+}
+
+Element britannia 1385x1360
+{
+	Amount i15
+}
+
+Element britannia 1385x1361
+{
+	Amount i15
+}
+
+Element britannia 1385x1452
+{
+	Amount i15
+}
+
+Element britannia 1386x1308
+{
+	Amount i15
+}
+
+Element britannia 1386x1313
+{
+	Amount i15
+}
+
+Element britannia 1386x1330
+{
+	Amount i15
+}
+
+Element britannia 1387x1296
+{
+	Amount i15
+}
+
+Element britannia 1387x1317
+{
+	Amount i15
+}
+
+Element britannia 1387x1322
+{
+	Amount i15
+}
+
+Element britannia 1387x1325
+{
+	Amount i15
+}
+
+Element britannia 1387x1331
+{
+	Amount i15
+}
+
+Element britannia 1387x1372
+{
+	Amount i15
+}
+
+Element britannia 1387x1379
+{
+	Amount i15
+}
+
+Element britannia 1387x1382
+{
+	Amount i15
+}
+
+Element britannia 1387x1494
+{
+	Amount i15
+}
+
+Element britannia 1388x1311
+{
+	Amount i15
+}
+
+Element britannia 1388x1345
+{
+	Amount i15
+}
+
+Element britannia 1388x1361
+{
+	Amount i15
+}
+
+Element britannia 1388x1378
+{
+	Amount i15
+}
+
+Element britannia 1389x1297
+{
+	Amount i15
+}
+
+Element britannia 1389x1321
+{
+	Amount i15
+}
+
+Element britannia 1389x1337
+{
+	Amount i15
+}
+
+Element britannia 1389x1344
+{
+	Amount i15
+}
+
+Element britannia 1389x1360
+{
+	Amount i15
+}
+
+Element britannia 1389x1364
+{
+	Amount i15
+}
+
+Element britannia 1389x1367
+{
+	Amount i15
+}
+
+Element britannia 1389x1370
+{
+	Amount i15
+}
+
+Element britannia 1389x1371
+{
+	Amount i15
+}
+
+Element britannia 1389x1450
+{
+	Amount i15
+}
+
+Element britannia 1389x1457
+{
+	Amount i15
+}
+
+Element britannia 1390x1318
+{
+	Amount i15
+}
+
+Element britannia 1390x1320
+{
+	Amount i15
+}
+
+Element britannia 1390x1323
+{
+	Amount i15
+}
+
+Element britannia 1390x1333
+{
+	Amount i15
+}
+
+Element britannia 1390x1334
+{
+	Amount i15
+}
+
+Element britannia 1390x1354
+{
+	Amount i15
+}
+
+Element britannia 1390x1356
+{
+	Amount i15
+}
+
+Element britannia 1390x1357
+{
+	Amount i15
+}
+
+Element britannia 1390x1493
+{
+	Amount i15
+}
+
+Element britannia 1390x1496
+{
+	Amount i15
+}
+
+Element britannia 1391x1311
+{
+	Amount i15
+}
+
+Element britannia 1391x1313
+{
+	Amount i15
+}
+
+Element britannia 1391x1314
+{
+	Amount i15
+}
+
+Element britannia 1391x1315
+{
+	Amount i15
+}
+
+Element britannia 1391x1317
+{
+	Amount i15
+}
+
+Element britannia 1391x1333
+{
+	Amount i15
+}
+
+Element britannia 1391x1361
+{
+	Amount i15
+}
+
+Element britannia 1391x1394
+{
+	Amount i15
+}
+
+Element britannia 1391x1397
+{
+	Amount i15
+}
+
+Element britannia 1391x1407
+{
+	Amount i15
+}
+
+Element britannia 1392x1309
+{
+	Amount i15
+}
+
+Element britannia 1392x1320
+{
+	Amount i15
+}
+
+Element britannia 1392x1342
+{
+	Amount i15
+}
+
+Element britannia 1392x1390
+{
+	Amount i15
+}
+
+Element britannia 1392x890
+{
+	Amount i15
+}
+
+Element britannia 1393x1317
+{
+	Amount i15
+}
+
+Element britannia 1393x1334
+{
+	Amount i15
+}
+
+Element britannia 1393x1379
+{
+	Amount i15
+}
+
+Element britannia 1393x1493
+{
+	Amount i15
+}
+
+Element britannia 1394x1299
+{
+	Amount i15
+}
+
+Element britannia 1394x1302
+{
+	Amount i15
+}
+
+Element britannia 1394x1303
+{
+	Amount i15
+}
+
+Element britannia 1394x1305
+{
+	Amount i15
+}
+
+Element britannia 1394x1352
+{
+	Amount i15
+}
+
+Element britannia 1394x1369
+{
+	Amount i15
+}
+
+Element britannia 1395x1338
+{
+	Amount i15
+}
+
+Element britannia 1395x1339
+{
+	Amount i15
+}
+
+Element britannia 1395x1390
+{
+	Amount i15
+}
+
+Element britannia 1396x1298
+{
+	Amount i15
+}
+
+Element britannia 1396x1337
+{
+	Amount i15
+}
+
+Element britannia 1396x1388
+{
+	Amount i15
+}
+
+Element britannia 1396x1401
+{
+	Amount i15
+}
+
+Element britannia 1396x1409
+{
+	Amount i15
+}
+
+Element britannia 1396x1490
+{
+	Amount i15
+}
+
+Element britannia 1396x1500
+{
+	Amount i15
+}
+
+Element britannia 1397x1332
+{
+	Amount i15
+}
+
+Element britannia 1397x1384
+{
+	Amount i15
+}
+
+Element britannia 1397x1446
+{
+	Amount i15
+}
+
+Element britannia 1397x1456
+{
+	Amount i15
+}
+
+Element britannia 1397x1479
+{
+	Amount i15
+}
+
+Element britannia 1397x1498
+{
+	Amount i15
+}
+
+Element britannia 1397x896
+{
+	Amount i15
+}
+
+Element britannia 1398x1369
+{
+	Amount i15
+}
+
+Element britannia 1398x1370
+{
+	Amount i15
+}
+
+Element britannia 1398x1464
+{
+	Amount i15
+}
+
+Element britannia 1398x1474
+{
+	Amount i15
+}
+
+Element britannia 1398x1476
+{
+	Amount i15
+}
+
+Element britannia 1398x1483
+{
+	Amount i15
+}
+
+Element britannia 1398x1484
+{
+	Amount i15
+}
+
+Element britannia 1399x1322
+{
+	Amount i15
+}
+
+Element britannia 1399x1328
+{
+	Amount i15
+}
+
+Element britannia 1399x1433
+{
+	Amount i15
+}
+
+Element britannia 1399x1440
+{
+	Amount i15
+}
+
+Element britannia 1399x893
+{
+	Amount i15
+}
+
+Element britannia 1400x1336
+{
+	Amount i15
+}
+
+Element britannia 1400x1369
+{
+	Amount i15
+}
+
+Element britannia 1400x1379
+{
+	Amount i15
+}
+
+Element britannia 1400x1382
+{
+	Amount i15
+}
+
+Element britannia 1400x1385
+{
+	Amount i15
+}
+
+Element britannia 1400x1447
+{
+	Amount i15
+}
+
+Element britannia 1400x1480
+{
+	Amount i15
+}
+
+Element britannia 1400x1508
+{
+	Amount i15
+}
+
+Element britannia 1400x1510
+{
+	Amount i15
+}
+
+Element britannia 1400x1511
+{
+	Amount i15
+}
+
+Element britannia 1401x1392
+{
+	Amount i15
+}
+
+Element britannia 1401x1409
+{
+	Amount i15
+}
+
+Element britannia 1401x1423
+{
+	Amount i15
+}
+
+Element britannia 1401x1424
+{
+	Amount i15
+}
+
+Element britannia 1401x1459
+{
+	Amount i15
+}
+
+Element britannia 1402x1240
+{
+	Amount i15
+}
+
+Element britannia 1402x1330
+{
+	Amount i15
+}
+
+Element britannia 1402x1368
+{
+	Amount i15
+}
+
+Element britannia 1402x1371
+{
+	Amount i15
+}
+
+Element britannia 1402x1374
+{
+	Amount i15
+}
+
+Element britannia 1402x1384
+{
+	Amount i15
+}
+
+Element britannia 1402x1421
+{
+	Amount i15
+}
+
+Element britannia 1402x1430
+{
+	Amount i15
+}
+
+Element britannia 1402x1441
+{
+	Amount i15
+}
+
+Element britannia 1402x1451
+{
+	Amount i15
+}
+
+Element britannia 1402x1469
+{
+	Amount i15
+}
+
+Element britannia 1402x1482
+{
+	Amount i15
+}
+
+Element britannia 1403x1391
+{
+	Amount i15
+}
+
+Element britannia 1403x1459
+{
+	Amount i15
+}
+
+Element britannia 1403x1460
+{
+	Amount i15
+}
+
+Element britannia 1403x1509
+{
+	Amount i15
+}
+
+Element britannia 1404x1385
+{
+	Amount i15
+}
+
+Element britannia 1404x1436
+{
+	Amount i15
+}
+
+Element britannia 1404x1478
+{
+	Amount i15
+}
+
+Element britannia 1405x1251
+{
+	Amount i15
+}
+
+Element britannia 1405x1427
+{
+	Amount i15
+}
+
+Element britannia 1406x1366
+{
+	Amount i15
+}
+
+Element britannia 1406x1393
+{
+	Amount i15
+}
+
+Element britannia 1406x1407
+{
+	Amount i15
+}
+
+Element britannia 1406x1411
+{
+	Amount i15
+}
+
+Element britannia 1406x1414
+{
+	Amount i15
+}
+
+Element britannia 1406x1472
+{
+	Amount i15
+}
+
+Element britannia 1406x1478
+{
+	Amount i15
+}
+
+Element britannia 1406x1505
+{
+	Amount i15
+}
+
+Element britannia 1407x1315
+{
+	Amount i15
+}
+
+Element britannia 1407x1400
+{
+	Amount i15
+}
+
+Element britannia 1407x1443
+{
+	Amount i15
+}
+
+Element britannia 1407x1455
+{
+	Amount i15
+}
+
+Element britannia 1408x1265
+{
+	Amount i15
+}
+
+Element britannia 1408x1269
+{
+	Amount i15
+}
+
+Element britannia 1408x1320
+{
+	Amount i15
+}
+
+Element britannia 1408x1338
+{
+	Amount i15
+}
+
+Element britannia 1408x1381
+{
+	Amount i15
+}
+
+Element britannia 1408x1385
+{
+	Amount i15
+}
+
+Element britannia 1408x1418
+{
+	Amount i15
+}
+
+Element britannia 1409x1390
+{
+	Amount i15
+}
+
+Element britannia 1409x1424
+{
+	Amount i15
+}
+
+Element britannia 1409x1426
+{
+	Amount i15
+}
+
+Element britannia 1409x1427
+{
+	Amount i15
+}
+
+Element britannia 1409x1505
+{
+	Amount i15
+}
+
+Element britannia 1410x1252
+{
+	Amount i15
+}
+
+Element britannia 1410x1456
+{
+	Amount i15
+}
+
+Element britannia 1410x1471
+{
+	Amount i15
+}
+
+Element britannia 1410x1505
+{
+	Amount i15
+}
+
+Element britannia 1411x1395
+{
+	Amount i15
+}
+
+Element britannia 1411x1404
+{
+	Amount i15
+}
+
+Element britannia 1411x1417
+{
+	Amount i15
+}
+
+Element britannia 1411x1439
+{
+	Amount i15
+}
+
+Element britannia 1412x1367
+{
+	Amount i15
+}
+
+Element britannia 1412x1411
+{
+	Amount i15
+}
+
+Element britannia 1412x1470
+{
+	Amount i15
+}
+
+Element britannia 1413x1330
+{
+	Amount i15
+}
+
+Element britannia 1413x1398
+{
+	Amount i15
+}
+
+Element britannia 1413x1401
+{
+	Amount i15
+}
+
+Element britannia 1414x1371
+{
+	Amount i15
+}
+
+Element britannia 1414x1457
+{
+	Amount i15
+}
+
+Element britannia 1414x1469
+{
+	Amount i15
+}
+
+Element britannia 1415x1375
+{
+	Amount i15
+}
+
+Element britannia 1415x1416
+{
+	Amount i15
+}
+
+Element britannia 1415x1421
+{
+	Amount i15
+}
+
+Element britannia 1415x1425
+{
+	Amount i15
+}
+
+Element britannia 1415x1438
+{
+	Amount i15
+}
+
+Element britannia 1415x1446
+{
+	Amount i15
+}
+
+Element britannia 1416x1388
+{
+	Amount i15
+}
+
+Element britannia 1416x1432
+{
+	Amount i15
+}
+
+Element britannia 1416x1455
+{
+	Amount i15
+}
+
+Element britannia 1417x1367
+{
+	Amount i15
+}
+
+Element britannia 1417x1385
+{
+	Amount i15
+}
+
+Element britannia 1417x1401
+{
+	Amount i15
+}
+
+Element britannia 1417x1419
+{
+	Amount i15
+}
+
+Element britannia 1417x1446
+{
+	Amount i15
+}
+
+Element britannia 1417x1469
+{
+	Amount i15
+}
+
+Element britannia 1417x1474
+{
+	Amount i15
+}
+
+Element britannia 1417x1479
+{
+	Amount i15
+}
+
+Element britannia 1418x1385
+{
+	Amount i15
+}
+
+Element britannia 1418x1426
+{
+	Amount i15
+}
+
+Element britannia 1418x1446
+{
+	Amount i15
+}
+
+Element britannia 1419x1396
+{
+	Amount i15
+}
+
+Element britannia 1419x1399
+{
+	Amount i15
+}
+
+Element britannia 1419x1412
+{
+	Amount i15
+}
+
+Element britannia 1419x1431
+{
+	Amount i15
+}
+
+Element britannia 1419x1437
+{
+	Amount i15
+}
+
+Element britannia 1419x1454
+{
+	Amount i15
+}
+
+Element britannia 1420x1329
+{
+	Amount i15
+}
+
+Element britannia 1420x1381
+{
+	Amount i15
+}
+
+Element britannia 1420x1436
+{
+	Amount i15
+}
+
+Element britannia 1420x1446
+{
+	Amount i15
+}
+
+Element britannia 1421x1330
+{
+	Amount i15
+}
+
+Element britannia 1421x1332
+{
+	Amount i15
+}
+
+Element britannia 1421x1429
+{
+	Amount i15
+}
+
+Element britannia 1421x1454
+{
+	Amount i15
+}
+
+Element britannia 1422x1330
+{
+	Amount i15
+}
+
+Element britannia 1422x1336
+{
+	Amount i15
+}
+
+Element britannia 1422x1390
+{
+	Amount i15
+}
+
+Element britannia 1422x1400
+{
+	Amount i15
+}
+
+Element britannia 1423x1314
+{
+	Amount i15
+}
+
+Element britannia 1423x1321
+{
+	Amount i15
+}
+
+Element britannia 1423x1342
+{
+	Amount i15
+}
+
+Element britannia 1423x1345
+{
+	Amount i15
+}
+
+Element britannia 1423x1389
+{
+	Amount i15
+}
+
+Element britannia 1423x1437
+{
+	Amount i15
+}
+
+Element britannia 1423x1438
+{
+	Amount i15
+}
+
+Element britannia 1424x1327
+{
+	Amount i15
+}
+
+Element britannia 1424x1340
+{
+	Amount i15
+}
+
+Element britannia 1424x1348
+{
+	Amount i15
+}
+
+Element britannia 1424x1460
+{
+	Amount i15
+}
+
+Element britannia 1424x1470
+{
+	Amount i15
+}
+
+Element britannia 1425x1324
+{
+	Amount i15
+}
+
+Element britannia 1425x1385
+{
+	Amount i15
+}
+
+Element britannia 1425x1389
+{
+	Amount i15
+}
+
+Element britannia 1425x1446
+{
+	Amount i15
+}
+
+Element britannia 1425x1458
+{
+	Amount i15
+}
+
+Element britannia 1425x1463
+{
+	Amount i15
+}
+
+Element britannia 1425x1468
+{
+	Amount i15
+}
+
+Element britannia 1426x1323
+{
+	Amount i15
+}
+
+Element britannia 1426x1326
+{
+	Amount i15
+}
+
+Element britannia 1426x1349
+{
+	Amount i15
+}
+
+Element britannia 1426x1421
+{
+	Amount i15
+}
+
+Element britannia 1426x1466
+{
+	Amount i15
+}
+
+Element britannia 1427x1317
+{
+	Amount i15
+}
+
+Element britannia 1427x1386
+{
+	Amount i15
+}
+
+Element britannia 1427x1444
+{
+	Amount i15
+}
+
+Element britannia 1427x1446
+{
+	Amount i15
+}
+
+Element britannia 1428x1359
+{
+	Amount i15
+}
+
+Element britannia 1428x1362
+{
+	Amount i15
+}
+
+Element britannia 1428x1388
+{
+	Amount i15
+}
+
+Element britannia 1428x1458
+{
+	Amount i15
+}
+
+Element britannia 1429x1324
+{
+	Amount i15
+}
+
+Element britannia 1429x1325
+{
+	Amount i15
+}
+
+Element britannia 1430x1255
+{
+	Amount i15
+}
+
+Element britannia 1430x1322
+{
+	Amount i15
+}
+
+Element britannia 1430x1335
+{
+	Amount i15
+}
+
+Element britannia 1430x1336
+{
+	Amount i15
+}
+
+Element britannia 1430x1338
+{
+	Amount i15
+}
+
+Element britannia 1430x1350
+{
+	Amount i15
+}
+
+Element britannia 1430x1399
+{
+	Amount i15
+}
+
+Element britannia 1431x1333
+{
+	Amount i15
+}
+
+Element britannia 1431x1351
+{
+	Amount i15
+}
+
+Element britannia 1431x1354
+{
+	Amount i15
+}
+
+Element britannia 1431x1358
+{
+	Amount i15
+}
+
+Element britannia 1432x1317
+{
+	Amount i15
+}
+
+Element britannia 1432x1328
+{
+	Amount i15
+}
+
+Element britannia 1432x1329
+{
+	Amount i15
+}
+
+Element britannia 1433x1352
+{
+	Amount i15
+}
+
+Element britannia 1433x1367
+{
+	Amount i15
+}
+
+Element britannia 1433x1417
+{
+	Amount i15
+}
+
+Element britannia 1434x1331
+{
+	Amount i15
+}
+
+Element britannia 1434x1339
+{
+	Amount i15
+}
+
+Element britannia 1434x1370
+{
+	Amount i15
+}
+
+Element britannia 1435x1345
+{
+	Amount i15
+}
+
+Element britannia 1436x1368
+{
+	Amount i15
+}
+
+Element britannia 1436x1403
+{
+	Amount i15
+}
+
+Element britannia 1436x1432
+{
+	Amount i15
+}
+
+Element britannia 1437x1305
+{
+	Amount i15
+}
+
+Element britannia 1437x1346
+{
+	Amount i15
+}
+
+Element britannia 1438x1315
+{
+	Amount i15
+}
+
+Element britannia 1438x1351
+{
+	Amount i15
+}
+
+Element britannia 1438x1384
+{
+	Amount i15
+}
+
+Element britannia 1439x1301
+{
+	Amount i15
+}
+
+Element britannia 1439x1321
+{
+	Amount i15
+}
+
+Element britannia 1439x1325
+{
+	Amount i15
+}
+
+Element britannia 1439x1336
+{
+	Amount i15
+}
+
+Element britannia 1439x1342
+{
+	Amount i15
+}
+
+Element britannia 1439x1388
+{
+	Amount i15
+}
+
+Element britannia 1440x1343
+{
+	Amount i15
+}
+
+Element britannia 1440x1368
+{
+	Amount i15
+}
+
+Element britannia 1440x1378
+{
+	Amount i15
+}
+
+Element britannia 1441x1310
+{
+	Amount i15
+}
+
+Element britannia 1441x1363
+{
+	Amount i15
+}
+
+Element britannia 1441x1366
+{
+	Amount i15
+}
+
+Element britannia 1442x1338
+{
+	Amount i15
+}
+
+Element britannia 1442x1381
+{
+	Amount i15
+}
+
+Element britannia 1442x1403
+{
+	Amount i15
+}
+
+Element britannia 1443x1313
+{
+	Amount i15
+}
+
+Element britannia 1443x1333
+{
+	Amount i15
+}
+
+Element britannia 1443x1343
+{
+	Amount i15
+}
+
+Element britannia 1443x1356
+{
+	Amount i15
+}
+
+Element britannia 1443x1364
+{
+	Amount i15
+}
+
+Element britannia 1444x1346
+{
+	Amount i15
+}
+
+Element britannia 1444x1358
+{
+	Amount i15
+}
+
+Element britannia 1444x1363
+{
+	Amount i15
+}
+
+Element britannia 1444x1372
+{
+	Amount i15
+}
+
+Element britannia 1445x1320
+{
+	Amount i15
+}
+
+Element britannia 1445x1329
+{
+	Amount i15
+}
+
+Element britannia 1445x1331
+{
+	Amount i15
+}
+
+Element britannia 1445x1338
+{
+	Amount i15
+}
+
+Element britannia 1445x1339
+{
+	Amount i15
+}
+
+Element britannia 1445x1369
+{
+	Amount i15
+}
+
+Element britannia 1445x1405
+{
+	Amount i15
+}
+
+Element britannia 1446x1273
+{
+	Amount i15
+}
+
+Element britannia 1446x1304
+{
+	Amount i15
+}
+
+Element britannia 1446x1308
+{
+	Amount i15
+}
+
+Element britannia 1446x1343
+{
+	Amount i15
+}
+
+Element britannia 1446x1391
+{
+	Amount i15
+}
+
+Element britannia 1447x1261
+{
+	Amount i15
+}
+
+Element britannia 1447x1273
+{
+	Amount i15
+}
+
+Element britannia 1447x1335
+{
+	Amount i15
+}
+
+Element britannia 1447x1368
+{
+	Amount i15
+}
+
+Element britannia 1447x1371
+{
+	Amount i15
+}
+
+Element britannia 1447x1378
+{
+	Amount i15
+}
+
+Element britannia 1447x1384
+{
+	Amount i15
+}
+
+Element britannia 1448x1235
+{
+	Amount i15
+}
+
+Element britannia 1448x1238
+{
+	Amount i15
+}
+
+Element britannia 1448x1313
+{
+	Amount i15
+}
+
+Element britannia 1448x1323
+{
+	Amount i15
+}
+
+Element britannia 1448x1326
+{
+	Amount i15
+}
+
+Element britannia 1448x1337
+{
+	Amount i15
+}
+
+Element britannia 1448x1360
+{
+	Amount i15
+}
+
+Element britannia 1449x1350
+{
+	Amount i15
+}
+
+Element britannia 1449x1363
+{
+	Amount i15
+}
+
+Element britannia 1449x1380
+{
+	Amount i15
+}
+
+Element britannia 1450x1325
+{
+	Amount i15
+}
+
+Element britannia 1450x1335
+{
+	Amount i15
+}
+
+Element britannia 1450x1363
+{
+	Amount i15
+}
+
+Element britannia 1450x1385
+{
+	Amount i15
+}
+
+Element britannia 1450x1386
+{
+	Amount i15
+}
+
+Element britannia 1450x1388
+{
+	Amount i15
+}
+
+Element britannia 1451x1322
+{
+	Amount i15
+}
+
+Element britannia 1451x1325
+{
+	Amount i15
+}
+
+Element britannia 1451x1337
+{
+	Amount i15
+}
+
+Element britannia 1451x1360
+{
+	Amount i15
+}
+
+Element britannia 1451x1361
+{
+	Amount i15
+}
+
+Element britannia 1452x1323
+{
+	Amount i15
+}
+
+Element britannia 1453x1309
+{
+	Amount i15
+}
+
+Element britannia 1453x1340
+{
+	Amount i15
+}
+
+Element britannia 1453x1343
+{
+	Amount i15
+}
+
+Element britannia 1453x1349
+{
+	Amount i15
+}
+
+Element britannia 1453x1376
+{
+	Amount i15
+}
+
+Element britannia 1454x1321
+{
+	Amount i15
+}
+
+Element britannia 1454x1324
+{
+	Amount i15
+}
+
+Element britannia 1454x1331
+{
+	Amount i15
+}
+
+Element britannia 1454x1354
+{
+	Amount i15
+}
+
+Element britannia 1454x1373
+{
+	Amount i15
+}
+
+Element britannia 1455x1364
+{
+	Amount i15
+}
+
+Element britannia 1456x1360
+{
+	Amount i15
+}
+
+Element britannia 1456x1382
+{
+	Amount i15
+}
+
+Element britannia 1457x1328
+{
+	Amount i15
+}
+
+Element britannia 1457x1385
+{
+	Amount i15
+}
+
+Element britannia 1458x1324
+{
+	Amount i15
+}
+
+Element britannia 1458x1356
+{
+	Amount i15
+}
+
+Element britannia 1458x1372
+{
+	Amount i15
+}
+
+Element britannia 1459x1316
+{
+	Amount i15
+}
+
+Element britannia 1459x1327
+{
+	Amount i15
+}
+
+Element britannia 1459x1333
+{
+	Amount i15
+}
+
+Element britannia 1459x1364
+{
+	Amount i15
+}
+
+Element britannia 1459x1382
+{
+	Amount i15
+}
+
+Element britannia 1460x1310
+{
+	Amount i15
+}
+
+Element britannia 1460x1311
+{
+	Amount i15
+}
+
+Element britannia 1461x1328
+{
+	Amount i15
+}
+
+Element britannia 1461x1329
+{
+	Amount i15
+}
+
+Element britannia 1461x1358
+{
+	Amount i15
+}
+
+Element britannia 1461x1380
+{
+	Amount i15
+}
+
+Element britannia 1462x1316
+{
+	Amount i15
+}
+
+Element britannia 1462x1356
+{
+	Amount i15
+}
+
+Element britannia 1462x1377
+{
+	Amount i15
+}
+
+Element britannia 1463x1322
+{
+	Amount i15
+}
+
+Element britannia 1463x1359
+{
+	Amount i15
+}
+
+Element britannia 1463x1365
+{
+	Amount i15
+}
+
+Element britannia 1463x1386
+{
+	Amount i15
+}
+
+Element britannia 1464x1315
+{
+	Amount i15
+}
+
+Element britannia 1464x1332
+{
+	Amount i15
+}
+
+Element britannia 1464x1372
+{
+	Amount i15
+}
+
+Element britannia 1464x1381
+{
+	Amount i15
+}
+
+Element britannia 1465x1327
+{
+	Amount i15
+}
+
+Element britannia 1465x1330
+{
+	Amount i15
+}
+
+Element britannia 1465x1370
+{
+	Amount i15
+}
+
+Element britannia 1466x1315
+{
+	Amount i15
+}
+
+Element britannia 1466x1323
+{
+	Amount i15
+}
+
+Element britannia 1467x1317
+{
+	Amount i15
+}
+
+Element britannia 1467x1371
+{
+	Amount i15
+}
+
+Element britannia 1467x1381
+{
+	Amount i15
+}
+
+Element britannia 1467x1384
+{
+	Amount i15
+}
+
+Element britannia 1468x1240
+{
+	Amount i15
+}
+
+Element britannia 1468x1317
+{
+	Amount i15
+}
+
+Element britannia 1468x1358
+{
+	Amount i15
+}
+
+Element britannia 1468x1365
+{
+	Amount i15
+}
+
+Element britannia 1468x1378
+{
+	Amount i15
+}
+
+Element britannia 1469x1310
+{
+	Amount i15
+}
+
+Element britannia 1469x1328
+{
+	Amount i15
+}
+
+Element britannia 1469x1353
+{
+	Amount i15
+}
+
+Element britannia 1469x1400
+{
+	Amount i15
+}
+
+Element britannia 1470x1332
+{
+	Amount i15
+}
+
+Element britannia 1470x1381
+{
+	Amount i15
+}
+
+Element britannia 1471x1240
+{
+	Amount i15
+}
+
+Element britannia 1471x1324
+{
+	Amount i15
+}
+
+Element britannia 1471x1342
+{
+	Amount i15
+}
+
+Element britannia 1471x1357
+{
+	Amount i15
+}
+
+Element britannia 1471x1372
+{
+	Amount i15
+}
+
+Element britannia 1471x1397
+{
+	Amount i15
+}
+
+Element britannia 1472x1319
+{
+	Amount i15
+}
+
+Element britannia 1472x1352
+{
+	Amount i15
+}
+
+Element britannia 1472x1353
+{
+	Amount i15
+}
+
+Element britannia 1472x1355
+{
+	Amount i15
+}
+
+Element britannia 1473x1318
+{
+	Amount i15
+}
+
+Element britannia 1473x1337
+{
+	Amount i15
+}
+
+Element britannia 1473x1365
+{
+	Amount i15
+}
+
+Element britannia 1474x1317
+{
+	Amount i15
+}
+
+Element britannia 1474x1328
+{
+	Amount i15
+}
+
+Element britannia 1474x1340
+{
+	Amount i15
+}
+
+Element britannia 1474x1345
+{
+	Amount i15
+}
+
+Element britannia 1474x1350
+{
+	Amount i15
+}
+
+Element britannia 1474x1374
+{
+	Amount i15
+}
+
+Element britannia 1474x1384
+{
+	Amount i15
+}
+
+Element britannia 1475x1314
+{
+	Amount i15
+}
+
+Element britannia 1475x1317
+{
+	Amount i15
+}
+
+Element britannia 1476x1333
+{
+	Amount i15
+}
+
+Element britannia 1476x1369
+{
+	Amount i15
+}
+
+Element britannia 1476x1382
+{
+	Amount i15
+}
+
+Element britannia 1477x1324
+{
+	Amount i15
+}
+
+Element britannia 1477x1356
+{
+	Amount i15
+}
+
+Element britannia 1477x1366
+{
+	Amount i15
+}
+
+Element britannia 1478x1266
+{
+	Amount i15
+}
+
+Element britannia 1478x1314
+{
+	Amount i15
+}
+
+Element britannia 1478x1332
+{
+	Amount i15
+}
+
+Element britannia 1478x1338
+{
+	Amount i15
+}
+
+Element britannia 1478x1369
+{
+	Amount i15
+}
+
+Element britannia 1479x1255
+{
+	Amount i15
+}
+
+Element britannia 1479x1350
+{
+	Amount i15
+}
+
+Element britannia 1479x1372
+{
+	Amount i15
+}
+
+Element britannia 1479x1373
+{
+	Amount i15
+}
+
+Element britannia 1479x1375
+{
+	Amount i15
+}
+
+Element britannia 1480x1319
+{
+	Amount i15
+}
+
+Element britannia 1480x1320
+{
+	Amount i15
+}
+
+Element britannia 1480x1329
+{
+	Amount i15
+}
+
+Element britannia 1480x1339
+{
+	Amount i15
+}
+
+Element britannia 1480x1354
+{
+	Amount i15
+}
+
+Element britannia 1480x1369
+{
+	Amount i15
+}
+
+Element britannia 1481x1323
+{
+	Amount i15
+}
+
+Element britannia 1481x1346
+{
+	Amount i15
+}
+
+Element britannia 1482x1313
+{
+	Amount i15
+}
+
+Element britannia 1482x1337
+{
+	Amount i15
+}
+
+Element britannia 1482x1372
+{
+	Amount i15
+}
+
+Element britannia 1482x1378
+{
+	Amount i15
+}
+
+Element britannia 1482x1383
+{
+	Amount i15
+}
+
+Element britannia 1482x905
+{
+	Amount i15
+}
+
+Element britannia 1483x1308
+{
+	Amount i15
+}
+
+Element britannia 1483x1315
+{
+	Amount i15
+}
+
+Element britannia 1483x1340
+{
+	Amount i15
+}
+
+Element britannia 1483x1348
+{
+	Amount i15
+}
+
+Element britannia 1483x1366
+{
+	Amount i15
+}
+
+Element britannia 1483x1383
+{
+	Amount i15
+}
+
+Element britannia 1484x1329
+{
+	Amount i15
+}
+
+Element britannia 1484x1333
+{
+	Amount i15
+}
+
+Element britannia 1484x1382
+{
+	Amount i15
+}
+
+Element britannia 1485x1344
+{
+	Amount i15
+}
+
+Element britannia 1485x1387
+{
+	Amount i15
+}
+
+Element britannia 1486x1246
+{
+	Amount i15
+}
+
+Element britannia 1486x1340
+{
+	Amount i15
+}
+
+Element britannia 1486x1357
+{
+	Amount i15
+}
+
+Element britannia 1486x1359
+{
+	Amount i15
+}
+
+Element britannia 1486x1369
+{
+	Amount i15
+}
+
+Element britannia 1486x1372
+{
+	Amount i15
+}
+
+Element britannia 1486x1383
+{
+	Amount i15
+}
+
+Element britannia 1487x1318
+{
+	Amount i15
+}
+
+Element britannia 1487x1336
+{
+	Amount i15
+}
+
+Element britannia 1487x1382
+{
+	Amount i15
+}
+
+Element britannia 1487x1385
+{
+	Amount i15
+}
+
+Element britannia 1488x1246
+{
+	Amount i15
+}
+
+Element britannia 1488x1314
+{
+	Amount i15
+}
+
+Element britannia 1488x1346
+{
+	Amount i15
+}
+
+Element britannia 1488x1368
+{
+	Amount i15
+}
+
+Element britannia 1488x1369
+{
+	Amount i15
+}
+
+Element britannia 1488x1371
+{
+	Amount i15
+}
+
+Element britannia 1489x1332
+{
+	Amount i15
+}
+
+Element britannia 1489x1342
+{
+	Amount i15
+}
+
+Element britannia 1489x1345
+{
+	Amount i15
+}
+
+Element britannia 1489x1381
+{
+	Amount i15
+}
+
+Element britannia 1490x1328
+{
+	Amount i15
+}
+
+Element britannia 1490x1362
+{
+	Amount i15
+}
+
+Element britannia 1490x1377
+{
+	Amount i15
+}
+
+Element britannia 1491x1309
+{
+	Amount i15
+}
+
+Element britannia 1491x1337
+{
+	Amount i15
+}
+
+Element britannia 1491x1359
+{
+	Amount i15
+}
+
+Element britannia 1491x1361
+{
+	Amount i15
+}
+
+Element britannia 1492x1316
+{
+	Amount i15
+}
+
+Element britannia 1492x1333
+{
+	Amount i15
+}
+
+Element britannia 1492x1352
+{
+	Amount i15
+}
+
+Element britannia 1492x1380
+{
+	Amount i15
+}
+
+Element britannia 1493x1351
+{
+	Amount i15
+}
+
+Element britannia 1493x1356
+{
+	Amount i15
+}
+
+Element britannia 1493x1361
+{
+	Amount i15
+}
+
+Element britannia 1493x1364
+{
+	Amount i15
+}
+
+Element britannia 1493x1379
+{
+	Amount i15
+}
+
+Element britannia 1493x1385
+{
+	Amount i15
+}
+
+Element britannia 1494x1324
+{
+	Amount i15
+}
+
+Element britannia 1494x1349
+{
+	Amount i15
+}
+
+Element britannia 1494x1380
+{
+	Amount i15
+}
+
+Element britannia 1495x1317
+{
+	Amount i15
+}
+
+Element britannia 1495x1319
+{
+	Amount i15
+}
+
+Element britannia 1495x1341
+{
+	Amount i15
+}
+
+Element britannia 1495x1342
+{
+	Amount i15
+}
+
+Element britannia 1495x1377
+{
+	Amount i15
+}
+
+Element britannia 1496x1327
+{
+	Amount i15
+}
+
+Element britannia 1496x1337
+{
+	Amount i15
+}
+
+Element britannia 1496x1340
+{
+	Amount i15
+}
+
+Element britannia 1496x1346
+{
+	Amount i15
+}
+
+Element britannia 1496x1428
+{
+	Amount i15
+}
+
+Element britannia 1497x1316
+{
+	Amount i15
+}
+
+Element britannia 1497x1351
+{
+	Amount i15
+}
+
+Element britannia 1497x1357
+{
+	Amount i15
+}
+
+Element britannia 1497x1374
+{
+	Amount i15
+}
+
+Element britannia 1498x1308
+{
+	Amount i15
+}
+
+Element britannia 1498x1330
+{
+	Amount i15
+}
+
+Element britannia 1498x1377
+{
+	Amount i15
+}
+
+Element britannia 1499x1324
+{
+	Amount i15
+}
+
+Element britannia 1499x1355
+{
+	Amount i15
+}
+
+Element britannia 1499x1376
+{
+	Amount i15
+}
+
+Element britannia 1499x1382
+{
+	Amount i15
+}
+
+Element britannia 1500x1317
+{
+	Amount i15
+}
+
+Element britannia 1500x1320
+{
+	Amount i15
+}
+
+Element britannia 1500x1358
+{
+	Amount i15
+}
+
+Element britannia 1500x1359
+{
+	Amount i15
+}
+
+Element britannia 1500x1368
+{
+	Amount i15
+}
+
+Element britannia 1501x1318
+{
+	Amount i15
+}
+
+Element britannia 1501x1338
+{
+	Amount i15
+}
+
+Element britannia 1501x1381
+{
+	Amount i15
+}
+
+Element britannia 1502x1313
+{
+	Amount i15
+}
+
+Element britannia 1502x1335
+{
+	Amount i15
+}
+
+Element britannia 1502x1341
+{
+	Amount i15
+}
+
+Element britannia 1502x1364
+{
+	Amount i15
+}
+
+Element britannia 1502x1370
+{
+	Amount i15
+}
+
+Element britannia 1502x1380
+{
+	Amount i15
+}
+
+Element britannia 1503x1309
+{
+	Amount i15
+}
+
+Element britannia 1503x1333
+{
+	Amount i15
+}
+
+Element britannia 1503x1349
+{
+	Amount i15
+}
+
+Element britannia 1503x1375
+{
+	Amount i15
+}
+
+Element britannia 1504x1333
+{
+	Amount i15
+}
+
+Element britannia 1504x1367
+{
+	Amount i15
+}
+
+Element britannia 1504x1370
+{
+	Amount i15
+}
+
+Element britannia 1505x1331
+{
+	Amount i15
+}
+
+Element britannia 1505x1350
+{
+	Amount i15
+}
+
+Element britannia 1505x1363
+{
+	Amount i15
+}
+
+Element britannia 1506x1328
+{
+	Amount i15
+}
+
+Element britannia 1506x1346
+{
+	Amount i15
+}
+
+Element britannia 1506x1360
+{
+	Amount i15
+}
+
+Element britannia 1507x1360
+{
+	Amount i15
+}
+
+Element britannia 1508x1315
+{
+	Amount i15
+}
+
+Element britannia 1508x1323
+{
+	Amount i15
+}
+
+Element britannia 1508x1348
+{
+	Amount i15
+}
+
+Element britannia 1509x1341
+{
+	Amount i15
+}
+
+Element britannia 1509x1356
+{
+	Amount i15
+}
+
+Element britannia 1510x1326
+{
+	Amount i15
+}
+
+Element britannia 1510x1363
+{
+	Amount i15
+}
+
+Element britannia 1512x1322
+{
+	Amount i15
+}
+
+Element britannia 1512x1328
+{
+	Amount i15
+}
+
+Element britannia 1512x1334
+{
+	Amount i15
+}
+
+Element britannia 1513x1308
+{
+	Amount i15
+}
+
+Element britannia 1513x1314
+{
+	Amount i15
+}
+
+Element britannia 1513x1320
+{
+	Amount i15
+}
+
+Element britannia 1513x1362
+{
+	Amount i15
+}
+
+Element britannia 1514x1318
+{
+	Amount i15
+}
+
+Element britannia 1514x1330
+{
+	Amount i15
+}
+
+Element britannia 1514x1333
+{
+	Amount i15
+}
+
+Element britannia 1514x1336
+{
+	Amount i15
+}
+
+Element britannia 1515x1355
+{
+	Amount i15
+}
+
+Element britannia 1516x1346
+{
+	Amount i15
+}
+
+Element britannia 1516x1352
+{
+	Amount i15
+}
+
+Element britannia 1516x1363
+{
+	Amount i15
+}
+
+Element britannia 1517x1333
+{
+	Amount i15
+}
+
+Element britannia 1518x1320
+{
+	Amount i15
+}
+
+Element britannia 1518x1321
+{
+	Amount i15
+}
+
+Element britannia 1518x1339
+{
+	Amount i15
+}
+
+Element britannia 1518x1340
+{
+	Amount i15
+}
+
+Element britannia 1518x1345
+{
+	Amount i15
+}
+
+Element britannia 1518x1366
+{
+	Amount i15
+}
+
+Element britannia 1519x1314
+{
+	Amount i15
+}
+
+Element britannia 1520x1321
+{
+	Amount i15
+}
+
+Element britannia 1521x1321
+{
+	Amount i15
+}
+
+Element britannia 1521x1326
+{
+	Amount i15
+}
+
+Element britannia 1521x1357
+{
+	Amount i15
+}
+
+Element britannia 1521x1360
+{
+	Amount i15
+}
+
+Element britannia 1522x1344
+{
+	Amount i15
+}
+
+Element britannia 1522x1351
+{
+	Amount i15
+}
+
+Element britannia 1523x1361
+{
+	Amount i15
+}
+
+Element britannia 1523x1374
+{
+	Amount i15
+}
+
+Element britannia 1524x1329
+{
+	Amount i15
+}
+
+Element britannia 1524x1332
+{
+	Amount i15
+}
+
+Element britannia 1524x1341
+{
+	Amount i15
+}
+
+Element britannia 1524x1342
+{
+	Amount i15
+}
+
+Element britannia 1524x1366
+{
+	Amount i15
+}
+
+Element britannia 1524x1376
+{
+	Amount i15
+}
+
+Element britannia 1525x1325
+{
+	Amount i15
+}
+
+Element britannia 1525x1355
+{
+	Amount i15
+}
+
+Element britannia 1525x1360
+{
+	Amount i15
+}
+
+Element britannia 1525x1373
+{
+	Amount i15
+}
+
+Element britannia 1526x1328
+{
+	Amount i15
+}
+
+Element britannia 1526x1334
+{
+	Amount i15
+}
+
+Element britannia 1526x1351
+{
+	Amount i15
+}
+
+Element britannia 1527x1344
+{
+	Amount i15
+}
+
+Element britannia 1527x1357
+{
+	Amount i15
+}
+
+Element britannia 1527x1369
+{
+	Amount i15
+}
+
+Element britannia 1528x1334
+{
+	Amount i15
+}
+
+Element britannia 1528x1349
+{
+	Amount i15
+}
+
+Element britannia 1528x1364
+{
+	Amount i15
+}
+
+Element britannia 1528x1367
+{
+	Amount i15
+}
+
+Element britannia 1529x1325
+{
+	Amount i15
+}
+
+Element britannia 1529x1326
+{
+	Amount i15
+}
+
+Element britannia 1529x1363
+{
+	Amount i15
+}
+
+Element britannia 1529x1374
+{
+	Amount i15
+}
+
+Element britannia 1530x1354
+{
+	Amount i15
+}
+
+Element britannia 1530x1357
+{
+	Amount i15
+}
+
+Element britannia 1530x1370
+{
+	Amount i15
+}
+
+Element britannia 1531x1329
+{
+	Amount i15
+}
+
+Element britannia 1531x1362
+{
+	Amount i15
+}
+
+Element britannia 1532x1330
+{
+	Amount i15
+}
+
+Element britannia 1532x1333
+{
+	Amount i15
+}
+
+Element britannia 1532x1344
+{
+	Amount i15
+}
+
+Element britannia 1532x1362
+{
+	Amount i15
+}
+
+Element britannia 1533x1327
+{
+	Amount i15
+}
+
+Element britannia 1533x1334
+{
+	Amount i15
+}
+
+Element britannia 1533x1336
+{
+	Amount i15
+}
+
+Element britannia 1533x1344
+{
+	Amount i15
+}
+
+Element britannia 1533x1374
+{
+	Amount i15
+}
+
+Element britannia 1533x1378
+{
+	Amount i15
+}
+
+Element britannia 1533x1381
+{
+	Amount i15
+}
+
+Element britannia 1534x1369
+{
+	Amount i15
+}
+
+Element britannia 1535x1335
+{
+	Amount i15
+}
+
+Element britannia 1535x1338
+{
+	Amount i15
+}
+
+Element britannia 1535x1353
+{
+	Amount i15
+}
+
+Element britannia 1535x1356
+{
+	Amount i15
+}
+
+Element britannia 1535x1367
+{
+	Amount i15
+}
+
+Element britannia 1535x1370
+{
+	Amount i15
+}
+
+Element britannia 1536x1325
+{
+	Amount i15
+}
+
+Element britannia 1536x1341
+{
+	Amount i15
+}
+
+Element britannia 1536x1344
+{
+	Amount i15
+}
+
+Element britannia 1536x1378
+{
+	Amount i15
+}
+
+Element britannia 1537x1361
+{
+	Amount i15
+}
+
+Element britannia 1538x1340
+{
+	Amount i15
+}
+
+Element britannia 1538x1352
+{
+	Amount i15
+}
+
+Element britannia 1539x1333
+{
+	Amount i15
+}
+
+Element britannia 1539x1369
+{
+	Amount i15
+}
+
+Element britannia 1539x1372
+{
+	Amount i15
+}
+
+Element britannia 1539x1375
+{
+	Amount i15
+}
+
+Element britannia 1540x1328
+{
+	Amount i15
+}
+
+Element britannia 1540x1330
+{
+	Amount i15
+}
+
+Element britannia 1540x1331
+{
+	Amount i15
+}
+
+Element britannia 1541x1340
+{
+	Amount i15
+}
+
+Element britannia 1541x1343
+{
+	Amount i15
+}
+
+Element britannia 1541x1358
+{
+	Amount i15
+}
+
+Element britannia 1542x1352
+{
+	Amount i15
+}
+
+Element britannia 1542x1362
+{
+	Amount i15
+}
+
+Element britannia 1543x1354
+{
+	Amount i15
+}
+
+Element britannia 1544x1326
+{
+	Amount i15
+}
+
+Element britannia 1544x1335
+{
+	Amount i15
+}
+
+Element britannia 1544x1341
+{
+	Amount i15
+}
+
+Element britannia 1544x1351
+{
+	Amount i15
+}
+
+Element britannia 1545x1336
+{
+	Amount i15
+}
+
+Element britannia 1545x1339
+{
+	Amount i15
+}
+
+Element britannia 1545x1385
+{
+	Amount i15
+}
+
+Element britannia 1546x1368
+{
+	Amount i15
+}
+
+Element britannia 1546x1374
+{
+	Amount i15
+}
+
+Element britannia 1547x1348
+{
+	Amount i15
+}
+
+Element britannia 1547x1351
+{
+	Amount i15
+}
+
+Element britannia 1547x1356
+{
+	Amount i15
+}
+
+Element britannia 1547x1387
+{
+	Amount i15
+}
+
+Element britannia 1548x1250
+{
+	Amount i15
+}
+
+Element britannia 1548x1337
+{
+	Amount i15
+}
+
+Element britannia 1548x1340
+{
+	Amount i15
+}
+
+Element britannia 1548x1343
+{
+	Amount i15
+}
+
+Element britannia 1548x1377
+{
+	Amount i15
+}
+
+Element britannia 1549x1377
+{
+	Amount i15
+}
+
+Element britannia 1550x1349
+{
+	Amount i15
+}
+
+Element britannia 1550x1367
+{
+	Amount i15
+}
+
+Element britannia 1550x1382
+{
+	Amount i15
+}
+
+Element britannia 1550x1386
+{
+	Amount i15
+}
+
+Element britannia 1551x1354
+{
+	Amount i15
+}
+
+Element britannia 1551x1386
+{
+	Amount i15
+}
+
+Element britannia 1552x1329
+{
+	Amount i15
+}
+
+Element britannia 1552x1374
+{
+	Amount i15
+}
+
+Element britannia 1553x1237
+{
+	Amount i15
+}
+
+Element britannia 1553x1356
+{
+	Amount i15
+}
+
+Element britannia 1553x1360
+{
+	Amount i15
+}
+
+Element britannia 1553x1362
+{
+	Amount i15
+}
+
+Element britannia 1554x1329
+{
+	Amount i15
+}
+
+Element britannia 1554x1342
+{
+	Amount i15
+}
+
+Element britannia 1554x1356
+{
+	Amount i15
+}
+
+Element britannia 1554x1372
+{
+	Amount i15
+}
+
+Element britannia 1555x1353
+{
+	Amount i15
+}
+
+Element britannia 1556x1388
+{
+	Amount i15
+}
+
+Element britannia 1557x1331
+{
+	Amount i15
+}
+
+Element britannia 1557x1342
+{
+	Amount i15
+}
+
+Element britannia 1557x1375
+{
+	Amount i15
+}
+
+Element britannia 1558x1335
+{
+	Amount i15
+}
+
+Element britannia 1558x1338
+{
+	Amount i15
+}
+
+Element britannia 1558x1341
+{
+	Amount i15
+}
+
+Element britannia 1558x1384
+{
+	Amount i15
+}
+
+Element britannia 1559x1357
+{
+	Amount i15
+}
+
+Element britannia 1560x1333
+{
+	Amount i15
+}
+
+Element britannia 1561x1378
+{
+	Amount i15
+}
+
+Element britannia 1562x1334
+{
+	Amount i15
+}
+
+Element britannia 1562x1345
+{
+	Amount i15
+}
+
+Element britannia 1562x1352
+{
+	Amount i15
+}
+
+Element britannia 1563x1361
+{
+	Amount i15
+}
+
+Element britannia 1564x1351
+{
+	Amount i15
+}
+
+Element britannia 1564x1354
+{
+	Amount i15
+}
+
+Element britannia 1565x1388
+{
+	Amount i15
+}
+
+Element britannia 1565x1390
+{
+	Amount i15
+}
+
+Element britannia 1566x1333
+{
+	Amount i15
+}
+
+Element britannia 1566x1346
+{
+	Amount i15
+}
+
+Element britannia 1566x1358
+{
+	Amount i15
+}
+
+Element britannia 1566x1384
+{
+	Amount i15
+}
+
+Element britannia 1567x1371
+{
+	Amount i15
+}
+
+Element britannia 1568x1376
+{
+	Amount i15
+}
+
+Element britannia 1568x1383
+{
+	Amount i15
+}
+
+Element britannia 1569x1365
+{
+	Amount i15
+}
+
+Element britannia 1569x1381
+{
+	Amount i15
+}
+
+Element britannia 1570x1344
+{
+	Amount i15
+}
+
+Element britannia 1570x1362
+{
+	Amount i15
+}
+
+Element britannia 1570x1391
+{
+	Amount i15
+}
+
+Element britannia 1571x1346
+{
+	Amount i15
+}
+
+Element britannia 1571x1353
+{
+	Amount i15
+}
+
+Element britannia 1572x1359
+{
+	Amount i15
+}
+
+Element britannia 1572x1391
+{
+	Amount i15
+}
+
+Element britannia 1573x1326
+{
+	Amount i15
+}
+
+Element britannia 1575x1339
+{
+	Amount i15
+}
+
+Element britannia 1575x1385
+{
+	Amount i15
+}
+
+Element britannia 1576x1352
+{
+	Amount i15
+}
+
+Element britannia 1576x1384
+{
+	Amount i15
+}
+
+Element britannia 1576x1390
+{
+	Amount i15
+}
+
+Element britannia 1577x1348
+{
+	Amount i15
+}
+
+Element britannia 1577x1396
+{
+	Amount i15
+}
+
+Element britannia 1580x1342
+{
+	Amount i15
+}
+
+Element britannia 1580x1397
+{
+	Amount i15
+}
+
+Element britannia 1582x1379
+{
+	Amount i15
+}
+
+Element britannia 1583x1399
+{
+	Amount i15
+}
+
+Element britannia 1584x1354
+{
+	Amount i15
+}
+
+Element britannia 1584x1398
+{
+	Amount i15
+}
+
+Element britannia 1586x1353
+{
+	Amount i15
+}
+
+Element britannia 1587x1376
+{
+	Amount i15
+}
+
+Element britannia 1587x1378
+{
+	Amount i15
+}
+
+Element britannia 1588x1380
+{
+	Amount i15
+}
+
+Element britannia 1589x1399
+{
+	Amount i15
+}
+
+Element britannia 1590x1360
+{
+	Amount i15
+}
+
+Element britannia 1590x1361
+{
+	Amount i15
+}
+
+Element britannia 1590x1384
+{
+	Amount i15
+}
+
+Element britannia 1590x1391
+{
+	Amount i15
+}
+
+Element britannia 1592x1380
+{
+	Amount i15
+}
+
+Element britannia 1592x1389
+{
+	Amount i15
+}
+
+Element britannia 1593x1361
+{
+	Amount i15
+}
+
+Element britannia 1595x1365
+{
+	Amount i15
+}
+
+Element britannia 1595x1368
+{
+	Amount i15
+}
+
+Element britannia 1601x1305
+{
+	Amount i15
+}
+
+Element britannia 1617x1362
+{
+	Amount i15
+}
+
+Element britannia 1654x1338
+{
+	Amount i15
+}
+
+Element britannia 1682x1539
+{
+	Amount i15
+}
+
+Element britannia 1714x1395
+{
+	Amount i15
+}
+
+Element britannia 1721x1396
+{
+	Amount i15
+}
+
+Element britannia 1722x1392
+{
+	Amount i15
+}
+
+Element britannia 1722x1539
+{
+	Amount i15
+}
+
+Element britannia 1728x1400
+{
+	Amount i15
+}
+
+Element britannia 1728x1408
+{
+	Amount i15
+}
+
+Element britannia 1729x1404
+{
+	Amount i15
+}
+
+Element britannia 1730x1391
+{
+	Amount i15
+}
+
+Element britannia 1730x1392
+{
+	Amount i15
+}
+
+Element britannia 1733x1395
+{
+	Amount i15
+}
+
+Element britannia 1733x1413
+{
+	Amount i15
+}
+
+Element britannia 1738x1386
+{
+	Amount i15
+}
+
+Element britannia 1739x1404
+{
+	Amount i15
+}
+
+Element britannia 1743x1419
+{
+	Amount i15
+}
+
+Element britannia 1745x1419
+{
+	Amount i15
+}
+
+Element britannia 1746x1389
+{
+	Amount i15
+}
+
+Element britannia 1748x1395
+{
+	Amount i15
+}
+
+Element britannia 1751x1421
+{
+	Amount i15
+}
+
+Element britannia 1752x1486
+{
+	Amount i15
+}
+
+Element britannia 1756x1389
+{
+	Amount i15
+}
+
+Element britannia 1756x1418
+{
+	Amount i15
+}
+
+Element britannia 1758x1467
+{
+	Amount i15
+}
+
+Element britannia 1759x1397
+{
+	Amount i15
+}
+
+Element britannia 1759x1402
+{
+	Amount i15
+}
+
+Element britannia 1760x1409
+{
+	Amount i15
+}
+
+Element britannia 1761x1409
+{
+	Amount i15
+}
+
+Element britannia 1763x1408
+{
+	Amount i15
+}
+
+Element britannia 1765x1398
+{
+	Amount i15
+}
+
+Element britannia 1789x1352
+{
+	Amount i15
+}
+
+Element britannia 1793x1346
+{
+	Amount i15
+}
+
+Element britannia 1795x1351
+{
+	Amount i15
+}
+
+Element britannia 1801x1345
+{
+	Amount i15
+}
+
+Element britannia 1803x1353
+{
+	Amount i15
+}
+
+Element britannia 1804x1349
+{
+	Amount i15
+}
+
+Element britannia 1808x1346
+{
+	Amount i15
+}
+
+Element britannia 1811x1346
+{
+	Amount i15
+}
+
+Element britannia 1812x1343
+{
+	Amount i15
+}
+
+Element britannia 1812x1411
+{
+	Amount i15
+}
+
+Element britannia 1815x1406
+{
+	Amount i15
+}
+
+Element britannia 1849x1383
+{
+	Amount i15
+}
+
+Element britannia 1864x1573
+{
+	Amount i15
+}
+
+Element britannia 1870x1356
+{
+	Amount i15
+}
+
+Element britannia 1873x1359
+{
+	Amount i15
+}
+
+Element britannia 1873x1360
+{
+	Amount i15
+}
+
+Element britannia 1951x990
+{
+	Amount i15
+}
+
+Element britannia 1951x994
+{
+	Amount i15
+}
+
+Element britannia 2161x2235
+{
+	Amount i15
+}
+
+Element britannia 2411x1942
+{
+	Amount i15
+}
+
+Element britannia 2411x1947
+{
+	Amount i15
+}
+
+Element britannia 2413x1938
+{
+	Amount i15
+}
+
+Element britannia 2414x1936
+{
+	Amount i15
+}
+
+Element britannia 2415x1945
+{
+	Amount i15
+}
+
+Element britannia 2417x1943
+{
+	Amount i15
+}
+
+Element britannia 683x1224
+{
+	Amount i15
+}
+
+Element britannia 908x1937
+{
+	Amount i15
+}
+
+Element britannia 971x1304
+{
+	Amount i15
+}
+
+Element britannia 973x1311
+{
+	Amount i15
+}
+
+Element britannia 973x1710
+{
+	Amount i15
+}
+
+Element britannia 975x1896
+{
+	Amount i15
+}
+
+Element britannia 985x1300
+{
+	Amount i15
+}
+
+Element britannia 995x1261
+{
+	Amount i15
+}
+
+Element britannia 999x1268
+{
+	Amount i15
+}
+
+Element britannia 999x1304
+{
+	Amount i15
+}
+

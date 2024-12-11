@@ -1,0 +1,20 @@
+/*
+ * $Id: endParalysis.src 87 2006-05-23 19:04:43Z sroyalty $
+ *
+ */
+ 
+use uo;
+use os;
+
+include ":attributes:attributes";
+
+program TimedScript_EndParalysis(mobile)
+
+ 
+	AP_SetSkillMod(mobile, AWARENESS, 0);
+    RecalcVitals(mobile);
+	//PlaySoundEffect(mobile, 0x205);
+	//SendSysMessage(mobile, "Sua visao volta ao normal");
+	
+	return 1;
+endprogram

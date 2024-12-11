@@ -1,0 +1,657 @@
+EScript Compiler v1.15
+Copyright (C) 1993-2018 Eric N. Swanson
+
+Compiling: Z:/scripts/console/save.src
+Compiling: Z:/scripts/console/removeChars.src
+Compiling: Z:/scripts/console/reloadConfig.src
+Compiling: Z:/scripts/console/online.src
+Compiling: Z:/scripts/console/NPCCount.src
+Compiling: Z:/scripts/console/itemCount.src
+Compiling: Z:/scripts/console/shutDown.src
+Compiling: Z:/scripts/andou.src
+Z:\scripts\console\reloadConfig.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/console/reloadConfig.ecl
+Writing:   Z:/scripts/console/reloadConfig.dep
+Compiling: Z:/scripts/misc/boat.src
+Z:\scripts\console\itemCount.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/console/itemCount.ecl
+Writing:   Z:/scripts/console/itemCount.dep
+Compiling: Z:/scripts/misc/candelete.src
+Z:\scripts\console\NPCCount.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/console/NPCCount.ecl
+Z:\scripts\misc\boat.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/misc/boat.ecl
+Writing:   Z:/scripts/misc/boat.dep
+Compiling: Z:/scripts/misc/chrdeath.src
+Z:\scripts\misc\candelete.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/misc/candelete.ecl
+Z:\scripts\console\save.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/console/save.ecl
+Writing:   Z:/scripts/console/save.dep
+Z:\scripts\misc\chrdeath.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/misc/chrdeath.ecl
+Compiling: Z:/scripts/misc/dblclickother.src
+Writing:   Z:/scripts/console/NPCCount.dep
+Writing:   Z:/scripts/misc/chrdeath.dep
+Z:\scripts\console\online.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/console/online.ecl
+Compiling: Z:/scripts/misc/dblclickself.src
+Z:\scripts\andou.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/andou.ecl
+Z:\scripts\console\shutDown.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/console/shutDown.ecl
+Z:\scripts\console\removeChars.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/console/removeChars.ecl
+Compiling: Z:/scripts/misc/death.src
+Writing:   Z:/scripts/console/removeChars.dep
+Writing:   Z:/scripts/misc/candelete.dep
+Writing:   Z:/scripts/console/online.dep
+Compiling: Z:/scripts/misc/equiptest.src
+Compiling: Z:/scripts/misc/help.src
+Z:\scripts\misc\death.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/misc/death.ecl
+Compiling: Z:/scripts/misc/logoff.src
+Writing:   Z:/scripts/misc/death.dep
+Writing:   Z:/scripts/console/shutDown.dep
+Z:\scripts\misc\help.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/misc/help.ecl
+Writing:   Z:/scripts/andou.dep
+Z:\scripts\misc\dblclickother.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/misc/dblclickother.ecl
+Compiling: Z:/scripts/misc/logofftest.src
+Writing:   Z:/scripts/misc/help.dep
+Compiling: Z:/scripts/misc/logon.src
+Compiling: Z:/scripts/misc/oncreate.src
+Compiling: Z:/scripts/misc/ondelete.src
+Writing:   Z:/scripts/misc/dblclickother.dep
+Z:\scripts\misc\oncreate.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/misc/oncreate.ecl
+Compiling: Z:/scripts/misc/questbutton.src
+Z:\scripts\misc\logoff.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/misc/logoff.ecl
+Writing:   Z:/scripts/misc/logoff.dep
+Compiling: Z:/scripts/misc/reconnect.src
+Writing:   Z:/scripts/misc/oncreate.dep
+Compiling: Z:/scripts/misc/skillwin.src
+Z:\scripts\misc\questbutton.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/misc/questbutton.ecl
+Writing:   Z:/scripts/misc/questbutton.dep
+Compiling: Z:/scripts/misc/unequiptest.src
+Z:\scripts\misc\logofftest.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/misc/logofftest.ecl
+Writing:   Z:/scripts/misc/logofftest.dep
+Compiling: Z:/scripts/misc/unmod.src
+Z:\scripts\misc\logon.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/misc/logon.ecl
+Writing:   Z:/scripts/misc/logon.dep
+Compiling: Z:/scripts/misc/virtuebutton.src
+Z:\scripts\misc\reconnect.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/misc/reconnect.ecl
+Z:\scripts\misc\virtuebutton.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/misc/virtuebutton.ecl
+Writing:   Z:/scripts/misc/reconnect.dep
+Writing:   Z:/scripts/misc/virtuebutton.dep
+Compiling: Z:/scripts/start.src
+Compiling: Z:/scripts/www/online.src
+Z:\scripts\start.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/start.ecl
+Writing:   Z:/scripts/start.dep
+Z:\scripts\www\online.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/www/online.ecl
+Writing:   Z:/scripts/www/online.dep
+Compiling: Z:/scripts/www/running_scripts.src
+Compiling: Z:/scripts/www/serverstats.src
+Z:\scripts\www\running_scripts.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/www/running_scripts.ecl
+Writing:   Z:/scripts/www/running_scripts.dep
+Compiling: Z:/pkg/commands/acctDelete/acctDelete.src
+Z:\scripts\www\serverstats.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/www/serverstats.ecl
+Writing:   Z:/scripts/www/serverstats.dep
+Compiling: Z:/pkg/commands/admin/givebonusrp.src
+Z:\pkg\commands\admin\givebonusrp.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/admin/givebonusrp.ecl
+Writing:   Z:/pkg/commands/admin/givebonusrp.dep
+Compiling: Z:/pkg/commands/admin/maxchar.src
+Z:\pkg\commands\admin\maxchar.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/admin/maxchar.ecl
+Writing:   Z:/pkg/commands/admin/maxchar.dep
+Compiling: Z:/pkg/commands/admin/unloadcfg.src
+Z:\pkg\commands\admin\unloadcfg.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/admin/unloadcfg.ecl
+Z:\scripts\misc\unmod.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/misc/unmod.ecl
+Writing:   Z:/scripts/misc/unmod.dep
+Compiling: Z:/pkg/commands/building/addset.src
+Z:\scripts\misc\ondelete.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/misc/ondelete.ecl
+Writing:   Z:/pkg/commands/admin/unloadcfg.dep
+Z:\pkg\commands\building\addset.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/addset.ecl
+Compiling: Z:/pkg/commands/building/colorrect.src
+Writing:   Z:/scripts/misc/ondelete.dep
+Compiling: Z:/pkg/commands/building/create.src
+Z:\pkg\commands\acctDelete\acctDelete.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/acctDelete/acctDelete.ecl
+Z:\scripts\misc\unequiptest.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/misc/unequiptest.ecl
+Z:\pkg\commands\building\colorrect.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/colorrect.ecl
+Writing:   Z:/pkg/commands/building/addset.dep
+Writing:   Z:/pkg/commands/building/colorrect.dep
+Writing:   Z:/scripts/misc/unequiptest.dep
+Compiling: Z:/pkg/commands/building/createat.src
+Compiling: Z:/pkg/commands/building/createrect.src
+Compiling: Z:/pkg/commands/building/createstack.src
+Z:\scripts\misc\equiptest.src: 0 errors, 0 warnings.
+Writing:   Z:/scripts/misc/equiptest.ecl
+Z:\scripts\misc\skillwin.src: 0 errors, 1 warnings.
+Writing:   Z:/scripts/misc/skillwin.ecl
+Writing:   Z:/scripts/misc/equiptest.dep
+Compiling: Z:/pkg/commands/building/destroy.src
+Writing:   Z:/pkg/commands/acctDelete/acctDelete.dep
+Z:\pkg\commands\building\createat.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/createat.ecl
+Writing:   Z:/pkg/commands/building/createat.dep
+Z:\pkg\commands\building\createrect.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/createrect.ecl
+Compiling: Z:/pkg/commands/building/destroyfloor.src
+Z:\pkg\commands\building\createstack.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/createstack.ecl
+Writing:   Z:/pkg/commands/building/createrect.dep
+Writing:   Z:/pkg/commands/building/createstack.dep
+Compiling: Z:/pkg/commands/building/destroyradius.src
+Compiling: Z:/pkg/commands/building/destroyrect.src
+Writing:   Z:/scripts/misc/skillwin.dep
+Z:\pkg\commands\building\create.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/create.ecl
+Compiling: Z:/pkg/commands/building/destroytype.src
+Z:\pkg\commands\building\destroy.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/destroy.ecl
+Z:\pkg\commands\building\destroyradius.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/destroyradius.ecl
+Z:\pkg\commands\building\destroyrect.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/destroyrect.ecl
+Compiling: Z:/pkg/commands/building/getmapinfo.src
+Writing:   Z:/pkg/commands/building/destroyrect.dep
+Writing:   Z:/pkg/commands/building/destroyradius.dep
+Compiling: Z:/pkg/commands/building/landtile.src
+Writing:   Z:/pkg/commands/building/create.dep
+Z:\pkg\commands\building\destroytype.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/destroytype.ecl
+Writing:   Z:/pkg/commands/building/destroy.dep
+Compiling: Z:/pkg/commands/building/lockradius.src
+Compiling: Z:/pkg/commands/building/los.src
+Z:\pkg\commands\building\getmapinfo.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/getmapinfo.ecl
+Writing:   Z:/pkg/commands/building/getmapinfo.dep
+Compiling: Z:/pkg/commands/building/losat.src
+Z:\pkg\commands\building\lockradius.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/lockradius.ecl
+Compiling: Z:/pkg/commands/building/makefloor.src
+Writing:   Z:/pkg/commands/building/lockradius.dep
+Writing:   Z:/pkg/commands/building/destroytype.dep
+Compiling: Z:/pkg/commands/building/makeset.src
+Z:\pkg\commands\building\landtile.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/landtile.ecl
+Z:\pkg\commands\building\losat.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/losat.ecl
+Writing:   Z:/pkg/commands/building/losat.dep
+Writing:   Z:/pkg/commands/building/landtile.dep
+Compiling: Z:/pkg/commands/building/moveobject.src
+Compiling: Z:/pkg/commands/building/moverect.src
+Compiling: Z:/pkg/commands/building/mpx.src
+Z:\pkg\commands\building\los.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/los.ecl
+Z:\pkg\commands\building\makefloor.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/makefloor.ecl
+Writing:   Z:/pkg/commands/building/makefloor.dep
+Z:\pkg\commands\building\destroyfloor.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/destroyfloor.ecl
+Compiling: Z:/pkg/commands/building/mpy.src
+Z:\pkg\commands\building\mpx.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/mpx.ecl
+Z:\pkg\commands\building\moverect.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/moverect.ecl
+Writing:   Z:/pkg/commands/building/mpx.dep
+Writing:   Z:/pkg/commands/building/moverect.dep
+Compiling: Z:/pkg/commands/building/mpz.src
+Writing:   Z:/pkg/commands/building/los.dep
+Compiling: Z:/pkg/commands/building/rangerect.src
+Z:\pkg\commands\building\moveobject.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/moveobject.ecl
+Compiling: Z:/pkg/commands/building/skinner.src
+Z:\pkg\commands\building\mpy.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/mpy.ecl
+Writing:   Z:/pkg/commands/building/destroyfloor.dep
+Z:\pkg\commands\building\rangerect.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/rangerect.ecl
+Writing:   Z:/pkg/commands/building/rangerect.dep
+Compiling: Z:/pkg/commands/building/tile.src
+Z:\pkg\commands\building\skinner.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/skinner.ecl
+Z:\pkg\commands\building\mpz.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/mpz.ecl
+Z:\pkg\commands\building\makeset.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/makeset.ecl
+Writing:   Z:/pkg/commands/building/moveobject.dep
+Compiling: Z:/pkg/commands/building/tileinfo.src
+Writing:   Z:/pkg/commands/building/mpy.dep
+Compiling: Z:/pkg/commands/building/unlockradius.src
+Compiling: Z:/pkg/commands/building/worldheight.src
+Writing:   Z:/pkg/commands/building/skinner.dep
+Writing:   Z:/pkg/commands/building/mpz.dep
+Writing:   Z:/pkg/commands/building/makeset.dep
+Compiling: Z:/pkg/commands/coun/conceal.src
+Compiling: Z:/pkg/commands/coun/disable.src
+Z:\pkg\commands\coun\disable.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/coun/disable.ecl
+Writing:   Z:/pkg/commands/coun/disable.dep
+Compiling: Z:/pkg/commands/coun/enable.src
+Z:\pkg\commands\building\worldheight.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/worldheight.ecl
+Z:\pkg\commands\building\tileinfo.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/tileinfo.ecl
+Z:\pkg\commands\building\tile.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/tile.ecl
+Z:\pkg\commands\building\unlockradius.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/building/unlockradius.ecl
+Writing:   Z:/pkg/commands/building/tile.dep
+Compiling: Z:/pkg/commands/coun/fetch.src
+Z:\pkg\commands\coun\conceal.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/coun/conceal.ecl
+Compiling: Z:/pkg/commands/coun/gmbcast.src
+Z:\pkg\commands\coun\enable.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/coun/enable.ecl
+Writing:   Z:/pkg/commands/building/unlockradius.dep
+Writing:   Z:/pkg/commands/building/worldheight.dep
+Writing:   Z:/pkg/commands/building/tileinfo.dep
+Compiling: Z:/pkg/commands/coun/mtele.src
+Compiling: Z:/pkg/commands/coun/nsight.src
+Writing:   Z:/pkg/commands/coun/conceal.dep
+Writing:   Z:/pkg/commands/coun/enable.dep
+Compiling: Z:/pkg/commands/coun/realms.src
+Z:\pkg\commands\coun\gmbcast.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/coun/gmbcast.ecl
+Z:\pkg\commands\coun\fetch.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/coun/fetch.ecl
+Compiling: Z:/pkg/commands/coun/tele.src
+Z:\pkg\commands\coun\nsight.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/coun/nsight.ecl
+Z:\pkg\commands\coun\mtele.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/coun/mtele.ecl
+Compiling: Z:/pkg/commands/gm/andou.src
+Writing:   Z:/pkg/commands/coun/nsight.dep
+Compiling: Z:/pkg/commands/gm/boost.src
+Writing:   Z:/pkg/commands/coun/fetch.dep
+Writing:   Z:/pkg/commands/coun/gmbcast.dep
+Writing:   Z:/pkg/commands/coun/mtele.dep
+Compiling: Z:/pkg/commands/gm/checkacc.src
+Compiling: Z:/pkg/commands/gm/comandos.src
+Compiling: Z:/pkg/commands/gm/corpo.src
+Z:\pkg\commands\gm\andou.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/andou.ecl
+Z:\pkg\commands\coun\tele.src: 0 errors, 1 warnings.
+Writing:   Z:/pkg/commands/coun/tele.ecl
+Z:\pkg\commands\coun\realms.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/coun/realms.ecl
+Writing:   Z:/pkg/commands/coun/tele.dep
+Writing:   Z:/pkg/commands/gm/andou.dep
+Compiling: Z:/pkg/commands/gm/criarreagentes.src
+Compiling: Z:/pkg/commands/gm/destroymulti.src
+Z:\pkg\commands\gm\corpo.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/corpo.ecl
+Writing:   Z:/pkg/commands/coun/realms.dep
+Compiling: Z:/pkg/commands/gm/ekill.src
+Z:\pkg\commands\gm\destroymulti.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/destroymulti.ecl
+Z:\pkg\commands\gm\checkacc.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/checkacc.ecl
+Z:\pkg\commands\gm\criarreagentes.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/criarreagentes.ecl
+Writing:   Z:/pkg/commands/gm/corpo.dep
+Writing:   Z:/pkg/commands/gm/destroymulti.dep
+Writing:   Z:/pkg/commands/gm/checkacc.dep
+Compiling: Z:/pkg/commands/gm/equip.src
+Compiling: Z:/pkg/commands/gm/freeze.src
+Compiling: Z:/pkg/commands/gm/getscript.src
+Writing:   Z:/pkg/commands/gm/criarreagentes.dep
+Compiling: Z:/pkg/commands/gm/getstatic.src
+Z:\pkg\commands\gm\getstatic.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/getstatic.ecl
+Writing:   Z:/pkg/commands/gm/getstatic.dep
+Compiling: Z:/pkg/commands/gm/getusescript.src
+Z:\pkg\commands\gm\getscript.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/getscript.ecl
+Z:\pkg\commands\gm\freeze.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/freeze.ecl
+Writing:   Z:/pkg/commands/gm/freeze.dep
+Compiling: Z:/pkg/commands/gm/goserial.src
+Z:\pkg\commands\gm\equip.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/equip.ecl
+Writing:   Z:/pkg/commands/gm/equip.dep
+Compiling: Z:/pkg/commands/gm/ident.src
+Z:\pkg\commands\gm\getusescript.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/getusescript.ecl
+Writing:   Z:/pkg/commands/gm/getusescript.dep
+Writing:   Z:/pkg/commands/gm/getscript.dep
+Z:\pkg\commands\gm\boost.src: 0 errors, 1 warnings.
+Writing:   Z:/pkg/commands/gm/boost.ecl
+Z:\pkg\commands\gm\goserial.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/goserial.ecl
+Compiling: Z:/pkg/commands/gm/info.src
+Writing:   Z:/pkg/commands/gm/boost.dep
+Z:\pkg\commands\gm\ident.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/ident.ecl
+Writing:   Z:/pkg/commands/gm/goserial.dep
+Compiling: Z:/pkg/commands/gm/infonovo.src
+Compiling: Z:/pkg/commands/gm/jump.src
+Compiling: Z:/pkg/commands/gm/kill.src
+Z:\pkg\commands\gm\ekill.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/ekill.ecl
+Writing:   Z:/pkg/commands/gm/ident.dep
+Z:\scripts\misc\dblclickself.src: 0 errors, 62 warnings.
+Writing:   Z:/scripts/misc/dblclickself.ecl
+Compiling: Z:/pkg/commands/gm/lkill.src
+Writing:   Z:/pkg/commands/gm/ekill.dep
+Compiling: Z:/pkg/commands/gm/movetocont.src
+Z:\pkg\commands\gm\kill.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/kill.ecl
+Writing:   Z:/scripts/misc/dblclickself.dep
+Z:\pkg\commands\gm\jump.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/jump.ecl
+Writing:   Z:/pkg/commands/gm/jump.dep
+Compiling: Z:/pkg/commands/gm/partyspy.src
+Z:\pkg\commands\gm\info.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/info.ecl
+Z:\pkg\commands\gm\movetocont.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/movetocont.ecl
+Compiling: Z:/pkg/commands/gm/possess.src
+Z:\pkg\commands\gm\infonovo.src: 0 errors, 2 warnings.
+Writing:   Z:/pkg/commands/gm/infonovo.ecl
+Writing:   Z:/pkg/commands/gm/kill.dep
+Z:\pkg\commands\gm\lkill.src: 0 errors, 1 warnings.
+Writing:   Z:/pkg/commands/gm/lkill.ecl
+Compiling: Z:/pkg/commands/gm/putinfire.src
+Writing:   Z:/pkg/commands/gm/info.dep
+Compiling: Z:/pkg/commands/gm/sayspy.src
+Writing:   Z:/pkg/commands/gm/infonovo.dep
+Compiling: Z:/pkg/commands/gm/setclerigo.src
+Z:\pkg\commands\gm\partyspy.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/partyspy.ecl
+Z:\pkg\commands\gm\putinfire.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/putinfire.ecl
+Writing:   Z:/pkg/commands/gm/partyspy.dep
+Writing:   Z:/pkg/commands/gm/putinfire.dep
+Compiling: Z:/pkg/commands/gm/setdescmod.src
+Compiling: Z:/pkg/commands/gm/setmovable.src
+Writing:   Z:/pkg/commands/gm/movetocont.dep
+Compiling: Z:/pkg/commands/gm/setscript.src
+Z:\pkg\commands\gm\sayspy.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/sayspy.ecl
+Writing:   Z:/pkg/commands/gm/sayspy.dep
+Z:\pkg\commands\gm\setclerigo.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/setclerigo.ecl
+Compiling: Z:/pkg/commands/gm/setuscript.src
+Writing:   Z:/pkg/commands/gm/setclerigo.dep
+Writing:   Z:/pkg/commands/gm/lkill.dep
+Compiling: Z:/pkg/commands/gm/setusescript.src
+Compiling: Z:/pkg/commands/gm/sfx.src
+Z:\pkg\commands\gm\setscript.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/setscript.ecl
+Z:\pkg\commands\gm\setuscript.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/setuscript.ecl
+Writing:   Z:/pkg/commands/gm/setscript.dep
+Compiling: Z:/pkg/commands/gm/shave.src
+Z:\pkg\commands\gm\setmovable.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/setmovable.ecl
+Writing:   Z:/pkg/commands/gm/setmovable.dep
+Compiling: Z:/pkg/commands/gm/strip.src
+Z:\pkg\commands\gm\setdescmod.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/setdescmod.ecl
+Z:\pkg\commands\gm\sfx.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/sfx.ecl
+Writing:   Z:/pkg/commands/gm/setdescmod.dep
+Writing:   Z:/pkg/commands/gm/sfx.dep
+Compiling: Z:/pkg/commands/gm/unlock.src
+Writing:   Z:/pkg/commands/gm/setuscript.dep
+Compiling: Z:/pkg/commands/gm/unpossess.src
+Z:\pkg\commands\gm\setusescript.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/setusescript.ecl
+Z:\pkg\commands\gm\shave.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/shave.ecl
+Z:\pkg\commands\gm\strip.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/strip.ecl
+Compiling: Z:/pkg/commands/gm/whereship.src
+Writing:   Z:/pkg/commands/gm/setusescript.dep
+Z:\pkg\commands\gm\unlock.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/unlock.ecl
+Compiling: Z:/pkg/commands/gm/wolfform.src
+Writing:   Z:/pkg/commands/gm/strip.dep
+Writing:   Z:/pkg/commands/gm/unlock.dep
+Compiling: Z:/pkg/commands/gm/writequip.src
+Writing:   Z:/pkg/commands/gm/shave.dep
+Z:\pkg\commands\gm\writequip.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/writequip.ecl
+Compiling: Z:/pkg/commands/ondelete.src
+Compiling: Z:/pkg/commands/player/arremessar.src
+Writing:   Z:/pkg/commands/gm/writequip.dep
+Compiling: Z:/pkg/commands/player/backup/arremessar.src
+Z:\pkg\commands\gm\possess.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/possess.ecl
+Z:\pkg\commands\gm\unpossess.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/unpossess.ecl
+Writing:   Z:/pkg/commands/gm/possess.dep
+Compiling: Z:/pkg/commands/player/cabelo.src
+Writing:   Z:/pkg/commands/gm/unpossess.dep
+Z:\pkg\commands\gm\whereship.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/whereship.ecl
+Z:\pkg\commands\gm\wolfform.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/wolfform.ecl
+Writing:   Z:/pkg/commands/gm/wolfform.dep
+Writing:   Z:/pkg/commands/gm/whereship.dep
+Compiling: Z:/pkg/commands/player/clima.src
+Compiling: Z:/pkg/commands/player/cmdtoggle.src
+Compiling: Z:/pkg/commands/player/ct.src
+Z:\pkg\commands\player\cmdtoggle.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/player/cmdtoggle.ecl
+Z:\pkg\commands\ondelete.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/ondelete.ecl
+Writing:   Z:/pkg/commands/player/cmdtoggle.dep
+Z:\pkg\commands\player\ct.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/player/ct.ecl
+Writing:   Z:/pkg/commands/player/ct.dep
+Compiling: Z:/pkg/commands/player/detalhemapa.src
+Compiling: Z:/pkg/commands/player/envenenar.src
+Writing:   Z:/pkg/commands/ondelete.dep
+Z:\pkg\commands\player\cabelo.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/player/cabelo.ecl
+Z:\pkg\commands\player\clima.src: 0 errors, 1 warnings.
+Writing:   Z:/pkg/commands/player/clima.ecl
+Writing:   Z:/pkg/commands/player/clima.dep
+Compiling: Z:/pkg/commands/player/flip.src
+Z:\pkg\commands\gm\comandos.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/gm/comandos.ecl
+Z:\pkg\commands\player\detalhemapa.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/player/detalhemapa.ecl
+Compiling: Z:/pkg/commands/player/help.src
+Z:\pkg\commands\player\flip.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/player/flip.ecl
+Writing:   Z:/pkg/commands/player/flip.dep
+Compiling: Z:/pkg/commands/player/msg.src
+Z:\pkg\commands\player\backup\arremessar.src: 0 errors, 1 warnings.
+Writing:   Z:/pkg/commands/player/backup/arremessar.ecl
+Z:\pkg\commands\player\arremessar.src: 0 errors, 1 warnings.
+Writing:   Z:/pkg/commands/player/arremessar.ecl
+Writing:   Z:/pkg/commands/player/backup/arremessar.dep
+Compiling: Z:/pkg/commands/player/pularcerca.src
+Writing:   Z:/pkg/commands/player/cabelo.dep
+Compiling: Z:/pkg/commands/player/revistar.src
+Writing:   Z:/pkg/commands/gm/comandos.dep
+Writing:   Z:/pkg/commands/player/detalhemapa.dep
+Writing:   Z:/pkg/commands/player/arremessar.dep
+Compiling: Z:/pkg/commands/player/senha.src
+Z:\pkg\commands\player\help.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/player/help.ecl
+Compiling: Z:/pkg/commands/props/eraseglobal.src
+Compiling: Z:/pkg/commands/props/eraseobjproperty.src
+Z:\pkg\commands\player\pularcerca.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/player/pularcerca.ecl
+Z:\pkg\commands\player\revistar.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/player/revistar.ecl
+Z:\pkg\commands\player\msg.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/player/msg.ecl
+Writing:   Z:/pkg/commands/player/pularcerca.dep
+Writing:   Z:/pkg/commands/player/revistar.dep
+Writing:   Z:/pkg/commands/player/msg.dep
+Compiling: Z:/pkg/commands/props/getglobal.src
+Compiling: Z:/pkg/commands/props/getobjproperty.src
+Compiling: Z:/pkg/commands/props/getprop.src
+Z:\pkg\commands\props\eraseglobal.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/props/eraseglobal.ecl
+Z:\pkg\commands\props\getglobal.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/props/getglobal.ecl
+Z:\pkg\commands\props\getprop.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/props/getprop.ecl
+Z:\pkg\commands\props\eraseobjproperty.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/props/eraseobjproperty.ecl
+Z:\pkg\commands\props\getobjproperty.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/props/getobjproperty.ecl
+Writing:   Z:/pkg/commands/props/getobjproperty.dep
+Writing:   Z:/pkg/commands/props/getglobal.dep
+Compiling: Z:/pkg/commands/props/propedit.src
+Compiling: Z:/pkg/commands/props/props.src
+Writing:   Z:/pkg/commands/player/help.dep
+Compiling: Z:/pkg/commands/props/setglobal.src
+Z:\pkg\commands\player\senha.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/player/senha.ecl
+Writing:   Z:/pkg/commands/player/senha.dep
+Compiling: Z:/pkg/commands/props/setobjproperty.src
+Writing:   Z:/pkg/commands/props/eraseglobal.dep
+Z:\pkg\commands\props\props.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/props/props.ecl
+Compiling: Z:/pkg/commands/props/setprop.src
+Writing:   Z:/pkg/commands/props/props.dep
+Z:\pkg\commands\props\setglobal.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/props/setglobal.ecl
+Compiling: Z:/pkg/commands/seer/animations.src
+Z:\pkg\commands\player\envenenar.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/player/envenenar.ecl
+Writing:   Z:/pkg/commands/player/envenenar.dep
+Compiling: Z:/pkg/commands/seer/bcast.src
+Writing:   Z:/pkg/commands/props/getprop.dep
+Writing:   Z:/pkg/commands/props/eraseobjproperty.dep
+Z:\pkg\commands\props\setobjproperty.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/props/setobjproperty.ecl
+Writing:   Z:/pkg/commands/props/setobjproperty.dep
+Z:\pkg\commands\props\setprop.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/props/setprop.ecl
+Compiling: Z:/pkg/commands/seer/copylook.src
+Writing:   Z:/pkg/commands/props/setprop.dep
+Compiling: Z:/pkg/commands/seer/copyskills.src
+Compiling: Z:/pkg/commands/seer/darken.src
+Z:\pkg\commands\seer\animations.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/seer/animations.ecl
+Z:\pkg\commands\seer\bcast.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/seer/bcast.ecl
+Writing:   Z:/pkg/commands/seer/animations.dep
+Compiling: Z:/pkg/commands/seer/dupe.src
+Writing:   Z:/pkg/commands/props/setglobal.dep
+Compiling: Z:/pkg/commands/seer/go.src
+Compiling: Z:/pkg/commands/seer/mteleto.src
+Writing:   Z:/pkg/commands/seer/bcast.dep
+Z:\pkg\commands\seer\copylook.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/seer/copylook.ecl
+Writing:   Z:/pkg/commands/seer/copylook.dep
+Compiling: Z:/pkg/commands/seer/music.src
+Compiling: Z:/pkg/commands/seer/openpack.src
+Z:\pkg\commands\seer\darken.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/seer/darken.ecl
+Writing:   Z:/pkg/commands/seer/darken.dep
+Compiling: Z:/pkg/commands/seer/players.src
+Z:\pkg\commands\seer\openpack.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/seer/openpack.ecl
+Writing:   Z:/pkg/commands/seer/openpack.dep
+Compiling: Z:/pkg/commands/seer/rename.src
+Z:\pkg\commands\seer\mteleto.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/seer/mteleto.ecl
+Writing:   Z:/pkg/commands/seer/mteleto.dep
+Z:\pkg\commands\seer\dupe.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/seer/dupe.ecl
+Z:\pkg\commands\seer\music.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/seer/music.ecl
+Compiling: Z:/pkg/commands/seer/sayabove.src
+Z:\pkg\commands\seer\rename.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/seer/rename.ecl
+Z:\pkg\commands\seer\players.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/seer/players.ecl
+Writing:   Z:/pkg/commands/seer/music.dep
+Writing:   Z:/pkg/commands/seer/rename.dep
+Writing:   Z:/pkg/commands/seer/players.dep
+Compiling: Z:/pkg/commands/seer/sayabovepvt.src
+Z:\pkg\commands\seer\copyskills.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/seer/copyskills.ecl
+Compiling: Z:/pkg/commands/seer/setlight.src
+Z:\pkg\commands\seer\sayabove.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/seer/sayabove.ecl
+Writing:   Z:/pkg/commands/seer/copyskills.dep
+Compiling: Z:/pkg/commands/seer/shape.src
+Writing:   Z:/pkg/commands/seer/dupe.dep
+Writing:   Z:/pkg/commands/seer/sayabove.dep
+Compiling: Z:/pkg/commands/seer/teleto.src
+Z:\pkg\commands\seer\setlight.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/seer/setlight.ecl
+Z:\pkg\commands\seer\sayabovepvt.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/seer/sayabovepvt.ecl
+Writing:   Z:/pkg/commands/seer/sayabovepvt.dep
+Compiling: Z:/pkg/commands/seer/totalcap.src
+Compiling: Z:/pkg/commands/seer/where.src
+Z:\pkg\commands\seer\teleto.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/seer/teleto.ecl
+Compiling: Z:/pkg/commands/seer/xxx.src
+Writing:   Z:/pkg/commands/seer/teleto.dep
+Compiling: Z:/pkg/commands/test/andou.src
+Z:\pkg\commands\seer\totalcap.src: 2 errors, 0 warnings.
+Z:\pkg\commands\test\andou.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/test/andou.ecl
+Writing:   Z:/pkg/commands/seer/setlight.dep
+Z:\pkg\commands\seer\where.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/seer/where.ecl
+Writing:   Z:/pkg/commands/seer/where.dep
+Z:\pkg\commands\props\propedit.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/props/propedit.ecl
+Writing:   Z:/pkg/commands/test/andou.dep
+Z:\pkg\commands\seer\shape.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/seer/shape.ecl
+Writing:   Z:/pkg/commands/seer/shape.dep
+Z:\pkg\commands\seer\xxx.src: 0 errors, 1 warnings.
+Writing:   Z:/pkg/commands/seer/xxx.ecl
+Writing:   Z:/pkg/commands/props/propedit.dep
+Writing:   Z:/pkg/commands/seer/xxx.dep
+Z:\pkg\commands\seer\go.src: 0 errors, 0 warnings.
+Writing:   Z:/pkg/commands/seer/go.ecl
+Writing:   Z:/pkg/commands/seer/go.dep
+Compilation Summary:
+    Used 8 threads
+    Compiled 158 scripts in 17025 ms.
+    1 of those script had errors.
+    build workspace: 73690
+        - load *.em:   3631
+       - parse *.em:   571 (908)
+         - ast *.em:   1901
+      - parse *.inc:   10505 (693)
+        - ast *.inc:   14258
+      - parse *.src:   4337 (158)
+        - ast *.src:   13056
+  resolve functions:   229
+ register constants: 160
+            analyze: 61
+           optimize: 178
+       disambiguate: 1
+      generate code: 308
+  prune cache (sel): 1
+  prune cache (del): 13
+
+      - ambiguities: 43
+       - cache hits: 1424
+     - cache misses: 177

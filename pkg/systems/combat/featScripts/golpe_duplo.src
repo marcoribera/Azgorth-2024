@@ -1,0 +1,24 @@
+use uo;
+use os;
+use cfgfile;
+
+include "include/client";
+include "include/sounds";
+include "include/say";
+include "include/damage";
+include ":attributes:attributes";
+include ":timedscripts:timedScripts";
+include ":fls_magery:basicMagery";
+
+program explosao(params)
+	var who := params[1];
+	var spellinfo := params[2];
+	var targ := params[3];
+	params := 0; // No longer needed
+
+   PlaySoundEffect(who, 0x51F);
+   who.attack_once(targ);
+   sleepms(550);
+   who.attack_once(targ);
+   return 1;
+endprogram

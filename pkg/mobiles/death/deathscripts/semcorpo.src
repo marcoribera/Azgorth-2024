@@ -1,0 +1,37 @@
+/* $Id$
+ *
+ */
+ 
+use uo;
+use os;
+use util;
+
+include "include/client";
+include "include/sysEvent";
+include ":attributes:attributes";
+
+program DeathScript(params)
+	var corpse := params[1];
+	//var corpse_cfg := params[2];
+	//var template := params[3];
+	params := 0; // Not needed anymore
+
+	var template := Lower(GetObjProperty(corpse, "npctemplate"));
+	
+	foreach item in (EnumerateItemsInContainer(corpse))
+		if (item.isa(POLCLASS_WEAPON) || item.objtype == 0x203B || item.objtype == 0x203C || item.objtype == 0x203d || item.objtype == 0x2044
+			|| item.objtype == 0x2045 || item.objtype == 0x2046 || item.objtype == 0x2047 || item.objtype == 0x2048 || item.objtype == 0x2049
+			|| item.objtype == 0x204A || item.objtype == 0x203E || item.objtype == 0x203F || item.objtype == 0x2040 || item.objtype == 0x2041
+			|| item.objtype == 0x204B || item.objtype == 0x204C || item.objtype == 0x204D )
+			DesTroyItem(item);
+		endif
+
+        if (!item.isa(POLCLASS_ARMOR))
+		var e := MoveObjectToLocation(item, corpse.x, corpse.y, corpse.z, corpse.realm, MOVEOBJECT_FORCELOCATION | MOVEITEM_IGNOREMOVABLE);
+        endif
+		//printtextabove(corpse, " " + e);
+	endforeach
+    
+	DesTroyItem(corpse);
+
+endprogram

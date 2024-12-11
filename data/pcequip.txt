@@ -1,0 +1,345 @@
+#
+#  PCEQUIP.TXT: Player-Character Equipment Data
+#
+#  This file can be deleted to wipe all items held/equipped by characters
+#  Note that hair, beards, empty backpacks, and death shrouds are in PCS.TXT.
+#
+
+Item
+{
+	Serial	0x49a9f78a
+	ObjType	0x170f
+	Graphic	0x170f
+	Color	0x21f
+	X	100
+	Y	77
+	Z	0
+	Facing	3
+	Revision	0
+	Realm	britannia
+	Container	0x49ae3dff
+	DecayAt	37147303
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x49a9f78c
+	ObjType	0x152e
+	Graphic	0x152e
+	Color	0x1f9
+	X	91
+	Y	75
+	Z	0
+	Facing	4
+	Revision	0
+	Realm	britannia
+	Container	0x49ae3dff
+	DecayAt	37147303
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x49a9f78d
+	ObjType	0x1517
+	Graphic	0x1517
+	Color	0x12a
+	X	129
+	Y	103
+	Z	0
+	Facing	5
+	Revision	0
+	Realm	britannia
+	Container	0x49ae3dff
+	DecayAt	37147303
+	Newbie	1
+}
+
+Item
+{
+	Name	Adaga
+	Serial	0x49ad2872
+	ObjType	0xf51
+	Graphic	0xf51
+	X	0
+	Y	0
+	Z	0
+	Facing	1
+	Revision	2
+	Realm	britannia
+	CProp	atributos d9:S8:Atualizai1S7:Qualityr1S9:TipoEquipS8:CortanteS9:item_coldi0S11:item_energyi0S9:item_firei0S7:item_hpi40S13:item_physicali100S11:item_poisoni0
+	CProp	can_cast i1
+	CProp	cancast i1
+	CProp	gems d2:S3:aaat2:S2:idi33S7:objtypei24857S3:aewt2:S2:idi36S7:objtypei24860
+	CProp	swordmage i502170
+	Layer	1
+	Container	0x7a99a
+	DecayAt	37198258
+	Newbie	1
+	PhysicalDamage	100
+}
+
+Item
+{
+	Serial	0x49ad2871
+	ObjType	0x170f
+	Graphic	0x170f
+	Color	0x21f
+	X	0
+	Y	0
+	Z	0
+	Facing	3
+	Revision	0
+	Realm	britannia
+	CProp	atributos d9:S8:Atualizai1S7:Qualityr1S9:TipoEquipS22:<uninitialized object>S9:item_coldi0S11:item_energyi0S9:item_firei0S7:item_hpuS13:item_physicali0S11:item_poisoni0
+	Layer	3
+	Container	0x7a99a
+	DecayAt	37198258
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x49ad2873
+	ObjType	0x152e
+	Graphic	0x152e
+	Color	0x1d7
+	X	0
+	Y	0
+	Z	0
+	Facing	4
+	Revision	0
+	Realm	britannia
+	CProp	atributos d9:S8:Atualizai1S7:Qualityr1S9:TipoEquipS22:<uninitialized object>S9:item_coldi0S11:item_energyi0S9:item_firei0S7:item_hpuS13:item_physicali0S11:item_poisoni0
+	Layer	4
+	Container	0x7a99a
+	DecayAt	37198258
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x49ad2874
+	ObjType	0x1517
+	Graphic	0x1517
+	Color	0x1ec
+	X	0
+	Y	0
+	Z	0
+	Facing	5
+	Revision	0
+	Realm	britannia
+	CProp	atributos d9:S8:Atualizai1S7:Qualityr1S9:TipoEquipS22:<uninitialized object>S9:item_coldi0S11:item_energyi0S9:item_firei0S7:item_hpuS13:item_physicali0S11:item_poisoni0
+	Layer	5
+	Container	0x7a99a
+	DecayAt	37198258
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x49ad2878
+	ObjType	0xf8c
+	Graphic	0xf8c
+	X	98
+	Y	95
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	10
+	Container	0x49ad2870
+	DecayAt	37198298
+}
+
+Item
+{
+	Serial	0x49ad2875
+	ObjType	0xba63
+	Graphic	0xeed
+	Color	0x844
+	X	51
+	Y	114
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	100
+	Container	0x49ad2870
+	DecayAt	37197769
+}
+
+Item
+{
+	Serial	0x49feadf3
+	ObjType	0x170f
+	Graphic	0x170f
+	Color	0x21f
+	X	0
+	Y	0
+	Z	0
+	Facing	3
+	Revision	0
+	Realm	britannia
+	Layer	3
+	Container	0x7edf2
+	DecayAt	40169970
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x49feaefc
+	ObjType	0xba63
+	Graphic	0xeed
+	Color	0x844
+	X	127
+	Y	92
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	100
+	Container	0x49feadf2
+	DecayAt	40170207
+}
+
+Item
+{
+	Serial	0x49feaefd
+	ObjType	0x9f2
+	Graphic	0x9f2
+	X	81
+	Y	109
+	Z	0
+	Revision	3
+	Realm	britannia
+	Amount	2
+	Container	0x49feadf2
+	DecayAt	40170207
+}
+
+Item
+{
+	Serial	0x49feaefe
+	ObjType	0x9d0
+	Graphic	0x9d0
+	X	102
+	Y	106
+	Z	0
+	Revision	3
+	Realm	britannia
+	Container	0x49feadf2
+	DecayAt	40170207
+}
+
+Item
+{
+	Serial	0x49feaeff
+	ObjType	0x6161
+	Graphic	0x227b
+	X	79
+	Y	68
+	Z	0
+	Revision	1
+	Realm	britannia
+	CProp	nivel i0
+	Container	0x49feadf2
+	DecayAt	40170207
+}
+
+Item
+{
+	Serial	0x49feaf2a
+	ObjType	0xf90
+	Graphic	0xf90
+	X	116
+	Y	133
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	10
+	Container	0x49feadf2
+	DecayAt	40170249
+}
+
+Item
+{
+	Serial	0x49feaf2b
+	ObjType	0xf81
+	Graphic	0xf81
+	X	72
+	Y	129
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	10
+	Container	0x49feadf2
+	DecayAt	40170249
+}
+
+Item
+{
+	Serial	0x49feadf4
+	ObjType	0xf51
+	Graphic	0xf51
+	X	64
+	Y	69
+	Z	0
+	Facing	1
+	Revision	0
+	Realm	britannia
+	Container	0x49feadf2
+	DecayAt	40175033
+	Newbie	1
+	PhysicalDamage	100
+}
+
+Item
+{
+	Serial	0x49feadf5
+	ObjType	0x152e
+	Graphic	0x152e
+	Color	0x35e
+	X	91
+	Y	92
+	Z	0
+	Facing	4
+	Revision	0
+	Realm	britannia
+	Container	0x49feadf2
+	DecayAt	40175055
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x49feadf6
+	ObjType	0x1517
+	Graphic	0x1517
+	Color	0x83
+	X	96
+	Y	131
+	Z	0
+	Facing	5
+	Revision	0
+	Realm	britannia
+	Container	0x49feadf2
+	DecayAt	40175057
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x49feaf27
+	ObjType	0x6149
+	Graphic	0x4210
+	X	138
+	Y	115
+	Z	0
+	Facing	10
+	Revision	1
+	Realm	britannia
+	CProp	spells a2:i80i88
+	Container	0x49feadf2
+	DecayAt	40175168
+}
+

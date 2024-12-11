@@ -1,0 +1,48 @@
+
+use uo;
+
+include ":fls_core:packets";
+include ":combat:combat";
+include ":blood:blood";
+include "include/damage";
+
+program doubleattack(params)
+	var attacker	:= params[1];
+	var mobile	:= params[2];
+	var weapon	:= params[3];
+	var armor	:= params[4];
+	var basedamage	:= params[5];
+	var rawdamage	:= params[6];
+	params := 0; // Not needed anymore.
+	var	hpfixo :=	AP_GetVital(attacker, "Hits");
+
+	SetObjProperty(attacker, "#bomcomeco", 1);
+	
+	while (AP_GetVital(attacker, "Stamina") > 15)
+		
+		PrintTextAbove(attacker, "*ataque giratorio*");
+		PlaySoundEffect( attacker, 0x527 );
+		var dmgList := dictionary;
+		dmgList := getNewDamageList(attacker);	
+		
+		foreach mobile in (ListMobilesNearLocation(attacker.x, attacker.y, attacker.z, 2, attacker.realm ))
+			var hitscomp := AP_GetVital(attacker, "Hits");
+			var total := CalculateTotalDamage(mobile, basedamage, attacker, dmgList);
+			hitscomp:= hitscomp + total;
+			AP_SetVital(attacker, "Hits", hitscomp);
+			ApplyRawDamage(mobile, total);
+			MostraDano(attacker, mobile, total);
+			MakeBleed(mobile);
+			PlayAttackAnimation(attacker);
+			PlayHitSounds(attacker, mobile);
+			sleepms(250);
+			attacker.facing := attacker.facing + 1;
+		endforeach
+		sleep(1);
+		AP_ConsumeVital(attacker, "Stamina", 15);
+		
+	endwhile
+	SendSysMessageEx(attacker, "Voce ficou cansado demais para continuar com a manobra", SSM_FAIL);
+	AP_SetVital(attacker, "Hits", hpfixo);
+	
+endprogram 

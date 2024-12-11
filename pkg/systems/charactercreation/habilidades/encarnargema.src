@@ -1,0 +1,52 @@
+use uo;
+use os;
+
+include "include/damage";
+include ":attributes:attributes";
+include ":timedScripts:timedScripts";
+include "include/say";
+include ":spells:swordmage";
+include ":spells:summon";
+
+program manobra(who)
+
+	var targ := TargetCoordinates(who);
+	var undead;
+	var template;
+
+	if (!targ)
+		SendSysMessageEx(who, "Cancelado.");
+		return 1;
+	endif
+
+	if (!CheckLosAt(who, targ.x, targ.y, targ.z))
+		SendSysMessageEx(who, "Voce nao enxerga o alvo.");
+		return 1;
+	endif
+
+	var element;
+	element := 	GetObjProperty(who.weapon, "#elementalweapon");
+	element := element.type;
+	var duracao := AP_GetSkill(who, MAGICLORE);
+	
+	case(element)
+		"Fire":
+		SendSysMessageEx(who, "Voce conjura um elemental do fogo a partir da gema da sua arma.", SSM_INFO);
+		template := ":brainai:fireelemental";
+		"Cold":
+		SendSysMessageEx(who, "Voce conjura um elemental do gelo a partir da gema da sua arma.", SSM_INFO);
+		template := ":brainai:IceElemental";
+		"Energy":
+		SendSysMessageEx(who, "Voce conjura um elemental do energia a partir da gema da sua arma.", SSM_INFO);
+		template := ":brainai:elementaldeenergia";
+	endcase
+
+	undead := summon(template, targ, who);
+	TS_Starttimer(undead, "summon", duracao);
+	AP_SetSkillMod(undead, WRESTLING, AP_GetTrueSkill(who, MAGICLORE)/3);
+	
+endprogram
+	
+	
+	
+ 

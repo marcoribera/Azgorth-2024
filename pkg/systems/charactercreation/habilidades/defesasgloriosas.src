@@ -1,0 +1,19 @@
+ use uo;
+
+include ":attributes:attributes";
+include "include/say";
+include ":tn:cooldown";
+include "include/sysEvent";
+include "include/client";
+
+
+program manobra(attacker)
+
+	SendSysMessageEx(attacker, "Seu proximo bloqueio surpreendera o inimigo.", SSM_INFO);
+
+	SetCooldown(attacker, "defesasgloriosas", cint(AP_GetSkill(attacker, TACTICS)));
+
+endprogram 
+
+
+

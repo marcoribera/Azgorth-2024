@@ -1,0 +1,315 @@
+Element 0x1185A
+{
+	AllConversations a2:S17:O casa é um viadoS6:Inicio
+	InicioDialogue i0
+	O casa é um viadoDialogue sEntão, você conhece o casa, o scripter mais homo do fls?
+	inicioOptions a1:t5:S2:IDi1022006S3:inti50S6:resultS6:inicioS4:songi0S4:texti0
+}
+
+Element 0x1185F
+{
+	AllConversations a2:S5:IkkinS20:Ola, posso ajuda-lo?
+	IkkinDialogue sOla ikkin
+	Ola, posso ajuda-lo?Dialogue sConversa fiada do caralho de introdução
+	inicioDialogue i0
+	inicioOptions a1:t7:S8:checkkiti0S2:IDi5161447S3:inti0S11:requestitema1:t3:S6:amounti1S4:nameS4:robeS7:result2S17:Terminar ConversaS6:resultS20:Ola, posso ajuda-lo?S4:songi0S4:texti0
+}
+
+Element 0x1187C
+{
+	AllConversations a2:S27:Ei camarada, como se chama?S7:Máscara
+	Ei camarada, como se chama?Dialogue sMe chamo Balsthur Daja. Bem vindo a minha  Taverna, o Berço de Zanshir, fundada no ano de 203.
+	MáscaraDialogue sSó vou te passar essa informação porque você parece um ladino bem treinado. Não conte isso para ninguém, mas já vi um homem por aqui alegando conhecer ele.
+	inicioDialogue i0
+	inicioOptions a2:t5:S2:IDi4235618S3:inti0S6:resultS27:Ei camarada, como se chama?S4:songi0S4:textS14:Olá, camarada.t8:S8:checkhabS16:Ataques PrecisosS8:checkkitS15:Ladino TreinadoS2:IDi292344S3:inti40S11:requestitema1:t3:S6:amounti215S4:nameS16:moeda de cobres S7:result2S7:MáscaraS6:resultS7:MáscaraS4:songi0S4:textS35:Ei, você sabe algo sobre o Máscara?
+}
+
+Element 0x14769
+{
+	AllConversations a1:S15:Muito obrigado!
+	Muito obrigado!Dialogue sEstes bastardos me capturaram ha luas! Ja  estava achando que morreria de fome, mas gracas a Rothen voce apareceu! Muito obrigado, se me escoltar de volta a Zharkia, lhe pagarei 2 ouros!
+	inicioDialogue sObrigado por me salvar!
+	inicioOptions a1:t6:S5:eventt1:S4:typeS11:Criar ItensS2:IDi9440902S3:inti0S6:resultS17:Terminar ConversaS4:songi0S4:texti0
+}
+
+Element 0x14A81
+{
+	AllConversations a4:S8:ServiçosS6:TunicaS4:CapaS7:Tunica2
+	CapaDialogue sAqui está sua nova capa.
+	ServiçosDialogue sOlá, eu sou o Mestre Alfaiate da Armada Celeste. Como posso ajudá-lo?
+	Tunica2Dialogue sAqui está sua túnica.
+	TunicaDialogue sA capa da Armada Celeste, sem as patentes, custa 100 moedas.
+	inicioDialogue i0
+	inicioOptions a3:t5:S2:IDi23436S3:inti0S6:resultS8:ServiçosS4:songi0S4:textS4:Olá.t7:S8:GiveItema1:t64:S6:Amounti1S2:ARi2S6:ar_modi0S21:BlocksCastingIfInHandi1S17:CanUseWhileFrozeni0S20:CanUseWhileParalyzedi0S10:ColdDamagei0S10:ColdResisti0S5:Colori2337S13:ControlScriptS0:S8:Coveragea1:S4:BodyS6:CPropsd1:S9:createdbyS20:ikkin Gweyr AmarylisS12:CreateScriptS0:S14:DecaysOnMultisi0S9:DecayTimei10S4:DescS7:a cloakS13:DestroyScriptS17::combat:onDestroyS16:DoubleClickRangei2S12:EnergyDamagei0S12:EnergyResisti0S11:EquipScriptS13::combat:equipS6:Facingi20S10:FireDamagei0S10:FireResisti0S12:GhostsCanUsei0S7:Graphici5397S2:hpi20S7:Insuredi0S9:Invisiblei0S8:Lockablei0S5:MaxHpi20S9:maxhp_modi0S12:MethodScriptS0:S7:Movablei1S7:MultiIDi0S4:NameS5:cloakS6:Newbiei0S6:NoDropi0S8:ObjClassS5:ArmorS7:ObjTypei5397S11:OnHitScriptS0:S14:PhysicalDamagei0S14:PhysicalResisti0S12:PoisonDamagei0S12:PoisonResisti0S7:Qualityr1S17:RequiresAttentioni1S15:resist_cold_modi0S17:resist_energy_modi0S15:resist_fire_modi0S19:resist_physical_modi0S17:resist_poison_modi0S6:ScriptS0:S21:StackingIgnoresCPropsa0:S10:StackLimiti60000S11:StrRequiredi0S7:TooltipS0:S13:UnequipScriptS15::combat:unequipS14:UseRequiresLOSi1S9:usescriptS0:S13:VendorBuysFori21S14:VendorSellsFori43S12:WalkOnScriptS0:S6:Weighti1S2:IDi6211366S3:inti0S11:requestitema1:t3:S6:amounti100S4:nameS16:moeda de cobres S7:result2S6:inicioS6:resultS4:CapaS4:songi0S4:textS54:Eu preciso de nova capa da Armada Celeste [100 moedas]t7:S8:GiveItema1:t64:S6:Amounti1S2:ARi3S6:ar_modi0S21:BlocksCastingIfInHandi1S17:CanUseWhileFrozeni0S20:CanUseWhileParalyzedi0S10:ColdDamagei0S10:ColdResisti0S5:Colori2326S13:ControlScriptS0:S8:Coveragea2:S4:BodyS4:ArmsS6:CPropsd1:S9:createdbyS11:ikkin IkkinS12:CreateScriptS0:S14:DecaysOnMultisi0S9:DecayTimei10S4:DescS26:Túnica da Armada de AghajaS13:DestroyScriptS17::combat:onDestroyS16:DoubleClickRangei2S12:EnergyDamagei0S12:EnergyResisti0S11:EquipScriptS13::combat:equipS6:Facingi17S10:FireDamagei0S10:FireResisti0S12:GhostsCanUsei0S7:Graphici41831S2:hpi29S7:Insuredi0S9:Invisiblei0S8:Lockablei0S5:MaxHpi30S9:maxhp_modi0S12:MethodScriptS0:S7:Movablei1S7:MultiIDi0S4:NameS26:Túnica da Armada de AghajaS6:Newbiei0S6:NoDropi0S8:ObjClassS5:ArmorS7:ObjTypei41831S11:OnHitScriptS0:S14:PhysicalDamagei0S14:PhysicalResisti0S12:PoisonDamagei0S12:PoisonResisti0S7:Qualityr1S17:RequiresAttentioni1S15:resist_cold_modi0S17:resist_energy_modi0S15:resist_fire_modi0S19:resist_physical_modi0S17:resist_poison_modi0S6:ScriptS0:S21:StackingIgnoresCPropsa0:S10:StackLimiti60000S11:StrRequiredi0S7:TooltipS0:S13:UnequipScriptS15::combat:unequipS14:UseRequiresLOSi1S9:usescriptS0:S13:VendorBuysFori0S14:VendorSellsFori0S12:WalkOnScriptS0:S6:Weighti1S2:IDi5604866S3:inti0S11:requestitema1:t3:S6:amounti100S4:nameS16:moeda de cobres S7:result2S6:inicioS6:resultS6:TunicaS4:songi0S4:textS52:Eu preciso de uma nova túnica da Armada [100 moedas]
+}
+
+Element 0x16763
+{
+	AllConversations a5:S22:Voce soube do gigante?S6:noitemS7:noitem2S7:successS4:fail
+	Voce soube do gigante?Dialogue sEle saiu pela mina e aterrorizou toda a cidade! Na sua saida botou um monte de guardas para correr e matou um deles. Nos da Associacao Cenariana, preocupados com a seguranca de nossos mineradores, estamos  oferecendo uma recompensa de 250 cobres para quem conseguir abate-lo. Mas tome cuidado, muitos por ai ja tentaram e nao tiveram sorte!
+	failDialogue sTudo bem, nem todos sao bravos o suficiente para isso.
+	inicioDialogue sVoce soube do gigante que saiu da mina? Ele esta aterrorizando as redondezas, e inclusive matou um guarda! Nos da Associacao Cenariana estamos oferecendo uma recompensa de 250 cobres para quem  trouxer a cabeca da besta. Mas tome cuidado! Muitos ja tentaram e nenhum teve sucesso ate agora.
+	inicioOptions a2:t6:S2:IDi524153S3:inti0S11:requestitema1:t4:S6:amounti1S4:nameS5:skullS7:result2S7:noitem2S11:specialpropS5:questS6:resultS7:successS4:songi0S4:textS24:Aqui esta o cabeca dela!t5:S2:IDi3981511S3:inti0S6:resultS4:failS4:songi0S4:textS49:Eu nao sou nenhum louco de me meter com gigantes!
+	noitem2Dialogue sVoce esta tentando me enganar? Volte quando tiver matado a besta!
+	noitemDialogue i0
+	successDialogue sVoce deve ser realmente um guerreiro feroz! Aqui estao os 250 cobres conforme prometido. Faca bom proveito delas, gaste em artifices  cenarianos!
+	successOptions a1:t7:S8:GiveItema1:t60:S6:Amounti250S21:BlocksCastingIfInHandi1S17:CanUseWhileFrozeni0S20:CanUseWhileParalyzedi0S10:ColdDamagei0S10:ColdResisti0S5:Colori2116S13:ControlScriptS0:S6:CPropsd1:S9:createdbyS12:casao fdfsdfS12:CreateScriptS0:S14:DecaysOnMultisi0S9:DecayTimei10S4:DescS19:250 moeda de cobresS13:DestroyScriptS0:S16:DoubleClickRangei2S12:EnergyDamagei0S12:EnergyResisti0S11:EquipScriptS0:S6:Facingi0S10:FireDamagei0S10:FireResisti0S12:GhostsCanUsei0S7:Graphici3821S2:hpi0S7:Insuredi0S9:Invisiblei0S8:Lockablei0S5:MaxHpi1S9:maxhp_modi0S12:MethodScriptS0:S7:Movablei1S7:MultiIDi0S4:NameS14:moeda de cobreS6:Newbiei0S6:NoDropi0S8:ObjClassS4:ItemS7:ObjTypei47715S14:PhysicalDamagei0S14:PhysicalResisti0S12:PoisonDamagei0S12:PoisonResisti0S7:Qualityr1S17:RequiresAttentioni1S15:resist_cold_modi0S17:resist_energy_modi0S15:resist_fire_modi0S19:resist_physical_modi0S17:resist_poison_modi0S6:ScriptS11:caraoucoroaS21:StackingIgnoresCPropsa0:S10:StackLimiti60000S11:StrRequiredi0S7:TooltipS0:S13:UnequipScriptS0:S14:UseRequiresLOSi1S9:usescriptS0:S13:VendorBuysFori0S14:VendorSellsFori0S12:WalkOnScriptS0:S6:Weighti10S2:IDi7246380S3:inti0S6:noshowi6000S6:resultS17:Terminar ConversaS4:songi0S4:textS9:Obrigado!
+}
+
+Element 0x16AA3
+{
+	inicioOptions a1:t7:S5:eventt9:S6:amounti0S11:npctemplatee1:S9:errortextS73:Unable to unpack struct elemcount. Length given must be positive integer!S5:rangei0S14:summonbosstexte1:S9:errortextS73:Unable to unpack struct elemcount. Length given must be positive integer!S10:summontexte1:S9:errortextS73:Unable to unpack struct elemcount. Length given must be positive integer!S4:typeS10:Criar NpcsS1:xS6:error{S1:yS1:}S1:ze1:S9:errortextS25:Array index out of boundsS2:IDi2552501S3:inti0S6:noshowi0S6:resulti0S4:songi0S4:textS5:sdssd
+}
+
+Element 0x18991
+{
+	AllConversations a2:S4:fddfS6:dffddf
+	dffddfDialogue sassasasasa
+	fddfDialogue sdfd
+	inicioDialogue sasa sasa
+	inicioOptions a1:t6:S5:eventt2:S5:itemsa5:i1152796326i1152796326i71770i100753i36584S4:typeS14:Abrir PassagemS2:IDi5614852S3:inti0S6:resultS4:fddfS4:songi0S4:textS4:assa
+}
+
+Element 0x19149
+{
+	AllConversations a13:S5:City1S8:EstabuloS17:Cozinha e costuraS15:Corte e CosturaS5:BancoS19:Estalagem e TavernaS5:ForjaS6:IgrejaS4:MinaS12:Alugar casasS5:ArenaS7:AtelierS8:pocilga1
+	Alugar casasDialogue sBem, se você está começando agora a se levantar na vida eu recomendo que alugue um quarto na Estalagem. Se já está um pouco crescido na  vida, fale com o rapaz ali pela praça. Ele vai te indicar boas residências para alugar e construir sua família nas seguranças da muralha. Agora,  se o sangue que corre em suas veias é azul, então eu diria para você ir até o leste daqui. E encontrar um rapaz bem apessoado, de preto. Ele poderá mostrar as melhores residências que  o dinheiro pode comprar em Zharkia.
+	ArenaDialogue s*Ele te mede com o olhar e um sorriso mais simpatico do que desafiador* Então seu estilo de conversa é na ponta da espada, certo? Braços fortes nunca serão demais em momentos desesperados. Mas é isso, se prepare, a Arena aqui de Zharkia fica exatamente no extremo leste contornando a muralha você logo chegará lá. Bom treino!
+	AtelierDialogue sO atelier fica logo em frente atravessando a ponte.
+	BancoDialogue sPra chegar até o banco você só precisa atravessar a ponte e seguir pro noroeste a  partir dali. Tem também umas casas para  alugar bem acima dele. Cuidado com os pedintes, eles estão se acumulando com toda essa imigração.
+	City1Dialogue sBem-vindo a Zharkia, viajante! Aqui como pode ver, fica o estábulo! acima dele tem quartos para alugar. Atras de mim a gloriosa Igreja de Rothen. Bem como a Forja, a Oficina de trabalho e a cozinha! A noroeste encontrará o banco. Logo a leste daqui verá o mercado, onde poderá comprar diversos produtos. A sudeste, pela muralha, é o quartel da Guarda. Cuidado com encrencas ou acabará lá! E passando pela guarda e pelo quartel é o bairro nobre, onde os afortunados assentam suas vidas.  Passando pelo bairro e indo pro Norte, é o Castelo do Deus Rei Zamordus, mas, antes,  virando a esquerda tem a Torre de Shimoria, famosa pela maior biblioteca de toda Tybar!
+	Corte e CosturaDialogue sAqui bem atrás de mim, veja! A placa com a  tesoura, percebe? Logo no primeiro andar, assim que entrar poderá fazer seu pano, curtir couros e, bem, essas coisas *Fala coçando a cabeça*
+	Cozinha e costuraDialogue sAh! Você só precisa acompanhar o cheirinho que ele vai te conoduzir ao local certo. Está vendo bem aqui atrás de mim? No primeiro Andar você vai passar por um local de trabalho para costureiros, subindo a escada é a cozinha! Se for assar pães, não esqueça de me trazer umzinho *Ri*
+	EstabuloDialogue sRapaz, você precisa de óculos *Ri*  Olha o estábulo ali. *Indica a construção  logo ao lado oeste*
+	Estalagem e TavernaOptions a1:t5:S2:IDi6708771S3:inti0S6:resultS8:pocilga1S4:songi0S4:textS25:Alguma outra alternativa?
+	ForjaDialogue sA busca pelo aço está incessante não é mesmo? Veja bem, viajante. A Forja é bem a norte- noroeste daqui. Atravesse a ponte, vira a direita e logo a verá. O barulho irritante de ferro contra ferro é inconfundivel. *Fala com um sorriso no rosto*
+	IgrejaDialogue sSim, rapaz, muito bem. É disso que precisamos por aqui. Fiéis! A Gloriosa, abençoada e incrível Igreja de Rothen encontra-se logo atrás de mim. Passando a ponto siga pro norte, tem uma  pracinha antes de chegar na Igreja. Vamos unir nossos corações e orações em prol deste Reinado. Que Rothen tenha piedade desta Nação.
+	MinaDialogue sUm minerador, hã? Muito que bem, vamos lá. Está vendo ali, ó ? *Ele aponta o norte-noroeste* Passando a forja, ja vai sair na mina. Não tem erro.
+	inicioDialogue sAh, uma cara nova na cidade! Diga viajante,  no que posso ajuda-lo?
+	inicioOptions a4:t5:S2:IDi5328644S3:inti0S6:resultS19:Estalagem e TavernaS4:songi0S4:textS22:Onde fica a estalagem?t5:S2:IDi5301224S3:inti0S6:resultS5:ForjaS4:songi0S4:textS23:Sim, onde fica a Forja?t5:S2:IDi5357879S3:inti0S6:resultS6:IgrejaS4:songi0S4:textS34:Sim, onde fica a Igreja de Rothen?t5:S2:IDi4658831S3:inti0S6:resultS12:Alugar casasS4:songi1050S4:textS41:Na verdade eu gostaria de alugar uma casa
+	pocilga1Dialogue sTem tambem a Pocilga, fica a sudeste dos muros da cidade. Nao e o melhor dos lugares, mas e barato e as pulgas vem de graca!
+}
+
+Element 0x19182
+{
+	AllConversations a3:S34:como esta nessa fria manha de sol?S9:SaudacoesS5:banco
+	SaudacoesDialogue sSaudações, viajante! Precisa de direções?
+	bancoDialogue sBem, o banco fica logo atrás de mim, se você  atravessar a ponte logo estará lá. É bem ali, veja *Aponta o noroeste*
+	como esta nessa fria manha de sol?Dialogue sComo esta hien hein hein/
+	inicioDialogue sSaudações, viajante! Precisa de direções? Sou Paris, pode perguntar!
+	inicioOptions a2:t5:S2:IDi1498164S3:inti0S6:resultS5:bancoS4:songi0S4:textS37:Sim! Pode me dizer onde fica o banco?t5:S2:IDi3178952S3:inti0S6:resultS17:Terminar ConversaS4:songi0S4:textS26:Sim, onde fica o estábulo?
+}
+
+Element 0x19191
+{
+	AllConversations a3:S5:BercoS4:CaosS10:Bercccoooo
+	BercccooooDialogue sOra, quanta gentileza. *Ela ri uma risada gostosa* Sabe, os espertinhos assim se dariam muito bem no Berço. Quem sabe no futuro a gente não se esbarre por lá também? Gente como eu e você poderíamos faturar alto *pisca levemente provocativa*
+	BercoDialogue sShh! Não fale isso alto por aqui, mas você pode encontrar a escória de Zharkia no Berço. Consiga aliados por lá se quiser viver  discretamente. E não sou eu que estou dizendo!
+	BercoOptions a1:t5:S2:IDi9951750S3:inti0S6:resultS10:BercccooooS4:songi801S4:textS10:Preciso ir
+	CaosDialogue sEntão você acha divertido incitar o caos? Como eu posso dizer isso...?? Eu também! *Ri divertida* Sou Linda, se você quer se  provar para nós, digo, para mim. Precisará completar algumas tarefas.
+	inicioDialogue s*Ela te olha com um sorriso um tanto estranho*
+	inicioOptions a1:t6:S8:checkkitS7:BandidoS2:IDi9208762S3:inti0S6:resultS5:BercoS4:songi0S4:textS28:Que mulher atraente. *Sorri*
+}
+
+Element 0x19193
+{
+	AbreaeDialogue sAh, sim, tudo bem. Pode passar.
+	AllConversations a2:S13:Open the gateS6:Abreae
+	Open the gateDialogue sSabe como é, né? Poder a gente não pode não.
+	inicioDialogue sOpa, e ae. *Ele te olha com um olhar  desinteressado, daqueles que só 50 moedas  poderiam conseguir alguma atenção*
+	inicioOptions a1:t7:S5:eventt2:S5:itemsa2:i1153316166i1153316163S4:typeS11:Abrir PortaS2:IDi9090462S3:inti0S11:requestitema1:t3:S6:amounti50S4:nameS16:moeda de cobres S7:result2S6:AbreaeS6:resultS6:AbreaeS4:songi0S4:textS44:Pode liberar a passagem? *Entrega 50 moedas*
+}
+
+Element 0x19196
+{
+	AllConversations a1:S14:Open the gates
+	Open the gatesDialogue sAh, claro, da sim. Ensine uma lição praqueles goblins!
+	inicioDialogue sOpa, tudo bem?
+	inicioOptions a1:t7:S5:eventt2:S5:itemsa1:i1153318718S4:typeS11:Abrir PortaS2:IDi8864639S3:inti0S11:requestitema1:t3:S6:amounti50S4:nameS16:moeda de cobres S7:result2S14:Open the gatesS6:resultS14:Open the gatesS4:songi0S4:textS44:Pode liberar a passagem? *Entrega 50 moedas*
+}
+
+Element 0x1919F
+{
+	AllConversations a3:S5:TrucoS10:Truco tobaS5:Truco
+	Truco tobaDialogue sBem, que tal jogarmos um truco apostando... O TOBA?! *Ele te olha com uma cara  quase que maniaca, voce parece em maus lencois*
+	TrucoDialogue sVocê gosta de jogar truco?
+	TrucoOptions a0:
+	inicioDialogue sOla querido
+	inicioOptions a1:t5:S2:IDi3656855S3:inti0S6:resultS5:TrucoS4:songi0S4:textS36:Que tédio, adoraria jogoar um truco.
+}
+
+Element 0x191A7
+{
+	AllConversations a1:S9:dfsdsfdsf
+	dfsdsfdsfDialogue sfsdfsdfsd
+	dfsdsfdsfOptions a1:t5:S2:IDi706820S3:inti0S6:resultS9:dfsdsfdsfS4:songi0S4:textS9:dsadasdsa
+	inicioDialogue sdsfsdf
+	inicioOptions a1:t5:S2:IDi996341S3:inti0S6:resultS9:dfsdsfdsfS4:songi0S4:texti0
+}
+
+Element 0x191AB
+{
+	AllConversations a2:S5:TrucoS10:Truco toba
+	Truco tobaOptions a2:t5:S2:IDi6192638S3:inti0S6:resultS10:Truco tobaS4:songi0S4:textS51:O que é um toba para quem já perdeu as esperanças..t5:S2:IDi351952S3:inti0S6:resultS10:Truco tobaS4:songi0S4:textS44:Acho que vou passar...dessa vez... *Confuso*
+	TrucoDialogue sOra, vejam só! Quer dizer que você gosta  de truco?
+	TrucoOptions a1:t5:S2:IDi8953602S3:inti0S6:resultS5:TrucoS4:songi0S4:textS47:E não é que eu gosto mesmo? Baita coincidência!
+	inicioDialogue sOlá, querido!
+	inicioOptions a2:t5:S2:IDi7639256S3:inti0S6:resultS5:TrucoS4:songi1074S4:textS35:Que tédio, adoraria jogar um truco.t5:S2:IDi7147130S3:inti0S6:resultS10:Truco tobaS4:songi0S4:textS34:Mas o que é isso, rapaz?! O TOBA!?
+}
+
+Element 0x191D3
+{
+	Agradeco e dou a questDialogue s*tosse* Obrigado, você é muito gentil
+	AllConversations a2:S16:Fudido de doencaS22:Agradeco e dou a quest
+	Fudido de doencaOptions a1:t7:S8:GiveItema1:t60:S6:Amounti50S21:BlocksCastingIfInHandi1S17:CanUseWhileFrozeni0S20:CanUseWhileParalyzedi0S10:ColdDamagei0S10:ColdResisti0S5:Colori2116S13:ControlScriptS0:S6:CPropsd1:S9:createdbyS27:igorturano Praga de ZargrumS12:CreateScriptS0:S14:DecaysOnMultisi0S9:DecayTimei10S4:DescS18:50 moeda de cobresS13:DestroyScriptS0:S16:DoubleClickRangei2S12:EnergyDamagei0S12:EnergyResisti0S11:EquipScriptS0:S6:Facingi0S10:FireDamagei0S10:FireResisti0S12:GhostsCanUsei0S7:Graphici3821S2:hpi0S7:Insuredi0S9:Invisiblei0S8:Lockablei0S5:MaxHpi1S9:maxhp_modi0S12:MethodScriptS0:S7:Movablei1S7:MultiIDi0S4:NameS14:moeda de cobreS6:Newbiei0S6:NoDropi0S8:ObjClassS4:ItemS7:ObjTypei47715S14:PhysicalDamagei0S14:PhysicalResisti0S12:PoisonDamagei0S12:PoisonResisti0S7:Qualityr1S17:RequiresAttentioni1S15:resist_cold_modi0S17:resist_energy_modi0S15:resist_fire_modi0S19:resist_physical_modi0S17:resist_poison_modi0S6:ScriptS11:caraoucoroaS21:StackingIgnoresCPropsa0:S10:StackLimiti60000S11:StrRequiredi0S7:TooltipS0:S13:UnequipScriptS0:S14:UseRequiresLOSi1S9:usescriptS0:S13:VendorBuysFori0S14:VendorSellsFori0S12:WalkOnScriptS0:S6:Weighti2S2:IDi1135139S3:inti0S11:requestitema1:t3:S6:amounti1S4:nameS4:FumoS7:result2S22:Agradeco e dou a questS6:resultS22:Agradeco e dou a questS4:songi1058S4:textS8:Até mais
+	inicioDialogue s*Parece sentir dores, apenas te olhando*
+	inicioOptions a3:t5:S2:IDi5541378S3:inti0S6:resultS16:Fudido de doencaS4:songi0S4:textS14:Você está bem?t5:S2:IDi3209162S3:inti0S6:resultS17:Terminar ConversaS4:songi1068S4:textS41:Desculpe, no momento não posso te ajudar.t5:S2:IDi8776978S3:inti0S6:resultS16:Fudido de doencaS4:songi1058S4:textS21:Certo, vou te ajudar.
+}
+
+Element 0x191F0
+{
+	inicioDialogue sHey! *O elfo notadamente se assusta quando você se aproxima, mas disfarça* Estou aqui aproveitando a maré boa pra fazer uma surpresa pra minha amada. *Ele é bem idoso e tem um tom de voz muito gentil apesar da marca de escravo estampada em sua face*
+	inicioOptions a1:t5:S2:IDi3308140S3:inti0S6:resulti0S4:songi1070S4:textS18:Você por acaso...?
+}
+
+Element 0x191FD
+{
+}
+
+Element 0x19204
+{
+	AllConversations a1:S8:Fuma cha
+	Fuma chaDialogue s*Ele traga um pouco de narguile, e toma gole de cha de ginseng. Depois ele novamente traga para logo em seguida tomar outro gole de cha. Essa parece ser uma boa vida pela expressão estampada em sua face*
+	inicioDialogue s*Ele da uma boa tragada no narguile e te olha com uma cara neutra de quem não está afim de iniciar uma conversa e longa e quer apenas fumar seu narguile em paz*
+	inicioOptions a1:t5:S2:IDi8770961S3:inti0S6:resultS8:Fuma chaS4:songi1050S4:textS35:Bem, acho que vou te deixar em paz.
+}
+
+Element 0x19209
+{
+	AllConversations a1:S13:Praga de Zagr
+	Praga de ZagrDialogue sArgh, cuidado quando forem subir as montanhas. Aqueles malditos goblins estão contaminados com a praga de Zargrum. Dizem que o fumo que os ogros carregam são capazes de curar a praga. Mas eu nao fumo! Vou a Igreja em toda missa. Logo estarei melhor... *tosse*
+	inicioDialogue s*O Aquilrano esta aparentemente bem, ja que suas roupas e ate mesmo sua pele nao tem manchas de sangue. Mas ao olhar para sua face voce nota seus olhos fundos e sua pele num tom esverdeado ate mesmo para sua pele morena. Agora que você, de fato, se aproximou, sua  nítida impressão é de um homem muito adoecido*
+	inicioOptions a2:t5:S2:IDi9894959S3:inti0S6:resultS13:Praga de ZagrS4:songi1057S4:textS12:Você tá bem?t5:S2:IDi493691S3:inti0S6:resultS17:Terminar ConversaS4:songi1068S4:textS10:Preciso ir
+}
+
+Element 0x19213
+{
+	AllConversations a3:S9:Berco boyS9:incendio1S9:incendioy
+	Berco boyDialogue sUm homem galante e bem sucedido como voce se daria bem no Berco de Zanshir. Talvez nos  encontremos por la, hm? *pisca com um olho*
+	incendio1Dialogue sDe que incendio esta falando? Eu nao sei de incendio nenhum! *olha pros lados nervosamente*
+	incendio1Options a2:t5:S2:IDi6839145S3:inti0S6:resultS17:Terminar ConversaS4:songi0S4:textS16:Certo, obrigado!t6:S8:checkkitS15:Ladino TreinadoS2:IDi3678732S3:inti0S6:resultS9:incendioyS4:songi0S4:textS48:Seria melhor para voce se me contasse o que sabe
+	incendioyDialogue sCerto, voce me convenceu. Eu vi, quando um homem que media em torno de 1,80m e com um cavanhaque castanho passou por aqui logo antes do incendio. Mas como estava vestindo um capuz, nao pude ver muito mais que isso.
+	inicioDialogue s*Ela olha para cima, com grandes olhos muito atraentes, alem de um farto par de seios que voce esta neste momento enfrentando uma  batalha interna para nao olhar*
+	inicioOptions a2:t6:S8:checkkitS7:BandidoS2:IDi7277037S3:inti0S6:resultS9:Berco boyS4:songi801S4:textS44:Que mulher atraente *Sorri olhando para ela*t6:S8:checkkiti0S2:IDi3606344S3:inti0S6:resultS9:incendio1S4:songi0S4:textS70:*Voce ignora a beleza da mulher* Voce viu o responsavel pelo incendio?
+}
+
+Element 0x19622
+{
+	Abrir bau corpulentoDialogue s*Voce nota que a trava esta muito dura e notadamente não será qualquer homem que  poderá desemperrá-la, porém com sua força bruta você consegue romper a trava e abrir o baú*
+	AllConversations a1:S20:Abrir bau corpulento
+	inicioDialogue s*Voce nota que a trava do bau está danificada somente um homem realmente forte poderia abrir este bau, arrancando a trava com as  proprias maos*
+	inicioOptions a1:t7:S8:checkkitS10:CorpulentoS5:eventt2:S5:itemsa1:i1153624868S4:typeS11:Abrir PortaS2:IDi9339870S3:inti0S6:resultS20:Abrir bau corpulentoS4:songi1069S4:textS49:*Tenta abrir o bau com a forca das proprias maos*
+}
+
+Element 0x19BEB
+{
+	AllConversations a4:S7:bandidoS9:incendio1S9:incendio2S16:Desaparecimentos
+	DesaparecimentosDialogue sOuvi rumores de desaparecidos no bairro thuriao. Pelo visto eles nao estao morrendo so de fome. Mas ainda nao sei bem para onde os estao  levando, procure-me em alguns dias.
+	bandidoDialogue s*Ela lhe sorri, interessada* Lugar de gente bem sucedida e galante como voce eh no Berco de  Zanshir. Talvez nos encontremos por la, hm? *pisca flertando*
+	incendio1Dialogue sNao, eu nao vi nada sobre esse incendio, alias, eu nem sabia que ele tinha acontecido, so estou sabendo agora que voce falou. E eu saberia muito bem se tivessem passado por aqui, estou sempre de olho em gente interessante *sorri flertando*
+	incendio1Options a1:t6:S8:checkkitS15:Ladino TreinadoS2:IDi8530859S3:inti0S6:resultS9:incendio2S4:songi0S4:textS59:Pare com a baboseira, eh melhor abrir a boca para o seu bem
+	incendio2Dialogue sEsta bem, eu falo! *intimidada* Foi o Billie Kane! Eu vi quando ele passou e  depois voltou correndo, logo apos o incendio  comecar.
+	inicioDialogue s*Ela olha para cima, com grandes olhos muito atraentes, alem de um farto par de seios que voce esta neste momento enfrentando uma batalha interna para nao olhar*
+	inicioOptions a2:t6:S8:checkkiti0S2:IDi1232694S3:inti0S6:resultS7:bandidoS4:songi801S4:textS43:Que mulher atraente *Sorri olhando pra ela*t6:S8:checkhabS15:Ladino treinadoS2:IDi5954840S3:inti0S6:resultS16:DesaparecimentosS4:songi0S4:textS54:Por que o thuriao esta gritando que tem gente sumindo?
+}
+
+Element 0x1A24F
+{
+	AllConversations a1:S7:bandido
+	bandidoDialogue sPode ir, mas finja que nunca me viu antes!
+	bandidoOptions a1:t6:S5:eventt2:S5:itemsa1:i1154249439S4:typeS11:Abrir PortaS2:IDi9519157S3:inti0S6:resultS17:Terminar ConversaS4:songi0S4:textS11:Agradecido!
+	inicioOptions a1:t7:S8:checkkitS7:BandidoS2:IDi2829567S3:inti0S11:requestitema1:t3:S6:amounti100S4:nameS16:moeda de cobres S7:result2S6:inicioS6:resultS7:bandidoS4:songi0S4:textS39:Deixe-me passar, e prometo ser generoso
+}
+
+Element 0x1C410
+{
+	AllConversations a1:S4:Open
+	OpenDialogue s*Você força a tranca com as duas mãos, contando unicamente com a sua incrível força. O baú está finalmente aberto*
+	inicioDialogue s*Você nota que o baú está com a tranca emperrada, nenhum chaveiro conseguirá abrir. Porém, pela estrutura envelhecida do baú, você acredita que alguém realmente forte e corpulento poderia ser capaz de remover a  fechadura com as próprias mãos*
+	inicioOptions a1:t7:S8:checkkitS10:CorpulentoS5:eventt2:S5:itemsa1:i1153624868S4:typeS11:Abrir PortaS2:IDi7543986S3:inti0S6:resultS4:OpenS4:songi1099S4:textS35:*Forçar o baú com as próprias mãos*
+}
+
+Element 0x23DAB
+{
+	AllConversations a2:S12:DesaparecewwS17:Humanos em aghaja
+	DesaparecewwDialogue sVocê parece alguem que está por dentro das situações. Está sabendo de alguma coisa sobre os desaparecimentos na comunidade em Frente a Zharkia?
+	Humanos em aghajaDialogue sNão é possível que Vorantar quer abrir a  área nobre para todos os povos! Isso é uma afronta a nossa história!
+	inicioDialogue s*Olhando o vasto horizonte maritimo que cerca a cidade, ao nota-lo o vanirio passa a te olhar de forma curiosa* Sim?
+	inicioOptions a2:t6:S8:checkkitS15:Ladino TreinadoS2:IDi1923651S3:inti0S6:resultS12:DesaparecewwS4:songi0S4:textS34:Nossa costa é linda , não é mesmo?t5:S2:IDi4096599S3:inti80S6:resultS17:Humanos em aghajaS4:songi1069S4:textS46:*Você nota que o homem está agitado* O que há?
+}
+
+Element 0x3306D
+{
+}
+
+Element 0x3306F
+{
+	inicioDialogue i0
+}
+
+Element 0x33082
+{
+	inicioDialogue i0
+}
+
+Element 0x3417F
+{
+	AllConversations a4:S12:artefatoinfoS7:entregaS15:Muito obrigado!S11:entregafail
+	Muito obrigado!Dialogue s
+	artefatoinfoDialogue sEsta duvidando de mim? *franze o cenho* Eu sou o maior alquimista que Tybar ja viu! *se gaba, empertigado* O que eu faco, ninguem mais faz! Poder puro armazenado em objetos que podem ser empunhados por qualquer um! Imagine so, qualquer gorila sendo capaz de invocar feiticoes?
+	entregaDialogue s*pega o cranio e comeca a moe-lo* Isso vai dar a melhor cocarina que ja existiu! HAHAHAHAHAHHAHAHA *empolgado*
+	entregaOptions a1:t6:S8:GiveItema1:t84:S6:Amounti1S4:Animi11S9:AttributeS13:MeleeCombat1HS21:BlocksCastingIfInHandi1S17:CanUseWhileFrozeni0S20:CanUseWhileParalyzedi0S10:ColdDamagei0S10:ColdResisti0S5:Colori0S13:ControlScriptS0:S6:CPropsd5:S7:cancasti1S6:cargasi12S9:createdbyS10:casao ZekkS5:magici1S9:spellinfot1:S2:idi11S12:CreateScriptS17::wands:createWandS6:DamageS5:1d4+0S15:damage_cold_modi0S17:damage_energy_modi0S15:damage_fire_modi0S19:damage_physical_modi0S17:damage_poison_modi0S14:DecaysOnMultisi0S9:DecayTimei10S5:Delayi0S4:DescS4:wandS13:DestroyScriptS0:S7:dmg_modi0S16:DoubleClickRangei2S12:EnergyDamagei0S12:EnergyResisti0S11:EquipScriptS5:equipS6:Facingi1S10:FireDamagei0S10:FireResisti0S12:GhostsCanUsei0S7:Graphici3570S9:HitScriptS13:mainHitScriptS8:HitSoundi316S2:hpi30S7:Insuredi0S9:Invisiblei0S8:Lockablei0S9:MaxDamagei4S5:MaxHpi30S9:maxhp_modi0S8:MaxRangei1S12:MethodScriptS0:S9:MinDamagei1S8:MinRangei0S9:MissSoundi564S11:MountedAnimi11S7:Movablei1S7:MultiIDi0S4:NameS4:wandS6:Newbiei0S6:NoDropi0S8:ObjClassS6:WeaponS7:ObjTypei3570S14:PhysicalDamagei100S14:PhysicalResisti0S12:PoisonDamagei0S12:PoisonResisti0S10:Projectilei0S14:ProjectileAnimi0S15:ProjectileSoundi0S14:ProjectileTypei0S7:Qualityr1S17:RequiresAttentioni1S15:resist_cold_modi0S17:resist_energy_modi0S15:resist_fire_modi0S19:resist_physical_modi0S17:resist_poison_modi0S6:ScriptS16::wands:clickWandS5:Speedi30S21:StackingIgnoresCPropsa0:S10:StackLimiti60000S11:StrRequiredi0S7:TooltipS0:S9:TwoHandedi0S13:UnequipScriptS7:unequipS14:UseRequiresLOSi1S9:usescriptS0:S13:VendorBuysFori0S14:VendorSellsFori0S12:WalkOnScriptS0:S6:Weighti1S2:IDi6020915S3:inti0S6:resultS17:Terminar ConversaS4:songi0S4:textS15:Muito obrigado!
+	entregafailDialogue sEh um tolo se acha que vai me enganar. Agora va embora, antes que eu resolva explodi-lo pelos ares.
+	inicioDialogue sUrghhhhh! Eu nao acredito que depois de tanto trabalho e tanta pesquisa, todo o meu esforco nao servira de nada. Tudo porque eu nao encontro um ingrediente, coisa simples. Voce por acaso nao saberia onde encontrar o cranio de um demiliche? Eu poderia lhe conseguir um artefato interessante se me trouxesse um desses. Algo que eu mesmo inventei! O que me diz?
+	inicioOptions a2:t5:S2:IDi2409S3:inti0S6:resulti0S4:songi0S4:textS65:Demiliche? Essas coisas sao perigosas, e eu nao sou nenhum louco!t6:S2:IDi9941253S3:inti0S11:requestitema1:t3:S6:amounti1S4:nameS18:cranio de demilichS7:result2S17:Terminar ConversaS6:resultS7:entregaS4:songi0S4:textS38:Isso eh facil! Aqui esta o seu cranio!
+}
+
+Element 0x4FD1F
+{
+}
+
+Element 0x7AA21
+{
+}
+
+Element 0x7B600
+{
+	AllConversations a4:S20:Resposta atendimentoS21:Resposta atendimento2S23:Nada não, obrigado(a).S26:Obrigada, fique a vontade.
+	Nada não, obrigado(a).Dialogue s
+	Obrigada, fique a vontade.Options a1:t6:S5:eventt3:S5:itemsa2:i1237885521i1237886846S5:realmS9:britanniaS4:typeS11:Abrir PortaS2:IDi7314098S3:inti0S6:resultS17:Terminar ConversaS4:songi0S4:textS9:Finalizar
+	Resposta atendimento2Options a1:t6:S2:IDi1258320S3:inti0S11:requestitema1:t3:S6:amounti100S4:nameS16:Moedas de Cobre S7:result2S17:Terminar ConversaS6:resultS26:Obrigada, fique a vontade.S4:songi0S4:textS18:Claro, aqui está.
+	inicioDialogue sOlá, seja bem vindo(a) ao Hospital de Aesir, em  posso ajuda-lo(a)?
+	inicioOptions a2:t6:S5:eventt3:S5:itemsa6:i1237885521i1237885521i1237885521i1237885521i1237885521i1237885521S5:realmS9:britanniaS4:typeS11:Abrir PortaS2:IDi429016S3:inti0S6:resultS21:Resposta atendimento2S4:songi0S4:textS41:Olá, gostaria de um atendimento médico.t5:S2:IDi4744589S3:inti0S6:resultS17:Terminar ConversaS4:songi0S4:textS22:Nada não, obrigado(a)
+}
+
+Element 0x7B726
+{
+}
+
+Element 0x7BCB6
+{
+	inicioDialogue sOlá, em que posso ajuda-lo(a)?
+	inicioOptions a1:t6:S5:eventt2:S5:realmS9:britanniaS4:typeS11:Abrir PortaS2:IDi5297205S3:inti0S6:resulti0S4:songi0S4:textS35:Gostaria de retornar em segurança.
+}
+
+Element 0x7C67F
+{
+	AllConversations a3:S15:Resposta plebeuS15:pega o dinheiroS30:Obrigado aqui esta seu titulo.
+	Obrigado aqui esta seu titulo.Options a1:t6:S8:GiveItema1:t88:S6:Amounti1S21:BlocksCastingIfInHandi1S17:CanUseWhileFrozeni0S20:CanUseWhileParalyzedi0S10:ColdDamagei0S10:ColdResisti0S13:ColdResistCapi0S16:ColdResistCapModi0S5:Colori0S13:ControlScriptS0:S6:CPropsd1:S9:createdbyS13:admin CuilennS12:CreateScriptS0:S14:DecaysOnMultisi0S9:DecayTimei10S15:DefenceIncreasei0S18:DefenceIncreaseCapi0S21:DefenceIncreaseCapModi0S18:DefenceIncreaseModi0S4:DescS15:Título Plebeu S13:DestroyScriptS0:S16:DoubleClickRangei2S12:EnergyDamagei0S12:EnergyResisti0S15:EnergyResistCapi0S18:EnergyResistCapModi0S11:EquipScriptS0:S6:Facingi0S13:FasterCastingi0S16:FasterCastingModi0S18:FasterCastRecoveryi0S21:FasterCastRecoveryModi0S10:FireDamagei0S10:FireResisti0S13:FireResistCapi0S16:FireResistCapModi0S12:GhostsCanUsei0S7:Graphici3636S9:HitChancei0S12:HitChanceModi0S2:hpi0S7:Insuredi0S9:Invisiblei0S8:Lockablei0S13:LowerManaCosti0S16:LowerManaCostModi0S16:LowerReagentCosti0S19:LowerReagentCostModi0S4:Lucki0S7:LuckModi0S5:MaxHpi1S9:maxhp_modi0S12:MethodScriptS0:S7:Movablei1S7:MultiIDi115S4:NameS15:Título Plebeu S6:Newbiei0S6:NoDropi0S8:ObjClassS4:ItemS7:ObjTypei3636S14:PhysicalDamagei0S14:PhysicalResisti0S17:PhysicalResistCapi0S20:PhysicalResistCapModi0S12:PoisonDamagei0S12:PoisonResisti0S15:PoisonResistCapi0S18:PoisonResistCapModi0S7:Qualityr1S17:RequiresAttentioni1S15:resist_cold_modi0S17:resist_energy_modi0S15:resist_fire_modi0S19:resist_physical_modi0S17:resist_poison_modi0S6:ScriptS0:S19:SpellDamageIncreasei0S22:SpellDamageIncreaseModi0S21:StackingIgnoresCPropsa0:S10:StackLimiti60000S11:StrRequiredi0S7:TooltipS0:S13:UnequipScriptS0:S14:UseRequiresLOSi1S9:usescriptS0:S13:VendorBuysFori3S14:VendorSellsFori5S12:WalkOnScriptS0:S6:Weighti1S2:IDi5293533S3:inti0S6:resultS17:Terminar ConversaS4:songi0S4:textS14:Pega o título
+	Resposta plebeuOptions a1:t7:S8:GiveItema1:t88:S6:Amounti1S21:BlocksCastingIfInHandi1S17:CanUseWhileFrozeni0S20:CanUseWhileParalyzedi0S10:ColdDamagei0S10:ColdResisti0S13:ColdResistCapi0S16:ColdResistCapModi0S5:Colori0S13:ControlScriptS0:S6:CPropsd1:S9:createdbyS13:admin CuilennS12:CreateScriptS0:S14:DecaysOnMultisi0S9:DecayTimei10S15:DefenceIncreasei0S18:DefenceIncreaseCapi0S21:DefenceIncreaseCapModi0S18:DefenceIncreaseModi0S4:DescS15:Título Plebeu S13:DestroyScriptS0:S16:DoubleClickRangei2S12:EnergyDamagei0S12:EnergyResisti0S15:EnergyResistCapi0S18:EnergyResistCapModi0S11:EquipScriptS0:S6:Facingi0S13:FasterCastingi0S16:FasterCastingModi0S18:FasterCastRecoveryi0S21:FasterCastRecoveryModi0S10:FireDamagei0S10:FireResisti0S13:FireResistCapi0S16:FireResistCapModi0S12:GhostsCanUsei0S7:Graphici3636S9:HitChancei0S12:HitChanceModi0S2:hpi0S7:Insuredi0S9:Invisiblei0S8:Lockablei0S13:LowerManaCosti0S16:LowerManaCostModi0S16:LowerReagentCosti0S19:LowerReagentCostModi0S4:Lucki0S7:LuckModi0S5:MaxHpi1S9:maxhp_modi0S12:MethodScriptS0:S7:Movablei1S7:MultiIDi115S4:NameS15:Título Plebeu S6:Newbiei0S6:NoDropi0S8:ObjClassS4:ItemS7:ObjTypei3636S14:PhysicalDamagei0S14:PhysicalResisti0S17:PhysicalResistCapi0S20:PhysicalResistCapModi0S12:PoisonDamagei0S12:PoisonResisti0S15:PoisonResistCapi0S18:PoisonResistCapModi0S7:Qualityr1S17:RequiresAttentioni1S15:resist_cold_modi0S17:resist_energy_modi0S15:resist_fire_modi0S19:resist_physical_modi0S17:resist_poison_modi0S6:ScriptS0:S19:SpellDamageIncreasei0S22:SpellDamageIncreaseModi0S21:StackingIgnoresCPropsa0:S10:StackLimiti60000S11:StrRequiredi0S7:TooltipS0:S13:UnequipScriptS0:S14:UseRequiresLOSi1S9:usescriptS0:S13:VendorBuysFori3S14:VendorSellsFori5S12:WalkOnScriptS0:S6:Weighti1S2:IDi5807054S3:inti0S11:requestitema1:t3:S6:amounti5000S4:nameS16:Moedas de Cobre S7:result2S17:Terminar ConversaS6:resultS17:Terminar ConversaS4:songi0S4:textS33:Vou querer, aqui esta o dinheiro.
+	Terminar ConversaDialogue s*Estende a mão pegando o saco de dinheiro*
+	inicioDialogue sOlá em que posso ajuda-lo(a)?
+	inicioOptions a3:t5:S2:IDi1503219S3:inti0S6:resultS15:Resposta plebeuS4:songi0S4:textS39:Gostaria de compra um título de Plebeut5:S2:IDi1807440S3:inti0S6:resulti0S4:songi0S4:textS41:Gostaria de comprar um título de Barão.t5:S2:IDi1663999S3:inti0S6:resulti0S4:songi0S4:textS37:Gostaria de comprar um título Nobre.
+	pega o dinheiroOptions a1:t6:S2:IDi5865247S3:inti0S11:requestitema1:t3:S6:amounti5000S4:nameS16:Moedas de Cobre S7:result2S17:Terminar ConversaS6:resultS17:Terminar ConversaS4:songi0S4:textS18:Entrega o dinheiro
+}
+

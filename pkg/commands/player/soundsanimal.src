@@ -1,0 +1,472 @@
+
+use basic;
+use uo;
+use util;
+use os;
+use cfgfile;
+
+program soundanimal(who, text)
+
+		var layout := array(
+		
+	 		"page 0",
+			"resizepic 50 50 3600 430 430",
+                        "checkertrans 50 50 430 430",
+			"text 160 65 500 0",
+			"gumppic 70 85 96",
+			"button 70 100 2103 2104 1 0 1",
+			"text 90 95 500 1",
+			"button 70 120 2103 2104 1 0 2",
+			"text 90 115 500 2",
+			"button 70 140 2103 2104 1 0 3",
+			"text 90 135 500 3",
+			"button 70 160 2103 2104 1 0 4",
+			"text 90 155 500 4",
+			"button 70 180 2103 2104 1 0 5",
+			"text 90 175 500 5",
+			"button 70 200 2103 2104 1 0 6",
+			"text 90 195 500 6",
+			"button 70 220 2103 2104 1 0 7",
+			"text 90 215 500 7",
+			"button 70 240 2103 2104 1 0 8",
+			"text 90 235 500 8",
+			"button 70 260 2103 2104 1 0 9",
+			"text 90 255 500 9",
+			"button 70 280 2103 2104 1 0 10",
+			"text 90 275 500 10",
+			"button 70 300 2103 2104 1 0 11",
+			"text 90 295 500 11",
+			"button 70 320 2103 2104 1 0 12",
+			"text 90 315 500 12",
+			"button 70 340 2103 2104 1 0 13",
+			"text 90 335 500 13",
+			"button 70 360 2103 2104 1 0 14",
+			"text 90 355 500 14",
+			"button 70 380 2103 2104 1 0 15",
+			"text 90 375 500 15",
+			"button 70 400 2103 2104 1 0 16",
+			"text 90 395 500 16",
+			"button 70 420 2103 2104 1 0 17",
+			"text 90 415 500 17",
+			"gumppic 250 85 96",
+			"gumppic 280 85 96",
+			"button 260 100 2103 2104 1 1 18",
+			"text 280 95 500 18",
+			"button 260 120 2103 2104 1 1 19",
+			"text 280 115 500 19",
+			"button 260 140 2103 2104 1 1 20",
+			"text 280 135 500 20",
+			"button 260 160 2103 2104 1 1 21",
+			"text 280 155 500 21",
+			"button 260 180 2103 2104 1 1 22",
+			"text 280 175 500 22",
+			"button 260 200 2103 2104 1 1 23",
+			"text 280 195 500 23",
+			"button 260 220 2103 2104 1 1 24",
+			"text 280 215 500 24",
+			"button 260 240 2103 2104 1 1 25",
+			"text 280 235 500 25",
+			"button 260 260 2103 2104 1 1 26",
+			"text 280 255 500 26",
+			"button 260 280 2103 2104 1 1 27",
+			"text 280 275 500 27",
+			"button 260 300 2103 2104 1 1 28",
+			"text 280 295 500 28",
+			"button 260 320 2103 2104 1 1 29",
+			"text 280 315 500 29",
+			"button 260 340 2103 2104 1 1 30",
+			"text 280 335 500 30",
+			"button 260 360 2103 2104 1 1 31",
+			"text 280 355 500 31",
+			"button 260 380 2103 2104 1 1 32",
+			"text 280 375 500 32",
+			"button 260 400 2103 2104 1 1 33",
+			"text 280 395 500 33",
+			"button 235 440 2121 2120 1 0 0"
+		);
+		
+		var data := array(
+
+			"escolha o som que voce deseja reproduzir:",
+			"1. Urso1",
+			"2. Urso2",
+			"3. Urso3",
+			"4. Urso4",
+			"5. Urso5",
+			"6. Lobo1",
+			"7. Lobo2",
+			"8. Lobo3",
+			"9. Lobo4",
+			"10. Lobo5",
+			"11. Cobra1",
+			"12. Cobra2",
+			"13. Cobra3",
+			"14. Cobra4",
+			"15. Cobra5",
+			"16. Cobra6",
+			"17. Cobra7",
+			"18. Cobra8",
+			"19. Cobra9",
+			"20. Cobra10",
+			"21. Pantera1",
+			"22. Pantera2",
+			"23. Pantera3",
+			"24. Pantera4",
+			"25. Pantera5",
+			"26. Rugido1",
+			"27. Rugido2",
+			"28. Rugido3",
+			"29. Rugido4",
+			"30. Rugido5",
+			"31. Rugido6",
+			"32. Rugido7",
+			"33. Rugido8"
+		);
+
+
+	text := splitwords(text);
+
+	var input  := array;
+//	sendsysmessage(who, " " + text.size());
+
+	var delay := 1;
+	var repeatcount := 1;
+	var repeatflag := 0;
+	if (text.size() == 0)
+		input := SendDialogGump( who, Layout, Data );
+		if ( (input[0]==0) )
+			SendSysMessage(who, "Cancelled.");
+			return;
+		endif
+	else
+
+		var k := 0;
+		while (k < 33)
+			input[k] := 0;
+			k := k + 1;
+		endwhile
+
+		if (cint(text[1]) >= 1)
+			input[cint(text[1])] := 1;
+		endif
+		
+		//sendsysmessage(who, "input " + text[1] );
+		
+		var i := 1;
+		
+		for(i := 1; i < text.size(); i := i + 1)
+			if (text[i] == "d")
+				delay := cint(text[i+1]);
+				if (delay == 0)
+					delay := 1;
+				endif
+			elseif (text[i] == "l")
+				repeatcount := cint(text[i+1]);
+				if (repeatcount == 0)
+					repeatcount := 1;
+					repeatflag := 0;
+				endif
+			endif
+		endfor
+endif
+
+
+who.hidden := 0;
+if ( (input[1]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x05E );
+  PrintTextAbove(who, "*Rugido*");
+else
+  PlaySoundEffect( who, 0x05E );
+  PrintTextAbove(who, "*Rugido*");
+endif
+endif
+if ( (input[2]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x05F );
+  PrintTextAbove(who, "*Rugido*");
+else
+  PlaySoundEffect( who, 0x05F );
+  PrintTextAbove(who, "*Rugido*");
+endif
+endif
+if ( (input[3]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x060 );
+  PrintTextAbove(who, "*Rugido*");
+else
+  PlaySoundEffect( who, 0x060 );
+  PrintTextAbove(who, "*Rugido*");
+endif
+endif
+if ( (input[4]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x061 );
+  PrintTextAbove(who, "*Rugido*");
+else
+  PlaySoundEffect( who, 0x061 );
+  PrintTextAbove(who, "*Rugido*");
+endif
+endif
+if ( (input[5]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x062 );
+  PrintTextAbove(who, "*Rugido*");
+else
+  PlaySoundEffect( who, 0x062 );
+  PrintTextAbove(who, "*Rugido*");
+endif
+endif
+if ( (input[6]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x0E4 );
+  PrintTextAbove(who, "*Rosna*");
+else
+  PlaySoundEffect( who, 0x0E4 );
+  PrintTextAbove(who, "*Rosna*");
+endif
+endif
+if ( (input[7]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x0E5 );
+  PrintTextAbove(who, "*Uiva*");
+else
+  PlaySoundEffect( who, 0x0E5 );
+  PrintTextAbove(who, "*Uiva*");
+endif
+endif
+if ( (input[8]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x0E6 );
+  PrintTextAbove(who, "*Rosna*");
+else
+  PlaySoundEffect( who, 0x0E6 );
+  PrintTextAbove(who, "*Rosna*");
+endif
+endif
+if ( (input[9]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x0E7 );
+  PrintTextAbove(who, "*Rosna*");
+else
+  PlaySoundEffect( who, 0x0E7 );
+  PrintTextAbove(who, "*Rosna*");
+endif
+endif
+if ( (input[10]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0E8 );
+  PrintTextAbove(who, "*Gane*");
+else
+  PlaySoundEffect( who, 0x0E8 );
+  PrintTextAbove(who, "*Gane*");
+endif
+endif
+if ( (input[11]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x0DA );
+  PrintTextAbove(who, "*Sibilia*");
+else
+  PlaySoundEffect( who, 0x0DA );
+  PrintTextAbove(who, "*Sibilia");
+endif
+endif	
+if ( (input[12]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x0DB );
+  PrintTextAbove(who, "*Sibila*");
+else
+  PlaySoundEffect( who, 0x0DB );
+  PrintTextAbove(who, "*Sibila*");
+endif
+endif
+if ( (input[13]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x0DC );
+  PrintTextAbove(who, "*Sibila*");
+else
+  PlaySoundEffect( who, 0x0DC );
+  PrintTextAbove(who, "*Sibila*");
+endif
+endif
+if ( (input[14]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x0DD );
+  PrintTextAbove(who, "*Sibila*");
+else
+  PlaySoundEffect( who, 0x0DD );
+  PrintTextAbove(who, "*Sibila*");
+endif
+endif
+if ( (input[15]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x0DE );
+  PrintTextAbove(who, "*Sibila*");
+else
+  PlaySoundEffect( who, 0x0DE );
+  PrintTextAbove(who, "*Sibila*");
+endif
+endif
+if ( (input[16]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x279 );
+  PrintTextAbove(who, "*Sibila*");
+else
+  PlaySoundEffect( who, 0x279 );
+  PrintTextAbove(who, "*Sibila*");
+endif
+endif
+if ( (input[17]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x27A );
+  PrintTextAbove(who, "*Sibila*");
+else
+  PlaySoundEffect( who, 0x27A );
+  PrintTextAbove(who, "*Sibila*");
+endif
+endif
+if ( (input[18]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x27B );
+  PrintTextAbove(who, "*Sibila*");
+else
+  PlaySoundEffect( who, 0x27B );
+  PrintTextAbove(who, "*Sibila*");
+endif
+endif
+if ( (input[19]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x27C );
+  PrintTextAbove(who, "*Sibila*");
+else
+  PlaySoundEffect( who, 0x27C );
+  PrintTextAbove(who, "*Sibila*");
+endif
+endif
+if ( (input[20]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x27D );
+  PrintTextAbove(who, "*Sibila*");
+else
+  PlaySoundEffect( who, 0x27D );
+  PrintTextAbove(who, "*Sibila*");
+endif
+endif
+if ( (input[21]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x0B9 );
+  PrintTextAbove(who, "*Ruge*");
+else
+  PlaySoundEffect( who, 0x0B9 );
+  PrintTextAbove(who, "*Ruge*");
+endif
+endif
+if ( (input[22]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x0BA );
+  PrintTextAbove(who, "*Ruge*");
+else
+  PlaySoundEffect( who, 0x0BA );
+  PrintTextAbove(who, "*Ruge*");
+endif
+endif
+if ( (input[23]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x0BB );
+  PrintTextAbove(who, "*Ruge*");
+else
+  PlaySoundEffect( who, 0x0BB );
+  PrintTextAbove(who, "*Ruge*");
+endif
+endif
+if ( (input[24]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x0BC );
+  PrintTextAbove(who, "*Ruge*");
+else
+  PlaySoundEffect( who, 0x0BC );
+  PrintTextAbove(who, "*Ruge*");
+endif
+endif
+if ( (input[25]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x0BD );
+  PrintTextAbove(who, "*Ruge*");
+else
+  PlaySoundEffect( who, 0x0BD );
+  PrintTextAbove(who, "*Ruge*");
+endif
+endif
+if ( (input[26]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x2A6 );
+  PrintTextAbove(who, "*Rugido*");
+else
+  PlaySoundEffect( who, 0x2A6 );
+  PrintTextAbove(who, "*Rugido*");
+endif
+endif
+if ( (input[27]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x2A7 );
+  PrintTextAbove(who, "*Rugido*");
+else
+  PlaySoundEffect( who, 0x2A7 );
+  PrintTextAbove(who, "*Rugido*");
+endif
+endif
+if ( (input[28]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x2A8 );
+  PrintTextAbove(who, "*Rugido*");
+else
+  PlaySoundEffect( who, 0x2A8 );
+  PrintTextAbove(who, "*Rugido*");
+endif
+endif
+if ( (input[29]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x2A9 );
+  PrintTextAbove(who, "*Rugido*");
+else
+  PlaySoundEffect( who, 0x2A9 );
+  PrintTextAbove(who, "*Rugido*");
+endif
+endif
+if ( (input[30]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x2AA );
+  PrintTextAbove(who, "*Rugido*");
+else
+  PlaySoundEffect( who, 0x2AA );
+  PrintTextAbove(who, "*Rugido*");
+endif
+endif
+if ( (input[31]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x2AB );
+  PrintTextAbove(who, "*Rugido*");
+else
+  PlaySoundEffect( who, 0x2AB );
+  PrintTextAbove(who, "*Rugido*");
+endif
+endif
+if ( (input[32]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x44A );
+  PrintTextAbove(who, "*Rugido*");
+else
+  PlaySoundEffect( who, 0x44A );
+  PrintTextAbove(who, "*Rugido*");
+endif
+endif
+if ( (input[33]==1) )
+if (who.graphic == 401)
+  PlaySoundEffect( who, 0x3F1 );
+  PrintTextAbove(who, "*Rugido*");
+else
+  PlaySoundEffect( who, 0x3F1 );
+  PrintTextAbove(who, "*Rugido*");
+endif
+endif
+endprogram

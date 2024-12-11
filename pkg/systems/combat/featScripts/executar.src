@@ -1,0 +1,117 @@
+
+use uo;
+use util;
+use os;
+
+include ":fls_core:packets";
+include ":fls_core:fls_util";
+include ":attributes:attributeConstants";
+include ":attributes:attributes";
+include ":attributes:skillCheck";
+include ":attributes:stats";
+include ":fls_core:fls_combat";
+include ":blood:blood";
+include "include/damage";
+include ":fls_core:fls_characters";
+include ":fls_core:packets";
+include ":combat:combat";
+include "include/packets";
+include ":timedscripts:timedScripts";
+include "include/client";
+
+
+program backstab(who)
+
+    if (TS_GetCooldown(who, "habilidade dois"))
+		return SendSysMessageEX(who, "Habilidade em Cooldown!", SSM_FAIL);
+	endif
+
+	if (GetEquipmentByLayer(who, 0x19))
+		SendSysMessageEx(who, "Voce nao consegue fazer isso montado.", SSM_FAIL);
+		return 0;
+	endif
+	
+    var armainicial := who.weapon;
+
+    var combatskill := AP_GetSkill(who, MELEECOMBAT2H);
+
+    if ( combatskill < 60.0)
+		SendSysMessageEx(who, "Voce nao tem conhecimento suficiente para executar o golpe", SSM_FAIL);
+		return 0;
+    endif
+
+	SendSysMessageEx(who, "Quem voce deseja tentar executar?", SSM_REQUEST);
+	var targ := target(who);
+
+    var cfg:=ReadConfigFile(":combat:itemdesc");
+	var elem := FindConfigElem(cfg, who.weapon.objtype);
+
+	if ( !targ.ISA(POLCLASS_MOBILE) )
+		SendSysMessageEx(who, "Voce nao pode atacar isto.", SSM_FAIL);
+		return;
+	elseif (!CheckLOSAt(who, targ.x, targ.y, targ.z))
+		SendSysMessageEx(who, "O Alvo nao esta visivel para voce.", SSM_FAIL);
+		return 1;
+	elseif (CoordinateDistance(who.x, who.y, targ.x, targ.y) > 1)
+		SendSysMessageEx(who, "O Alvo esta muito distante.", SSM_FAIL);
+		return 1;
+    elseif ( who.weapon != armainicial )
+		SendSysMessageEx(who, "Voce nao pode atacar depois de ter trocado a arma.", SSM_FAIL);
+		return;
+	endif
+
+    TS_StartCooldown(who, "habilidade dois", 30);
+    who.hidden := 0;
+
+    if (CheckGender(who) == 2)
+	   PlaySoundEffect(who, 0x514);
+    else
+	   PlaySoundEffect(who, 0x515);
+    endif
+
+    var bonusdmg := AP_GetSkill(who, MELEECOMBAT2H);
+	var rawdamage := CalculateRawDamage(who, who.weapon);
+    var hit_chance := CalculateHitChancehab(who, targ);
+    var random := Randomint (100)+1;
+
+	rawdamage := rawdamage;
+
+	if (rawdamage < 1)
+		rawdamage := 1;
+	endif
+
+    if (isBloodied(targ))
+		rawdamage := rawdamage + bonusdmg/2;
+	endif
+	
+	if ( random < hit_chance )
+        if (!ParryCheck(who, targ, rawdamage));
+            var dmgList := dictionary;
+            dmgList := getNewDamageList(who);
+            var basedamage := CalculateTotalDamageBonus(rawdamage, who, targ);
+            var total := CalculateTotalDamage(targ, basedamage, who, dmgList);
+
+            if (total < 1)
+                total := 1;
+            endif
+
+            PrintText(who, "*Tenta executar {}*".format(targ.name));
+            PlayHitSounds(who, targ);
+            PlayAttackAnimation(who);
+            ApplyRawDamage(targ, total);
+            MostraDano(who, targ, total);
+            MakeBleed(targ);
+            
+            if (targ.dead)
+                HealFLS(who, 20);
+                TS_LowerDuration(who, "habilidade dois", 20, 1);
+            endif
+        else
+            PlayHitSounds(who, targ);
+            PlayAttackAnimation(who);
+        endif
+    else
+        PlayMissSound(who);
+        PlayAttackAnimation(who);
+    endif
+endprogram

@@ -1,0 +1,34 @@
+use uo;
+
+include "include/say";
+include ":attributes:attributes";
+
+program spirit(who ,item)
+
+	if (GetObjproperty(who, "caminho") != "Xamã")
+		SendSysMEssageEx(who, "Sente um dor excruciante ao tentar usar sem o Dom da Natureza", SSM_FAIL);
+		ApplyRawDamage(who, 6000);
+		return 0;
+	endif
+
+	SendSysMessageEx(who, "Escolha o totem para armazenar o espirito.", SSM_INFO);
+	var targ := Target(who);
+	
+	if  (targ.graphic  ==  16912)
+		
+		var spells := GetObjProperty(targ, "spells");
+		if (spells == error)
+			spells := array;
+		endif
+		var spellid := Cint(GetObjProperty(item, "id"));
+	
+		if (!(spellid in spells))
+			spells.append(spellid);
+			SendSysMEssageEx(who, "Espirito adicionado no totem.", SSM_INFO);
+			SetObjProperty(targ, "spells", spells);
+			DestroyItem(item);
+		endif
+	
+	endif
+
+endprogram

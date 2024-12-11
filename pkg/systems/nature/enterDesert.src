@@ -1,0 +1,10 @@
+use uo;
+use os;
+use vitals;
+
+include ":charactercreation:resists";
+include "include/damage";
+
+program calor(who, regioname)
+    start_script(":nature:caloreffect", {who});
+endprogram

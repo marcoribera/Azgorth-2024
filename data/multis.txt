@@ -1,0 +1,27 @@
+#
+#  MULTIS.TXT: Ship and House data
+#
+#  Deleting this file will not properly wipe houses and ships,
+#  because doors, planks, and tillermen will be left in the world.
+#
+
+MULTI
+{
+	Serial	0x46f00fd2
+	ObjType	0x6182
+	Graphic	0x4070
+	X	2015
+	Y	1828
+	Z	-1
+	Facing	127
+	Revision	0
+	Realm	britannia
+	CProp	footage u
+	CProp	numlockdowns i86
+	CProp	numsecure i3
+	CProp	owneracct scasao
+	CProp	ownerserial i65994
+	MultiID	112
+	Custom	0
+}
+

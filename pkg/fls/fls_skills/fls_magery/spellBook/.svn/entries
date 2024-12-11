@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="85"
+   name=""
+   committed-date="2006-05-23T18:41:38.809375Z"
+   url="https://svn.sourceforge.net/svnroot/pol-distro/096/pkg/skills/magery/spellBook"
+   last-author="sroyalty"
+   kind="dir"
+   uuid="0f0f479d-2c14-0410-9819-d12ebb206e83"
+   revision="324"/>
+<entry
+   committed-rev="85"
+   name="castSpell.src"
+   text-time="2006-06-13T18:28:26.000000Z"
+   committed-date="2006-05-23T18:41:38.809375Z"
+   checksum="56476addba9ee9c1ab6721a37e522d2a"
+   last-author="sroyalty"
+   kind="file"
+   prop-time="2006-06-13T18:28:26.000000Z"/>
+<entry
+   committed-rev="85"
+   name="canRemove.src"
+   text-time="2006-06-13T18:28:26.000000Z"
+   committed-date="2006-05-23T18:41:38.809375Z"
+   checksum="b6627b36434cef75f082df42ca046bcd"
+   last-author="sroyalty"
+   kind="file"
+   prop-time="2006-06-13T18:28:26.000000Z"/>
+</wc-entries>

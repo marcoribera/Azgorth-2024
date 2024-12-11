@@ -1,0 +1,97 @@
+[12/07 00:09:11] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/07 00:19:12] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/07 00:29:13] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/07 00:35:15] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/07 00:39:14] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/07 00:45:15] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/07 00:49:16] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/07 00:52:52] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/07 00:52:52] Account marcknight logged in from 127.0.0.1
+[12/07 00:52:53] Client#1 (127.0.0.1): disconnected (account marcknight)
+[12/07 00:52:53] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/07 00:52:53] Account marcknight logged in from 127.0.0.1
+[12/07 00:52:54] Account marcknight selecting character dasdasdas
+[12/07 00:52:54] Unable to read script 'scripts/misc/chatbutton.ecl'
+[12/07 00:52:54] Client#2: Unknown packet type 0xFB, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 fb 00                                              ........ ........
+
+[12/07 00:52:54] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[12/07 00:52:54] Client#2: Unknown packet type 0xFB, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 fb 00                                              ........ ........
+
+[12/07 00:52:54] Client#2: Unknown packet type 0xBF, 11 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 bf 00 0b fa ce 00 34 01  00 21 00                  ......4. .!......
+
+[12/07 00:53:02] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[12/07 00:53:02] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[12/07 00:55:15] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/07 00:55:15] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[12/07 00:56:45] Client#2 (127.0.0.1): disconnected (account marcknight)
+[12/07 00:59:17] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/07 00:59:19] Client#3 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/07 00:59:19] Account marcknight logged in from 127.0.0.1
+[12/07 00:59:20] Client#3 (127.0.0.1): disconnected (account marcknight)
+[12/07 00:59:20] Client#4 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/07 00:59:20] Account marcknight logged in from 127.0.0.1
+[12/07 00:59:21] Account marcknight selecting character dasdasdas
+[12/07 00:59:21] Unable to read script 'scripts/misc/chatbutton.ecl'
+[12/07 00:59:21] Client#4: Unknown packet type 0xFB, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 fb 00                                              ........ ........
+
+[12/07 00:59:21] Client#4: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[12/07 00:59:21] Client#4: Unknown packet type 0xFB, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 fb 00                                              ........ ........
+
+[12/07 00:59:21] Client#4: Unknown packet type 0xBF, 11 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 bf 00 0b fa ce 00 34 01  00 21 00                  ......4. .!......
+
+[12/07 00:59:23] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[12/07 00:59:25] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[12/07 01:01:03] Client#4 (127.0.0.1): disconnected (account marcknight)
+[12/11 17:05:28] Logfile opened.
+[12/11 17:05:28] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[12/11 17:05:28] Game is active.
+[12/11 17:05:29] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/11 17:05:29] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/11 17:06:28] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/11 17:06:41] Client#1 (127.0.0.1): disconnected (account unknown)
+[12/11 17:06:58] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/11 17:07:13] Client#2 (127.0.0.1): disconnected (account unknown)
+[12/11 17:07:21] Client#3 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/11 17:07:25] Client#3 (127.0.0.1): disconnected (account unknown)
+[12/11 17:09:55] Client#4 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/11 17:09:55] Account marcknight logged in from 127.0.0.1
+[12/11 17:09:56] Client#4 (127.0.0.1): disconnected (account marcknight)
+[12/11 17:09:56] Client#5 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/11 17:09:56] Account marcknight logged in from 127.0.0.1
+[12/11 17:09:58] Account marcknight selecting character dasdasdas
+[12/11 17:09:58] Unable to read script 'scripts/misc/chatbutton.ecl'
+[12/11 17:09:58] Client#5: Unknown packet type 0xFB, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 fb 00                                              ........ ........
+
+[12/11 17:09:58] Client#5: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[12/11 17:09:58] Client#5: Unknown packet type 0xFB, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 fb 00                                              ........ ........
+
+[12/11 17:09:58] Client#5: Unknown packet type 0xBF, 11 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 bf 00 0b fa ce 00 34 01  00 22 00                  ......4. ."......
+
+[12/11 17:10:01] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[12/11 17:10:02] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[12/11 17:10:11] Unable to read script 'scripts/misc/popupmenu.ecl'
+[12/11 17:10:12] Unable to read script 'scripts/misc/popupmenu.ecl'
+[12/11 17:10:13] Unable to read script 'scripts/misc/popupmenu.ecl'
+[12/11 17:10:35] Unable to read script 'scripts/misc/popupmenu.ecl'
+[12/11 17:10:39] Unable to read script 'scripts/misc/popupmenu.ecl'
+[12/11 17:10:40] Unable to read script 'scripts/misc/popupmenu.ecl'
+[12/11 17:15:29] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/11 17:15:31] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/11 17:21:04] Client#5 (127.0.0.1): disconnected (account marcknight)
+[12/11 17:21:24] Shutting down...
+[12/11 17:21:24] Writing data files...Data save completed in 116 ms. 150 total.

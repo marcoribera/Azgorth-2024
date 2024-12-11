@@ -1,0 +1,119 @@
+use uo;
+use os;
+use cfgfile;
+
+include "include/client";
+include "include/sounds";
+include "include/say";
+include "include/damage";
+include "include/facings";
+include ":attributes:attributes";
+include ":timedscripts:timedScripts";
+include ":combat:combat";
+
+program explosao(params)
+	var who := params[1];
+	var spellinfo := params[2];
+
+    if (TS_GetCooldown(who, "habilidade dois"))
+		return SendSysMessageEX(who, "Habilidade em Cooldown!", SSM_FAIL);
+	endif
+
+    var combatskill := AP_GetSkill(who, RANGEDCOMBAT);
+    var armainicial := who.weapon;
+
+    if ( combatskill < 60.0)
+		SendSysMessageEx(who, "Voce nao tem conhecimento suficiente para executar o golpe", SSM_FAIL);
+		return 0;
+    endif
+
+    var ammo := CheckForAmmo(who, who.weapon, 1);
+   
+    if (!ammo) 
+      return SendSysMessageEx(who, "Voce precisa de ao menos uma flecha.", SSM_FAIL); 
+    endif
+
+    SendSysMessageEx(who, "Quem sera atingido pela sequencia de tiros?", SSM_INFO);
+	var targ := Target(who);
+	params := 0; // No longer needed
+    
+    if (who.warmode == 0)
+		who.warmode := 1;
+	endif
+
+    var cfg:=ReadConfigFile(":combat:itemdesc");
+	var elem := FindConfigElem(cfg, who.weapon.objtype);
+
+    if (!CheckLOSAt(who, targ.x, targ.y, targ.z))
+		SendSysMessageEx(who, "O Alvo nao esta visivel para voce.", SSM_FAIL);
+		return 1;
+	elseif (CoordinateDistance(who.x, who.y, targ.x, targ.y) > 20)
+		SendSysMessageEx(who, "O Alvo esta muito distante.", SSM_FAIL);
+		return 1;
+	elseif (IsBehind(who, targ.x, targ.y))
+		SendSysMessageEx(who, "Voce esta de costas para o alvo!", SSM_FAIL);
+		return 1;
+    elseif ( who.weapon != armainicial )
+		SendSysMessageEx(who, "Voce nao pode atacar depois de ter trocado a arma.", SSM_FAIL);
+		return;
+	endif
+
+    TS_StartCooldown(who, "habilidade dois", 20);
+    who.hidden := 0;
+
+    var esquiva:= GetObjProperty(targ, "evasao");
+    if (esquiva == 1)
+        Performaction(who, elem.Anim);
+        PlayMissSound(who);
+        PrintText(targ, "*esquiva-se*");
+      	EraseObjProperty(targ, "evasao");
+        return;
+    endif
+    
+    var dmgList := dictionary;
+	dmgList := getNewDamageList(who);
+	var basedamage := CalculateRawDamage(who, who.weapon);
+    var hit_chance := CalculateHitChancehab(who, targ);
+    var random := Randomint (100)+1;
+
+    for i := 1 to 5
+        who.frozen := 1;
+        if ( random < hit_chance )
+            var total := cint(CalculateTotalDamage(targ, basedamage, who, dmgList));
+
+            if (!ParryCheck(who, targ, total));
+                Performaction(who, elem.Anim);
+
+                if ( (who.weapon.objtype == 0x0f4f) || (who.weapon.objtype == 0x13fd) || (who.weapon.objtype == 0x26CD) )
+                    PlayMovingEffectXYZEx( who.x, who.y, who.z+5, targ.x, targ.y, targ.z, who.realm, 0x1BFE, 10, 10, 0, 1051);
+                else
+                    PlayMovingEffectXYZEx( who.x, who.y, who.z+5, targ.x, targ.y, targ.z, who.realm, 0xf3f, 10, 10, 0, 1051);
+                endif
+
+                PlayHitSounds(who, targ);
+                DamageFLS(targ, total*2, DMG_FORCED, who);
+
+            else  
+                Performaction(who, elem.Anim);
+
+                if ( (who.weapon.objtype == 0x0f4f) || (who.weapon.objtype == 0x13fd) || (who.weapon.objtype == 0x26CD) )
+                    PlayMovingEffectXYZEx( who.x, who.y, who.z+5, targ.x, targ.y, targ.z, who.realm, 0x1BFE, 10, 10, 0, 1051);
+                else
+                    PlayMovingEffectXYZEx( who.x, who.y, who.z+5, targ.x, targ.y, targ.z, who.realm, 0xf3f, 10, 10, 0, 1051);
+                endif
+
+                PlayHitSounds(who, targ);
+            endif
+        else
+            if ( (who.weapon.objtype == 0x0f4f) || (who.weapon.objtype == 0x13fd) || (who.weapon.objtype == 0x26CD) )
+                PlayMovingEffectXYZEx( who.x, who.y, who.z+5, targ.x, targ.y, targ.z, who.realm, 0x1BFE, 10, 10, 0, 1051);
+            else
+                PlayMovingEffectXYZEx( who.x, who.y, who.z+5, targ.x, targ.y, targ.z, who.realm, 0xf3f, 10, 10, 0, 1051);
+            endif
+            PlayMissSound(who);
+            Performaction(who, elem.Anim);
+        endif
+        sleepms(500);
+    endfor
+    who.frozen := 0;
+endprogram

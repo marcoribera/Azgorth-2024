@@ -1,0 +1,51 @@
+
+include ":keys:key";
+include ":traps:traps";
+
+program posteAlgema(who, item)
+
+	if (Distance(who,item)>2)
+		SendSysMessageEx(who, "O alvo esta distante",SSM_FAIL );
+		return 0;
+	endif
+
+	if (KP_HasKeyForLock(who, item))
+		SendSysMessageEx(who,"Selecione o prisioneiro!",SSM_REQUEST);
+		var targ := Target(who);
+		
+		if (!targ)
+			SendSysMessage(who, "Cancelado.");
+			return 0;
+		endif
+
+		if (Distance(targ,item)>2)
+			SendSysMessageEx(who, "O alvo esta distante",SSM_FAIL );
+			return 0;
+		endif
+			
+		if (!targ.ip) // Se for player e tiver on
+			SendSysMessage(who, "Você nao pode amarrar isto.");
+			return 0;
+		endif
+
+		if (GetObjProperty(targ,"algemado") != error)
+			SendSysMessageEx(who, "O alvo já esta algemado.",SSM_FAIL );
+			return 0;
+		endif
+
+		if (GetObjProperty(targ,"algemado")== error)
+			SetObjProperty(who,"algemado",1);
+			targ.frozen := 1;
+			PrintText(who, "*fecha a algema*");
+		else
+			EraseObjProperty(who,"algemado");
+			targ.frozen := 0;
+			PrintText(who, "*abre a algema*");
+		endif
+
+	else
+		SendSysMessageEx(who, "Você não possui a chave para abrir as algemas",SSM_FAIL );
+		return 0;
+	endif
+
+endprogram	

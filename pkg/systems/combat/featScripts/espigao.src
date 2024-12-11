@@ -1,0 +1,111 @@
+use uo;
+use os;
+use cfgfile;
+
+include "include/client";
+include "include/sounds";
+include "include/say";
+include "include/damage";
+include ":attributes:attributes";
+include ":timedscripts:timedScripts";
+include ":combat:combat";
+include "include/facings";
+
+program defensor(params)
+	var who := params[1];
+	//var spellinfo := params[2];
+	//var targ := params[3];
+	params := 0; // No longer needed
+
+    if (TS_GetCooldown(who, "habilidade dois"))
+		return SendSysMessageEX(who, "Habilidade em Cooldown!", SSM_FAIL);
+    endif
+
+   var combatskill := AP_GetSkill(who, MELEECOMBAT1H);
+   var armainicial := who.weapon;
+
+    if ( combatskill < 40.0)
+		SendSysMessageEx(who, "Voce nao tem conhecimento suficiente para executar o golpe", SSM_FAIL);
+		return 0;
+    endif
+
+   SendSysMessageEx(who, "Bater com o espigao em quem?", SSM_INFO);
+    var targ := Target(who);
+
+   if (!targ)
+      SendSysMessageEx(who, "Cancelado.", SSM_FAIL);
+      return 1;
+   elseif (!CheckLOSAt(who, targ.x, targ.y, targ.z))
+		SendSysMessageEx(who, "O Alvo nao esta visivel para voce.", SSM_FAIL);
+		return 1;
+	elseif (CoordinateDistance(who.x, who.y, targ.x, targ.y) > 1)
+		SendSysMessageEx(who, "O Alvo esta muito distante.", SSM_FAIL);
+		return 1;
+	elseif (IsBehind(who, targ.x, targ.y))
+		SendSysMessageEx(who, "Voce esta de costas para o alvo!", SSM_FAIL);
+		return 1;
+	elseif ( who.weapon != armainicial )
+		SendSysMessageEx(who, "Voce nao pode atacar depois de ter trocado a arma.", SSM_FAIL);
+		return;
+	endif
+
+   TS_StartCooldown(who, "habilidade dois", 20);
+    who.hidden := 0;
+
+   var esquiva:= GetObjProperty(targ, "evasao");
+
+   if (esquiva == 1)
+      PlayAttackAnimation(who);
+      PlayMissSound(who);
+      PrintText(targ, "*esquiva-se*");
+      EraseObjProperty(targ, "evasao");
+      return;
+   endif
+
+   var random := Randomint (100)+1;
+   var hit_chance := CalculateHitChancehab(who, targ);
+
+   if ( random > hit_chance )
+      PlayMissSound(targ);
+      return;
+   endif
+
+   var dmgList := dictionary;
+   dmgList := getNewDamageList(who);
+   var basedamage := CalculateRawDamage(who, who.weapon);
+   var total := cint(CalculateTotalDamage(targ, basedamage, who, dmgList));
+
+    if (!ParryCheck(who, targ, total));
+      PlayAttackAnimation(who);
+      PlaySoundEffect(who, cint(0x145));
+      PrintText(who, "*bate com o espigão*");
+      var chance := GetAttribute(who, "Strength");
+      DamageFLS(targ, total*2, DMG_PHYSICAL, who);
+      PlayHitSounds(who, targ);
+      TS_StartTimer(targ, "Paralysis", 1, who);
+      TS_StartTimer(who, "Paralysis", 1, targ);
+
+
+      sleepms(1200);
+
+        if (random > chance)
+            var arma := who.weapon;
+            sleepms(1000);
+            MoveObjectToLocation( arma, targ.x, targ.y, targ.z+1);
+            sleepms(100);
+            start_script(":combat:reequip_weapon", array{ targ, arma });
+            sleepms(100);
+            TS_StartTimer(targ, "Paralysis", 1, who);
+            TS_StartTimer(who, "Paralysis", 1, targ);
+            PrintText(targ, "*arma fica presa no alvo*");
+            return;
+        endif
+      PrintText(who, "*puxa o espigão devolta*");
+      DamageFLS(targ, total*2, DMG_FORCED, who);   
+    else
+      PlayHitSounds(who, targ);
+      PlayAttackAnimation(who);
+    endif
+  
+	return 1;
+endprogram

@@ -1,0 +1,302 @@
+
+use uo;
+use util;
+use os;
+
+include ":fls_core:packets";
+include ":fls_core:fls_util";
+include ":attributes:attributeConstants";
+include ":attributes:attributes";
+include ":attributes:skillCheck";
+include ":attributes:stats";
+//include ":fls_core:fls_combat";
+include ":blood:blood";
+include "include/damage";
+include ":fls_core:fls_characters";
+include ":fls_core:packets";
+//include ":tn:combat";
+include ":combat:combat";
+include "include/packets";
+include ":timedscripts:timedScripts";
+include "include/client";
+
+
+program backstab(who)
+
+	if (GetEquipmentByLayer(who, 0x19))
+		SendSysMessageEx(who, "Voce nao consegue fazer isso montado.", SSM_FAIL);
+		return 0;
+	endif
+	
+	var weapon := who.weapon;
+	var weaponBow := 0;
+	if (lower(weapon.attribute) == "rangedcombat")
+		weaponBow := 1;
+	endif
+
+	if ( !CanBackStab(who, weapon) )
+		return;
+	endif
+	
+	SendSysMessageEx(who, "Quem voce deseja atacar?", SSM_REQUEST);
+	var targ := target(who, TGTOPT_HARMFUL+TGTOPT_CHECK_LOS);
+	if ( !targ.ISA(POLCLASS_MOBILE) )
+		SendSysMessageEx(who, "Voce nao pode atacar isto.", SSM_FAIL);
+		return;
+	elseif ( who.weapon != weapon )
+		SendSysMessageEx(who, "Voce nao pode atacar depois de ter trocado a arma.", SSM_FAIL);
+		return;
+	elseif (TemHabilidade(who, "Ataque Furtivo a Distancia") && weaponBow)
+		SetObjProperty(who, "backstab", 1);
+			var rawdamage := CalculateRawDamage(who, weapon);
+			rawdamage := rawdamage*3;
+			if (rawdamage < 1)
+				rawdamage := 1;
+			endif
+
+			if ( weaponBow)
+				if (!AmmoCheck(who, targ))
+					return 1;
+				endif
+			else
+				PerformAction(who, 0x000a );
+			endif
+
+			if ( rawdamage > 0 )
+				var dmgList := dictionary;
+				dmgList := getNewDamageList(who);
+				var basedamage := CalculateTotalDamageBonus(rawdamage, who, targ);
+				var total := CalculateTotalDamage(targ, basedamage, who, dmgList);
+
+				if (total < 1)
+					total := 1;
+				endif
+
+				ApplyRawDamage(targ, total);
+				MostraDano(who, targ, total);
+				MakeBleed(targ);
+
+				if (GetObjProperty(weapon, "ammo"))
+					var aljava := GetEquipmentByLayer(who, LAYER_CAPE);
+					var ammo := GetObjProperty(weapon, "ammo");
+					foreach arrow in (EnumerateItemsInContainer(aljava))
+						if (arrow.objtype == ammo)
+							weapon := arrow;
+						endif
+					endforeach
+				endif
+
+				var poisonInfo := GetObjProperty(weapon, "poisonInfo" );
+				if (poisonInfo == error)
+					return 0;
+				endif
+
+				poisonInfo.dosage := poisonInfo.dosage -1;
+
+				if (poisonInfo.dosage <= 0) //se nao tiver mais cargas de veneno, deleta
+					EraseObjProperty(weapon, "poisonInfo");
+					return 0;
+				else //se ainda tiver atualiza na arma
+					SetObjProperty(weapon, "poisonInfo", poisonInfo);
+				endif
+	
+				if (IsPoisonImune(targ, poisonInfo.name) )
+					return 0;
+				endif
+
+				if (poisonInfo.name == "paralyzePoison")
+					poisonInfo.time := 5;
+				endif
+
+				TS_StartTimer(targ, poisonInfo.name, poisonInfo.time, poisonInfo.level, who);
+
+				who.hidden := 0;
+				PrintTextAbove(who, "*aparece*");
+			endif
+
+			if ( weaponBow)
+				if (!AmmoCheck(who, targ))
+					return 1;
+				endif
+			else
+				PerformAction(who, 0x000a );
+			endif
+
+			EraseObjProperty(who, "backstab");
+			SendSysMessage(who, "Voce acertou seu alvo!");
+			who.hidden := 0;
+			PrintTextAbove(who, "*aparece*");
+		return;
+	elseif ( Distance(who, targ) > 2 )
+		SendSysMessageEx(who, targ.name+" esta muito distante ou voce ainda não possui habilidade para fazer ataques furtivos com bestas e arcos a essa distancia.", SSM_FAIL);
+		return;
+
+	
+	elseif ( targ.serial == who.serial)
+		SendSysMessageEx(who, "Voce conclui que isso nao e uma boa ideia.", SSM_FAIL);
+		return;
+	elseif ( IsBehind(targ, who.x, who.y) )
+		if ( !CanBackStab(who, weapon) )
+			return;
+		else
+			sleepms(100);
+			
+			if ( weaponBow)
+				if (!AmmoCheck(who, targ))
+					return 1;
+				endif
+			else
+				PerformAction(who, 0x000a );
+			endif
+			
+			if (GetObjProperty(who, "ataquefurtivoaprimorado") == 1 )
+				SetObjProperty(who, "backstab", 1);
+				var rawdamage := CalculateRawDamage(who, weapon);
+				rawdamage := rawdamage*4;
+				if (rawdamage < 1)
+					rawdamage := 1;
+				endif
+
+				if ( rawdamage > 0 )
+					var dmgList := dictionary;
+					dmgList := getNewDamageList(who);
+					var basedamage := CalculateTotalDamageBonus(rawdamage, who, targ);
+					var total := CalculateTotalDamage(targ, basedamage, who, dmgList);
+						if (total < 1)
+							total := 1;
+						endif		
+					who.hidden := 0;
+					PrintTextAbove(who, "*aparece*");		
+					DamageFLS(targ, total, DMG_FORCED, who);
+					MostraDano(who, targ, total);
+					MakeBleed(targ);
+					TS_StartTimer(targ, "bleed", 15);
+					EraseObjProperty(who, "backstab");
+					SendSysMessage(who, "Voce acertou seu alvo!");
+					EraseObjProperty(who, "ataquefurtivoaprimorado");
+					return;
+				endif	
+			endif
+	
+			SetObjProperty(who, "backstab", 1);
+			var rawdamage := CalculateRawDamage(who, weapon);
+			rawdamage := rawdamage*2;
+			if (rawdamage < 1)
+				rawdamage := 1;
+			endif
+
+			if ( rawdamage > 0 )
+				var dmgList := dictionary;
+				dmgList := getNewDamageList(who);
+				var basedamage := CalculateTotalDamageBonus(rawdamage, who, targ);
+				var total := CalculateTotalDamage(targ, basedamage, who, dmgList);
+				if (total < 1)
+					total := 1;
+				endif
+				who.hidden := 0;
+				PrintTextAbove(who, "*aparece*");
+				ApplyRawDamage(targ, total);
+				MostraDano(who, targ, total);
+				MakeBleed(targ);
+				TS_StartTimer(targ, "bleed", 15);
+
+				var poisonInfo := GetObjProperty(weapon, "poisonInfo" );
+				if (poisonInfo == error)
+					return 0;
+				endif
+
+				poisonInfo.dosage := poisonInfo.dosage -1;
+
+				if (poisonInfo.dosage <= 0) //se nao tiver mais cargas de veneno, deleta
+					EraseObjProperty(weapon, "poisonInfo");
+					return 0;
+				else //se ainda tiver atualiza na arma
+					SetObjProperty(weapon, "poisonInfo", poisonInfo);
+				endif
+	
+				if (IsPoisonImune(targ, poisonInfo.name) )
+					return 0;
+				endif
+
+				if (poisonInfo.name == "paralyzePoison")
+					poisonInfo.time := 5;
+				endif
+
+				TS_StartTimer(targ, poisonInfo.name, poisonInfo.time, poisonInfo.level, who);
+
+			endif
+			who.hidden := 0;
+			PrintTextAbove(who, "*aparece*");
+			EraseObjProperty(who, "backstab");
+			SendSysMessage(who, "Voce acertou seu alvo!");
+			
+
+			/* if ( GetObjProperty(who, "ataquefurtivoaprimorado") == 1 )
+				EraseObjProperty(who, "ataquefurtivoaprimorado");
+				who.hidden := 1;
+			else
+				who.hidden := 0;
+			endif */
+
+		endif
+	else
+		SendSysMessage(who, "Voce deve ficar atras de " + targ.name);
+	endif
+endprogram
+
+function CanBackStab(who, weapon)
+	
+	var can_back_stab := 0;
+	if ((weapon.attribute) == "MeleeCombat1H")
+		can_back_stab := 1;
+	endif
+	
+	if ((weapon.attribute) == "RangedCombat")
+		can_back_stab := 1;
+	endif
+
+	
+	if ( !can_back_stab )
+		SendSysMessage(who, "Esta arma nao e apropriada para um ataque furtivo.");
+		return 0;
+	elseif ( !who.hidden )
+		SendSysMessage(who, "Voce precisa estar escondido para realizar esse ataque.");
+		return 0;
+	endif
+	
+	return 1;
+endfunction
+
+function AmmoCheck(who, targ)
+	var wpn_a_elem := GetWpnCfgInfo(who, who.weapon);
+
+	if ( !wpn_a_elem.ProjectileType )
+		return 1;
+	endif
+
+	var has_ammo := 0;
+
+	var aljavas := array{0x791c, 0x2fb7};
+	var aljava := GetEquipmentByLayer(who, 0x14);
+	
+		if (aljava.objtype in aljavas)
+			aljava := GetEquipmentByLayer(who, 0x14);
+		else
+			aljava := GetEquipmentByLayer(who, 0xc);
+		endif
+	var ammo := GetObjProperty(who.weapon, "ammo");
+	if (!ammo)
+		SendSysMessage(who, "Voce nao definiu o tipo de flecha que vai usar. [clique 2x no arco e na flecha]");
+		return 0;
+	endif
+	if ( ConsumeSubstance( aljava, ammo, 1 ) )
+		var cfg:=ReadConfigFile(":woodworking:itemdesc");
+		var elem := FindConfigElem(cfg, ammo);
+		var ammo_color := elem.color;
+		PlayMovingEffectXYZHued(who, targ, wpn_a_elem.ProjectileAnim, 10, 10, 0, ammo_color);
+		return 1;
+	else
+		return 0;
+	endif
+	
+endfunction

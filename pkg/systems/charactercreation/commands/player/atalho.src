@@ -1,0 +1,458 @@
+use uo;
+use vitals;
+use math;
+use npc;
+
+include ":attributes:attributes";
+include ":timedscripts:timedScripts";
+include ":charactercreation:habilidades";
+include "include/say";
+include "include/facings";
+include ":tn:cooldown";
+include ":tn:combat";
+
+program useHotBar(who, text)
+
+   var hab_id;
+   if (typeof(who) == "Array")
+      hab_id := who[3];
+      text := who[2];
+      who := who[1];
+   endif
+
+   text := SplitWords(text, " ")[1];
+   if (GetScriptCooldown(who, "atalho_{}".format(text))) return 0; endif
+
+   if (hab_id)
+      var hab := getFeatById(hab_id);
+      if (hab)
+         TriggerHabilitie(who, hab);
+      endif
+   endif
+
+   var spos := cint(text);
+   if (!spos) 
+      return SendSysMessageEx(who, "Voce precisa entrar com o numero da barra de atalho. Ex: .atalho 1", SSM_FAIL); 
+   elseif (GetObjProperty(who, "#Casting")) 
+      return SendSysMessageEx(who, "Voce nao pode usar uma habilidade agora.", SSM_FAIL);
+   elseif (TS_GetCooldown(who, "hab_block"))
+      return SendSysMessageEx(who, "Suas habilidades foram bloqueadas devido a algum efeito sobre seu personagem.", SSM_FAIL);
+   endif
+
+   var hotbar := GetObjProperty(who, "hotbar");
+   if (!hotbar) hotbar := struct{ shortcuts := array{} }; endif
+
+   var shortcut := hotbar.shortcuts[spos];
+   if (!shortcut)
+      return SendSysMessageEx(who, "Nao ha nenhuma habilidade configurada para este atalho '{}'.".format(spos), SSM_FAIL);
+   endif
+
+   if (!shortcut.id || shortcut.id != 88)
+      if (who.frozen || who.squelched || who.paralyzed)
+         return SendSysMessageEx(who, "Voce nao pode usar uma habilidade enquanto esta paralizado, congelado ou silenciado.", SSM_FAIL);
+      endif
+   endif
+
+   if (shortcut.item)
+      return TriggerItem(who, shortcut);
+   elseif (shortcut.script)
+      return start_script(shortcut.script, who);
+   elseif (shortcut.equips)
+      return start_script(":combat:equipmacro", array{who, shortcut.equips});
+   elseif (shortcut.shab)
+      return ProccessHab(who, shortcut.shab);
+   endif
+
+   var hab := getFeatById(shortcut.id);
+   if (hab)
+      TriggerHabilitie(who, hab);
+   endif
+endprogram
+
+function TriggerItem(who, shortcut)
+   var item;
+   var equiped := listequippeditems(who);
+   foreach obj in equiped
+      if (obj.objtype == shortcut.objtype)
+         item := obj;
+      endif
+      sleepms(2);
+   endforeach
+   
+   if (!item)
+      item := FindObjtypeInContainer(who.backpack, shortcut.objtype);
+   endif
+   
+   if (!item)
+      return SendSysMessageEx(who, "Item nao encontrado na sua mochila", SSM_FAIL);
+   endif
+
+   UseItem(item, who);
+endfunction
+
+function GetScriptCooldown(who, script_name)
+   if (!getCooldown(who, script_name))
+      setCooldown(who, script_name, 1);
+      return 0;
+   endif
+
+   SendSysMessageEx(who, "Prevenção de Flood. Aguarde +1 segundo.", SSM_FAIL);
+   return 1;
+endfunction
+
+function TriggerHabilitie(who, hab)
+	if ( TS_GetCooldown(who, "hab_{}".format(hab.FeatID)) != error)
+		return SendSysMessageEx(who, "'Habilidade em Cooldown!'", SSM_FAIL);
+   elseif (hab.RequireMagicWeapon && !who.weapon.isMagicWeapon())
+		return SendSysMessageEx(who, "'Você precisa estar equipado com uma arma mágica para esta habilidade.'", SSM_FAIL);
+	endif
+   
+  /* if (TS_GetCooldown(who, "dodge") || TS_GetCooldown(who, "block"))
+		return SendSysMessageEx(who, "'Você não pode usar habilidades quando estiver esquivando ou bloqueado.'", SSM_FAIL);
+   endif
+   SetObjProperty(who, "#Casting", 1); */
+   
+   if (hab.Mana)
+      var mana := hab.Mana + cint(cdbl(hab.Mana) * (AP_GetTrueSkill(who, "FeatConsume") / 100));
+      if (!AP_ConsumeVital(who, MANA, mana))
+         SendSysMessageEx(who, "'Mana Insuficiente!'", SSM_FAIL);
+         EraseObjProperty(who, "#Casting");
+         return SendSysMessageEx(who, "Você não tem mana suficiente para executar esta habilidade.", SSM_FAIL);
+      endif
+   endif
+
+   if (hab.Vigor)
+      var vigor := hab.Vigor + cint(cdbl(hab.Vigor) * (AP_GetTrueSkill(who, "FeatConsume") / 100));
+      if (!AP_ConsumeVital(who, STAMINA, vigor))
+         SendSysMessageEx(who, "'Vigor Insuficiente!'", SSM_FAIL);
+         EraseObjProperty(who, "#Casting");
+         return SendSysMessageEx(who, "Você não tem vigor suficiente para executar esta habilidade.", SSM_FAIL);
+      endif
+   endif
+   TS_StartCooldown(who, "HabUsed", 300);
+   who.hidden := 0;
+
+   var weapon := who.weapon;
+   var power := CalculateRawDamage(who, weapon);
+
+   /*
+   if (hab.CastTime)
+      var cycles := hab.CastTime;
+      if (Randomint(100) <= 20)
+         cycles := 0;
+         SendSysMessageEx(who, "Conjuração Rápida", SSM_INFO);
+      endif
+      
+      var moveCheck := Start_Script(":magery:moveCheck", array{who, Getpid()});
+
+      while (cycles)
+         if ( Events_Waiting() || TS_GetTimerInfo(who, "tombar") || who.frozen || who.paralyzed )
+            EraseObjProperty(who, "#Casting");
+            SendSysMessageEx(who, "Você não conseguiu se concentrar o suficiente para usar esta habilidade.", SSM_FAIL);
+            // FailSpell(who);
+            return 0;
+         endif
+
+         cycles -= 1;
+         sleepms(800);
+      endwhile
+
+      moveCheck.kill();
+   endif
+   */
+
+   var targ := ChooseTarget(who, hab);
+   if (!targ) //verifica se o ponto ¿ v¿sivel
+      SendsysMessageEx(who, "Habilidade cancelada", SSM_FAIL);
+      FailFeat(who, hab);
+      return;
+   endif
+
+	if (hab.Cooldown && !GetObjProperty(who, "no_cd"))
+      TS_StartCooldown(who, "hab_{}".format(hab.FeatID), hab.Cooldown);
+   endif
+
+   if (hab.Target != "Self")
+      if (TS_GetCooldown(who, "hallucination") && targ.isA(POLCLASS_NPC))
+         var mobile_around := ListMobilesInLineOfSight( who, 10);
+         targ := mobile_around.randomentry();
+      endif
+   endif
+
+   if (targ.isA(POLCLASS_NPC) && hab.TargetAlign == "Harmful")
+      targ.setAggro(who.serial, 25);
+   endif
+
+   var script := ":charactercreation:habilidades/{}";
+   if (hab.script[":"])
+      script := hab.script;
+   else
+      script := script.format(hab.script);
+   endif
+
+   var e := start_script(script, array{who, hab, targ, power, weapon});
+   if (e == error)
+      FailFeat(who, hab);
+      return SendSysMessageEx(who, "Script da Habilidade não encontrado.", SSM_FAIL);
+   endif
+
+   EraseObjProperty(who, "#magiasilenciosa");
+   EraseObjProperty(who, "#Casting");
+endfunction
+
+function getFeatById(nome, get_class := 0)
+   var featCfg := ReadConfigFile(":charactercreation:habilidades");
+   var elem := FindConfigElem(featCfg, nome);
+
+   return struct{
+      FeatID := GetConfigInt(elem, "nome")
+   };
+endfunction
+
+function ChooseTarget(mobile, feat)
+   var move_script := start_script(":magery:canceltarget_if_move", mobile);
+   var targ;
+   
+   if (feat.Targ == "Self")
+      targ := mobile;
+   elseif (feat.Targ == "Opponent")
+      targ := mobile.opponent;
+      var rang := _ifElse(feat.Range, feat.Range, 1);
+
+      if (!targ)
+         targ := ListHostiles(mobile, rang);
+         targ := targ[1];
+      endif
+
+      if (!targ)
+         targ := 0;
+      elseif (rang && CoordinateDistance(mobile.x, mobile.y, targ.x, targ.y) > rang)
+         targ := 0;
+      endif
+   elseif (feat.Targ == "Mobile" || feat.Targ == "Item")
+      while (mobile.connected)
+         SendSysMessageEx(mobile, "Escolha o alvo da habilidade.", SSM_REQUEST);
+         var noto := TGTOPT_NEUTRAL;
+         if (feat.TargetAlign == "Harmful")
+            noto := TGTOPT_HARMFUL;
+         elseif (feat.TargetAlign == "Helpful")
+            noto := TGTOPT_HELPFUL;
+         endif
+
+         targ := Target(mobile, noto);
+         if (!targ)
+            break;
+         elseif (GetCooldown(targ, "repeal") > 0)
+            SendSysMessageEx(mobile, "O alvo esta invulneravel a habilidades.", SSM_FAIL);
+         elseif (feat.Targ == "Mobile" && !targ.isA(POLCLASS_MOBILE))
+            SendSysMessageEx(mobile, "Você deve escolher uma criatura como alvo.", SSM_FAIL);
+         elseif (feat.Targ == "Item" && !targ.isA(POLCLASS_ITEM) && !targ.isA(POLCLASS_CONTAINER))
+            SendSysMessageEx(mobile, "Você deve escolher um objeto como alvo", SSM_FAIL);
+         elseif (!feat.NoLos && !CheckLineOfSight(mobile, targ));
+            SendSysMessageEx(mobile, "Você não tem visão do alvo.", SSM_FAIL);
+         elseif (!feat.Range)
+            break;
+         elseif (feat.Range && CoordinateDistance(mobile.x, mobile.y, targ.x, targ.y) > feat.Range)
+            SendSysMessageEx(mobile, "Muito distante!", SSM_FAIL);
+         else
+            break;
+         endif
+      endwhile
+      if (mobile != targ && targ)
+         TurnObjectToward(mobile, targ.x, targ.y);
+      endif
+   elseif (feat.Targ == "Area")
+      while (mobile.connected)
+         PrintTextPrivate(mobile, "'Escolha o ponto alvo.'", mobile, SSM_INFO);
+         targ := TargetCoordinates(mobile);
+         if (!targ)
+            break;
+         endif
+
+         TurnObjectToward(mobile, targ.x, targ.y);
+
+         if (!feat.NoLos && !CheckLosAt( mobile, targ.x, targ.y, targ.z ));
+            SendSysMessageEx(mobile, "Você não tem visão da area escolhida.", SSM_FAIL);
+         elseif(!feat.Range)
+            break;
+         elseif (CoordinateDistance(mobile.x, mobile.y, targ.x, targ.y) > feat.Range)
+            SendSysMessageEx(mobile, "Muito distante!", SSM_FAIL);
+         else
+            break;
+         endif
+      endwhile
+   endif
+
+   move_script.kill();
+   return targ;
+endfunction
+
+function FailFeat(who, hab)
+   if (hab.Mana)
+      var mana := hab.Mana + cint(cdbl(hab.Mana) * (AP_GetTrueSkill(who, "FeatConsume") / 100));
+      HealMana(who, mana);
+   endif
+   
+   if (hab.Vigor)
+      var vigor := hab.Vigor + cint(cdbl(hab.Vigor) * (AP_GetTrueSkill(who, "FeatConsume") / 100));
+      HealStamina(who, vigor);
+   endif
+
+   TS_LowerDuration(who, "hab_{}".format(hab.FeatID), -1, 1);
+
+   EraseObjProperty(who, "#Casting");
+endfunction
+
+function _ifElse(a,b,c)
+   if (a) return b; endif
+   return c;
+endfunction
+
+function PrintTextPrivate(above_object, uc_text, for_object, color := _DEFAULT_UCCOLOR, font := _DEFAULT_UCFONT, langcode := "ENG")
+   if (uc_text == error)
+         return;
+   endif
+
+   return PrintTextAbovePrivateUC(above_object, UC(uc_text), langcode, for_object, font, color);
+endfunction
+
+function ProccessHab(who, hab)
+	hab := lower(hab);
+	var habcfg := ReadConfigFile(":charactercreation:config/habilidades");
+	var habelem := FindConfigElem(habcfg, hab);
+
+	if (!habelem)
+		SendSysMessageEx(who, "Habilidade nao encontrada.", SSM_FAIL);
+		return;
+	endif
+
+	var uso := GetConfigString(habelem, "uso");
+
+	if (uso != "Ativa")
+		SendSysMEssageEx(who, "Esta habilidade nao pode ser ativada.");
+		return;
+	endif
+
+
+//	sendsysmessage(who, " " + TS_GetCooldown(who, hab) );
+	if ( TS_GetCooldown(who, hab) != error)
+		SendSysMEssageEx(who, "Voce nao pode usar essa habilidade agora.", SSM_FAIL);
+		return 1;
+	endif
+	
+	var stam := cint(GetConfigInt(habelem, "stam"));
+	if (stam != error)
+		if (!AP_ConsumeVital(who, STAMINA, stam))
+			SendSysMessageEx(who, "Voce esta muito cansado para usar esta habilidade.", SSM_FAIL);
+			return 1;
+		endif
+	endif
+
+	var mana := cint(GetConfigInt(habelem, "mana"));
+	if (mana != error)
+		if (!AP_ConsumeVital(who, MANA, mana))
+			SendSysMessageEx(who, "Voce esta muito cansado para usar esta habilidade.", SSM_FAIL);
+			return 1;
+		endif
+	endif
+
+    var script := GetConfigString(habelem, "script");
+	var duracao := GetConfigString(habelem, "duracao");
+
+	var delay := Cint(GetConfigInt(habelem, "delay"));
+
+	var mimic := 0;
+	if (GetObjProperty(who, "#mimico"))
+		mimic := SystemFindObjectBySerial(GetObjProperty(who, "#mimico"));
+		if (mimic && (Distance(mimic, who) < 12))
+			PrintText(mimic, "*copia a habilidade " + hab);
+		endif
+		EraseObjProperty(who, "#mimico");
+	endif
+
+	if (duracao == "1 ataque")
+		if (!script)
+			SendSysMessageEx(who, "Nao foi encontrado o script da habilidade: " + hab, SSM_FAIL);
+			return;
+		endif
+		SendSysMessageEx(who, "Se voce acertar o proximo ataque, vai executar o movimento: " + hab, SSM_INFO);
+		SetObjProperty(who, "movement",  script);
+		SetObjProperty(who, "#movtime", ReadGameClock());
+		if (mimic)
+			SendSysMessageEx(mimic, "Se voce acertar o proximo ataque, vai executar o movimento: " + hab, SSM_INFO);
+			SetObjProperty(mimic, "movement",  script);
+			SetObjProperty(mimic, "#movtime", ReadGameClock());
+		endif
+	else
+		var e := start_script(script, who );
+		if (mimic)
+			start_script(script, mimic );
+		endif
+		//sendsysmessage(who, " " + e );
+	endif
+	
+	TS_StartCooldown(who, hab, delay);
+
+endfunction
+
+
+function CreateGumpHabilidade(who)
+
+	UnloadConfigFile(":charactercreation:config/habilidades");
+
+	var gump := GFCreateGump();
+
+   GFDisposable(gump, 0);
+	GFResizePic(gump, 0, 25, 3600, 380, 650);	
+	GFResizePic(gump, 15, 40, 0x13BE, 350, 620);
+	GFTextMid(gump, 80, 50, 250, 1153, "Habilidades de Classe");
+
+	var habilidades := GetObjPRoperty(who, "myhabs");
+	if (!habilidades)
+		habilidades := dictionary;
+	endif
+	
+	var habcfg := ReadConfigFile(":charactercreation:config/habilidades");
+
+	// var habElems := habilidades.keys();
+
+	
+	var x := 40;
+	var y := 80;
+	var i := 0;
+
+	foreach hab in habilidades
+			
+			var habelem := FindConfigElem(habcfg, hab);
+			var desc := getConfigString(habelem, "desc");
+			var uso := GetConfigString(habelem, "uso");
+			var nome := GetConfigString(habelem, "nome");
+			var script := GetConfigString(habelem, "script");
+
+
+	
+			if (uso != "Passiva")
+				i := i + 1;
+				SetObjProperty(who, "HabsAtivas"[i], nome);
+				GFAddButton(gump, 20, y+5, 2103, 2104, 1, i);	
+				GFTextLine(gump, x, y, 1153, nome + " [" + uso + "]" );
+				GFHTMLArea( gump, x, y+20, 300, 60, desc, 1150, 1);
+				y := y + 80;
+			endif
+
+	endforeach
+	
+	var input := GFSendGump(who, gump);
+	input := input[0];
+
+	if (input > 0)
+		for(i := 1; i <= 20 ; i := i + 1)
+			if (input == i)
+				SendSysMessage(who, GetObjProperty(who, "HabsAtivas"[i]));
+				ProccessHab(who, GetObjProperty(who, "HabsAtivas"[i]));
+			endif
+		endfor
+	endif
+	
+
+endfunction 

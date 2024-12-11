@@ -1,0 +1,195 @@
+use uo;
+use os;
+use cfgfile;
+
+include ":tn:equipment";
+include ":tn:cooldown";
+include "include/say";
+include ":mounts:mounts";
+include ":spells:tnmagery";
+include "include/client";
+include "include/sounds";
+include "include/say";
+include ":timedScripts:timedScripts";
+
+program equipweapon(who, item)
+
+var descmod_item:=GetObjProperty(item,"descmod");
+var descmod:={};
+
+	if(descmod_item != error)
+		if(GetObjProperty(who,"descmod") == error)
+			descmod.append(descmod_item);
+			SetObjProperty(who,"descmod",descmod);
+		else
+			descmod:=GetObjProperty(who,"descmod");
+			if (descmod_item in descmod)
+			else
+				descmod.append(descmod_item);
+				SetObjProperty(who,"descmod",descmod);
+			endif
+		endif
+
+		var ori_name:=who.name;
+		SetName(who, " ");
+		SetName(who, ori_name);	
+	endif
+	
+	if (GetObjProperty(who, "corruption"));
+		if (item.objtype == 0x2CE0 || item.objtype == 0x2CE2 || item.objtype == 0x2CE1 || item.objtype == 0x2CE3 || item.objtype == 0x2CE5 || item.objtype == 0x2CDF )
+			SendSysMEssageEx(who, "Os deuses o punem pela sua corrupcao.", SSM_FAIL);
+			ApplyRawDamage(who, 6000);
+			return 0;
+		endif
+	elseif (GetObjProperty(who, "caminho") != "Acolito")
+		if (item.objtype == 0x2CE0 || item.objtype == 0x2CE2 || item.objtype == 0x2CE1 || item.objtype == 0x2CE3 || item.objtype == 0x2CE5 || item.objtype == 0x2CDF )
+			SendSysMEssageEx(who, "Voce sente um desconforto como se sua pele estivesse em chamas ao tentar vestir a armadura, apenas Acolitos e Paladinos tem permissao dos Deuses", SSM_FAIL);
+			return 0;
+		endif
+	endif
+	
+	if (who.npctemplate)
+		return 1;
+	endif
+
+	if (GetObjProperty(who, "desarmar") == 1)
+		SendSysMessageEx(who, "Voce nao consegue se armar.", SSM_FAIL);
+		return 0;
+	endif
+
+	if (TemHabilidade(who, "Furia"))
+			if (item.objtype == 0x13ec || item.objtype == 0x13ed || item.objtype == 0x13ee || item.objtype == 0x13ef || item.objtype == 0x13f0 || item.objtype == 0x13f1 || item.objtype == 0x13f2 || item.objtype == 0x13BB || item.objtype == 0x13C0 || item.objtype == 0x13BE || item.objtype == 0x13C3 || item.objtype == 0x13BF || item.objtype == 0xFFE6 || item.objtype == 0x13C4 || item.objtype == 0x1415 || item.objtype == 0x1416 || item.objtype == 0x1410 || item.objtype == 0x1417 || item.objtype == 0x1411 || item.objtype == 0x141A || item.objtype == 0x1414 || item.objtype == 0x1418 || item.objtype == 0x1413) 
+				SendSysMessageEx(who, "Como Berserker voce se recusa a usar armaduras de metal", SSM_FAIL);
+				return 0;
+			endif
+	endif
+
+	if (GetEquipmentByLayer(who, LAYER_MOUNT))
+
+		if (item.objtype == 0x26CC || item.objtype == 0xe139 || item.objtype == 0x2d2a || item.objtype == 0x0f4f || item.objtype == 0x13fd || item.objtype == 0x26CD)
+			SendSysMessageEx(who, "Voce consegue apenas usar arcos curtos montado", SSM_FAIL);
+			return 0;
+		endif
+
+		if (TemHabilidade(who, "Treinamento Cazar"))
+			if (!TemHabilidade(who, "Treinamento de Cavaleiro"))
+				if (item.attribute != RANGEDCOMBAT || item.objtype != 0xe137 && item.objtype != 0x13B2)
+					SendSysMessageEx(who, "Voce consegue apenas usar arcos curtos montado", SSM_FAIL);
+					return 0;
+				endif
+			endif
+
+		elseif (TemHabilidade(who, "Treinamento de Cavaleiro"))
+			if (!TemHabilidade(who, "Treinamento Cazar"))
+				if (item.attribute == RANGEDCOMBAT)
+					SendSysMessageEx(who, "Voce nao consegue usar arcos enquanto estiver montado.", SSM_FAIL);
+					return 0;
+				endif
+			endif
+
+		else SendSysMessageEx(who, "Voce nao consegue se armar enquanto estiver montado.", SSM_FAIL);
+			return 0;	
+		endif
+		
+	endif	
+
+	if (GetObjProperty(who, "metamorfose") != error)
+		if (TemHabilidade(who, "Fera Adornada"))
+			if (item.isa(POLCLASS_WEAPON) || item.isa(POLCLASS_ARMOR))	
+				SendSysMessageEx(who, "Voce nao pode equipar nada nessa forma.");
+				return 0;
+			endif
+		else
+			SendSysMessageEx(who, "Voce nao pode equipar nada nessa forma.");
+			return 0;
+		endif
+	endif
+
+	if ( !GetCooldown(item, "blessweapon") && GetObjProperty(item, "armaSagradaOriginalColor") != error )
+		item.color := Cint(GetObjProperty(item, "armaSagradaOriginalColor"));
+		EraseObjProperty(item, "armaSagradaOriginalColor");
+	endif
+
+	var elementalWeapon := GetObjProperty(item, "#elementalweapon");
+	if ( elementalWeapon != error)
+		if (ReadGameClock() > elementalWeapon.endtime)
+			EraseObjProperty(item, "#elementalweapon");
+			item.color := cint(GetObjProperty(item, "elementalWeaponOriginalColor"));
+			EraseObjProperty(item, "elementalWeaponOriginalColor");
+		endif
+		if (who.serial != elementalWeapon.serial)
+			set_critical(1);
+			SendSysMessageEx(who, "Voce nao consegue manter a magia na arma.", SSM_FAIL);
+			EraseObjProperty(item, "#elementalweapon");
+			EraseObjProperty(item, "HitScripts");
+			item.color := cint(GetObjProperty(item, "elementalWeaponOriginalColor"));
+			var p := GetProcess( cint(GetObjProperty(item, "pid") ) );
+			p.kill();
+			set_critical(0);
+		endif
+	endif
+
+	if (item.isa(POLCLASS_ARMOR))
+
+		case(RandomInt(3) + 1)
+			1: PlaySoundEffect(who, 0x49);
+			2: PlaySoundEffect(who, 0x58);
+			//3: PlaySoundEffect(who, 0x3d);
+		endcase
+		PrintText(who, "*vestindo "+item.desc+"*");
+		PerformAction( who, 0x0020 );
+		TS_StartTimer(who, "paralysis", 2);
+		
+		var timer_list := TS_GetTimerList(who);
+		var names := array;
+
+		foreach timer in ( timer_list.keys() )
+			timer := lower(timer);
+			if ( timer == "velocidade")
+				TS_LowerDuration(who, timer, -1);
+			elseif (timer == "dmgreturn" )
+				TS_LowerDuration(who, timer, -1);
+			endif
+		
+		endforeach
+
+			var penal := AP_GetStatMod(who, "Dexterity");
+			if (penal >= -1)
+				SendSysMessageEX(who, "Sua carga esta leve e voce nao tera problemas em se esquivar", SSM_INFO);
+			elseif (penal >= -10)
+				SendSysMessageEX(who, "Sua carga esta mediana e voce nao podera se esquivar com tanta frequencia", SSM_INFO);
+			elseif (penal >= -15)
+				SendSysMessageEX(who, "Sua carga esta pesada tornando a esquiva complicada", SSM_INFO);
+			endif
+	endif
+
+	if (GetObjProperty(item, "armaespiritual"))
+		if (GetObjProperty(item, "swordmage") != who.serial)
+			SendSysMessageEx(who, "Voce nao pode usar esta arma.", SSM_FAIL);
+			return 0;
+		endif
+	endif
+
+	if (GetObjProperty(item, "swordmage") == who.serial)
+		var pid := GetObjProperty(item, "#swordmagepid");
+		if (pid)
+			var script := GetProcess(pid);
+			script.kill();
+		endif
+		start_script (":spells:swordmage", {who, item});
+	endif
+
+	set_critical(1);
+
+	var ret := SetEquipmentMods(who, item);
+
+	var cfg := readconfigfile(":combat:itemdesc");
+	if ( cint(cfg[item.objtype].parrybonus) > 0 )
+		EraseObjProperty(who, "twohanded");
+	endif
+	set_critical(0);
+
+	UpdateHotbar(who);
+
+	return ret;
+endprogram

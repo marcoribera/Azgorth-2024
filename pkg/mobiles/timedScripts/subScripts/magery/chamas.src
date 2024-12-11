@@ -1,0 +1,40 @@
+use uo;
+use vitals;
+use os;
+
+include ":attributes:attributes";
+include ":timedscripts:timedScripts";
+include "include/damage";
+include "include/say";
+include "include/client";
+
+program default_poison(params)
+	var who := params[1];
+
+
+	var dmg := 0;
+	//var stam := 0;
+	var poisonedmsg := "";
+	var viewermsg := "";
+	var time := 15;
+	dmg := 7;
+	time := 2;
+
+	while(1)
+		
+		SendSysMessageEx(who, "Voce esta queimando.", SSM_FAIL);
+		PrintTextAbove(who, "*Pegando Fogo*");
+		ApplyRawDamage(who, dmg);
+		PlayObjectCenteredEffect(who, GFX_EXPLODE_1, 7, 16);
+		if (who.graphic == 401)
+	 		PlaySoundEffect( who, 0x32F );
+		else
+	 		PlaySoundEffect( who, 0x441 );
+		endif
+		sleep(time);
+	endwhile
+
+	return;
+endprogram
+
+ 

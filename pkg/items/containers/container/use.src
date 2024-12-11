@@ -1,0 +1,97 @@
+//$Id: use.src 128 2006-05-27 17:36:42Z austinheilman $
+
+use uo;
+use os;
+use cfgfile;
+
+include ":keys:key";
+include ":traps:traps";
+include "include/say";
+
+program useContainer(mobile, container)
+	var item_cfg := ReadConfigFile(":*:itemdesc");
+	item_cfg := item_cfg[container.graphic];
+
+	CheckDurabilidade(container);
+
+	if ( mobile.cmdlevel )
+		SendSysMessage(mobile, "Command level is present - container is skipping locks, traps, etc.");
+		SendViewContainer(mobile, container);
+	elseif ( ContainerIsLocked(mobile, container) ) 
+		return 0;
+	elseif ( GetObjProperty(container, "TrapList") != error )
+		RunTraps(container, mobile);
+		return 0;
+	endif
+	
+	if (!container.IsA(POLCLASS_CORPSE))
+		SendViewContainer(mobile, container);
+		PrintText(mobile, "*{} abriu {}*".format(mobile.name, container.name));
+	else
+		var npc:= GetObjProperty(container, "npctemplate");
+		if(!npc)
+			SendViewContainer(mobile, container);
+			PrintText(mobile, "*{} revirando os pertences do {}*".format(mobile.name, container.name));
+		endif
+		SendViewContainer(mobile, container);
+	endif
+
+	if ( (item_cfg.OpenGraphic) && (item_cfg.CloseGraphic) )
+		container.graphic := item_cfg.OpenGraphic;
+		Sleep(2);
+		container.graphic := item_cfg.CloseGraphic;
+	endif
+
+	if (!container.IsA(POLCLASS_CORPSE))
+		var vaiquebrar := GetObjProperty(container, "usos");
+
+		//if (vaiquebrar == 20)
+			//SetName(container,container.desc + " [Quebradica] ");
+			//PrintText(mobile, "O recipiente vai quebrar em breve, procure um carpinteiro!", SSM_FAIL);
+		if (vaiquebrar <= 10)
+			PrintText(mobile, "O recipiente vai quebrar em breve, procure um carpinteiro!", SSM_FAIL);
+		endif
+
+		if (vaiquebrar <=0)
+			foreach item in (EnumerateItemsInContainer(container))
+				//if (container in EnumerateItemsInContainer(mobile.backpack))
+					var e := MoveObjectToLocation(item, mobile.x, mobile.y, mobile.z, mobile.realm, MOVEOBJECT_FORCELOCATION | MOVEITEM_IGNOREMOVABLE);
+				//else
+				//	var e := MoveObjectToLocation(item, container.x, container.y, container.z, container.realm, MOVEOBJECT_FORCELOCATION | MOVEITEM_IGNOREMOVABLE);
+				//endif
+			endforeach
+			Sleep(1);
+			PrintText(container, "*Quebrou!*");
+			Sleep(2);
+			createitematlocation(container.x, container.y, container.z, 3119, 1, container.realm);
+			DesTroyItem(container);
+		endif
+	endif
+endprogram
+
+function ContainerIsLocked(mobile, container)
+	if ( !container.locked )
+		// Nothing to worry about.
+		return 0;
+	elseif ( KP_HasKeyForLock(mobile, container) )
+		SendSysMessage(mobile, "Voce abre o container com a chave.");
+		return 0;
+	else
+		PrintTextAbovePrivate(container, "Isto esta trancado.", mobile);
+		return 1;
+	endif
+endfunction
+
+function CheckDurabilidade(container)
+
+	var durabilidade:= GetObjProperty(container, "usos");
+	//	var crafteracct:= GetObjProperty(container, "crafteracc");
+
+	if (! durabilidade)
+		SetObjProperty(container, "usos", 60);
+	else 
+		durabilidade := durabilidade - 1;
+		SetObjProperty(container, "usos", durabilidade);
+	endif
+
+endfunction

@@ -1,0 +1,7 @@
+Element Categories
+{
+	null a1:S3:OSI
+	skill a20:S7:AlchemyS9:AwarenessS12:DomesticWorkS9:GatheringS12:HandleAnimalS6:MageryS9:MagicLoreS17:MechanicalApitudeS8:MedicineS13:MeleeCombat1HS13:MeleeCombat2HS12:MetalWorkingS5:ParryS13:PickpocketingS12:RangedCombatS5:SneakS8:SurvivalS7:TacticsS11:WoodWorkingS9:Wrestling
+	stat a3:S9:DexterityS12:IntelligenceS8:Strength
+}
+

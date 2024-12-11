@@ -1,0 +1,57 @@
+use uo;
+
+include ":attributes:attributes";
+include ":timedScripts:timedScripts";
+include "include/say";
+include "include/damage";
+
+program manobra(attacker)
+
+	var festa := attacker.party;
+
+	if (!festa)
+		SendSysMessageEx(attacker, "Voce nao tem aliados!", SSM_FAIL);
+		return;
+	endif
+
+	SendSysMessageEx(attacker, "Em quem deve ser a carga?", SSM_REQUEST);
+    var alvo := Target(attacker);
+
+	if (!alvo.isa(POLCLASS_MOBILE))
+		SendSysMessageEx(attacker, "Seus aliados nao podem atacar isto", SSM_FAIL);
+		return;
+	endif	
+
+	if(!CheckLosAt(attacker, alvo.x, alvo.y, alvo.z))
+		SendSysMessageEx(attacker, "Voce nao consegue ver o alvo.", SSM_FAIL);
+		return 0;
+	endif
+
+	PrintText(attacker, "CARGAAAAAAAAA!!!");
+	if (attacker.graphic == 401)
+		PlaySoundEffect( attacker, 0x339 );
+	else
+		PlaySoundEffect( attacker, 0x44B );
+	endif
+
+	foreach member in (festa.members)
+		foreach mobile in ListMobilesInLineOfSight(attacker, 12)
+			var weapon := member.weapon;
+			var weaponBow := 0;
+			if (lower(weapon.attribute) == "rangedcombat")
+				weaponBow := 1;
+			endif
+
+			if (member.serial != attacker.serial && !weaponBow)
+				MoveObjectToLocation(member, alvo.x, alvo.y, alvo.z, alvo.realm, MOVEOBJECT_FORCELOCATION);
+				member.attack_once(alvo);
+				TS_StartTimer(alvo, "paralysis", 8);
+				PrintTextAbove(alvo, "*Atordoado*");
+			else
+				member.attack_once(alvo);
+			endif
+		endforeach
+	endforeach
+
+
+endprogram  

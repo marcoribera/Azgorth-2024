@@ -1,0 +1,598 @@
+[08/01 00:08:05] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/01 00:18:06] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/01 00:28:08] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/01 00:30:55] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/01 00:38:09] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/01 00:40:55] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/01 00:48:10] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/01 00:50:55] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/01 00:58:12] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/01 01:08:13] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/01 01:10:29] Shutting down...
+[08/01 01:10:29] Writing data files...Data save completed in 223 ms. 242 total.
+[08/02 02:09:27] Logfile opened.
+[08/02 02:09:27] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/02 02:09:27] Game is active.
+[08/02 02:09:28] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/02 02:09:28] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/02 02:09:28] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/02 02:09:28] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/02 02:09:28] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/02 02:09:28] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/02 02:09:28] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 02:09:29] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 02:19:29] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 02:19:37] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 02:29:29] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 02:29:39] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 02:39:40] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 02:49:42] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 02:59:43] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 03:03:33] Shutting down...
+[08/02 03:03:33] Writing data files...Data save completed in 188 ms. 204 total.
+[08/02 11:12:30] Logfile opened.
+[08/02 11:12:30] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/02 11:12:30] Game is active.
+[08/02 11:12:31] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/02 11:12:31] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/02 11:12:31] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/02 11:12:31] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/02 11:12:31] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/02 11:12:31] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/02 11:12:31] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 11:12:32] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 11:13:30] Shutting down...
+[08/02 11:13:30] Writing data files...Data save completed in 189 ms. 504 total.
+[08/02 11:21:08] Logfile opened.
+[08/02 11:21:08] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/02 11:21:08] Game is active.
+[08/02 11:21:09] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/02 11:21:09] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/02 11:21:09] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/02 11:21:09] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/02 11:21:09] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/02 11:21:09] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/02 11:21:09] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 11:21:10] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 11:21:16] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 11:21:17] Account marcknight logged in from 127.0.0.1
+[08/02 11:21:20] Client#1 (127.0.0.1): disconnected (account marcknight)
+[08/02 11:21:20] Client#2 connected from 127.0.0.1 (2/0 connections) on interface 127.0.0.1
+[08/02 11:21:21] Account marcknight logged in from 127.0.0.1
+[08/02 11:21:23] Account marcknight selecting character teste
+[08/02 11:21:24] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/02 11:23:53] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[08/02 11:31:08] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 11:31:15] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 11:41:08] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 11:41:16] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 11:51:18] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 12:01:19] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 12:11:21] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 12:17:17] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 12:21:22] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 12:27:17] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 12:31:23] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 12:37:17] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 12:41:25] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 12:51:26] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 13:01:27] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 13:11:29] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 13:13:26] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 13:21:30] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 13:23:26] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 13:31:31] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 13:33:26] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 13:41:33] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 13:51:34] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 14:01:35] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 14:09:35] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 14:10:46] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/02 14:11:37] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 14:19:35] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 14:21:38] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 14:29:35] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 14:31:39] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 14:41:41] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 14:51:42] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 15:01:44] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 15:05:44] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 15:11:45] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 15:15:44] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 15:21:46] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 15:25:45] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 15:29:34] Shutting down...
+[08/02 15:29:34] Writing data files...Data save completed in 214 ms. 233 total.
+[08/02 15:34:28] Logfile opened.
+[08/02 15:34:28] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/02 15:34:28] Game is active.
+[08/02 15:34:29] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/02 15:34:29] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/02 15:34:29] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/02 15:34:29] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/02 15:34:29] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/02 15:34:29] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/02 15:34:30] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 15:34:31] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 15:34:37] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 15:34:37] Account marcknight logged in from 127.0.0.1
+[08/02 15:34:38] Client#1 (127.0.0.1): disconnected (account marcknight)
+[08/02 15:34:38] Client#2 connected from 127.0.0.1 (2/0 connections) on interface 127.0.0.1
+[08/02 15:34:39] Account marcknight logged in from 127.0.0.1
+[08/02 15:34:40] Account marcknight selecting character teste
+[08/02 15:34:40] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/02 15:34:41] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[08/02 15:44:31] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 15:44:42] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 15:54:31] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 15:54:44] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 16:04:45] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 16:14:19] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/02 16:14:21] Shutting down...
+[08/02 16:14:21] Writing data files...Data save completed in 245 ms. 264 total.
+[08/02 16:28:59] Logfile opened.
+[08/02 16:28:59] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/02 16:28:59] Game is active.
+[08/02 16:29:00] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/02 16:29:00] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/02 16:29:00] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/02 16:29:00] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/02 16:29:00] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/02 16:29:00] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/02 16:29:01] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 16:29:02] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 16:29:02] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 16:29:02] Account marcknight logged in from 127.0.0.1
+[08/02 16:29:05] Client#1 (127.0.0.1): disconnected (account marcknight)
+[08/02 16:29:05] Client#2 connected from 127.0.0.1 (2/0 connections) on interface 127.0.0.1
+[08/02 16:29:06] Account marcknight logged in from 127.0.0.1
+[08/02 16:29:07] Account marcknight selecting character teste
+[08/02 16:29:07] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/02 16:39:02] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 16:39:11] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 16:49:02] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 16:49:12] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 16:50:32] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/02 16:50:36] Shutting down...
+[08/02 16:50:36] Writing data files...Data save completed in 238 ms. 258 total.
+[08/02 17:11:05] Logfile opened.
+[08/02 17:11:05] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/02 17:11:05] Game is active.
+[08/02 17:11:05] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/02 17:11:05] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/02 17:11:05] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/02 17:11:05] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/02 17:11:05] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/02 17:11:05] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/02 17:11:05] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 17:11:06] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 17:11:06] Account marcknight logged in from 127.0.0.1
+[08/02 17:11:07] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 17:11:07] Client#1 (127.0.0.1): disconnected (account marcknight)
+[08/02 17:11:07] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 17:11:07] Account marcknight logged in from 127.0.0.1
+[08/02 17:11:08] Account marcknight selecting character teste
+[08/02 17:11:08] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/02 17:16:43] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/02 17:21:07] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 17:21:16] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 17:31:07] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 17:31:17] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 17:33:06] Shutting down...
+[08/02 17:33:06] Writing data files...Data save completed in 234 ms. 252 total.
+[08/02 17:41:36] Logfile opened.
+[08/02 17:41:36] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/02 17:41:36] Game is active.
+[08/02 17:41:36] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/02 17:41:36] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/02 17:41:36] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/02 17:41:36] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/02 17:41:36] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/02 17:41:36] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/02 17:41:37] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 17:41:37] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 17:43:22] Shutting down...
+[08/02 17:43:22] Writing data files...Data save completed in 212 ms. 577 total.
+[08/02 17:44:01] Logfile opened.
+[08/02 17:44:01] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/02 17:44:01] Game is active.
+[08/02 17:44:01] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/02 17:44:01] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/02 17:44:01] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/02 17:44:01] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/02 17:44:01] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/02 17:44:01] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/02 17:44:02] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 17:44:03] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 17:44:39] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 17:44:39] Account marcknight logged in from 127.0.0.1
+[08/02 17:46:39] Client#1 (127.0.0.1): disconnected (account marcknight)
+[08/02 17:46:46] Shutting down...
+[08/02 17:46:46] Writing data files...Data save completed in 217 ms. 570 total.
+[08/02 17:47:20] Logfile opened.
+[08/02 17:47:20] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/02 17:47:20] Game is active.
+[08/02 17:47:20] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/02 17:47:20] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/02 17:47:20] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/02 17:47:20] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/02 17:47:20] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/02 17:47:20] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/02 17:47:21] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 17:47:22] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 17:47:30] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 17:47:30] Account marcknight logged in from 127.0.0.1
+[08/02 17:47:31] Client#1 (127.0.0.1): disconnected (account marcknight)
+[08/02 17:47:32] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 17:47:32] Account marcknight logged in from 127.0.0.1
+[08/02 17:47:33] Account marcknight selecting character teste
+[08/02 17:47:36] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/02 17:47:36] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[08/02 17:48:00] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/02 17:48:05] Shutting down...
+[08/02 17:48:05] Writing data files...Data save completed in 241 ms. 532 total.
+[08/02 17:48:42] Logfile opened.
+[08/02 17:48:42] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/02 17:48:42] Game is active.
+[08/02 17:48:42] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/02 17:48:42] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/02 17:48:42] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/02 17:48:42] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/02 17:48:42] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/02 17:48:42] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/02 17:48:43] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 17:48:44] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 17:49:38] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 17:49:38] Account marcknight logged in from 127.0.0.1
+[08/02 17:49:40] Client#1 (127.0.0.1): disconnected (account marcknight)
+[08/02 17:49:40] Client#2 connected from 127.0.0.1 (2/0 connections) on interface 127.0.0.1
+[08/02 17:49:41] Account marcknight logged in from 127.0.0.1
+[08/02 17:49:43] Account marcknight selecting character teste
+[08/02 17:49:44] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/02 17:49:55] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[08/02 17:50:50] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/02 17:50:52] Shutting down...
+[08/02 17:50:52] Writing data files...Data save completed in 237 ms. 535 total.
+[08/02 17:53:38] Logfile opened.
+[08/02 17:53:38] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/02 17:53:38] Game is active.
+[08/02 17:53:38] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/02 17:53:38] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/02 17:53:38] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/02 17:53:38] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/02 17:53:38] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/02 17:53:38] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/02 17:53:39] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 17:53:40] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 17:53:56] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 17:53:56] Account marcknight logged in from 127.0.0.1
+[08/02 17:53:57] Client#1 (127.0.0.1): disconnected (account marcknight)
+[08/02 17:53:57] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 17:53:57] Account marcknight logged in from 127.0.0.1
+[08/02 17:53:59] Account marcknight selecting character teste
+[08/02 17:54:00] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/02 17:54:05] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[08/02 17:56:01] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/02 17:56:03] Shutting down...
+[08/02 17:56:03] Writing data files...Data save completed in 231 ms. 535 total.
+[08/02 17:57:19] Logfile opened.
+[08/02 17:57:19] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/02 17:57:19] Game is active.
+[08/02 17:57:19] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/02 17:57:19] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/02 17:57:19] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/02 17:57:19] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/02 17:57:19] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/02 17:57:19] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/02 17:57:20] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 17:57:21] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 17:57:27] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 17:57:27] Account marcknight logged in from 127.0.0.1
+[08/02 17:57:28] Client#1 (127.0.0.1): disconnected (account marcknight)
+[08/02 17:57:28] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 17:57:29] Account marcknight logged in from 127.0.0.1
+[08/02 17:57:29] Account marcknight selecting character teste
+[08/02 17:57:30] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/02 17:57:34] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[08/02 17:59:07] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/02 17:59:09] Shutting down...
+[08/02 17:59:09] Writing data files...Data save completed in 233 ms. 960 total.
+[08/02 17:59:43] Logfile opened.
+[08/02 17:59:43] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/02 17:59:43] Game is active.
+[08/02 17:59:44] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/02 17:59:44] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/02 17:59:44] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/02 17:59:44] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/02 17:59:44] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/02 17:59:44] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/02 17:59:45] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 17:59:46] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 17:59:46] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 17:59:46] Account marcknight logged in from 127.0.0.1
+[08/02 17:59:47] Client#1 (127.0.0.1): disconnected (account marcknight)
+[08/02 17:59:47] Client#2 connected from 127.0.0.1 (2/0 connections) on interface 127.0.0.1
+[08/02 17:59:48] Account marcknight logged in from 127.0.0.1
+[08/02 17:59:48] Account marcknight selecting character teste
+[08/02 17:59:49] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/02 18:01:53] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/02 18:01:54] Shutting down...
+[08/02 18:01:54] Writing data files...Data save completed in 223 ms. 519 total.
+[08/02 18:02:42] Logfile opened.
+[08/02 18:02:42] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/02 18:02:42] Game is active.
+[08/02 18:02:43] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/02 18:02:43] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/02 18:02:43] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/02 18:02:43] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/02 18:02:43] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/02 18:02:43] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/02 18:02:43] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 18:02:44] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 18:02:46] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 18:02:46] Incorrect password for account marcknight from 127.0.0.1
+[08/02 18:02:46] Client#1 (127.0.0.1): disconnected (account unknown)
+[08/02 18:02:53] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 18:02:53] Account marcknight logged in from 127.0.0.1
+[08/02 18:02:54] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/02 18:02:54] Client#3 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 18:02:54] Account marcknight logged in from 127.0.0.1
+[08/02 18:02:54] Account marcknight selecting character teste
+[08/02 18:02:55] Client#3: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/02 18:04:06] Client#3 (127.0.0.1): disconnected (account marcknight)
+[08/02 18:04:08] Shutting down...
+[08/02 18:04:08] Writing data files...Data save completed in 222 ms. 499 total.
+[08/02 18:05:04] Logfile opened.
+[08/02 18:05:04] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/02 18:05:04] Game is active.
+[08/02 18:05:05] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/02 18:05:05] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/02 18:05:05] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/02 18:05:05] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/02 18:05:05] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/02 18:05:05] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/02 18:05:05] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 18:05:07] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 18:07:39] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 18:07:40] Account marcknight logged in from 127.0.0.1
+[08/02 18:07:41] Client#1 (127.0.0.1): disconnected (account marcknight)
+[08/02 18:07:42] Client#2 connected from 127.0.0.1 (2/0 connections) on interface 127.0.0.1
+[08/02 18:07:42] Account marcknight logged in from 127.0.0.1
+[08/02 18:07:43] Account marcknight selecting character teste
+[08/02 18:07:44] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/02 18:08:39] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/02 18:08:40] Shutting down...
+[08/02 18:08:40] Writing data files...Data save completed in 231 ms. 507 total.
+[08/02 18:09:16] Logfile opened.
+[08/02 18:09:16] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/02 18:09:16] Game is active.
+[08/02 18:09:16] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/02 18:09:16] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/02 18:09:16] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/02 18:09:16] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/02 18:09:16] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/02 18:09:16] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/02 18:09:17] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 18:09:18] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 18:10:19] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 18:10:19] Account marcknight logged in from 127.0.0.1
+[08/02 18:10:20] Client#1 (127.0.0.1): disconnected (account marcknight)
+[08/02 18:10:20] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 18:10:20] Account marcknight logged in from 127.0.0.1
+[08/02 18:10:21] Account marcknight selecting character teste
+[08/02 18:10:23] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/02 18:11:58] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/02 18:12:01] Shutting down...
+[08/02 18:12:01] Writing data files...Data save completed in 228 ms. 626 total.
+[08/02 18:12:35] Logfile opened.
+[08/02 18:12:35] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/02 18:12:35] Game is active.
+[08/02 18:12:36] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/02 18:12:36] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/02 18:12:36] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/02 18:12:36] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/02 18:12:36] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/02 18:12:36] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/02 18:12:37] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/02 18:12:38] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/02 18:12:43] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/02 18:12:43] Account marcknight logged in from 127.0.0.1
+[08/02 18:12:44] Client#1 (127.0.0.1): disconnected (account marcknight)
+[08/02 18:12:44] Client#2 connected from 127.0.0.1 (2/0 connections) on interface 127.0.0.1
+[08/02 18:12:44] Account marcknight logged in from 127.0.0.1
+[08/02 18:12:45] Account marcknight selecting character teste
+[08/02 18:12:45] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/02 18:15:05] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/02 18:15:05] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[08/04 21:10:31] Logfile opened.
+[08/04 21:10:31] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/04 21:10:31] Game is active.
+[08/04 21:10:32] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/04 21:10:32] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/04 21:10:32] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/04 21:10:32] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/04 21:10:32] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/04 21:10:32] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/04 21:10:32] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/04 21:10:33] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/04 21:12:50] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/04 21:12:52] Incorrect password for account marcoribera from 127.0.0.1
+[08/04 21:12:52] Client#1 (127.0.0.1): disconnected (account unknown)
+[08/04 21:13:12] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/04 21:13:12] Account marcknight logged in from 127.0.0.1
+[08/04 21:13:14] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/04 21:13:15] Client#3 connected from 127.0.0.1 (2/0 connections) on interface 127.0.0.1
+[08/04 21:13:15] Account marcknight logged in from 127.0.0.1
+[08/04 21:13:18] Account marcknight selecting character teste
+[08/04 21:13:20] Client#3: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/04 21:13:33] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[08/04 21:20:33] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/04 21:20:42] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/04 21:21:21] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[08/04 21:30:34] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/04 21:30:44] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/04 21:39:32] Client#3 (127.0.0.1): disconnected (account marcknight)
+[08/04 21:39:33] Shutting down...
+[08/04 21:39:33] Writing data files...Data save completed in 220 ms. 236 total.
+[08/04 21:52:56] Logfile opened.
+[08/04 21:52:56] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/04 21:52:56] Game is active.
+[08/04 21:52:56] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/04 21:52:56] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/04 21:52:56] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/04 21:52:56] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/04 21:52:56] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/04 21:52:56] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/04 21:52:57] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/04 21:52:58] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/04 21:55:09] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/04 21:55:10] Account marcknight logged in from 127.0.0.1
+[08/04 21:55:11] Client#1 (127.0.0.1): disconnected (account marcknight)
+[08/04 21:55:12] Client#2 connected from 127.0.0.1 (2/0 connections) on interface 127.0.0.1
+[08/04 21:55:12] Account marcknight logged in from 127.0.0.1
+[08/04 21:55:13] Account marcknight selecting character teste
+[08/04 21:55:13] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/04 21:55:14] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[08/04 22:02:58] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/04 22:03:07] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/04 22:12:58] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/04 22:13:08] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/04 22:23:10] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/04 22:25:12] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/04 22:25:17] Shutting down...
+[08/04 22:25:17] Writing data files...Data save completed in 231 ms. 247 total.
+[08/04 22:25:42] Logfile opened.
+[08/04 22:25:42] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/04 22:25:42] Game is active.
+[08/04 22:25:43] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/04 22:25:43] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/04 22:25:43] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/04 22:25:43] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/04 22:25:43] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/04 22:25:43] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/04 22:25:43] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/04 22:25:44] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/04 22:26:30] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/04 22:26:31] Account marcknight logged in from 127.0.0.1
+[08/04 22:26:34] Client#1 (127.0.0.1): disconnected (account marcknight)
+[08/04 22:26:35] Client#2 connected from 127.0.0.1 (2/0 connections) on interface 127.0.0.1
+[08/04 22:26:35] Account marcknight logged in from 127.0.0.1
+[08/04 22:26:37] Account marcknight selecting character teste
+[08/04 22:26:38] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/04 22:26:48] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[08/04 22:30:22] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/04 22:30:22] Shutting down...
+[08/04 22:30:22] Writing data files...Data save completed in 211 ms. 539 total.
+[08/04 22:31:45] Logfile opened.
+[08/04 22:31:45] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/04 22:31:45] Game is active.
+[08/04 22:31:46] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/04 22:31:46] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/04 22:31:46] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/04 22:31:46] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/04 22:31:46] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/04 22:31:46] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/04 22:31:46] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/04 22:31:48] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/04 22:32:17] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/04 22:32:18] Account marcknight logged in from 127.0.0.1
+[08/04 22:32:19] Client#1 (127.0.0.1): disconnected (account marcknight)
+[08/04 22:32:20] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/04 22:32:20] Account marcknight logged in from 127.0.0.1
+[08/04 22:32:21] Account marcknight selecting character teste
+[08/04 22:32:22] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/04 22:32:24] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[08/04 22:40:10] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/04 22:40:11] Shutting down...
+[08/04 22:40:11] Writing data files...Data save completed in 250 ms. 623 total.
+[08/04 22:43:26] Logfile opened.
+[08/04 22:43:26] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/04 22:43:26] Game is active.
+[08/04 22:43:26] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/04 22:43:26] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/04 22:43:26] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/04 22:43:26] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/04 22:43:26] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/04 22:43:26] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/04 22:43:27] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/04 22:43:28] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/04 22:44:10] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/04 22:44:11] Account marcknight logged in from 127.0.0.1
+[08/04 22:44:14] Client#1 (127.0.0.1): disconnected (account marcknight)
+[08/04 22:44:14] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/04 22:44:14] Account marcknight logged in from 127.0.0.1
+[08/04 22:44:16] Account marcknight selecting character teste
+[08/04 22:44:17] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/04 22:44:26] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[08/04 22:46:41] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[08/04 22:53:28] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/04 22:53:38] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/04 23:03:27] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/04 23:03:38] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/04 23:13:39] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/04 23:23:41] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/04 23:31:24] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/04 23:31:26] Shutting down...
+[08/04 23:31:26] Writing data files...Data save completed in 238 ms. 255 total.
+[08/04 23:36:34] Logfile opened.
+[08/04 23:36:34] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[08/04 23:36:34] Game is active.
+[08/04 23:36:35] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2609,3601,-5; destroying the boat...
+[08/04 23:36:35] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2658,3517,-5; destroying the boat...
+[08/04 23:36:35] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2684,3519,-5; destroying the boat...
+[08/04 23:36:35] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2623,3516,-5; destroying the boat...
+[08/04 23:36:35] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2690,3542,-5; destroying the boat...
+[08/04 23:36:35] [pkg/multis/boat/boat.ecl]: [ERROR] [boat.src] No tillerman for boat at: 2694,3588,-5; destroying the boat...
+[08/04 23:36:35] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/04 23:36:36] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/04 23:36:45] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/04 23:36:45] Account marcknight logged in from 127.0.0.1
+[08/04 23:36:46] Client#1 (127.0.0.1): disconnected (account marcknight)
+[08/04 23:36:46] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[08/04 23:36:46] Account marcknight logged in from 127.0.0.1
+[08/04 23:36:47] Account marcknight selecting character teste
+[08/04 23:36:51] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[08/04 23:36:52] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[08/04 23:40:51] Client#2 (127.0.0.1): disconnected (account marcknight)
+[08/04 23:46:36] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/04 23:46:45] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[08/04 23:56:36] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[08/04 23:56:46] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.

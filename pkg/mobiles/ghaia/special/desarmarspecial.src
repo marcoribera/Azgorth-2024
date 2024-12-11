@@ -1,0 +1,37 @@
+use uo;
+use os;
+use vitals;
+
+include ":charactercreation:habilidades";
+include ":timedScripts:timedScripts";
+include "include/damage";
+
+program loko(params)
+
+	var who := params[1];
+	var cdtime := params[2];
+	var cdname := params[3];
+
+	//printtextabove(who, "loko");
+
+	if (CoordinateDistance(who.x, who.y, who.opponent.x, who.opponent.y) <= 3)
+		TS_StartCooldown(who, cdname, cdtime);
+		PerformAction(who, 0x0d);
+		PrintTextAbove(who, "Vamos ver como voce luta agora!");
+		TS_StartTimer(who.opponent, "desarmar", 10);
+		var defweapon := who.opponent.weapon;
+		if (defweapon.objtype != 0xF020)
+		var x := who.opponent.x;
+		var y := who.opponent.y;
+		var move := MoveObjectToLocation(defweapon, x, y,  GetWorldHeight(x, y), who.opponent.realm, MOVEOBJECT_FORCELOCATION);
+			if (move == error)
+				MoveItemToContainer(defweapon, who.opponent.backpack);
+			endif
+		else
+		SendSysMessage(who.opponent, "desarmado");
+		endif
+
+	PrintText(who.opponent, "*desarmado*", SSM_FAIL);
+	endif
+
+endprogram

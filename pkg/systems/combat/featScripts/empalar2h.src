@@ -1,0 +1,134 @@
+use os;
+
+include "include/say";
+include ":timedscripts:timedScripts";
+include ":fls_core:fls_characters";
+include "include/client";
+//include "include/shapes";
+include "include/client";
+include "include/sounds";
+include "include/facings";
+include "include/damage";
+include ":attributes:attributes";
+include ":combat:combat";
+
+
+program startTalent(param)
+   var who := param[1];
+   var hab := param[2];
+
+   if (TS_GetCooldown(who, "habilidade dois"))
+		return SendSysMessageEX(who, "Habilidade em Cooldown!", SSM_FAIL);
+	endif
+
+   var combatskill := AP_GetSkill(who, MELEECOMBAT2H);
+
+   if ( combatskill < 40.0)
+		SendSysMessageEx(who, "Voce nao tem conhecimento suficiente para executar o golpe", SSM_FAIL);
+		return 0;
+   endif
+
+   var armainicial := who.weapon;
+   var cfg:=ReadConfigFile(":combat:itemdesc");
+	var elem := FindConfigElem(cfg, who.weapon.objtype);
+   
+   if ( who.weapon != armainicial )
+		SendSysMessageEx(who, "Voce nao pode atacar depois de ter trocado a arma.", SSM_FAIL);
+		return;
+	endif
+
+   TS_StartCooldown(who, "habilidade dois", 20);
+   who.hidden := 0;
+
+	who.SetWarMode(1);
+	PlaySoundEffect(who, 0x520);
+
+    var loc := struct{ "x" := who.x, "y" := who.y, "z" := who.z };
+    PushBack(who, 5, 35);
+    if (CheckGender(who) == 2)
+        PlaySoundEffect(who, 0x514);
+    else
+        PlaySoundEffect(who, 0x515);
+    endif
+	
+	who.SetWarMode(1);
+   PrintText(who, "*Recua e golpeia com {}".format(who.weapon.desc));
+
+   var hostiles := ListHostiles(who);
+   var already_hit := array{};
+
+   var mobiles := ListMobilesNearLocation( who.x, who.y, who.z, 3, who.realm);
+   var dmgList := dictionary;
+   dmgList := getNewDamageList(who);
+   var dmg := CalculateRawDamage(who, who.weapon);
+   var hit_chance := CalculateHitChancehab(who, mobiles);
+   var random := Randomint (100)+1;
+
+    var mod := GetModByFacing(who.facing);
+    for i := 1 to 5
+      var x := mod[1] * i;
+      var y := mod[2] * i;
+        if (who.x == loc.x+x && who.y == loc.y+x)
+            return 1;
+        endif
+
+        foreach mobile in (ListMobilesNearLocationEx( loc.x+x, loc.y+y, loc.z, 0, LISTEX_FLAG_NORMAL|LISTEX_FLAG_HIDDEN))
+            sleepms(2);
+
+            var esquiva:= GetObjProperty(mobile, "evasao");
+
+            if (esquiva == 1)
+                Performaction(who, elem.Anim);
+                PlayMissSound(mobile);
+                PrintText(mobile, "*esquiva-se*");
+                EraseObjProperty(mobile, "evasao");
+                already_hit.append(mobile);
+            endif
+            
+            if ( random < hit_chance )
+            var total := cint(CalculateTotalDamage(mobile, dmg, who, dmgList));
+                if ( mobile != who )
+                    if (!ParryCheck(who, mobile, total));
+                        PlayMovingEffect( who, mobile, 0x22C6, 10);
+                        DamageFLS(mobile, total*3, DMG_PHYSICAL, who);
+                    else
+                        PlayHitSounds(who, mobile);
+                    endif
+                endif
+            else
+                PlayMissSound(who);
+            endif
+
+        endforeach
+        sleepms(2);
+    endfor
+    who.setFacing(InverseFacing(who.facing));
+   var weapon_cfg := GetItemCfgInfo(who, who.weapon);
+	PlayAttackAnimation(who);
+   return 1;
+
+endprogram
+
+function InverseFacing(facing, type := 0)
+   if (!type)
+      if (facing >= 4)
+         facing -= 4;
+      else
+         facing += 4; 
+      endif
+   elseif( type == 1)
+      if (facing >= 6)
+         facing += 2;
+      else
+         facing -= 6; 
+      endif
+   elseif( type == 2)
+      if (facing <= 2)
+         facing += 6;
+      else
+         facing += 2;
+      endif
+   endif
+
+   return facing;
+endfunction

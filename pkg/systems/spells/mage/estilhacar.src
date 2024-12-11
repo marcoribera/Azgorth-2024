@@ -1,0 +1,62 @@
+  
+ use uo;
+use os;
+
+include ":spells:tnmagery";
+include "include/client";
+include "include/sounds";
+include "include/say";
+include ":timedscripts:timedScripts";
+
+program SpellScript(params)
+	var who := params[1];
+	var info := params[2];
+	params := 0; // No longer needed
+
+	SendSysMessageEx(who, "Escolha uma arma ou alguem armado.", SSM_REQUEST);
+	var targ := Spell_Target(who, TGTOPT_CHECK_LOS);
+	if (!targ)
+		SendSysMessageEx(who, "Cancelado", SSM_FAIL);
+		return;
+	endif
+
+	if (targ.isA(POLCLASS_WEAPON))
+		SetObjProperty(targ, "broken", 1);
+		SetObjProperty(targ, "realdesc", targ.desc);
+		//releasegems(targ, wpn);
+		eraseobjproperty(targ, "gems");
+		SetName(targ, targ.desc+" [danificado]");
+		PrintText(targ, "*arma quebrou*");
+	else
+
+		if (CheckResist(targ, VONTADE, 80+cint(AP_GetSkill(who, MAGICLORE))))
+			SendSysMEssageEx(who, "Voce nota que o alvo nao foi afetado.", SSM_FAIL);
+			SendSysMessageEx(targ, "Voce resistiu a magia.", SSM_INFO);
+			who.frozen := 0;
+			return;
+		endif
+
+		var wpn := targ.weapon;
+
+		if (wpn.objtype != 0xF020)
+
+			SendSysMessage(targ, wpn.desc+" quebrou.");
+			MoveObjectToLocation(wpn, 1, 1, 1, targ.realm, MOVEOBJECT_FORCELOCATION);
+			SetObjProperty(wpn, "broken", 1);
+			SetObjProperty(wpn, "realdesc", wpn.desc);
+			//releasegems(targ, wpn);
+			eraseobjproperty(wpn, "gems");
+			SetName(wpn, wpn.desc+" [danificado]");
+			MoveItemToContainer(wpn, targ.backpack);
+
+			//MoveObjectToLocation(wpn, who.x, who.y, who.z, who.realm);
+			//DestroyItem(wpn);
+			PrintText(targ, "*arma quebrou*");
+
+		endif
+	endif
+
+        PlaySoundEffect(targ, SFX_SPELL_CURSE);
+	
+	return 1;
+endprogram    

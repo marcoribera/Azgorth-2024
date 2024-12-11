@@ -1,0 +1,926 @@
+Element 2dchaos
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element abc
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element admin
+{
+	FirstLine e1:S9:errortextS41:File not found: pkg/systems/motd/motd.txt
+	noshow i1
+}
+
+Element Alarico
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element alef
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+}
+
+Element alexsouza
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Alo
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element amazingmax
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element amiguinhofluvius
+{
+	FirstLine s
+	noshow i1
+}
+
+Element Arandur
+{
+	FirstLine sffff
+	noshow i1
+}
+
+Element Astolpho
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element asturbal
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Baali
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Beleg
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element Berian
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element biel0328
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element Boglas
+{
+	FirstLine s
+	noshow i1
+}
+
+Element Brottor
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element BruxaoJunin
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element Calford
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element casao
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element castilho
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element Cerejazz
+{
+	FirstLine s
+	noshow i1
+}
+
+Element Cleberius
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element cuica
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Dandanilo
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Datena
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element deathstroke
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element diegobvs
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Dolly
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element doomking
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element drbebado
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element edufelipe101
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element Ehine
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element Elros
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element enzogordo
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element ept
+{
+	FirstLine e1:S9:errortextS41:File not found: pkg/systems/motd/motd.txt
+	noshow i1
+}
+
+Element estagiario
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element ethanzao
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element etojr
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element fineuo
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element flaviogalante
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element fluvius
+{
+	FirstLine s
+	noshow i1
+}
+
+Element frajolas
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Freddio
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Galahad
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element gannergui
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element Gargan10
+{
+	FirstLine s
+	noshow i1
+}
+
+Element gergecoelho
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element ghaplayer
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element gordoenzo
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element grcerejo
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Gron
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element gu88
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Gunnar
+{
+	FirstLine s
+	noshow i1
+}
+
+Element hadlich
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element hannah
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Hao
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element hazarot
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element hermann21
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element hotride
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element iasmin
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element igorturano
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element ikkin
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element ikkin2
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Ikkin3
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element Impacto
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element Ingrid
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element Ivanoff
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element Jahyrc
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+}
+
+Element java
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element jayshun
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element jefo28
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element juli
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element juliandro
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element juliomaister
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element Junin
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Kaeser
+{
+	FirstLine s
+}
+
+Element Kanna
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element kitty
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element kulaah
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element kyefhe
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Lancis
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Larcks
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Lordvint
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Lucas
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element luzao
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element magalos
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element manurivero
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element marcknight
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element matue
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element mauriciosb
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element mennson
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element menor171
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element mind
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element Mogul
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element mostardao
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element mouro
+{
+	FirstLine s
+	noshow i1
+}
+
+Element Muniek
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element Mya
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element Nelio
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element neliobuilder
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element Nhezin
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element nietz
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element nietzsche
+{
+	FirstLine s
+	noshow i1
+}
+
+Element nightmare
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element Niles
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element nilesthor
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element opa
+{
+	FirstLine s
+}
+
+Element pao09
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element papaiurso
+{
+	FirstLine s
+}
+
+Element Papito
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element patrick78
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element paulo775
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element player
+{
+	FirstLine s
+	noshow i1
+}
+
+Element Profeta
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element queensophia
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element raphapp
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+}
+
+Element Rav
+{
+	FirstLine s
+}
+
+Element ravengar
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element realsyberg
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element Redfieldz
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Rienzetsu
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element ritz
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Robertgarcia
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element rodrigoza
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element samara
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+}
+
+Element Samuca
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element Sangar
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element sayurivanessa
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element silverleaf
+{
+	FirstLine e1:S9:errortextS41:File not found: pkg/systems/motd/motd.txt
+	noshow i1
+}
+
+Element Smasher
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element Sokaku
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Spelborea
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+}
+
+Element sputin
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element sralarcks
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element suellena
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Tepes
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element test
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element teste
+{
+	FirstLine s
+}
+
+Element teupai
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element thebors
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Thiago123
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element tiagoaugusto
+{
+	FirstLine s
+}
+
+Element Timm
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element tnicacio
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+}
+
+Element tomate
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element ts.farianeves
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element turanim
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element uchihafx
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+}
+
+Element urso
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element vaz1485
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element vinicin
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Vivian
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element wladi
+{
+	FirstLine s
+}
+
+Element Wladicm
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Wth
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+	noshow i1
+}
+
+Element Wurdig
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+
+Element zaper
+{
+	FirstLine sJa curtiu a nossa pagina no Facebook hoje? Busque por Forgotten Lore Shard no FB, curta e compartilhe a pagina, e receba +1 pt RP!       Bom jogo e boas historias!
+	noshow i1
+}
+
+Element ziden
+{
+	FirstLine sConfira nossas midias sociais, curta e compartilhe e ganhe +1 pontoRP por isso. facebook.com/flshard6 instagram.com/ultimaonline_fls
+}
+

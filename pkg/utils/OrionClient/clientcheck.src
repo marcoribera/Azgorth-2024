@@ -1,0 +1,14 @@
+use uo;
+use os;
+
+program clientcheck(who)
+  SetObjProperty(who, "#orioncheck", 1);
+  SendPacket(who, "BF0007FACE0034");  //Packet Orion Version
+  Sleep(5); //Wait for response
+  if (GetObjProperty(who, "#orioncheck") == 1)
+    SendSysMessage(who, "This server requires the latest version of Orion.");
+    EraseObjProperty(who, "#orioncheck");
+    DisconnectClient(who);
+  endif
+  SendSysMessage(who, "Checando o client");
+endprogram

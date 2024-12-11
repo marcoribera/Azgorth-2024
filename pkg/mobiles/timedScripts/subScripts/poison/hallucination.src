@@ -1,0 +1,48 @@
+use uo;
+use os;
+
+include ":attributes:attributes";
+include ":timedscripts:timedScripts";
+include "include/damage";
+include ":tn:hallucination";
+
+program default_poison(params)
+	var who := params[1];
+	var attacker := params[2];
+	var level := CInt(params[3]);
+
+	if ( !level )
+		level := 1;
+	endif
+
+	if ( attacker )
+		SetScriptController(attacker);
+	endif
+
+	var time := 15;
+	Hallucinate(who);
+
+	var times := 0;
+
+	while(times < 15)
+		//PrintTextAbovePrivate(who, "**", who);
+		foreach mobile in ( ListMobilesInLineOfSight(who, 12) )
+			if( mobile.ip && mobile != who )
+				PrintTextAbovePrivate(who, "*Pupilas dilatadas*", mobile);
+			endif
+			sleepms(2);
+		endforeach
+		
+		Hallucinate(who);
+
+		if (who.dead)
+			var script := GetProcess(GetPid());
+			script.kill();
+		endif
+		
+		sleep(5);
+		times := times + 1;
+	endwhile
+
+	return;
+endprogram

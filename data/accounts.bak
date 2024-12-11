@@ -1,0 +1,40 @@
+Account
+{
+	Name	marcknight
+	PasswordHash	0335607242700eda427334e66b93a2c4
+	Enabled	1
+	Banned	0
+	DefaultCmdLevel	admin
+	UOExpansion	ML
+	CProp	IP a1:S9:127.0.0.1
+	CProp	LastLogin i1733543961
+	CProp	nota i0
+}
+
+Account
+{
+	Name	marcoribera
+	PasswordHash	48735b4296e684f77df1a9076783fffb
+	Enabled	1
+	Banned	0
+	UOExpansion	ML
+	CProp	IP a1:S9:127.0.0.1
+	CProp	LastLogin i1733508855
+	CProp	heir_days i10
+	CProp	herdado i10
+	CProp	herdeiro t3:S15:bonus_primariasi3S17:bonus_secundariasi0S16:bonus_terciariase1:S9:errortextS14:Divide by Zero
+	CProp	nota i0
+}
+
+Account
+{
+	Name	teste
+	PasswordHash	d051d720347621f48307a676e4bf3469
+	Enabled	1
+	Banned	0
+	UOExpansion	SA
+	CProp	IP a1:S9:127.0.0.1
+	CProp	LastLogin i1696180743
+	CProp	maxchars i2
+}
+

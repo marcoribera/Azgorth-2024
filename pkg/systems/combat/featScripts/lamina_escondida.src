@@ -1,0 +1,38 @@
+use uo;
+use os;
+use cfgfile;
+
+include "include/client";
+include "include/sounds";
+include "include/say";
+include "include/damage";
+include "include/utils";
+include ":attributes:attributes";
+include ":timedscripts:timedScripts";
+include ":fls_magery:basicMagery";
+
+program explosao(params)
+	var who := params[1];
+	var spellinfo := params[2];
+	var targ := params[3];
+	params := 0; // No longer needed
+
+   var weapon := who.weapon;
+
+   PlayMovingEffectXYZEx( who.x, who.y, who.z+3, targ.x, targ.y, targ.z, who.realm, weapon.objtype, 10 ,0, 0, 0, GetFacing(who.x, who.y, targ.x, targ.y) );
+
+	PlaySoundEffect(who, 0x5D3);
+	PrintText(who, "*joga {}".format(weapon.desc));
+
+   sleepms(150);
+   MoveObjectToLocation( weapon, targ.x, targ.y, targ.z+1 );
+   start_script(":combat:reequip_weapon", array{ who, weapon });
+
+   if (!CheckBlockDodge(targ, 1, 1))
+      DamageFLS(targ, spellinfo.PowerMod[1], DMG_PHYSICAL, who);
+      var t := _ifElse(targ.isA(POLCLASS_NPC), 5, 3);
+      TS_StartTimer(targ, "lentidao", t, who);
+   endif
+
+	return 1;
+endprogram

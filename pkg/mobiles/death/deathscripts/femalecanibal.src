@@ -1,0 +1,31 @@
+
+
+use uo;
+use os;
+use util;
+
+include ":death:death";
+
+program DeathScript(params)
+	var corpse := params[1];
+	//var npc_cfg := params[2];
+	params := 0; // Not needed anymore
+
+	PrintTextAbove(corpse, "*Solta um grito ensurdecedor*");
+	SleepMS(30);
+	var corpse_x := corpse.x;
+	var corpse_y := corpse.y;
+	var corpse_z := corpse.z;
+	var realm := corpse.realm;
+    
+    var random := (Randomint(5)+1);
+
+	//DestroyItem(corpse);
+	var npc := CreateNPCFromTemplate(":brainAi:canibalbeta", corpse_x + random, corpse_y + random, corpse_z + 2, 0, realm);
+    var npc1 := CreateNPCFromTemplate(":brainAi:canibalbeta", corpse_x + random, corpse_y + random, corpse_z + 2, 0, realm);
+    var npc2 := CreateNPCFromTemplate(":brainAi:canibalbeta", corpse_x + random, corpse_y + random, corpse_z + 2, 0, realm);
+    RestartScript(npc);
+    RestartScript(npc1);
+    RestartScript(npc2);
+	return 1;
+endprogram 	

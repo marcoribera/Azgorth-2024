@@ -1,0 +1,47 @@
+use uo;
+use os;
+
+include ":combat:armorZones";
+include ":tn:equipment";
+
+program UnequipTest(mobile, item)
+	var retval := 1;
+
+	if ( (mobile.frozen) || (mobile.paralyzed))
+		SendSysMessage(mobile, "You are unable to move in order to unequip that.");
+		retval := 0;
+	elseif ("cursed" in (GetObjProperty(item, "equip")))
+		retval := 0;
+	endif
+
+	if (mobile.hidden)
+		var zones := CS_GetArmorZone(item);
+		if ("Body" IN zones || "Arms" IN zones || "Legs/feet" IN zones)
+			SendSysMessage(mobile, "Voce apareceu ao colocar "+item.desc+".");
+			mobile.hidden := 0;
+			PrintText(mobile, "*aparece*");
+			var last_loc := struct{ "x" := mobile.x, "z" := mobile.z, "y" := mobile.y };
+    		foreach monster in ListMobilesNearLocationEx(mobile.x, mobile.y, mobile.z, 12, LISTEX_FLAG_NORMAL|LISTEX_FLAG_HIDDEN|LISTEX_FLAG_NPC_ONLY)
+      			if (GetObjProperty(monster, "guild"))
+        			SendEvent(monster, struct{ "type" := 0x78460, source := mobile, "last_loc" := last_loc});
+      			endif
+		  		sleepms(2);
+	  		endforeach
+		endif
+	endif
+
+	if ( retval )
+		//RemoveEquipmentMods(mobile, item);
+		EraseObjProperty(item, "#EquippedOn");
+		if (coverFace(item))
+			mobile.name := GetObjProperty(mobile, "realname");
+			if (GetObjProperty(mobile, "olddescription"))
+				SetObjProperty(mobile, "description", GetObjProperty(mobile, "olddescription"));
+				EraseObjProperty(mobile, "olddescription");
+			endif
+			EraseObjProperty(mobile, "realname");
+		endif
+	endif
+
+	return retval;
+endprogram

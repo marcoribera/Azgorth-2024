@@ -1,0 +1,18 @@
+
+use uo;
+
+include ":fls_core:packets";
+include ":combat:combat";
+include ":blood:blood";
+include "include/damage";
+include "include/say";
+
+program doubleattack(who)
+
+	SendSysMessageEx(who, "Sangue por Sangue!", SSM_INFO);
+	SetCooldown(who, "ataquetotal", 16);
+	//SetObjProperty(who, "#attackbonus", 100);
+	//setObjProperty(who, "#defensefail", 1);
+	
+endprogram
+

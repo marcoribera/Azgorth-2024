@@ -1,0 +1,58 @@
+use uo;
+use os;
+//use npc;
+//use cfgfile;
+
+include ":spells:tnmagery";
+include "include/client";
+include "include/sounds";
+include "include/say";
+include ":timedscripts:timedScripts";
+include ":charactercreation:resists";
+include "include/sysEvent";
+
+program retorno(params)
+    var who := params[1];
+	var info := params[2];
+	params := 0; // No longer needed
+
+    if (who.hidden)
+		SendSysMessageEx(who, "Voce nao pode fazer isso escondido.", SSM_FAIL);
+		return 0;
+	elseif (GetEquipmentByLayer(who, 0x19))
+		SendSysMessageEx(who, "Voce nao consegue fazer isso montado.", SSM_FAIL);
+		return 0;
+	endif
+
+    SendSysMessageEx(who, "Quem sera marcado para o retorno espiritual?", SSM_REQUEST);
+	var what := Spell_Target(who, TGTOPT_CHECK_LOS);
+	if (!what)
+		return;
+	endif
+
+	if(!CheckLosAt(who, what.x, what.y, what.z))
+		SendSysMessageEx(who, "Voce nao consegue ver o alvo.", SSM_FAIL);
+		return 0;
+	endif
+
+    if (what.isA(POLCLASS_ITEM) )
+        if (!what.movable)
+            SendSysMessageEx(who, "Voce nao pode marcar isso", SSM_FAIL);
+            return;
+        endif
+    endif
+
+    var preso1 := CreateItemAtLocation(what.x, what.y, what.z+1, 0x0CEE, 1);
+    preso1.movable:=0;
+
+    var i := 1;
+    while ( i < 6)
+		PrintTextAbovePrivate(who, "" + i, who);
+		sleep(1);
+		i := i + 1;
+	endwhile
+
+    MoveObjectToLocation(what, preso1.x, preso1.y, preso1.z, preso1.realm, MOVEOBJECT_FORCELOCATION);
+    DestroyItem(preso1);
+  
+endprogram

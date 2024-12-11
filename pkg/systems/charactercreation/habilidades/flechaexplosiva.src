@@ -1,0 +1,59 @@
+use uo;
+use os;
+use cfgfile;
+
+include "include/client";
+include "include/sounds";
+include "include/say";
+include ":attributes:attributes";
+include ":timedscripts:timedScripts";
+include ":combat:combat";
+include "include/shapes";
+
+program animateSword(who, targ)
+	//var who := params[1];
+	//var hab := params[2];
+	//var targ := params[3];
+	//params := 0; // No longer needed
+
+	var weapon := who.weapon;
+	var weaponBow := 0;
+	if (lower(weapon.attribute) == "rangedcombat")
+		weaponBow := 1;
+	endif
+
+   	if (!weaponBow)
+      SendSysMessageEx(who, "Voce precisa estar usando um arco!");
+      return 0;
+	endif
+
+	SendSysMessageEx(who, "Em qual frasco deseja atirar?", SSM_REQUEST);
+	targ := target(who, TGTOPT_CHECK_LOS);
+
+	if ( who.weapon != weapon )
+		SendSysMessageEx(who, "Voce nao pode atirar depois de ter trocado a arma.", SSM_FAIL);
+		return 0;
+	endif
+
+  	if (!(targ.objtype in array{ 56328, 61280, 61281, 61282, 0x6073}))
+      SendSysMessageEx(who, "Voce nao pode atirar nisto.", SSM_FAIL);
+      return 0;
+   	endif
+
+	var ammo := GetObjProperty(who.weapon, "ammo");
+	if (!ammo)
+		SendSysMessage(who, "Voce nao definiu o tipo de flecha que vai usar. [clique 2x no arco e na flecha]");
+		return 0;
+	endif
+
+	var elem := GetWpnCfgInfo(who, who.weapon);
+   	PrintText(who, "*dispara no explosivo*");
+	PlaySoundEffect(who, 0x14A);
+	Performaction(who, elem.Anim);
+	PlayMovingEffectXYZ( who.x, who.y, who.z+3, targ.x, targ.y, targ.z, elem.ProjectileAnim, 10, 10, 0, who.realm);
+
+  	sleepms(600);
+  	start_script( ":alchemy:potions/exploder", targ);
+
+	return 1;
+endprogram

@@ -1,0 +1,27 @@
+use uo;
+use datafile;
+
+include ":traps:traps";
+include ":tn:tngumps";
+
+program controlScript(door)
+	if ( !door.locked )
+		if ( door.IsOpen() )
+			door.Close();
+		endif
+	endif
+	
+	var time := Cint(GetObjProperty(door, "time"));
+	if (time) //se eh uma porta de dungeon
+		var locktime := Cint(GetObjProperty(door, "locktime"));
+		if (locktime) //se foi aberta
+			var duration;
+			duration := GetObjProperty(door, "time");
+			sleep(duration);
+			door.locked := 1; //tranca a porta novamente
+			EraseObjProperty(door, "locktime");
+		endif
+	endif
+	
+	return 1;
+endprogram

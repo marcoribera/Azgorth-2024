@@ -1,0 +1,12 @@
+Account
+{
+	Name	admin
+	PasswordHash	f6fdffe48c908deb0f4c3bd36c032e72
+	Enabled	1
+	Banned	0
+	UOExpansion	SA
+	CProp	IP a3:S15:109.106.142.191S14:189.69.140.161S9:127.0.0.1
+	CProp	LastLogin i1693095657
+	CProp	nota i0
+	CProp	rplog a1:S35:admin definiu nota para admin: 4=>3
+}

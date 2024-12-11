@@ -1,0 +1,101 @@
+use uo;
+use os;
+use cfgfile;
+
+include "include/client";
+include "include/sounds";
+include "include/say";
+include "include/damage";
+include "include/facings";
+include ":attributes:attributes";
+include ":timedscripts:timedScripts";
+//include ":fls_magery:basicMagery";
+include ":combat:combat";
+
+program explosao(params)
+	var who := params[1];
+	//var spellinfo := params[2];
+	//var targ := params[3];
+	params := 0; // No longer needed
+
+   if (TS_GetCooldown(who, "habilidade um"))
+		return SendSysMessageEX(who, "Habilidade em Cooldown!", SSM_FAIL);
+	endif
+
+   var combatskill := AP_GetSkill(who, MELEECOMBAT2H);
+	var armainicial := who.weapon;
+
+   if ( combatskill < 40.0)
+		SendSysMessageEx(who, "Voce nao tem conhecimento suficiente para executar o golpe", SSM_FAIL);
+		return 0;
+   endif
+
+   SendSysMessageEx(who, "Quem sera puxado?", SSM_INFO);
+	var targ := Target(who);
+
+   var cfg:=ReadConfigFile(":combat:itemdesc");
+	var elem := FindConfigElem(cfg, who.weapon.objtype);
+
+	if (!CheckLOSAt(who, targ.x, targ.y, targ.z))
+		SendSysMessageEx(who, "O Alvo nao esta visivel para voce.", SSM_FAIL);
+		return 1;
+	elseif (CoordinateDistance(who.x, who.y, targ.x, targ.y) > 3)
+		SendSysMessageEx(who, "O Alvo esta muito distante.", SSM_FAIL);
+		return 1;
+	elseif (IsBehind(who, targ.x, targ.y))
+		SendSysMessageEx(who, "Voce esta de costas para o alvo!", SSM_FAIL);
+		return 1;
+	elseif ( who.weapon != armainicial )
+		SendSysMessageEx(who, "Voce nao pode atacar depois de ter trocado a arma.", SSM_FAIL);
+		return;
+	endif
+	
+	var esquiva:= GetObjProperty(targ, "evasao");
+
+   if (esquiva == 1)
+        PlayAttackAnimation(who);
+        PlayMissSound(targ);
+        PrintText(targ, "*esquiva-se*");
+         EraseObjProperty(targ, "evasao");
+      return;
+   endif
+
+   TS_StartCooldown(who, "habilidade um", 20);
+	who.hidden := 0;
+
+   if (CheckGender(who) == 2)
+	   PlaySoundEffect(who, 0x514);
+   else
+	   PlaySoundEffect(who, 0x515);
+   endif
+
+   var random := Randomint (100)+1;
+   var hit_chance := CalculateHitChancehab(who, targ);
+
+   if ( random > hit_chance )
+      PlayMissSound(targ);
+      PlayAttackAnimation(who);
+      return;
+   endif
+
+   var dmgList := dictionary;
+	dmgList := getNewDamageList(who);
+	var basedamage := CalculateRawDamage(who, who.weapon);
+   var total := cint(CalculateTotalDamage(targ, basedamage, who, dmgList));
+
+   if (!ParryCheck(who, targ, total));
+      PrintText(who, "*Da um puxao em {}*".format(targ.name));
+      PlayHitSounds(who, targ);
+      DamageFLS(targ, total, DMG_PHYSICAL, who);
+
+      var mod := GetModByFacing(who.facing);
+      MoveObjectToLocation(targ, who.x+mod[1], who.y+mod[2], who.z, who.realm);
+
+      TS_StartTimer(targ, "lentidao", 6);
+   else
+      PlayHitSounds(who, targ);
+      PlayAttackAnimation(who);
+   endif
+
+	return 1;
+endprogram

@@ -1,0 +1,151 @@
+use uo;
+use os;
+use cfgfile;
+
+include "include/client";
+include "include/sounds";
+include "include/say";
+include "include/damage";
+include "include/facings";
+include ":attributes:attributes";
+include ":timedscripts:timedScripts";
+include ":combat:combat";
+
+program explosao(params)
+	var who := params[1];
+	var spellinfo := params[2];
+
+    if (TS_GetCooldown(who, "habilidade dois"))
+		return SendSysMessageEX(who, "Habilidade em Cooldown!", SSM_FAIL);
+	endif
+
+    var combatskill := AP_GetSkill(who, RANGEDCOMBAT);
+
+    if ( combatskill < 60.0)
+		SendSysMessageEx(who, "Voce nao tem conhecimento suficiente para executar o golpe", SSM_FAIL);
+		return 0;
+    endif
+
+    var ammo := CheckForAmmo(who, who.weapon, 1);
+    var armainicial := who.weapon;
+
+    if (!ammo) 
+      return SendSysMessageEx(who, "Voce precisa de ao menos uma flecha.", SSM_FAIL); 
+    endif
+
+    SendSysMessageEx(who, "Atirar na cabeca de quem?", SSM_INFO);
+	var targ := Target(who);
+	params := 0; // No longer needed
+    
+    if (who.warmode == 0)
+		who.warmode := 1;
+	endif
+
+    var cfg:=ReadConfigFile(":combat:itemdesc");
+	var elem := FindConfigElem(cfg, who.weapon.objtype);
+
+    if (!targ)
+        SendSysMessageEx(who, "Cancelado.", SSM_FAIL);
+		return 1;
+    elseif (!CheckLOSAt(who, targ.x, targ.y, targ.z))
+		SendSysMessageEx(who, "O Alvo nao esta visivel para voce.", SSM_FAIL);
+		return 1;
+	elseif (CoordinateDistance(who.x, who.y, targ.x, targ.y) > 20)
+		SendSysMessageEx(who, "O Alvo esta muito distante.", SSM_FAIL);
+		return 1;
+	elseif (IsBehind(who, targ.x, targ.y))
+		SendSysMessageEx(who, "Voce esta de costas para o alvo!", SSM_FAIL);
+		return 1;
+    elseif ( who.weapon != armainicial )
+		SendSysMessageEx(who, "Voce nao pode atacar depois de ter trocado a arma.", SSM_FAIL);
+		return;
+	endif
+
+    TS_StartCooldown(who, "habilidade dois", 30);
+    who.hidden := 0;
+
+    var dmgList := dictionary;
+	dmgList := getNewDamageList(who);
+	var basedamage := CalculateRawDamage(who, who.weapon);
+    var hit_chance := CalculateHitChancehab(who, targ);
+    var random := Randomint (100)+1;
+    var mod := GetModByFacing(who.facing);
+
+    if ( random < hit_chance )
+
+        var total := cint(CalculateTotalDamage(targ, basedamage, who, dmgList));
+        var esquiva:= GetObjProperty(targ, "evasao");
+
+        who.frozen := 1;
+	    PrintText(who, "*mirando*");   
+        sleepms(3000);
+        Performaction(who, elem.Anim);
+
+        if ( (who.weapon.objtype == 0x0f4f) || (who.weapon.objtype == 0x13fd) || (who.weapon.objtype == 0x26CD) )
+            PlayMovingEffectXYZ( who.x+mod, who.y, who.z+5, who.x+mod[1], who.y+mod[2], who.z+50, 0x1BFE, 0 );
+        else
+            PlayMovingEffectXYZ( who.x+mod, who.y, who.z+5, who.x+mod[1], who.y+mod[2], who.z+50, 0xf3f, 0 );
+        endif
+
+        who.frozen := 0;
+        sleepms(2000);
+
+        if (esquiva == 1)
+            Performaction(who, elem.Anim);
+            PlayMissSound(who);
+            PrintText(targ, "*esquiva-se*");
+            EraseObjProperty(targ, "evasao");
+            return;
+        endif
+        
+        if (!ParryCheck(who, targ, total));
+
+            if ( (who.weapon.objtype == 0x0f4f) || (who.weapon.objtype == 0x13fd) || (who.weapon.objtype == 0x26CD) )
+                PlayMovingEffectXYZEx( targ.x-3, targ.y-1, targ.z+20, targ.x-1, targ.y-1, targ.z+5, targ.realm, 0x1BFE, 10, 10, 0, 1051);
+            else
+                PlayMovingEffectXYZEx( targ.x-3, targ.y-1, targ.z+20, targ.x-1, targ.y-1, targ.z+5, targ.realm, 0xf3f, 1 ,0,0, 1051);
+            endif
+        
+            PlayHitSounds(who, targ);
+            DamageFLS(targ, total*4, DMG_FORCED, who);
+            who.hidden := 0;
+            
+        else  
+            
+            if ( (who.weapon.objtype == 0x0f4f) || (who.weapon.objtype == 0x13fd) || (who.weapon.objtype == 0x26CD) )
+                PlayMovingEffectXYZEx( targ.x-3, targ.y-1, targ.z+20, targ.x-1, targ.y-1, targ.z+5, targ.realm, 0x1BFE, 10, 10, 0, 1051);
+            else
+                PlayMovingEffectXYZEx( targ.x-3, targ.y-1, targ.z+20, targ.x-1, targ.y-1, targ.z+5, targ.realm, 0xf3f, 1 ,0,0, 1051);
+            endif
+
+            PlayHitSounds(who, targ);
+            Performaction(who, elem.Anim);
+            who.hidden := 0;
+        endif
+    else
+        who.frozen := 1;
+	    PrintText(who, "*mirando*");   
+        sleepms(3000);
+        Performaction(who, elem.Anim);
+
+        if ( (who.weapon.objtype == 0x0f4f) || (who.weapon.objtype == 0x13fd) || (who.weapon.objtype == 0x26CD) )
+            PlayMovingEffectXYZ( who.x+mod, who.y, who.z+5, who.x+mod[1], who.y+mod[2], who.z+50, 0x1BFE, 0 );
+        else
+            PlayMovingEffectXYZ( who.x+mod, who.y, who.z+5, who.x+mod[1], who.y+mod[2], who.z+50, 0xf3f, 0 );
+        endif
+        
+        who.frozen := 0;
+        sleepms(2000);
+            
+        if ( (who.weapon.objtype == 0x0f4f) || (who.weapon.objtype == 0x13fd) || (who.weapon.objtype == 0x26CD) )
+            PlayMovingEffectXYZEx( targ.x-3, targ.y-1, targ.z+20, targ.x-1, targ.y-1, targ.z+5, targ.realm, 0x1BFE, 10, 10, 0, 1051);
+        else
+            PlayMovingEffectXYZEx( targ.x-3, targ.y-1, targ.z+20, targ.x-1, targ.y-1, targ.z+5, targ.realm, 0xf3f, 1 ,0,0, 1051);
+        endif
+
+        PlayMissSound(who);
+        Performaction(who, elem.Anim);
+        who.hidden := 0;
+  
+    endif
+endprogram

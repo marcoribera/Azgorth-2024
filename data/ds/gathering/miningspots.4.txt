@@ -1,0 +1,74 @@
+Element Mina Argonil
+{
+	Name sMina Argonil
+	Ores sferro estanho argonil
+	Rarity s800 700 500
+	Rect s5783 489 5798 513
+}
+
+Element Mina Cidade
+{
+	Name sMina Cidade
+	Ores sBronze Ferro Prata
+	Rarity s999 700 500
+	Realm sBritannia
+	Rect s10
+}
+
+Element Mina de Lithan
+{
+	Name sMina de Lithan
+	Ores sferro estanho lithtan
+	Rarity s800 800 600
+	Rect s5123 1293 5178 1330
+}
+
+Element Mina de Sinque
+{
+	Name sMina de Sinque
+	Ores sferro estanho sinque
+	Rarity s900 800 500
+	Rect s4391 2487 4410 2517
+}
+
+Element Mina de Zharkia
+{
+	Name sMina de Zharkia
+	Ores sferro estanho prata
+	Rarity s900 700 400
+	Rect s5190 896 5365 1100
+}
+
+Element Mina Externa
+{
+	Name sMina Externa
+	Ores sferro estanho lithan
+	Rarity s900 700 500
+	Realm sBritannia
+	Rect s5612 689 5659 703
+}
+
+Element Mina Figin
+{
+	Name sMina Figin
+	Ores sferro estanho figin
+	Rarity s900 700 400
+	Rect s4201 2319 4229 2341
+}
+
+Element Mina Galvorn
+{
+	Name sMina Galvorn
+	Ores sferro estanho prata galvorn
+	Rarity s900 700 400 500
+	Rect s4231 1748 4275 1792
+}
+
+Element Mina helce
+{
+	Name sMina helce
+	Ores sferro estanho helce
+	Rarity s500 500 600
+	Rect s5530 1420 5577 1437
+}
+

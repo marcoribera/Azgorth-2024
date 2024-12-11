@@ -1,0 +1,35 @@
+  use uo;
+
+include ":attributes:attributes";
+include ":timedScripts:timedScripts";
+include "include/say";
+include ":tn:npcutil";
+include ":brainAI:npcUtil";
+include ":ghaia:ghaia";
+include "include/sounds";
+
+program manobra(attacker)
+
+	var targ := TargetCoordinates(attacker);
+	var lvl := cint(AP_GetSkill(attacker,MAGICLORE));
+	var npc;
+	
+	//if (!CheckLOSAt(attacker, targ.x, targ.y, targ.z+5))
+	//	SendSysMessageEx(attacker, "O Alvo nao esta visivel para voce.", SSM_FAIL);
+	//	return 1;
+	//endif
+	
+	if (lvl >= 40 && lvl < 60)
+		npc:= createnpcfromtemplate(":brainai:ossadaescarlateinvoked", targ.x, targ.y, targ.z +5, 0, targ.realm);
+		npc:= createnpcfromtemplate(":brainai:ossadaescarlateinvoked", targ.x, targ.y, targ.z +5, 0, targ.realm);
+	elseif(lvl >= 60 && lvl < 80)
+		npc:= createnpcfromtemplate(":brainai:fleshgoleminvoked", targ.x, targ.y, targ.z +5, 0, targ.realm);
+	elseif(lvl >= 80)
+		npc:= createnpcfromtemplate(":brainai:fleshgoleminvoked", targ.x, targ.y, targ.z +5, 0, targ.realm);
+		npc:= createnpcfromtemplate(":brainai:fleshgoleminvoked", targ.x, targ.y, targ.z +5, 0, targ.realm);
+	else
+		npc:= createnpcfromtemplate(":brainai:Skeletoninvoked", targ.x, targ.y, targ.z +5, 0, targ.realm);
+	endif
+
+
+endprogram  

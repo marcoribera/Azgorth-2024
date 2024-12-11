@@ -1,0 +1,48 @@
+  use uo;
+
+include ":attributes:attributes";
+include ":timedScripts:timedScripts";
+include "include/say";
+include ":tn:tngumps";
+include "include/damage";
+
+program manobra(who)
+	SendSysMessageEx(who, "Para quem voce deseja se sacrificar?", SSM_INFO);
+	var targ := Target(who, TGTOPT_CHECK_LOS);
+
+	if (who.hidden)
+		SendSysMessageEx(who, "Voce nao pode fazer isso escondido.", SSM_FAIL);
+		return 0;
+	elseif (GetEquipmentByLayer(who, 0x19))
+		SendSysMessageEx(who, "Voce nao consegue fazer isso montado.", SSM_FAIL);
+		return 0;
+	elseif (Distance(who, targ) > 15)
+		SendSysMessageEx(who, "O Alvo esta muito distante.", SSM_FAIL);
+		return 1;
+	elseif ( targ.npctemplate )
+		SendSysMessageEx(who, "Esse alvo nao e valido", SSM_FAIL);
+		return 0;
+	elseif ( !targ )
+		SendSysMessageEx(who, "Cacelado.", SSM_FAIL);
+		return 0;
+	endif	
+
+
+    var dptarg := AP_GetVital(targ, "DP");
+	dptarg := dptarg+10;
+
+
+	AP_ConsumeVital(who, "DP", 10);
+	SendSysMessageEx(who, "Voce sacrifica parte da sua forca vital e cede ao seu alvo", SSM_FAIL);
+
+	AP_SetVital(targ, "DP", dptarg);
+	SendSysMessageEx(targ, "Voce se sente espiritualmente revigorado", SSM_INFO);
+	MakeBleed(who);
+	sleep(2);
+	MakeBleed(who);
+	sleep(2);
+	MakeBleed(who);
+	sleep(2);
+    MakeBleed(who);
+endprogram   
+

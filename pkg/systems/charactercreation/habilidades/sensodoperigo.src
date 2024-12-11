@@ -1,0 +1,56 @@
+ use uo;
+ use os;
+
+include ":attributes:attributes";
+include ":timedScripts:timedScripts";
+include "include/say";
+include "include/sysEvent";
+include ":brainAI:npcNerves";
+include ":brainAI:npcCommands";
+include ":brainAI:npcSounds";
+
+program manobra(who)
+	var nearby:= ListHostiles( who, range := 20, flags := 0 );
+	var hostiles := array{};
+	var party := who.party;
+
+	if (!who.party)
+
+		foreach char in nearby
+			hostiles.append(char);
+		sleepms(20);
+		endforeach
+	
+		foreach char in hostiles
+			SendEvent(char, struct{"type":=EVID_TAUNT, "source":=char});
+		endforeach
+
+		sleep(2);
+
+		foreach char in hostiles
+			SendEvent(char, struct{"type":=EVID_TAUNT, "source":=who});
+		endforeach
+		return 0;
+
+	else
+
+		foreach char in nearby
+				hostiles.append(char);
+			sleepms(20);
+		endforeach
+		
+		foreach char in hostiles
+			SendEvent(char, struct{"type":=EVID_TAUNT, "source":=char});
+		endforeach
+
+		sleep(2);
+
+		foreach char in hostiles
+			if (char != who)
+				SendEvent(char, struct{"type":=EVID_TAUNT, "source":=who.party.members});
+			endif
+		endforeach
+		
+	endif
+
+endprogram  

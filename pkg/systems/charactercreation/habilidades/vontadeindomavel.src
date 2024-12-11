@@ -1,0 +1,41 @@
+
+use uo;
+
+include ":attributes:attributes";
+include ":fls_core:packets";
+include ":combat:combat";
+include ":blood:blood";
+include "include/damage";
+include "include/say";
+include ":tn:cooldown";
+
+program doubleattack(who)
+
+	if (isBloodied(who))
+		SendSysMessageEx(who, "Voce esta cego de violencia.", SSM_INFO);
+		SetCooldown(who, "VontadeIndomavel", 60);
+
+		SetObjProperty(who, "coMod", 50);
+		who.resist_cold_mod := who.resist_cold_mod + 50;
+		SetObjProperty(who, "enMod", 50);
+		who.resist_energy_mod := who.resist_energy_mod + 50;
+		SetObjProperty(who, "fiMod", 50);
+		who.resist_fire_mod := who.resist_fire_mod + 50;
+
+		sleep(30);
+
+		var comod := GetObjProperty(who, "coMod");
+		who.resist_cold_mod := who.resist_cold_mod - comod;
+		EraseObjProperty(who, "coMod");
+		var enmod := GetObjProperty(who, "enMod");
+		who.resist_energy_mod := who.resist_energy_mod - enmod;
+		EraseObjProperty(who, "enMod");
+		var fimod := GetObjProperty(who, "fiMod");
+		who.resist_fire_mod := who.resist_fire_mod - fimod;
+		EraseObjProperty(who, "fiMod");
+
+	endif
+endprogram
+
+
+

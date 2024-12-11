@@ -1,0 +1,28 @@
+use uo;
+use os;
+use cfgfile;
+
+include "include/client";
+include "include/sounds";
+include "include/say";
+include "include/damage";
+include ":attributes:attributes";
+include ":combat:combat";
+include ":timedscripts:timedScripts";
+include ":fls_magery:basicMagery";
+
+program explosao(params)
+	var who := params[1];
+	var spellinfo := params[2];
+	var targ := params[3];
+	params := 0; // No longer needed
+
+   if (!CheckBlockDodge(targ, 1, 1))
+      DamageFLS(targ, spellinfo.PowerMod[1], DMG_PHYSICAL, who);
+      PlayAttackAnimation(who);
+		PlayHitSounds(who, targ);
+      TS_StartTimer(targ, "diminuir_poder", 10, 15);
+   endif
+
+	return 1;
+endprogram

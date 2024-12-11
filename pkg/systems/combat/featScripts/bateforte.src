@@ -1,0 +1,123 @@
+use uo;
+use os;
+use cfgfile;
+
+include "include/client";
+include "include/sounds";
+include "include/say";
+include "include/damage";
+include "include/facings";
+include ":attributes:attributes";
+include ":timedscripts:timedScripts";
+include ":combat:combat";
+
+program explosao(params)
+	var who := params[1];
+	var spellinfo := params[2];
+
+    if (TS_GetCooldown(who, "habilidade dois"))
+		return SendSysMessageEX(who, "Habilidade em Cooldown!", SSM_FAIL);
+	endif
+
+    var combatskill := AP_GetSkill(who, MELEECOMBAT2H);
+
+    if ( combatskill < 60.0)
+		SendSysMessageEx(who, "Voce nao tem conhecimento suficiente para executar o golpe", SSM_FAIL);
+		return 0;
+    endif
+
+    var armainicial := who.weapon;
+
+    SendSysMessageEx(who, "Quem golpear?", SSM_INFO);
+
+	var targ := Target(who);
+	params := 0; // No longer needed
+    
+    if (who.warmode == 0)
+		who.warmode := 1;
+	endif
+
+    var cfg:=ReadConfigFile(":combat:itemdesc");
+	var elem := FindConfigElem(cfg, who.weapon.objtype);
+
+    if (!targ)
+        SendSysMessageEx(who, "Cancelado.", SSM_FAIL);
+		return 1;
+    elseif (!CheckLOSAt(who, targ.x, targ.y, targ.z))
+		SendSysMessageEx(who, "O Alvo nao esta visivel para voce.", SSM_FAIL);
+		return 1;
+	elseif (CoordinateDistance(who.x, who.y, targ.x, targ.y) > 1)
+		SendSysMessageEx(who, "O Alvo esta muito distante.", SSM_FAIL);
+		return 1;
+	elseif (IsBehind(who, targ.x, targ.y))
+		SendSysMessageEx(who, "Voce esta de costas para o alvo!", SSM_FAIL);
+		return 1;
+    elseif ( who.weapon != armainicial )
+		SendSysMessageEx(who, "Voce nao pode atacar depois de ter trocado a arma.", SSM_FAIL);
+		return;
+	endif
+
+    TS_StartCooldown(who, "habilidade dois", 30);
+    who.hidden := 0;
+    
+    
+
+
+    var dmgList := dictionary;
+	dmgList := getNewDamageList(who);
+	var basedamage := CalculateRawDamage(who, who.weapon);
+    var hit_chance := CalculateHitChancehab(who, targ);
+    var random := Randomint (100)+1;
+    var mod := GetModByFacing(who.facing);
+
+    PrintText(who, "*Ergue a arma acima da cabeca*"); 
+    who.frozen := 1;  
+    sleepms(2000);
+    PlayAttackAnimation(who);
+    who.frozen := 0;
+
+    if ( random < hit_chance )
+
+        var total := cint(CalculateTotalDamage(targ, basedamage, who, dmgList));
+        var esquiva:= GetObjProperty(targ, "evasao");
+
+        if (esquiva == 1)
+            PlayAttackAnimation(who);
+            PlayMissSound(who);
+            PrintText(targ, "*esquiva-se*");
+            EraseObjProperty(targ, "evasao");
+            who.frozen := 0;
+            return;
+        endif
+
+        if (!ParryCheck(who, targ, total));
+            PlayAttackAnimation(who);
+            PlayHitSounds(who, targ);
+
+            if (CoordinateDistance(who.x, who.y, targ.x, targ.y) > 1)
+		        SendSysMessageEx(who, "O Alvo se afastou demais", SSM_FAIL);
+                PrintText(who, "*Acerta o chão*"); 
+                who.frozen := 0;
+		        return 1;
+            endif
+            
+            DamageFLS(targ, total*6, DMG_PHYSICAL, who);
+            PrintText(who, "*Bate Forte*"); 
+
+            who.frozen := 0;
+            
+        else  
+            who.frozen := 0;
+
+            PlayAttackAnimation(who);
+            PlayHitSounds(who, targ);
+        endif
+    else
+        PlayAttackAnimation(who);
+        who.frozen := 0;
+        sleepms(2000);
+        PlayMissSound(who);
+        Performaction(who, elem.Anim);
+        who.hidden := 0;
+    endif
+endprogram

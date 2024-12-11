@@ -1,0 +1,19 @@
+use uo;
+use os;
+use util;
+include ":charactercreation:habilidades";
+include ":tn:cooldown";
+include ":attributes:attributes";
+
+program TimedScript_Paralysis(params)
+	var mobile := params[1];
+
+
+	AP_SetSkillMod(mobile, AWARENESS, 5);
+    RecalcVitals(mobile);
+	//PlaySoundEffect(mobile, 0x205);
+	SendSysMessage(mobile, "Sua visao se torna mais agucada");
+	
+	return 1;
+endprogram
+

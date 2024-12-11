@@ -1,0 +1,47 @@
+use uo;
+use os;
+use cfgfile;
+
+include "include/client";
+include "include/sounds";
+include "include/say";
+include "include/damage";
+include ":attributes:attributes";
+include ":timedscripts:timedScripts";
+
+program animateSword(params)
+	var who := params[1];
+	var spellinfo := params[2];
+	var targ := params[3];
+	params := 0; // No longer needed
+
+   if (TS_GetTimerInfo(targ, "escudo"))
+      SendSysMessageEx(who, "O alvo já está protegido por um escudo");
+      return 0;
+   endif
+
+   PlayObjectCenteredEffect( targ, 0x3728, 1, 2 );
+   var shieldtype;
+   var color;
+
+   PlaySoundEffect(targ, 0x475);
+   var sort := RandomInt(3)+1;
+   case (sort)
+      1:
+      shieldtype := DMG_COLD;
+      color := 2753;
+      2:
+      shieldtype := DMG_POISON;
+      color := 2573;
+      default:
+      shieldtype := DMG_FIRE;
+      color := 2696;
+   endcase
+
+   SetObjproperty(targ, "shieldcolor", color);
+   SetObjproperty(targ, "shieldamount", spellinfo.PowerMod[1]);
+   SetObjProperty(targ, "shieldtype", shieldtype);
+
+   TS_StartTimer(targ, "escudo_magico", 120);	
+	return 1;
+endprogram

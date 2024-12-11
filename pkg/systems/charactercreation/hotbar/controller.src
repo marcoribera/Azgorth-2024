@@ -1,0 +1,36 @@
+use uo;
+include ":attributes:attributes";
+include ":charactercreation:habilidades";
+include ":fls_core:fls_characters";
+include ":timedScripts:timedScripts";
+include "include/say";
+include ":tn:cooldown";
+
+
+program hotbarController(who)
+   _checkPid(who, "hotbar_controller");
+   var stored_cooldowns := dictionary;
+   while (who.connected)
+      var new_cooldowns := TS_GetCooldownList(who);
+      if (stored_cooldowns.keys().size() != new_cooldowns.keys().size())
+         stored_cooldowns := new_cooldowns;
+         CloseGump( who, 0x945, 1 );
+      endif
+      
+      sleep(1);
+   endwhile
+endprogram
+
+function _checkPid(who, pid, temp := 0)
+   set_critical(1);
+   pid := "{}pid_{}".format(_ifElse(temp, "#", ""), pid);
+   var process := GetProcess( GetobjProperty(who, pid) );
+   if (process) process.kill(); endif
+   SetObjProperty(who, pid, GetPid());
+   set_critical(0);
+endfunction
+
+function _ifElse(a,b,c)
+   if (a) return b; endif
+   return c;
+endfunction

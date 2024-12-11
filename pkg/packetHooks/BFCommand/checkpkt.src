@@ -1,0 +1,17 @@
+use uo;
+use os;
+
+program checkpkt()
+  return 1;
+endprogram
+
+exported function ClientCheckPkt(who, byref packet)
+  var v1 := packet.GetInt32(7);
+  SendSysMessage(who, "Checando o pacote");
+  if (v1 >= 0x01001700) //1.0.17.0    This check may or may not work here...
+    SendSysMessage(who, "Orion client is 1.0.17.0 or above.");
+    EraseObjProperty(who, "#orioncheck");
+  else
+    SendSysMessage(who, "Orion client responded with version below 1.0.17.0");
+  endif
+endfunction

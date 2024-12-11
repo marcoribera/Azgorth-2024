@@ -1,0 +1,68 @@
+use uo;
+use os;
+
+include "include/damage";
+
+program armasagrada(param)
+
+	var arma := param[1];
+	var time := param[2];
+	var type := param[3];
+
+	var hit_scripts := GetObjProperty(arma, "HitScripts");
+	if ( !hit_scripts )
+		hit_scripts := array{};
+	endif
+
+	var sleeptime := cint( time/10 );
+
+	var originalColor := arma.color;
+	SetObjProperty(arma, "elementalWeaponOriginalColor", originalColor);
+	SetObjProperty(arma, "pid", Getpid());
+	//printtextabove(arma, " " + type);
+
+	if (type == DMG_FIRE)
+		arma.color := 1255;
+		hit_scripts := array{":combat:weaponHitScripts/FireHit"};
+		SetObjProperty(arma, "HitScripts", hit_scripts);
+	elseif (type == DMG_COLD)
+		hit_scripts := array{":combat:weaponHitScripts/IceHit"};
+		SetObjProperty(arma, "HitScripts", hit_scripts);
+		arma.color := 1261;
+	elseif (type == DMG_ENERGY)
+		hit_scripts := array{":combat:weaponHitScripts/LightningHit"};
+		SetObjProperty(arma, "HitScripts", hit_scripts);
+		arma.color := 1273;
+	endif
+
+	var i := 0;
+	var elemental := GetObjProperty(arma, "#elementalweapon");
+	while ( i <= 10)
+		elemental := GetObjProperty(arma, "#elementalweapon");
+		if (elemental == error)
+			break;
+		endif
+		sleep(sleeptime);
+		arcoiris(arma, type);
+		i := i + 1;
+	endwhile
+
+	arma.color := originalColor;
+	EraseObjProperty(arma, "HitScripts");
+endprogram
+ 
+function arcoiris(arma, type)
+
+	var k := 0;
+	
+	for (k := 1; k < 5; k := k + 1)
+		var initcolor := arma.color;
+		var i := 1;
+		for ( i := 1; i <= 5; i := i + 1)
+			arma.color := initcolor + i;
+			sleepms(500);
+		endfor
+		arma.color := initcolor;
+	endfor
+
+endfunction

@@ -1,0 +1,19 @@
+/*
+ * $Id: endParalysis.src 87 2006-05-23 19:04:43Z sroyalty $
+ *
+ */
+ 
+use uo;
+use os;
+
+include ":attributes:attributes";
+
+program TimedScript_EndUivoBuff(mobile)
+	AP_SetSkillMod(mobile, "Wrestling", 0);
+    RecalcVitals(mobile);
+	PrintTextAbove(mobile, "O efeito do uivo terminou");
+	//PlaySoundEffect(mobile, 0x205);
+	//SendSysMessage(mobile, "Sua visao volta ao normal");
+	
+	return 1;
+endprogram

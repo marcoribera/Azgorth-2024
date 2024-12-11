@@ -1,0 +1,106 @@
+use uo;
+
+include "include/say";
+include ":taming:taming";
+include ":gumps:yesno";
+include ":attributes:attributes";
+include ":timedScripts:timedScripts";
+include "include/facings";
+include "include/damage";
+include ":combat:combat";
+include "include/client";
+
+program tirodesfocado(who)
+
+    if (TS_GetCooldown(who, "habilidade um"))
+		return SendSysMessageEX(who, "Habilidade em Cooldown!", SSM_FAIL);
+	endif
+
+    var combatskill := AP_GetSkill(who, MELEECOMBAT2H);
+
+    if ( combatskill < 40.0)
+		SendSysMessageEx(who, "Voce nao tem conhecimento suficiente para executar o golpe", SSM_FAIL);
+		return 0;
+    endif
+
+	who.warmode := 1;
+
+    TS_StartCooldown(who, "habilidade um", 20);
+    PrintText(who, "*avanca freneticamente*");
+	who.hidden := 0;
+	
+    var loc := struct{ "x" := who.x, "y" := who.y, "z" := who.z };
+
+    PushBackEX(who, 4, 35, 1);
+
+    if (CheckGender(who) == 2)
+	   PlaySoundEffect(who, 0x514);
+    else
+	   PlaySoundEffect(who, 0x515);
+    endif
+
+
+    var hostiles := ListHostiles(who);
+    var already_hit := array{};
+
+    var mod := GetModByFacing(who.facing);
+
+    //calculo damage
+	var dmgList := dictionary;
+	dmgList := getNewDamageList(who);
+	var basedamage := CalculateRawDamage(who, who.weapon);
+
+    var cfg:=ReadConfigFile(":combat:itemdesc");
+	var elem := FindConfigElem(cfg, who.weapon.objtype);
+
+    var random := Randomint (100)+1;
+    
+
+    for i := 1 to 5
+      var x := mod[1] * i;
+      var y := mod[2] * i;
+
+        if (who.x == loc.x+x && who.y == loc.y+x)
+            return 1;
+        endif
+
+        foreach mobile in (ListMobilesNearLocationEx( loc.x+x, loc.y+y, loc.z, 0, LISTEX_FLAG_NORMAL|LISTEX_FLAG_HIDDEN))
+
+            var hit_chance := CalculateHitChancehab(who, mobile);
+            var total := cint(CalculateTotalDamage(mobile, basedamage, who, dmgList));
+            var esquiva:= GetObjProperty(mobile, "evasao");
+
+            if (esquiva == 1)
+                Performaction(who, elem.Anim);
+                PlayMissSound(mobile);
+                PrintText(mobile, "*esquiva-se*");
+                EraseObjProperty(mobile, "evasao");
+                already_hit.append(mobile);
+            endif
+
+            sleepms(2);
+            if (mobile in already_hit || mobile == who || mobile in who.party.members || (!mobile.npctemplate && !(mobile in hostiles)))
+                continue;
+            endif
+
+            if ( random < hit_chance )
+                if (!ParryCheck(who, mobile, total));
+                    DamageFLS(mobile, total*2, DMG_FORCED, who);
+                    already_hit.append(mobile);
+                else
+                    PlayHitSounds(who, mobile);
+            		Performaction(who, elem.Anim);
+                    already_hit.append(mobile);
+				endif
+            else
+				PlayMissSound(who);
+        		Performaction(who, elem.Anim);
+                already_hit.append(mobile);
+			endif
+
+        endforeach
+      sleepms(2);
+    endfor
+
+   return 1;
+endprogram

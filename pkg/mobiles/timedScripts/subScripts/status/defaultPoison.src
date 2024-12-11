@@ -1,0 +1,63 @@
+/* $Id: alcohol.src 87 2006-05-23 19:04:43Z sroyalty $
+ *
+ */
+
+use uo;
+use os;
+use util;
+use math;
+
+include "include/client";
+include "include/damage";
+include ":timedscripts:timedScripts";
+include "include/say";
+include ":attributes:vitals";
+
+function StartScript(mobile, attacker := 0, level := 0)
+	if ( !level )
+		level := 1;
+	endif
+
+	if ( attacker )
+		SetScriptController(attacker);
+	endif
+
+   var dmg := 7 * (level+1);
+
+   var success := 0;
+   while (!mobile.dead)
+      var fdmg := RandomIntMinmax(cint(cdbl(dmg) * 0.8), dmg+1);
+		damageFLS(mobile, cint(fdmg), DMG_POISON, attacker);
+      if (RandomInt(100) < 5)
+         break;
+      endif
+      sleep(2);
+   endwhile
+	
+   TS_LowerDuration(mobile, "defaultPoison", -1);
+   return 1;
+endfunction
+
+function EndScript(mobile)
+   return 1;
+endfunction
+
+function LogOffScript(mobile)
+   return 1;
+endfunction
+
+program TimedScriptInit(params)
+	var mobile := params[1];
+	var type   := params[2];
+	var level  := params[3];
+
+   if (typeof(type) == "String")
+      if (type == "End")
+         return EndScript(mobile);
+      elseif (type == "LogOff")
+         return LogOffScript(mobile);
+      endif
+   endif
+
+   return StartScript(mobile, type, level);
+endprogram

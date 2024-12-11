@@ -1,0 +1,91 @@
+use os;
+
+include "include/say";
+include ":timedscripts:timedScripts";
+include ":fls_core:fls_characters";
+include "include/client";
+//include "include/shapes";
+include "include/client";
+include "include/sounds";
+include "include/facings";
+include "include/damage";
+include ":attributes:attributes";
+include ":combat:combat";
+
+
+program startTalent(param)
+   var who := param[1];
+   var hab := param[2];
+
+   if (TS_GetCooldown(who, "habilidade dois"))
+		return SendSysMessageEX(who, "Habilidade em Cooldown!", SSM_FAIL);
+	endif
+
+   var combatskill := AP_GetSkill(who, MELEECOMBAT2H);
+
+   if ( combatskill < 40.0)
+		SendSysMessageEx(who, "Voce nao tem conhecimento suficiente para executar o golpe", SSM_FAIL);
+		return 0;
+   endif
+
+   var armainicial := who.weapon;
+   var cfg:=ReadConfigFile(":combat:itemdesc");
+	var elem := FindConfigElem(cfg, who.weapon.objtype);
+   
+   if ( who.weapon != armainicial )
+		SendSysMessageEx(who, "Voce nao pode atacar depois de ter trocado a arma.", SSM_FAIL);
+		return;
+	endif
+
+   TS_StartCooldown(who, "habilidade dois", 20);
+   who.hidden := 0;
+
+	who.SetWarMode(1);
+	PlaySoundEffect(who, 0x520);
+
+	var alreadydamaged := array{};
+	who.SetWarMode(1);
+   PrintText(who, "*girando {}".format(who.weapon.desc));
+
+   var mobiles := ListMobilesNearLocation( who.x, who.y, who.z, 3, who.realm);
+   var dmgList := dictionary;
+   dmgList := getNewDamageList(who);
+   var dmg := CalculateRawDamage(who, who.weapon);
+   var hit_chance := CalculateHitChancehab(who, mobiles);
+   var random := Randomint (100)+1;
+
+    //GrantPrivilege(who, "invul");
+	//who.Enable("invul");
+   
+    foreach mobile in mobiles
+        PushBack(mobile, 4, 35);
+        if ( random < hit_chance )
+         var total := cint(CalculateTotalDamage(mobile, dmg, who, dmgList));
+            if ( mobile != who )
+                if (!ParryCheck(who, mobile, total));
+                    PlayMovingEffect( who, mobile, 0x22C6, 10);
+                    DamageFLS(mobile, total*2, DMG_PHYSICAL, who);
+                else
+                    PlayHitSounds(who, mobile);
+                endif
+            endif
+        else 
+            PlayMissSound(who);
+      endif
+      sleepms(2);
+    endforeach
+
+    //who.Disable("invul");
+
+   var weapon_cfg := GetItemCfgInfo(who, who.weapon);
+   var area := GetMidpointCircleCoords(who.x, who.y, 3);
+   for i := 1 to 3
+        foreach p in area
+            PlayMovingEffectXYZEx( who.x, who.y, who.z, p.x, p.y, who.z+5, who.realm, 0x0F51, 0 ,0, 0, 1156);
+            sleepms(2);
+        endforeach
+        PlayAttackAnimation(who);
+        sleepms(120);
+   endfor
+   return 1;
+endprogram

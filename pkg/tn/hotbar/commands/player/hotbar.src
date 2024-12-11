@@ -1,0 +1,31 @@
+use cfgfile;
+use uo;
+use os;
+use datafile;
+use vitals;
+use math;
+
+include ":attributes:attributes";
+include ":timedscripts:timedScripts";
+include ":charactercreation:feats";
+include "include/say";
+include ":tn:tngumps";
+include ":tn:cooldown";
+include "include/string";
+
+program virtueachievements(params)
+    var who := params[1];
+
+    if (GetObjProperty(who, "useHotbar") == 1)
+        SetObjPRoperty(who, "useHotbar", 0);
+        GFCloseGump(who, GetObjProperty(who, "pid_hotbar"), 0);
+    else
+        SetObjPRoperty(who, "useHotbar", 1);
+        UpdateHotbar(who);
+    endif
+
+
+
+
+
+endprogram

@@ -1,0 +1,13 @@
+ use uo;
+
+include ":attributes:attributes";
+include ":timedScripts:timedScripts";
+include "include/say";
+include ":tn:cooldown";
+
+program manobra(attacker)
+
+	SendSysMessageEx(attacker, "Voce se renova a cada golpe!", SSM_INFO);
+	SetCooldown(attacker, "vigordecombate", cint(AP_GetSkill(attacker, TACTICS)));
+
+endprogram  

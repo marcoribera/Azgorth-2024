@@ -1,0 +1,65 @@
+use os;
+
+include "include/say";
+include ":timedscripts:timedScripts";
+include ":ghaia:ghaiaUtil";
+include ":fls_core:fls_characters";
+include "include/client";
+include "include/facings";
+include ":combat:combat";
+include "include/damage";
+include ":charactercreation:feats";
+
+program startTalent(param)
+   var who := param[1];
+   var spellinfo := param[2];
+   var targ := param[3];
+
+	if (!who.warmode)
+		who.warmode := 1;
+	endif
+	
+	var elem := GetItemCFGInfo(who, who.weapon);
+	
+	if (IsBehind(who, targ.x, targ.y))
+      FailFeat(who, spellinfo);
+		SendSysMessageEx(who, "Voc� est� de costas para o alvo!", SSM_FAIL);
+		return 0;
+	endif
+	
+	var ammo := CheckForAmmo(who, who.weapon);
+   if (!ammo)
+      return FailFeat(who, spellinfo);
+   endif
+	
+	PlaySoundEffect(who, 0x14A);
+	Performaction(who, elem.Anim);
+	PlayMovingEffectXYZ( who.x, who.y, who.z+3, targ.x, targ.y, targ.z, elem.ProjectileAnim, 10, 10, 0, who.realm);
+	sleepms(35);
+	PlayMovingEffectXYZ( who.x, who.y, who.z+3, targ.x, targ.y, targ.z, 0x377A, 6, 10, 0, who.realm);
+	
+	var distancia := GetCoordsInLine(who.x, who.y, targ.x, targ.y);
+	
+	//lista inimigos e aplica dano
+   var i := 1;
+	var alreadydamaged := array{};
+	foreach pontos in distancia
+		var mobiles := ListMobilesNearLocation(pontos.x, pontos.y, who.z, 1, who.realm);
+		foreach mobile in mobiles
+			if (!(mobile.serial in alreadydamaged) && (mobile != who) && !(mobile in who.party.members))
+				alreadydamaged.Append(mobile.serial);
+            if (alreadydamaged.size() > 1)
+               i := 2;
+            endif
+				DamageFLS(mobile, spellinfo.PowerMod[i], DMG_PHYSICAL, who);
+			endif
+			sleepms(20);
+		endforeach
+		sleepms(20);
+	endforeach
+
+	who.warmode := 1;
+	CreateItemAtLocation( targ.x, targ.y, targ.z, ammo, 1, who.realm);
+
+   return 1;
+endprogram

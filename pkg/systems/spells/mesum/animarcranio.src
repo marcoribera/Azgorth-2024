@@ -1,0 +1,90 @@
+use uo;
+use os;
+
+include ":spells:tnmagery";
+include "include/client";
+include "include/sounds";
+include "include/say";
+include ":timedScripts:timedScripts";
+include ":attributes:attributes";
+include ":tn:npcutil";
+include ":brainAI:npcUtil";
+include ":ghaia:ghaia";
+
+
+program SpellScript(params)
+	var who := params[1];
+	var targ := params[2];
+	params := 0; // No longer needed
+
+	var skill := AP_GetSkill(who, "Magery");
+	var maxsummons := 3;
+	var npctemplate := GetObjproperty(targ, "npctemplate");
+	var category := lower(getnpccategory( ParseTemplateName(npctemplate).template ));
+
+    //if (GetObjProperty(who, "CranioSummons") == maxsummons);
+	//	SendSysMessageEx(who, "Voce ja controla espiritos demais", SSM_FAIL);
+    //	return 0;
+	//endif
+
+	if ( targ.IsA(POLCLASS_MOBILE) )
+		SendSysMessage(who, "Voce so pode usar esta magia em cranios.");
+		return 0;
+	endif
+
+        if ( targ.objtype != 0x1AE4)
+        SendSysMessageEx(who, "Voce so pode usar esta magia em cranios", SSM_FAIL);
+        return 0;
+        endif
+
+	//Efeito da magia
+	//PlaySoundEffect(who, SFX_SPELL_HEAL);
+	CreateItemAtLocation(who.x, who.y, who.z, 4650, 1, who.realm);
+	CreateItemAtLocation((who.x - 1), who.y, who.z, 4650, 1, who.realm);
+	sleepms(500);
+	CreateItemAtLocation(who.x, (who.y - 1), who.z, 4650, 1, who.realm);	
+	sleepms(500);
+	PlaySoundEffect(who, 383);
+	CreateItemAtLocation((who.x + 1), who.y, who.z, 4650, 1, who.realm);
+	sleepms(500);
+	CreateItemAtLocation(who.x, (who.y - 1), who.z, 4650, 1, who.realm);
+	sleepms(500);
+	var brilho := CreateItemAtLocation(who.x, who.y, (who.z - 7), 14154, 1, who.realm);
+	sleepms(2000);
+	Destroyitem( brilho );
+
+	var undead;
+	
+	undead := createnpcfromtemplate(":brainai:floatingskullinvoked", who.x, who.y, who.z +5, 0 , who.realm);
+
+	PlaySoundEffect(who, 383);
+
+
+	Destroyitem( targ );
+	undead.SetMaster(who);
+				
+	SetObjProperty(undead, "GuardKill", 1);	
+	SetObjProperty(undead, "owner", who.serial);
+	SetObjProperty(undead, "name", who.name);
+	SetObjproperty(undead, "script", who.script);
+	SetObjProperty(undead, "AntigoTreinadorID", who.serial);
+		
+	undead.script := ":ghaia:controlled";
+	RestartScript(undead);
+				
+	Run_Script_To_Completion(":death:npcdeath", {undead});
+				
+	SetObjProperty(undead, "Necro", 1);
+	
+	//var numbersummons := Cint(GetObjProperty(who, "CranioSummons"));
+	//SetObjProperty(who, "CranioSummons", (numbersummons + 1));
+
+	TS_StartTimer(undead, "summon", GetSpellDuration(AP_GetSkill(who, MAGICLORE)) / 2);
+		
+
+	SendSysMEssageEx(who, "Voce teve sucesso em reanimar o cranio", SSM_INFO);
+	Corromper(who, 4, "0");
+	AP_SetSkillMod(undead, WRESTLING, AP_GetTrueSkill(who, MAGICLORE)/2);
+	
+	return 1;
+endprogram 

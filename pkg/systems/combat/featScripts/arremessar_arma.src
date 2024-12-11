@@ -1,0 +1,131 @@
+
+use uo;
+use os;
+use cfgfile;
+
+include "include/client";
+include "include/sounds";
+include "include/say";
+include "include/facings";
+include "include/damage";
+include ":attributes:attributes";
+include ":timedscripts:timedScripts";
+include ":combat:combat";
+
+program arremessar_arma(params)
+	var who := params[1];
+	//var spellinfo := params[2];
+	//var targ := params[3];
+	params := 0; // No longer needed
+
+   var weapon := who.weapon;
+
+   if (TS_GetCooldown(who, "habilidade um"))
+		return SendSysMessageEX(who, "Habilidade em Cooldown!", SSM_FAIL);
+	endif
+
+   var combatskill := AP_GetSkill(who, MELEECOMBAT2H);
+   var armainicial := who.weapon;
+
+   if ( combatskill < 20.0)
+		SendSysMessageEx(who, "Voce nao tem conhecimento suficiente para executar o golpe", SSM_FAIL);
+		return 0;
+   endif
+
+   var cfg:=ReadConfigFile(":combat:itemdesc");
+	var elem := FindConfigElem(cfg, who.weapon.objtype);
+
+   SendSysMessageEx(who, "Vai jogar em quem?", SSM_INFO);
+   var targ := Target(who);
+
+   if (!CheckLOSAt(who, targ.x, targ.y, targ.z))
+		SendSysMessageEx(who, "O Alvo nao esta visivel para voce.", SSM_FAIL);
+		return 1;
+	elseif (CoordinateDistance(who.x, who.y, targ.x, targ.y) > 10)
+		SendSysMessageEx(who, "O Alvo esta muito distante.", SSM_FAIL);
+		return 1;
+	elseif (IsBehind(who, targ.x, targ.y))
+		SendSysMessageEx(who, "Voce esta de costas para o alvo!", SSM_FAIL);
+		return 1;
+    elseif ( who.weapon != armainicial )
+		SendSysMessageEx(who, "Voce nao pode atacar depois de ter trocado a arma.", SSM_FAIL);
+		return;
+	endif
+
+   var dmgList := dictionary;
+   dmgList := getNewDamageList(who);
+   var dmg := CalculateRawDamage(who, who.weapon);
+	var altura := cint(who.z - targ.z);
+   var hit_chance := CalculateHitChancehab(who, targ);
+   var random := Randomint (100)+1;
+
+   var total := cint(CalculateTotalDamage(targ, dmg, who, dmgList));
+
+   if (altura < 0)
+		altura := 0;
+	endif
+
+   total := total + altura;
+
+   var poisonInfo := GetObjProperty(who.weapon, "poisonInfo" );
+
+   TS_StartCooldown(who, "habilidade um", 20);
+   who.hidden := 0;
+
+   Performaction(who, elem.Anim);
+
+   PlayMovingEffectXYZEx( who.x, who.y, who.z+3, targ.x, targ.y, targ.z, who.realm, weapon.objtype, 10 ,0, 0, 0, GetFacing(who.x, who.y, targ.x, targ.y) );
+
+	PlaySoundEffect(who, 0x5D3);
+	PrintText(who, "*Joga {}*".format(weapon.desc));
+
+   sleepms(100);
+	MoveObjectToLocation( weapon, targ.x, targ.y, targ.z+1 );
+   start_script(":combat:reequip_weapon", array{ who, weapon });
+
+   var esquiva:= GetObjProperty(targ, "evasao");
+   if (esquiva == 1)
+      Performaction(who, elem.Anim);
+      PlayMissSound(who);
+      PrintText(targ, "*esquiva-se*");
+      EraseObjProperty(targ, "evasao");
+      return;
+   endif
+
+   poisonInfo.dosage := poisonInfo.dosage -1;
+
+   if (poisonInfo.dosage <= 0) //se nao tiver mais cargas de veneno, deleta
+      EraseObjProperty(who.weapon, "poisonInfo");
+   else //se ainda tiver atualiza na arma
+      SetObjProperty(who.weapon, "poisonInfo", poisonInfo);
+   endif
+        
+
+   if (poisonInfo.name == "paralyzePoison")
+      poisonInfo.time := 4;
+   endif
+
+   if ( random < hit_chance )
+      foreach mobile in CheckifIsAlly(who, ListMobilesNearLocationEx( targ.x, targ.y, targ.z, 0, LISTEX_FLAG_NORMAL|LISTEX_FLAG_HIDDEN))
+         if (!ParryCheck(who, targ, total));
+            DamageFLS(mobile, total*2, DMG_PHYSICAL, who);
+
+            if (!IsPoisonImune(targ, poisonInfo.name) )
+               TS_StartTimer(targ, poisonInfo.name, poisonInfo.time, poisonInfo.level, who);
+            endif
+
+            if (RandomInt(100) <= 25)
+               PrintText(targ, "*Paralisado*", SSM_FAIL);
+               TS_StartTimer(targ, "paralysis", 6, who);
+            endif
+
+         else
+            PlayHitSounds(who, targ);
+         endif
+         sleepms(2);
+      endforeach
+   else
+      PlayMissSound(who);
+   endif
+
+endprogram 

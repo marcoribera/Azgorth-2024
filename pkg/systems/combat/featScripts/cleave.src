@@ -1,0 +1,105 @@
+use uo;
+
+include "include/say";
+include ":taming:taming";
+include ":gumps:yesno";
+include ":attributes:attributes";
+include ":timedScripts:timedScripts";
+include "include/facings";
+include "include/damage";
+include ":tn:combat";
+include "include/client";
+
+program tirodesfocado(who)
+
+    if (TS_GetCooldown(who, "habilidade dois"))
+		return SendSysMessageEX(who, "Habilidade em Cooldown!", SSM_FAIL);
+	endif
+
+    var combatskill := AP_GetSkill(who, MELEECOMBAT1H);
+
+    if ( combatskill < 40.0)
+		SendSysMessageEx(who, "Voce nao tem conhecimento suficiente para executar o golpe", SSM_FAIL);
+		return 0;
+    endif
+
+	var armainicial := who.weapon;
+
+	SendSysMessageEx(who, "Quem sera dividido?", SSM_INFO);
+	var targ := Target(who);
+
+	if (who.warmode == 0)
+		who.warmode := 1;
+	endif
+	
+	var cfg:=ReadConfigFile(":combat:itemdesc");
+	var elem := FindConfigElem(cfg, who.weapon.objtype);
+
+	if (!CheckLOSAt(who, targ.x, targ.y, targ.z))
+		SendSysMessageEx(who, "O Alvo nao esta visivel para voce.", SSM_FAIL);
+		return 1;
+	elseif (CoordinateDistance(who.x, who.y, targ.x, targ.y) > 1)
+		SendSysMessageEx(who, "O Alvo esta muito distante.", SSM_FAIL);
+		return 1;
+	elseif (IsBehind(who, targ.x, targ.y))
+		SendSysMessageEx(who, "Voce esta de costas para o alvo!", SSM_FAIL);
+		return 1;
+	elseif ( who.weapon != armainicial )
+		SendSysMessageEx(who, "Voce nao pode atacar depois de ter trocado a arma.", SSM_FAIL);
+		return;
+	endif
+	
+	var esquiva:= GetObjProperty(targ, "evasao");
+
+   	if (esquiva == 1)
+        Performaction(who, elem.Anim);
+        PlayMissSound(targ);
+        PrintText(targ, "*esquiva-se*");
+      	EraseObjProperty(targ, "evasao");
+      return;
+   	elseif (CoordinateDistance(who.x, who.y, targ.x, targ.y) > 1)
+		SendSysMessageEx(who, "O Alvo esta muito distante.", SSM_FAIL);
+		return 1;
+   	endif
+	
+	TS_StartCooldown(who, "habilidade dois", 20);
+	who.hidden := 0;
+
+	var distancia := GetCoordsInLine(who.x, who.y, targ.x, targ.y);
+	
+	//calculo damage
+	var dmgList := dictionary;
+	dmgList := getNewDamageList(who);
+	var basedamage := CalculateRawDamage(who, who.weapon);
+	
+	//lista inimigos e aplica dano
+	var alreadydamaged := array{};
+	foreach pontos in distancia
+		var mobiles := ListMobilesNearLocation(pontos.x, pontos.y, who.z, 1, who.realm);
+		var pets := ListPetsNear(who, 8);
+    	var random := Randomint (100)+1;
+		foreach mobile in (ListMobilesNearLocation( targ.x, targ.y, targ.z, 1, targ.realm ))
+				var hit_chance := CalculateHitChancehab(who, mobile);
+					if ( random < hit_chance )
+						if (!(mobile.serial in alreadydamaged) && (mobile != who) && !(mobile in who.party.members) && !(mobile in pets ))
+							var total := cint(CalculateTotalDamage(mobile, basedamage, who, dmgList));
+       						if (!ParryCheck(who, targ, total));
+								alreadydamaged.Append(mobile.serial);
+								PlayObjectCenteredEffectEx( mobile, 0x22c6, 1, 9);
+								DamageFLS(mobile, total*2, DMG_PHYSICAL, who);
+								PlayHitSounds(who, targ);
+								Performaction(who, elem.Anim);
+							else
+								PlayHitSounds(who, targ);
+            					Performaction(who, elem.Anim);
+							endif
+						endif
+					else
+						PlayMissSound(who);
+        				Performaction(who, elem.Anim);
+					endif
+				sleepms(20);
+		endforeach
+			sleepms(20);
+	endforeach
+endprogram 

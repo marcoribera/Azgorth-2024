@@ -1,0 +1,115 @@
+
+use uo;
+use os;
+use cfgfile;
+
+include ":gumps:yesno";
+include ":gumps:gumps";
+include ":gumps:gumps_ex";
+include "include/say";
+include "include/client";
+include "include/arrays";
+include ":fls_core:fls_crafting";
+include ":crafting:crafting";
+include ":gumps:requestgump";
+include ":charactercreation:feats";
+
+var item_config     := ReadConfigFile(":*:itemdesc");
+var craft_config    := ReadConfigFile(":metalworking:blacksmithy");
+
+program usaPergaminho(who, scroll)
+   var item_recipe := struct{
+      "name"  := GetObjproperty(scroll, "name"),
+      "difficulty"  := GetObjproperty(scroll, "difficulty"),
+      "colored"  := GetObjproperty(scroll, "colored"),
+      "mark"  := GetObjproperty(scroll, "mark"),
+      "exceptional" := GetObjproperty(scroll, "exceptional"),
+      "delay" := GetObjproperty(scroll, "delay"),
+      "materials" := GetObjproperty(scroll, "materials"),
+      "requires" := GetObjproperty(scroll, "requires"),
+      "craft_skill" := GetObjproperty(scroll, "craft_skill"),
+      "pieces" := GetObjproperty(scroll, "pieces"),
+      "fastcraft" := GetObjproperty(scroll, "fastcraft")
+   };
+	var input := SendGump(who, item_recipe);
+	if (input[0] == 12)
+      var craft_item;
+      case (item_recipe.craft_skill)
+         "Marcenaria": craft_item := 0x1034;
+         "Ferraria": craft_item := 0x13e3;
+         "Costura": craft_item := 0x0f9d;
+      endcase
+      if (!craft_item) return; endif
+      
+      craft_item := FindObjInModel("objtype", cint(craft_item), EnumerateItemsInContainer(who.backpack));
+      if (!craft_item) 
+         SendSysMessageEx(who, "Você precisa ter um instrumento de {}".format(item_recipe.craft_skill), SSM_FAIL);
+         return;
+      endif
+      PrintText(who, "*Seguindo instruções*");
+      var result := CraftItem(who, item_recipe.craft_skill, craft_item, item_recipe, 1, 1, 0);
+      if (result.size() >= 1)
+         DestroyItem(scroll);
+      endif
+	endif
+endprogram
+
+function SendGump(who, item_recipe)
+   if (!item_recipe.name || !item_recipe.difficulty || !item_recipe.craft_skill)
+      SendSysMessageEx(who, "Esse pergaminho de instrução não tem serventia.");
+      return 0;
+   endif
+
+	var gump := GFCreateGump();
+	//GFSetID(gump, GUMPID_RECIPES);
+   GFSetID(gump, 214);
+	GFDisposable(gump, 0);
+	GFGumpPic(gump, 4, 8, 2080);
+	GFGumpPic(gump, 22, 45, 2081);
+	GFGumpPic(gump, 23, 113, 2082);
+	GFGumpPic(gump, 25, 174, 2083);
+	GFGumpPicTiled(gump, 37, 43, 234, 11, 2091);
+	GFGumpPicTiled(gump, 38, 159, 234, 11, 2091);
+	GFGumpPic(gump, 47, 184, 1209);
+	GFHTMLArea(gump, 35, 16, 240, 20, "<CENTER>Instruções de {}".format(item_recipe.craft_skill));
+
+	GFHTMLArea(gump, 38, 60, 240, 20, "<BASEFONT COLOR=#8c1a1a><CENTER>{}".format(item_recipe.name));
+	
+   GFHTMLArea(gump, 38, 91, 240, 20, "<BASEFONT SIZE=1 COLOR=#8c1a1a><CENTER>Esta instrução permite fazer");
+   GFHTMLArea(gump, 38, 110, 240, 20, "<BASEFONT SIZE=1 COLOR=#8c1a1a><CENTER>este item uma vez");
+
+   // if (!is_lang || HaveFeat(who, is_lang))
+   //    var my_recipes := GetObjProperty(who, "recipes");
+   //    if (!(cint(objtype) in my_recipes) && !(hex(objtype) in my_recipes) && !(objtype in my_recipes))
+   //       var charge_list    := GetObjProperty(scroll, "learning");
+   //       var my_charges     := FindElemInArray(charge_list, struct{ "person":= who.serial });
+   //       var remain_charges := RecipeCharges(cint(recipe.difficulty)) - cint(my_charges.charges);
+   //       if (!FindConfigElem(book_recipes, objtype) && !FindConfigElem(cook_reecipes, objtype))
+   //          GFHTMLArea(gump, 38, 140, 240, 20, "<BASEFONT SIZE=2 {}><CENTER>Você ainda deve ler esse pergaminho {} vezes".format(lang, remain_charges));
+   //          if (!GetObjProperty(scroll, "serialid") || GetObjProperty(scroll, "serialid") == who.serial)
+               GFTextLine(gump, 205, 182, 995, "Fazer");
+               GFAddButton(gump, 265, 186, 2224, 2224, GF_CLOSE_BTN, 12);
+   //          endif
+   //       else
+   //          GFHTMLArea(gump, 38, 140, 240, 20, "<BASEFONT SIZE=2><CENTER>Para aprender, arraste para um livro.");
+   //          GFHTMLArea(gump, 150, 182, 180, 20, "<BASEFONT SIZE=2><CENTER>Restam {} leituras.".format(remain_charges));
+   //       endif
+   //    else
+   //       GFHTMLArea(gump, 38, 140, 240, 20, "<BASEFONT SIZE=2><CENTER>Você já aprendeu esta receita.");
+   //    endif
+   // endif
+
+	// if (who.cmdlevel >= 4)
+	// 	GFTextCrop(gump, 67, 182, 100, 17, 995, "Trocar Receita");
+	// 	GFAddButton(gump, 47, 184, 1209, 1209, GF_CLOSE_BTN, 99);
+	// endif
+
+	return GFSendGump(who, gump);
+endfunction
+
+
+function LoadItemEventData()
+    var df := DFOpenDataFile( ":crafting:excepitems", DF_CREATE, DF_KEYTYPE_INTEGER);
+    return df;
+endfunction
+

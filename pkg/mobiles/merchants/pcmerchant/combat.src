@@ -1,0 +1,62 @@
+/* $Id$
+ *
+ */
+
+use uo;
+use os;
+
+include ":brainAI:npcNerves";
+include ":brainAI:npcCommands";
+include ":attributes:attributes";
+
+const HELP_CMD          := 0x78458;
+
+program BrainNerve(params)
+	var npc		:= params[1];
+	//var nerve_name	:= params[2];
+	var event	:= params[3];
+	//var settings	:= params[4];
+	//var scripts	:= params[5];
+	params := 0; // Not needed anymore.
+
+	while ( npc )
+		CheckForEvent(npc, event);
+	endwhile
+endprogram
+
+function CheckForEvent(npc, byref event)
+	if ( event )
+		var guild := GetObjProperty(npc, "guild");
+		var source := event.source;
+		case ( event.type )
+			SYSEVENT_ENGAGED:
+				var inimigo := event.source;
+				foreach monster in ListMobilesNearLocationEx(npc.x, npc.y, npc.z, 20, LISTEX_FLAG_NORMAL|LISTEX_FLAG_HIDDEN|LISTEX_FLAG_NPC_ONLY)
+         			if (GetObjProperty(monster, "guild") == guild)
+           				SendEvent(monster, struct{ "type" := HELP_CMD, source := npc, targ := inimigo});
+         			endif
+         				sleepms(2);
+      				endforeach
+				AI_Speak(npc, "Nao seja tolo de me atacar! GUARDAS!", SPEAK_TEXTTYPE_YELL, SPEAK_DOEVENT_ENABLE);
+				break;
+			SYSEVENT_DAMAGED:
+				var inimigo := event.source;
+				foreach monster in ListMobilesNearLocationEx(npc.x, npc.y, npc.z, 20, LISTEX_FLAG_NORMAL|LISTEX_FLAG_HIDDEN|LISTEX_FLAG_NPC_ONLY)
+         			if (GetObjProperty(monster, "guild") == guild)
+           				SendEvent(monster, struct{ "type" := HELP_CMD, source := npc, targ := inimigo});
+         			endif
+         				sleepms(2);
+      				endforeach
+				AI_Speak(npc, "Nao seja tolo de me atacar! GUARDAS!", SPEAK_TEXTTYPE_YELL, SPEAK_DOEVENT_ENABLE);
+				// Ignore 'damaged'.
+				break;
+			default:
+				break;
+		endcase
+		event := 0;
+	endif
+
+	event := Wait_For_Event(100000);
+
+	return 1;
+endfunction

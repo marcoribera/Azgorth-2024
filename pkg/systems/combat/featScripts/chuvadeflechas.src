@@ -1,0 +1,102 @@
+
+use uo;
+use os;
+use cfgfile;
+
+include "include/client";
+include "include/sounds";
+include "include/say";
+include "include/damage";
+include "include/facings";
+include ":attributes:attributes";
+include ":timedscripts:timedScripts";
+include ":combat:combat";
+//include ":tn:combat";
+
+program explosao(params)
+	var who := params[1];
+	var spellinfo := params[2];
+	
+	params := 0; // No longer needed
+
+   if (TS_GetCooldown(who, "habilidade dois"))
+		return SendSysMessageEX(who, "Habilidade em Cooldown!", SSM_FAIL);
+	endif
+
+   var combatskill := AP_GetSkill(who, RANGEDCOMBAT);
+   var armainicial := who.weapon;
+
+   if ( combatskill < 40.0)
+	   SendSysMessageEx(who, "Voce nao tem conhecimento suficiente para executar o golpe", SSM_FAIL);
+		return 0;
+   endif
+
+   SendSysMessageEx(who, "Escolha a direcao que ira disparar as flechas", SSM_INFO);
+	var targ := TargetCoordinates(who);
+
+   var ammo := CheckForAmmo(who, who.weapon, 5);
+   
+   if (!ammo) 
+      return SendSysMessageEx(who, "Voce precisa de ao menos 5 flechas.", SSM_FAIL); 
+   endif
+
+   var cfg:=ReadConfigFile(":combat:itemdesc");
+   var elem := FindConfigElem(cfg, who.weapon.objtype);
+
+   if ( who.weapon != armainicial )
+	   SendSysMessageEx(who, "Voce nao pode atacar depois de ter trocado a arma.", SSM_FAIL);
+	   return;
+   endif
+
+   var weapon_cfg := GetItemCfgInfo(who, who.weapon);
+
+   who.frozen := 1;
+   var mod := GetModByFacing(who.facing);
+   PlaySoundEffect(who, cint(0x524));
+   for i := 1 to 5
+	  Performaction(who, elem.Anim);
+      PlayMovingEffectXYZ( who.x+mod, who.y, who.z+5, who.x+mod[1], who.y+mod[2], who.z+50, 0xf3f, 0 );
+      sleepms(200);
+   endfor
+   who.frozen := 0;
+
+   sleepms(500);
+   var area := GetCoordsInCircle(targ.x, targ.y, 2);
+   foreach p in area
+      PlayMovingEffectXYZEx( p.x-3, p.y-1, targ.z+20, p.x-1, p.y-1, targ.z+5, targ.realm, 0xf3f, 1 ,0,0, 1051);
+      sleepms(2);
+   endforeach
+   sleepms(200);
+   foreach p in area
+      PlayMovingEffectXYZEx( p.x-1, p.y-2, targ.z+20, p.x, p.y, targ.z+5, targ.realm, 0xf3f, 1 ,0);
+      sleepms(2);
+   endforeach
+
+   var dmgList := dictionary;
+	dmgList := getNewDamageList(who);
+	var basedamage := CalculateRawDamage(who, who.weapon);
+   var hit_chance := CalculateHitChancehab(who, targ);
+   var random := Randomint (100)+1;
+
+   TS_StartCooldown(who, "habilidade dois", 20);
+   who.hidden := 0;
+
+   foreach mobile in CheckifIsAlly(who, ListMobilesNearLocationEx( targ.x, targ.y, LIST_IGNORE_Z, 2, LISTEX_FLAG_NORMAL|LISTEX_FLAG_HIDDEN))
+      var esquiva:= GetObjProperty(mobile, "evasao");
+        if (esquiva == 1)
+            Performaction(who, elem.Anim);
+            PlayMissSound(mobile);
+            PrintText(mobile, "*esquiva-se*");
+            EraseObjProperty(mobile, "evasao");
+            return;
+        elseif ( random < hit_chance )
+            var total := cint(CalculateTotalDamage(mobile, basedamage, who, dmgList));
+            if (!ParryCheck(who, mobile, total));
+                DamageFLS(mobile, total, DMG_FORCED, who);
+            endif
+        endif
+      sleepms(2);
+   endforeach
+   
+	return 1;
+endprogram

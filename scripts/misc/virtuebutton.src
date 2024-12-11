@@ -1,0 +1,18 @@
+use cfgfile;
+use uo;
+use os;
+use datafile;
+use vitals;
+use math;
+
+include ":attributes:attributes";
+include ":timedscripts:timedScripts";
+include ":charactercreation:feats";
+include "include/say";
+include ":tn:tngumps";
+include ":tn:cooldown";
+
+program virtueachievements(who)
+   SetObjPRoperty(who, "useHotbar", 1);
+   var script := Start_Script(":tn:hotbar/hotbar", array{who});
+endprogram

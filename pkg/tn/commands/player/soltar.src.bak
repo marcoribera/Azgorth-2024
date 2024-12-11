@@ -1,0 +1,15 @@
+use uo;
+use os;
+
+include "include/say";
+include "include/sysEvent";
+include ":attributes:attributes";
+
+program soltar(who)
+
+if(GetObjProperty(who,"arrastando")!=error)
+	EraseObjProperty(who,"arrastado");
+	PrintText(who,"*Você para de arrastar*");
+endif
+
+endprogram

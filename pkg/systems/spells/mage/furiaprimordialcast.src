@@ -1,0 +1,260 @@
+use uo;
+use os;
+//use npc;
+//use cfgfile;
+
+include ":spells:tnmagery";
+include "include/client";
+include "include/sounds";
+include "include/say";
+include ":timedscripts:timedScripts";
+include ":charactercreation:resists";
+include "include/sysEvent";
+
+program SpellScript(params)
+	var who := params[1];
+	var info := params[2];
+	params := 0; // No longer needed
+    
+    SendSysMessageEx(who, "Escolha o alvo.", SSM_REQUEST);
+	var targ := Spell_Target(who, TGTOPT_CHECK_LOS);
+	if (!targ)
+		return;
+	endif
+
+    var npctemplate := NPC_ParseTemplateName(targ.npctemplate);
+    var cfg := ReadConfigFile(":brainai:npcdesc");
+
+
+	if ( !targ.isa(POLCLASS_MOBILE) )
+		SendSysMessageEx(who, "Voce so pode usar esta magia em criaturas vivas.", SSM_FAIL);
+		return 0;
+	endif
+
+    if (cfg[npctemplate.template].Category == "Undead")
+		SendSysMessage(who, "Voce so pode usar esta magia em criaturas vivas.");
+		return 1;
+	endif
+
+	if (!CheckResist(targ, VONTADE, 60+cint(AP_GetSkill(who, MAGICLORE))))
+        
+        if ( !targ.npctemplate )
+            sleepms(10);
+
+            targ.concealed := 1;
+            targ.frozen := 1 - targ.frozen;
+			targ.squelch((-1)*( 1-targ.squelched));
+            /*
+            var hpatual 	:= AP_GetVital(who, "HITS");
+            var manaatual 	:= AP_GetVital(who, "MANA");
+            var vigoratual 	:= AP_GetVital(who, "STAMINA");
+
+            var hptotal	:= AP_GetVitalMaximumValue(who, "HITS");
+            var manatotal	:= AP_GetVitalMaximumValue(who, "MANA");
+            var vigortotal	:= AP_GetVitalMaximumValue(who, "STAMINA");
+            */
+            sleepms(10);
+            var npcenfurecido := createnpcfromtemplate(":brainai:humanmale", targ.x, targ.y, targ.z, 0 , who.realm);
+            /*
+            SetAttributeBaseValue(npcenfurecido, HITS, hptotal * 10.0));
+            SetAttributeBaseValue(npcenfurecido, MANA, manatotal * 10.0));
+            SetAttributeBaseValue(npcenfurecido, STAMINA, vigortotal * 10.0));
+
+            AP_SetVital( npcenfurecido, HITS, hpatual);
+            AP_SetVital( npcenfurecido, MANA, hpatual);
+            AP_SetVital( npcenfurecido, STAMINA, hpatual);
+            */
+            var valor;
+            var mod;
+
+            sleepms(10);
+
+            var combat := AP_GetSkill(who, MAGICLORE);
+        
+            sleepms(10);
+
+            AP_SetTrueSkill(npcenfurecido, TACTICS, combat+20);
+            AP_SetTrueSkill(npcenfurecido, MAGERY, combat+20);
+            AP_SetTrueSkill(npcenfurecido, MAGICLORE, combat+20);
+
+            sleepms(10);
+
+            combat := combat/2;
+
+            AP_SetSkillMod(npcenfurecido, WRESTLING, combat);
+
+            var hpatual 	:= AP_GetVital(targ, "HITS");
+			var manaatual 	:= AP_GetVital(targ, "MANA");
+			var vigoratual 	:= AP_GetVital(targ, "STAMINA");
+
+
+		                    var mypack := GetEquipmentByLayer(npcenfurecido, 0x15);
+                            if (!mypack)
+                                mypack := CreateItemAtLocation(20, 20, 0, 0xe75, 1, npcenfurecido.realm);
+                            else
+                                MoveObjectToLocation(mypack, 20, 20, 0, npcenfurecido.realm, MOVEOBJECT_FORCELOCATION);
+                            endif
+
+                            var itemlist := ListEquippedItems(npcenfurecido);
+                            var y;
+
+                            foreach x in itemlist
+                                MoveItemToContainer(x, mypack);
+                            endforeach
+
+                            itemlist := ListEquippedItems(targ);
+                            foreach x in itemlist
+                                y := CreateItemCopyAtLocation(20, 20, 0, x);
+                                y.color := x.color;
+                                y.name := x.name;
+                                y.desc := x.desc;
+                                EquipItem(npcenfurecido, y);
+                            endforeach
+                            
+                            var desc:=GetObjProperty(targ,"description");
+
+                            if (desc!=error) 
+                                SetObjProperty(npcenfurecido,"description",desc);
+                            else
+                                EraseObjProperty(npcenfurecido,"description");
+                            endif
+
+                            npcenfurecido.gender := targ.gender;
+                            npcenfurecido.graphic := targ.graphic;
+                            npcenfurecido.color := targ.color;
+                            npcenfurecido.title_race:=targ.title_race;
+                            npcenfurecido.title_suffix:=targ.title_suffix;
+                            npcenfurecido.title_prefix:=targ.title_prefix;
+                            npcenfurecido.name := targ.name;
+                            npcenfurecido.TrueColor := targ.TrueColor;
+                            npcenfurecido.trueobjtype := targ.trueobjtype;
+
+
+                            var newpack := GetEquipmentByLayer(npcenfurecido, 0x15);
+                            if (newpack)
+                                DestroyItem(newpack);
+                            endif
+
+                            EquipItem(npcenfurecido, mypack);
+
+                            var classe:= GetObjProperty(targ, "classe");
+
+                            if (classe == "Sabio")
+                                npcenfurecido.script := ":ghaia:spell";
+                                SetObjproperty(npcenfurecido, "script", npcenfurecido.script);
+                                RestartScript(npcenfurecido);
+                            elseif ( (targ.weapon.objtype == 0x13B2) || (targ.weapon.objtype == 0x26CC) || (targ.weapon.objtype == 0x0f4f) || (targ.weapon.objtype == 0x13fd) || (targ.weapon.objtype == 0x26CD) )
+                                npcenfurecido.script := ":ghaia:archer";
+                                SetObjproperty(npcenfurecido, "script", npcenfurecido.script);
+                                RestartScript(npcenfurecido);
+                            endif
+
+                            if (targ.graphic == 401)
+                                PlaySoundEffect( npcenfurecido, 0x339 );
+                                PrintTextAbove(npcenfurecido, "*Solta um urro torrencial*");
+                            else
+                                PlaySoundEffect( npcenfurecido, 0x44B );
+                                PrintTextAbove(npcenfurecido, "*Solta um urro torrencial*");
+                            endif
+
+            SendSysMEssageEx(who, "O alvo esta enfurecido.", SSM_INFO);
+
+            sleepms(10);
+
+            Run_Script_To_Completion(":death:npcdeath", {npcenfurecido});
+
+            TS_StartTimer(npcenfurecido, "summon", GetSpellDuration(AP_GetSkill(who, MAGICLORE)) / 20);
+
+            AP_SetVital( targ, HITS, hpatual);
+			AP_SetVital( targ, MANA, hpatual);
+			AP_SetVital( targ, STAMINA, hpatual);
+
+            while (npcenfurecido)
+
+                var hpatual2 	:= AP_GetVital(npcenfurecido, "HITS");
+                var manaatual2 	:= AP_GetVital(npcenfurecido, "MANA");
+                var vigoratual2 	:= AP_GetVital(npcenfurecido, "STAMINA");
+
+                if (npcenfurecido.warmode == 0)
+                    foreach mobile in ListMobilesNearLocationEx(targ.x, targ.y, targ.z, 12, LISTEX_FLAG_NORMAL|LISTEX_FLAG_HIDDEN|LISTEX_FLAG_NPC_ONLY)
+                        if (mobile != npcenfurecido)
+                            var event := struct{"type":=SYSEVENT_ENGAGED, "source":=mobile};
+			                SendEvent(npcenfurecido, event);
+                        endif
+                    endforeach
+                endif
+
+                MoveObjectToLocation(targ, npcenfurecido.x, npcenfurecido.y, npcenfurecido.z);
+
+                sleepms(10);
+
+                var hpdomob := AP_GetVital(npcenfurecido, "HITS");
+
+                if (hpdomob <= 10)
+                    MoveObjectToLocation(targ, npcenfurecido.x, npcenfurecido.y, npcenfurecido.z);
+                    targ.concealed := 0;
+                    targ.frozen := 1 - targ.frozen;
+                    targ.squelch((-1)*( 1-targ.squelched));
+                    PrintTextAbove(targ, "*Recupera consciencia*");
+                    //ApplyRawDamage(targ, CInt(AP_GetVitalMaximumValue(targ, "HITS")+20));
+                    return;
+                elseif (npcenfurecido.dead)
+                    MoveObjectToLocation(targ, npcenfurecido.x, npcenfurecido.y, npcenfurecido.z);
+                    targ.concealed := 0;
+                    targ.frozen := 1 - targ.frozen;
+                    targ.squelch((-1)*( 1-targ.squelched));
+                    PrintTextAbove(targ, "*Recupera consciencia*");
+                    //(targ, CInt(AP_GetVitalMaximumValue(targ, "HITS") +20));
+                    return;
+                endif
+
+                sleepms(10);
+
+                AP_SetVital( targ, HITS, hpatual2);
+                AP_SetVital( targ, MANA, hpatual2);
+                AP_SetVital( targ, STAMINA, hpatual2);
+
+            endwhile
+            
+            sleepms(10);
+
+            targ.concealed := 0;
+            targ.frozen := 1 - targ.frozen;
+            targ.squelch((-1)*( 1-targ.squelched));
+
+            PrintTextAbove(targ, "*Recupera consciencia*");
+
+        elseif (targ.npctemplate)
+                SendSysMEssageEx(who, "O alvo esta enfurecido.", SSM_INFO);
+
+                var i := GetSpellDuration(AP_GetSkill(who, MAGICLORE)) / 20;
+
+                if (targ.graphic == 401)
+                    PlaySoundEffect( targ, 0x339 );
+                    PrintTextAbove(targ, "*Solta um urro torrencial*");
+                elseif (targ.graphic == 400)
+                    PlaySoundEffect( targ, 0x44B );
+                    PrintTextAbove(targ, "*Solta um urro torrencial*");
+                else
+                    PrintTextAbove(targ, "*Solta um urro torrencial*");
+                endif
+
+                while (i >= 1)
+                    if (targ.warmode == 0)
+                        foreach mobile in ListMobilesNearLocationEx(targ.x, targ.y, targ.z, 12, LISTEX_FLAG_NORMAL|LISTEX_FLAG_HIDDEN|LISTEX_FLAG_NPC_ONLY)
+                            if (mobile != targ)
+                                var event := struct{"type":=SYSEVENT_ENGAGED, "source":=mobile};
+			                    SendEvent(targ, event);
+                            endif
+                        endforeach
+                    endif
+                    i := i - 1 ;
+                endwhile
+        endif
+	else
+		SendSysMessageEx(who, "O alvo resistiu a magia.", SSM_FAIL);
+		SendSysMessageEx(targ, "Voce resistiu a magia.", SSM_INFO);
+        return 1;
+	endif
+
+endprogram  

@@ -1,0 +1,67 @@
+/* $Id: alcohol.src 87 2006-05-23 19:04:43Z sroyalty $
+ *
+ */
+
+use uo;
+use os;
+use util;
+
+include "include/client";
+include ":timedscripts:timedScripts";
+include "include/say";
+include "include/utils";
+include ":attributes:attributes";
+include ":charactercreation:resists";
+
+function StartScript(mobile, attacker := 0, level := 0)
+   while (mobile)
+      // PlayObjectCenteredEffect(mobile, GFX_EXPLODE_1, 7, 16);
+      var point;
+      mobile.frozen := 0;      
+      while (!point)
+         var point := RandomPlace(mobile, 0);
+         if (!CanWalk("L", mobile.x, mobile.y, mobile.z, point.x, point.y))
+            point := 0;
+         endif
+         sleepms(2);
+      endwhile
+      mobile.frozen := 0;
+      mobile.facing := GetFacing(mobile.x, mobile.y, point.x, point.y);
+      MoveObjectToLocation(mobile, point.x, point.y, point.z, mobile.realm, MOVEOBJECT_FORCELOCATION);
+      mobile.frozen := 1;
+      if (randomInt(2) == 1)
+         PrintText(mobile, "*euforico*", SSM_FAIL);
+      endif
+      if (randomInt(2) == 1)
+         SendSysMessageEx(mobile, "Seu coracao acelera", SSM_FAIL);
+         AP_ConsumeVital(mobile, STAMINA, 3);
+      endif      
+      sleep(2);
+      if (CheckResist(mobile, FORTITUDE, 60+cint(level)))
+         break;
+      endif
+   endwhile
+   
+	return 1;
+endfunction
+
+function EndScript(mobile)
+   mobile.frozen := 0;
+	return 1;
+endfunction
+
+program TimedScriptInit(params)
+	var mobile := params[1];
+	var type   := params[2];
+	var level  := params[3];
+
+   if (typeof(type) == "String")
+      if (type == "End")
+         return EndScript(mobile);
+      elseif (type == "LogOff")
+         return;
+      endif
+   endif
+
+   return StartScript(mobile, type, level);
+endprogram

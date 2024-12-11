@@ -1,0 +1,29 @@
+/* $Id$
+ *
+ */
+ 
+use uo;
+use os;
+use util;
+
+include "include/client";
+include "include/sysEvent";
+include ":attributes:attributes";
+
+program DeathScript(params)
+	var corpse := params[1];
+	//var corpse_cfg := params[2];
+	//var template := params[3];
+	params := 0; // Not needed anymore
+
+    foreach item in (EnumerateItemsInContainer(corpse))
+        if (item.objtype == 0x3EA2)
+		    DestroyItem(item);
+        endif
+		//printtextabove(corpse, " " + e);
+	endforeach
+
+	var npc := CreateNPCFromTemplate(":brainAi:Horse2", corpse.x, corpse.y, corpse.z, 0, corpse.realm);
+	return npc;
+
+endprogram

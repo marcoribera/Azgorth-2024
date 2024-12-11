@@ -1,0 +1,15 @@
+use uo;
+use os;
+use vitals;
+
+include ":charactercreation:resists";
+include "include/damage";
+include ":attributes:attributes";
+
+program calor(params)
+
+	var who := params[1];
+
+	SetObjProperty(who, "semcap", 1);
+
+endprogram

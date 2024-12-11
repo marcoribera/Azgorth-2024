@@ -1,0 +1,67 @@
+ use uo;
+
+include ":attributes:attributes";
+include ":timedScripts:timedScripts";
+include "include/say";
+include ":tn:cooldown";
+include "include/client";
+include "include/sounds";
+include "include/say";
+include "include/damage";
+include "include/facings";
+include ":tn:combat";
+
+
+program manobra(attacker)
+
+	var targ := Target(attacker);
+
+	SendSysMessageEx(attacker, "Quem sera temporariamente aleijado?", SSM_INFO);
+	
+	SetCooldown(attacker, "aleijar", cint(AP_GetSkill(attacker, TACTICS)));
+
+	var combatskill := AP_GetSkill(attacker, MELEECOMBAT1H);
+    var armainicial := attacker.weapon;
+	var cfg:=ReadConfigFile(":combat:itemdesc");
+	var elem := FindConfigElem(cfg, attacker.weapon.objtype);
+	var basedamage := CalculateRawDamage(attacker, attacker.weapon);
+	var dmgList := dictionary;
+	dmgList := getNewDamageList(attacker);
+
+	if (!CheckLOSAt(attacker, targ.x, targ.y, targ.z))
+		SendSysMessageEx(attacker, "O Alvo nao esta visivel para voce.", SSM_FAIL);
+		return 1;
+	elseif (CoordinateDistance(attacker.x, attacker.y, targ.x, targ.y) > 2)
+		SendSysMessageEx(attacker, "O Alvo esta muito distante.", SSM_FAIL);
+		return 1;
+	elseif (IsBehind(attacker, targ.x, targ.y))
+		SendSysMessageEx(attacker, "Voce esta de costas para o alvo!", SSM_FAIL);
+		return 1;
+    elseif ( attacker.weapon != armainicial )
+		SendSysMessageEx(attacker, "Voce nao pode atacar depois de ter trocado a arma.", SSM_FAIL);
+		return;
+	endif
+
+	var esquiva:= GetObjProperty(targ, "evasao");
+    if (esquiva == 1)
+        Performaction(attacker, elem.Anim);
+        PlayMissSound(attacker);
+        PrintText(targ, "*esquiva-se*");
+      	EraseObjProperty(targ, "evasao");
+        return;
+    endif
+
+	var hit_chance := CalculateHitChancehab(attacker, targ);
+    var random := Randomint (100)+1;
+	var total := cint(CalculateTotalDamage(targ, basedamage, attacker, dmgList));
+
+    if ( random < hit_chance )
+		if (!ParryCheck(attacker, targ, total));
+            Performaction(attacker, elem.Anim);
+            PrintText(attacker, "*Golpeia a perna de {}*".format(targ.name));
+            PlayHitSounds(attacker, targ);
+			TS_StartTimer(targ, "lentidao", 8, attacker);
+		endif
+	endif
+endprogram  
+

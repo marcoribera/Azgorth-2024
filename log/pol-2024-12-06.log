@@ -1,0 +1,507 @@
+[07/03 00:04:12] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 00:14:14] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 00:24:15] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 00:28:34] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 00:34:16] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 00:38:34] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 00:44:18] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 00:48:34] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 00:48:34] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 00:54:19] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 01:04:21] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 01:14:22] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 01:24:24] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 01:24:47] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 01:34:25] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 01:34:47] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 01:44:27] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 01:44:47] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 01:44:47] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 01:54:28] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 02:04:30] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 02:14:31] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 02:21:00] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 02:24:33] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 02:31:01] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 02:34:34] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 02:41:01] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 02:41:01] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 02:44:36] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 02:54:37] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 03:04:38] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 03:14:40] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 03:17:13] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 03:24:41] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 03:27:14] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 03:34:43] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 03:37:14] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 03:37:14] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 03:44:44] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 03:54:45] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 04:04:47] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 04:13:27] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 04:14:48] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 04:23:27] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 04:24:50] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 04:33:27] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 04:33:27] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 04:34:51] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 04:44:53] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 04:54:54] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 05:04:55] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 05:09:41] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 05:14:57] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 05:19:41] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 05:24:58] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 05:29:41] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 05:29:41] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 05:34:59] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 05:45:01] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 05:55:02] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 06:05:04] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 06:05:54] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 06:15:05] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 06:15:54] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 06:25:06] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 06:25:55] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 06:25:55] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 06:35:08] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 06:45:09] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 06:55:11] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 07:02:09] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 07:05:12] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 07:12:09] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 07:15:13] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 07:22:09] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 07:22:09] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 07:25:15] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 07:35:16] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 07:45:18] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 07:55:19] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 07:58:24] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 08:05:21] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 08:08:24] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 08:15:22] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 08:18:24] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 08:18:24] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 08:25:24] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 08:35:25] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 08:45:26] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 08:54:39] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 08:55:28] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 09:04:39] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 09:05:29] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 09:14:39] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 09:14:39] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 09:15:30] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 09:25:32] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 09:35:33] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 09:45:35] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 09:50:52] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 09:55:36] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 10:00:52] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 10:05:38] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 10:10:52] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 10:10:52] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 10:15:39] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 10:25:40] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 10:35:42] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 10:45:43] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 10:47:05] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 10:55:45] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 10:57:05] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 11:05:46] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 11:07:06] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 11:07:06] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 11:15:48] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 11:25:49] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 11:35:51] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 11:43:18] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 11:45:52] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 11:53:18] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 11:55:53] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 12:03:18] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 12:03:18] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 12:05:55] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 12:15:56] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 12:25:58] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 12:35:59] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 12:39:31] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 12:46:00] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 12:49:31] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 12:56:02] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 12:59:31] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 12:59:32] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 13:06:03] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 13:16:05] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 13:26:06] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 13:35:45] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 13:36:07] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 13:45:45] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 13:46:09] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 13:55:45] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 13:55:45] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 13:56:10] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 14:06:12] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 14:16:13] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 14:26:15] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 14:32:00] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 14:36:16] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 14:42:00] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 14:46:18] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 14:52:01] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 14:52:01] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 14:56:19] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 15:06:20] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 15:16:22] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 15:26:23] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 15:28:13] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 15:36:24] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 15:38:13] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 15:46:26] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 15:48:14] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 15:48:14] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 15:56:27] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 16:06:29] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 16:16:30] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 16:24:27] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 16:26:32] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 16:34:27] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 16:36:33] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 16:44:28] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 16:44:28] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 16:46:34] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 16:56:36] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 17:06:37] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 17:16:39] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 17:20:41] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 17:26:40] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 17:30:41] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 17:36:41] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 17:40:41] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 17:40:41] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 17:46:43] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 17:56:44] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 18:06:46] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 18:16:47] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 18:16:54] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 18:26:48] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 18:26:54] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 18:36:50] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 18:36:54] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 18:36:54] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 18:46:51] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 18:56:53] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 19:06:54] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 19:13:07] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 19:16:55] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 19:23:07] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 19:26:57] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 19:33:08] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 19:33:08] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 19:36:58] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 19:47:00] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 19:57:01] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 20:07:03] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 20:09:21] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 20:17:04] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 20:19:21] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 20:27:06] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 20:29:21] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 20:29:21] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 20:37:07] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 20:47:08] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 20:57:10] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 21:05:33] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 21:07:11] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 21:15:33] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 21:17:12] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 21:25:34] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 21:25:34] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 21:27:14] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 21:37:15] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 21:47:17] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 21:57:18] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 22:01:46] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 22:07:19] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 22:11:47] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 22:17:21] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 22:21:47] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/03 22:21:47] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[07/03 22:27:22] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 22:37:23] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/03 22:47:25] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/06 23:58:30] Logfile opened.
+[07/06 23:58:30] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[07/06 23:58:30] Game is active.
+[07/06 23:58:31] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/06 23:58:33] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/06 23:58:36] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[07/06 23:58:36] Account marcknight logged in from 127.0.0.1
+[07/06 23:58:36] Client#1 (127.0.0.1): disconnected (account marcknight)
+[07/06 23:58:36] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[07/06 23:58:36] Account marcknight logged in from 127.0.0.1
+[07/06 23:58:37] Account marcknight selecting character Humano
+[07/06 23:58:37] [pkg/packetHooks/razor/handshake.ecl]: Sending Razor Handshake for Humano from account marcknight
+[07/06 23:58:37] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[07/06 23:58:39] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[07/06 23:58:40] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[07/07 00:08:14] Logfile opened.
+[07/07 00:08:14] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[07/07 00:08:14] Game is active.
+[07/07 00:08:15] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/07 00:08:17] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/07 00:08:28] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[07/07 00:08:28] Account marcknight logged in from 127.0.0.1
+[07/07 00:08:29] Client#1 (127.0.0.1): disconnected (account marcknight)
+[07/07 00:08:29] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[07/07 00:08:29] Account marcknight logged in from 127.0.0.1
+[07/07 00:08:30] Account marcknight selecting character Humano
+[07/07 00:08:30] [pkg/packetHooks/razor/handshake.ecl]: Sending Razor Handshake for Humano from account marcknight
+[07/07 00:08:30] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[07/07 00:08:31] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[07/07 00:16:12] Logfile opened.
+[07/07 00:16:12] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[07/07 00:16:12] Game is active.
+[07/07 00:16:13] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/07 00:16:14] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[07/07 00:16:14] Account marcknight logged in from 127.0.0.1
+[07/07 00:16:15] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/07 00:16:15] Client#1 (127.0.0.1): disconnected (account marcknight)
+[07/07 00:16:15] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[07/07 00:16:15] Account marcknight logged in from 127.0.0.1
+[07/07 00:16:15] Account marcknight selecting character Humano
+[07/07 00:16:16] [pkg/packetHooks/razor/handshake.ecl]: Sending Razor Handshake for Humano from account marcknight
+[07/07 00:16:16] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[07/07 00:16:18] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[07/07 00:16:18] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[07/07 00:26:15] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/07 00:35:12] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/07 00:35:14] Client#2 (127.0.0.1): disconnected (account marcknight)
+[07/07 00:35:17] Shutting down...
+[07/07 00:35:17] Writing data files...Data save completed in 230 ms. 297 total.
+[07/07 00:41:07] Logfile opened.
+[07/07 00:41:07] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[07/07 00:41:07] Game is active.
+[07/07 00:41:08] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/07 00:41:10] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[07/07 00:41:10] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/07 00:41:10] Account marcknight logged in from 127.0.0.1
+[07/07 00:41:11] Client#1 (127.0.0.1): disconnected (account marcknight)
+[07/07 00:41:11] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[07/07 00:41:11] Account marcknight logged in from 127.0.0.1
+[07/07 00:41:11] Account marcknight selecting character Humano
+[07/07 00:41:11] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[07/07 00:41:11] [pkg/packetHooks/razor/handshake.ecl]: Sending Razor Handshake for Humano from account marcknight
+[07/07 00:47:04] Logfile opened.
+[07/07 00:47:04] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[07/07 00:47:04] Game is active.
+[07/07 00:47:05] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[07/07 00:47:07] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[07/07 00:49:51] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[07/07 00:49:51] Account marcknight logged in from 127.0.0.1
+[07/07 00:49:51] Client#1 (127.0.0.1): disconnected (account marcknight)
+[07/07 00:49:51] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[07/07 00:49:51] Account marcknight logged in from 127.0.0.1
+[07/07 00:49:52] Account marcknight selecting character Humano
+[07/07 00:49:52] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[07/07 00:49:52] [pkg/packetHooks/razor/handshake.ecl]: Sending Razor Handshake for Humano from account marcknight
+[07/07 00:51:36] Client#2 (127.0.0.1): disconnected (account marcknight)
+[07/07 00:51:36] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[07/07 00:51:36] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[12/02 23:31:30] Logfile opened.
+[12/02 23:31:30] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[12/02 23:31:30] Game is active.
+[12/02 23:31:30] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/02 23:31:31] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/02 23:32:54] Shutting down...
+[12/02 23:32:54] Writing data files...Data save completed in 249 ms. 271 total.
+[12/02 23:33:29] Logfile opened.
+[12/02 23:33:29] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[12/02 23:33:29] Game is active.
+[12/02 23:33:29] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/02 23:33:29] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/02 23:33:46] Shutting down...
+[12/02 23:33:46] Writing data files...Data save completed in 235 ms. 689 total.
+[12/06 14:44:52] Logfile opened.
+[12/06 14:44:52] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[12/06 14:44:52] Game is active.
+[12/06 14:44:53] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/06 14:44:54] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/06 14:45:39] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 14:46:04] Client#1 (127.0.0.1): disconnected (account unknown)
+[12/06 14:46:33] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 14:46:50] Client#2 (127.0.0.1): disconnected (account unknown)
+[12/06 14:47:34] Client#3 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 14:47:52] Client#3 (127.0.0.1): disconnected (account unknown)
+[12/06 14:48:01] Client#4 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 14:49:08] Client#4 (127.0.0.1): disconnected (account unknown)
+[12/06 14:49:52] Client#5 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 14:50:35] Client#5 (127.0.0.1): disconnected (account unknown)
+[12/06 14:52:06] Client#6 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 14:52:06] Incorrect password for account marcoribera from 127.0.0.1
+[12/06 14:52:06] Client#6 (127.0.0.1): disconnected (account unknown)
+[12/06 14:53:29] Client#7 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 14:53:29] Incorrect password for account marcoribera from 127.0.0.1
+[12/06 14:53:29] Client#7 (127.0.0.1): disconnected (account unknown)
+[12/06 14:54:55] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/06 14:55:01] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/06 14:55:26] Client#8 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 14:55:26] Incorrect password for account marcoribera from 127.0.0.1
+[12/06 14:55:26] Client#8 (127.0.0.1): disconnected (account unknown)
+[12/06 14:55:45] Client#9 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 14:55:45] Incorrect password for account marcknight from 127.0.0.1
+[12/06 14:55:45] Client#9 (127.0.0.1): disconnected (account unknown)
+[12/06 14:55:49] Client#10 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 14:55:49] Account marcknight logged in from 127.0.0.1
+[12/06 14:55:50] Client#10 (127.0.0.1): disconnected (account marcknight)
+[12/06 14:55:50] Client#11 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 14:55:51] Account marcknight logged in from 127.0.0.1
+[12/06 14:55:52] Account marcknight selecting character Elfo
+[12/06 14:55:52] Unable to read script 'scripts/misc/chatbutton.ecl'
+[12/06 14:55:52] Client#11: Unknown packet type 0xFB, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 fb 00                                              ........ ........
+
+[12/06 14:55:52] Client#11: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[12/06 14:55:52] Client#11: Unknown packet type 0xFB, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 fb 00                                              ........ ........
+
+[12/06 14:55:53] Client#11: Unknown packet type 0xBF, 11 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 bf 00 0b fa ce 00 34 01  00 21 00                  ......4. .!......
+
+[12/06 14:55:55] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[12/06 14:55:57] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[12/06 14:57:16] Client#11 (127.0.0.1): disconnected (account marcknight)
+[12/06 15:04:55] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/06 15:04:55] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[12/06 15:05:02] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/06 15:14:11] Client#12 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 15:14:11] Incorrect password for account marcoribera from 127.0.0.1
+[12/06 15:14:11] Client#12 (127.0.0.1): disconnected (account unknown)
+[12/06 15:14:14] Client#13 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 15:14:14] Account marcoribera logged in from 127.0.0.1
+[12/06 15:14:15] Client#13 (127.0.0.1): disconnected (account marcoribera)
+[12/06 15:14:15] Client#14 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 15:14:15] Account marcoribera logged in from 127.0.0.1
+[12/06 15:14:15] Account marcoribera selecting character Humano
+[12/06 15:14:16] Unable to read script 'scripts/misc/chatbutton.ecl'
+[12/06 15:14:16] Client#14: Unknown packet type 0xFB, 2 bytes (IP: 127.0.0.1, Account: marcoribera)
+0000 fb 00                                              ........ ........
+
+[12/06 15:14:16] Client#14: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcoribera)
+0000 c8 18                                              ........ ........
+
+[12/06 15:14:16] Client#14: Unknown packet type 0xFB, 2 bytes (IP: 127.0.0.1, Account: marcoribera)
+0000 fb 00                                              ........ ........
+
+[12/06 15:14:16] Client#14: Unknown packet type 0xBF, 11 bytes (IP: 127.0.0.1, Account: marcoribera)
+0000 bf 00 0b fa ce 00 34 01  00 21 00                  ......4. .!......
+
+[12/06 15:14:33] Client#14 (127.0.0.1): disconnected (account marcoribera)
+[12/06 15:14:39] Client#15 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 15:14:39] Incorrect password for account marcknight from 127.0.0.1
+[12/06 15:14:39] Client#15 (127.0.0.1): disconnected (account unknown)
+[12/06 15:14:43] Client#16 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 15:14:43] Incorrect password for account marcknight from 127.0.0.1
+[12/06 15:14:43] Client#16 (127.0.0.1): disconnected (account unknown)
+[12/06 15:14:46] Client#17 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 15:14:46] Account marcknight logged in from 127.0.0.1
+[12/06 15:14:47] Client#17 (127.0.0.1): disconnected (account marcknight)
+[12/06 15:14:47] Client#18 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 15:14:47] Account marcknight logged in from 127.0.0.1
+[12/06 15:14:47] Account marcknight selecting character Humano
+[12/06 15:14:47] Unable to read script 'scripts/misc/chatbutton.ecl'
+[12/06 15:14:47] Client#18: Unknown packet type 0xFB, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 fb 00                                              ........ ........
+
+[12/06 15:14:48] Client#18: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[12/06 15:14:48] Client#18: Unknown packet type 0xFB, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 fb 00                                              ........ ........
+
+[12/06 15:14:48] Client#18: Unknown packet type 0xBF, 11 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 bf 00 0b fa ce 00 34 01  00 21 00                  ......4. .!......
+
+[12/06 15:14:51] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[12/06 15:14:51] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[12/06 15:15:03] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/06 15:17:37] Client#18 (127.0.0.1): disconnected (account marcknight)
+[12/06 15:25:05] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/06 15:35:06] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/06 15:41:04] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/06 15:45:08] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/06 15:51:04] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/06 15:55:09] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/06 16:01:04] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/06 16:01:04] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[12/06 16:05:10] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/06 16:15:12] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/06 16:25:13] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/06 16:35:14] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/06 16:37:13] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/06 16:40:43] Shutting down...
+[12/06 16:40:43] Writing data files...Data save completed in 266 ms. 290 total.
+[12/06 19:51:56] Logfile opened.
+[12/06 19:51:56] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[12/06 19:51:56] Game is active.
+[12/06 19:51:56] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/06 19:51:56] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/06 19:51:56] Shutting down...
+[12/06 19:51:56] Writing data files...Data save completed in 117 ms. 632 total.
+[12/06 19:52:12] Logfile opened.
+[12/06 19:52:12] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[12/06 19:52:12] Game is active.
+[12/06 19:52:13] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/06 19:52:13] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/06 19:52:45] Client#1 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 19:52:46] Account marcknight logged in from 127.0.0.1
+[12/06 19:52:46] Client#1 (127.0.0.1): disconnected (account marcknight)
+[12/06 19:52:46] Client#2 connected from 127.0.0.1 (1/0 connections) on interface 127.0.0.1
+[12/06 19:52:46] Account marcknight logged in from 127.0.0.1
+[12/06 19:53:03] Account marcknight created character 0x7EDF2
+[12/06 19:53:03] [pkg/mobiles/newCharacter/oncreate.ecl]: Account (marcknight) creating character (dasdasdas)
+[12/06 19:53:03] Unable to read script 'scripts/misc/chatbutton.ecl'
+[12/06 19:53:03] Client#2: Unknown packet type 0xFB, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 fb 00                                              ........ ........
+
+[12/06 19:53:03] Client#2: Unknown packet type 0xC8, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 c8 18                                              ........ ........
+
+[12/06 19:53:03] Client#2: Unknown packet type 0xFB, 2 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 fb 00                                              ........ ........
+
+[12/06 19:53:03] Client#2: Unknown packet type 0xBF, 11 bytes (IP: 127.0.0.1, Account: marcknight)
+0000 bf 00 0b fa ce 00 34 01  00 21 00                  ......4. .!......
+
+[12/06 19:53:05] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[12/06 19:53:07] Unable to read script 'scripts/misc/popupmenu.ecl'
+[12/06 19:53:13] [scripts/misc/skillwin.ecl]: Error::AP_GetAttributeCfgElem() - unable to find cfg elem [] ->Element not found
+[12/06 19:53:21] Unable to read script 'scripts/misc/popupmenu.ecl'
+[12/06 19:59:26] Unable to read script 'scripts/misc/popupmenu.ecl'
+[12/06 19:59:27] Unable to read script 'scripts/misc/popupmenu.ecl'
+[12/06 20:01:33] Client#2 (127.0.0.1): disconnected (account marcknight)
+[12/06 20:01:38] Shutting down...
+[12/06 20:01:38] Writing data files...Data save completed in 236 ms. 789 total.
+[12/06 23:39:05] Logfile opened.
+[12/06 23:39:05] POL100 Never Gonna Give You Up (Windows 64bit (Rev. 7bb27f719)) compiled on Jan 21 2020 02:40:43 running.
+[12/06 23:39:05] Game is active.
+[12/06 23:39:06] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/06 23:39:07] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/06 23:49:07] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/06 23:49:08] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.
+[12/06 23:59:07] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running ore regeneration cycle. (0 veins)
+[12/06 23:59:07] [pkg/skills/gathering/regeneration/RegenerateResources.ecl]: Running mining-resource regeneration cycle. (0) coordinates.
+[12/06 23:59:09] [pkg/skills/farming/grower/globalcontrol.ecl]: Running plant-grower growth cycle.

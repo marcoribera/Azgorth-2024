@@ -1,0 +1,52 @@
+#
+#  GUILDS.TXT: Guild Data
+#
+
+General
+{
+	NextGuildId	4
+}
+
+Guild
+{
+	GuildId	1
+	CProp	area a0:
+	CProp	leader i0
+	CProp	link_to i0
+	CProp	money i35164
+	CProp	name sPessoas
+	CProp	npcs a1:t5:S10:bossStructuS9:equipmenta0:S4:nameS12:Pessoa fracaS5:pricei1S8:templateS26::brainai:guardafaccaofraco
+	CProp	npcs_active a3:t3:S5:pricei1S3:refi1S6:seriali504420t3:S5:pricei1S3:refi1S6:seriali504431t3:S5:pricei1S3:refi1S6:seriali504548
+	CProp	report a1:S13:Faccao Criada
+	CProp	uniforms a0:
+}
+
+Guild
+{
+	GuildId	2
+	CProp	area a0:
+	CProp	leader i0
+	CProp	link_to i0
+	CProp	money i40507
+	CProp	name sGuarda de Aesir
+	CProp	npcs a1:t5:S10:bossStructuS9:equipmenta0:S4:nameS12:Guarda ForteS5:pricei1S8:templateS27::brainai:guardafaccaoforte1
+	CProp	npcs_active a15:t3:S5:pricei1S3:refi1S6:seriali504484t3:S5:pricei1S3:refi1S6:seriali504485t3:S5:pricei1S3:refi1S6:seriali504486t3:S5:pricei1S3:refi1S6:seriali504487t3:S5:pricei1S3:refi1S6:seriali504497t3:S5:pricei1S3:refi1S6:seriali504498t3:S5:pricei1S3:refi1S6:seriali504503t3:S5:pricei1S3:refi1S6:seriali504504t3:S5:pricei1S3:refi1S6:seriali504507t3:S5:pricei1S3:refi1S6:seriali504511t3:S5:pricei1S3:refi1S6:seriali504514t3:S5:pricei1S3:refi1S6:seriali504515t3:S5:pricei1S3:refi1S6:seriali504516t3:S5:pricei1S3:refi1S6:seriali504518t3:S5:pricei1S3:refi1S6:seriali504519
+	CProp	report a1:S13:Faccao Criada
+	CProp	reports a2:S37:Soldado entrou em combate com CuilennS37:Soldado entrou em combate com Cuilenn
+	CProp	uniforms a0:
+}
+
+Guild
+{
+	GuildId	3
+	CProp	area a0:
+	CProp	leader i0
+	CProp	link_to i0
+	CProp	money i36885
+	CProp	name sGuarda Aesir 2
+	CProp	npcs a1:t5:S10:bossStructuS9:equipmenta0:S4:nameS13:Guarda forte S5:pricei1S8:templateS26::brainai:guardafaccaoforte
+	CProp	npcs_active a13:t3:S5:pricei1S3:refi1S6:seriali504527t3:S5:pricei1S3:refi1S6:seriali504538t3:S5:pricei1S3:refi1S6:seriali504540t3:S5:pricei1S3:refi1S6:seriali504551t3:S5:pricei1S3:refi1S6:seriali504624t3:S5:pricei1S3:refi1S6:seriali504643t3:S5:pricei1S3:refi1S6:seriali504664t3:S5:pricei1S3:refi1S6:seriali509282t3:S5:pricei1S3:refi1S6:seriali509283t3:S5:pricei1S3:refi1S6:seriali509290t3:S5:pricei1S3:refi1S6:seriali509293t3:S5:pricei1S3:refi1S6:seriali509294t3:S5:pricei1S3:refi1S6:seriali518728
+	CProp	report a1:S13:Faccao Criada
+	CProp	uniforms a0:
+}
+

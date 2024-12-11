@@ -1,0 +1,206 @@
+use uo;
+use os;
+use cfgfile;
+use util;
+
+include ":itemutils:objtype";
+//include "include/OLD/sound";
+include ":itemutils:canAccess";
+include ":attributes:attributeConstants";
+include ":attributes:attributes";
+include "include/say";
+include ":charactercreation:habilidades";
+include "include/sysEvent";
+
+program skill_lockpicking( me, lockpick )
+
+	if (me.hidden)
+		if (temHabilidade(me, "Especialista em Invasoes"))
+			me.hidden := 1;
+		endif
+	endif
+
+	EraseObjProperty(me, "IsMeditating");
+	EraseObjProperty(me, "HealTimer");
+
+	if (!maolivre(me, 2))
+		return 0;
+	endif
+
+	if(!can_access(me, lockpick))
+		return;
+	endif
+
+	if(lockpick.movable == 0)
+		SendSysMessageEx(me, "Voce nao pode usar isto.", SSM_FAIL);
+		return;
+	endif
+
+	if (!ReserveItem(lockpick))
+		return;
+	endif
+	SendSysMessageEx(me, "O que voce deseja fazer com isto?", SSM_REQUEST);
+
+	var chest := Target(me);
+	
+
+	if (!chest)
+		SendSysMessageEx(me,"Cancelado.", SSM_FAIL);
+		return;
+	endif
+	if ( (!Accessible(me,chest)) || (!Accessible(me,lockpick)) )
+		SendSysMessageEx(me, "Voce nao alcanca o alvo!", SSM_FAIL);
+		return;
+	endif
+	if ( Distance(me, chest) > 2)
+		SendSysMessageEx(me, "Voce esta muito distante.", SSM_FAIL);
+		return;
+	endif
+
+	if (GetObjProperty(chest,"level"))
+
+		if (!temHabilidade(me, "Especialista em Invasoes"))
+			PrintText(me, "*arrombando a fechadura*");
+			PlaySoundEffect(chest, 0x0242);
+			var event := struct{
+         	"type" := EVID_TAUNT,
+         	"source" := me
+      		};
+
+			foreach monster in ListMobilesNearLocationEx(chest.x, chest.y, chest.z, 12, LISTEX_FLAG_NORMAL|LISTEX_FLAG_HIDDEN|LISTEX_FLAG_NPC_ONLY)
+				if (GetObjProperty(monster, "guild"))
+					if (CheckLineOfSight(monster, me))
+					SendEvent(monster, struct{ "type" := 0x78455, source := me});
+					endif
+				elseif (!monster.master)
+					SendEvent(monster, event);
+				endif
+				sleepms(2);
+      		endforeach
+		  
+		else
+			foreach monster in ListMobilesNearLocationEx(chest.x, chest.y, chest.z, 12, LISTEX_FLAG_NORMAL|LISTEX_FLAG_HIDDEN|LISTEX_FLAG_NPC_ONLY)
+				if (GetObjProperty(monster, "guild") && CheckLineOfSight(monster, me))
+					SendEvent(monster, struct{ "type" := 0x78455, source := me});
+				endif
+				sleepms(2);
+			endforeach
+		endif
+
+		if (!Wait(me, 5))
+			SendSysMessageEx(me, "Voce interrompeu o processo.", SSM_FAIL);
+			return;
+		endif
+		PickTreasureChest(me, lockpick, chest); //funciona tanto pra chests quando pra portas
+	else
+		SendSysMessageEx(me, "Esse nao e um alvo valido.", SSM_FAIL);
+		ReleaseItem(lockpick);
+	endif
+
+endprogram
+
+function PickTreasureChest(me, lockpick, chest)
+
+  var lvl := CInt(GetObjProperty(chest,"level"));
+  if (!chest.locked)
+	SendSysMessageEx(me,"O alvo nao parece estar tracado.", SSM_INFO);
+	return;
+  endif
+
+    if (!temHabilidade(me, "Especialista em Invasoes"))
+		PrintText(me, "*arrombando a fechadura*");
+		PlaySoundEffect(chest, 0x0242);
+		var event := struct{
+         	"type" := EVID_TAUNT,
+         	"source" := me
+      		};
+
+		foreach monster in ListMobilesNearLocationEx(chest.x, chest.y, chest.z, 12, LISTEX_FLAG_NORMAL|LISTEX_FLAG_HIDDEN|LISTEX_FLAG_NPC_ONLY)
+			if (GetObjProperty(monster, "guild"))
+				if (CheckLineOfSight(monster, me))
+					SendEvent(monster, struct{ "type" := 0x78455, source := me});
+				endif
+			elseif (!monster.master)
+				SendEvent(monster, event);
+			endif
+			sleepms(2);
+      	endforeach
+
+	else
+		foreach monster in ListMobilesNearLocationEx(chest.x, chest.y, chest.z, 12, LISTEX_FLAG_NORMAL|LISTEX_FLAG_HIDDEN|LISTEX_FLAG_NPC_ONLY)
+
+			if (GetObjProperty(monster, "guild") && CheckLineOfSight(monster, me))
+					SendEvent(monster, struct{ "type" := 0x78455, source := me});
+			endif
+				sleepms(2);
+		endforeach
+
+    endif
+  sleepms(250);
+  var diff;
+	case (lvl)
+		1: diff := 15;
+		2: diff := 40;
+		3: diff := 60;
+		4: diff := 86;
+		5: diff := 90;
+		6: diff := 110;
+		default: diff := 40; 
+	endcase
+  var diffmod := Cint(GetObjProperty(me, "conhecimentosobrefechaduras"))*5;
+  diff := diff - diffmod;
+  if (diff <= 0)
+	diff := 5;
+  endif
+
+  	if (GetObjProperty(chest,"lockinstaller"))
+		diff := diff + 15;
+	endif
+
+  var check := SkillCheck(me, MECHANICALAPITUDE, diff);
+    if ( check > 0 )
+
+		if (temHabilidade(me, "Febre do Ouro"))
+			var skill := AP_GetSkill( me, MECHANICALAPITUDE );
+			if( skill >= 100 )
+			 CreateItemInBackpack(me, 0xba63, 25);
+			elseif( skill >= 90 )
+			 CreateItemInBackpack(me, 0xba63, 10);
+			elseif( skill >= 80 )
+		 	 CreateItemInBackpack(me, 0xba63, 6);
+			elseif( skill >= 60 )
+			 CreateItemInBackpack(me, 0xba63, 4);
+			elseif( skill >= 40 )
+			 CreateItemInBackpack(me, 0xba63, 2);
+			endif
+			SendSysMessageEx(me,"Voce embolsa rapidamente algumas moedas sem que ninguem perceba", SSM_INFO);
+		endif
+
+		if (temHabilidade(me, "Especialista em Invasoes"))
+			PrintTextAbovePrivate(chest,"*Destrancado!*",me);
+			SetObjProperty(chest, "arrombado", "" + me.name);
+			SetObjProperty(chest, "locktime", ReadGameClock());
+			set_critical(1);
+			chest.locked := 0;
+			set_critical(0);
+			return;
+		else	
+			PlaySoundEffect(chest, 0x0200);
+			PrintTextAbove(chest,"*Destrancado!*",me);
+			SetObjProperty(chest, "arrombado", "" + me.name);
+			SetObjProperty(chest, "locktime", ReadGameClock());
+			set_critical(1);
+			chest.locked := 0;
+			set_critical(0);
+		endif
+ 	else
+	SendSysMessageEx(me, "Voce falhou em arrombar a fechadura.", SSM_FAIL);
+	if (!temHabilidade(me, "Especialista em Invasoes") && check < -20)
+  		PlaySoundEffect(chest,0xef);
+		SendSysMessageEx(me,"Sua gazua quebrou!", SSM_FAIL);
+		SubtractAmount(lockpick,1);
+		return;
+	endif
+  endif
+  ReleaseItem(lockpick);
+endfunction

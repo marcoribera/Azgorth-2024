@@ -1,0 +1,5 @@
+Element CreateGump
+{
+	BaseGump t5:S4:baset7:S8:CloseLoci0S10:DisposeLoci0S6:heighti0S7:MoveLoci0S5:widthi0S1:xi50S1:yi50S8:cur_pagei0S4:dataa0:S7:data_idi1S6:layouta11:S6:Page 0S26:ResizePic 0 0 5054 420 280S30:gumppictiled 10 10 400 20 2624S25:CheckerTrans 10 10 400 20S30:gumppictiled 41 11 184 18 3004S30:gumppictiled 42 12 182 16 2624S25:CheckerTrans 42 12 182 16S27:Button 10 9 4011 4013 1 0 2S45:XmfHtmlTok 230 10 100 20 0 0 32767 3010005 @@S31:gumppictiled 10 40 400 200 2624S26:CheckerTrans 10 40 400 200
+}
+

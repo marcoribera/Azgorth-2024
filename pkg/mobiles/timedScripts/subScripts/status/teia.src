@@ -1,0 +1,42 @@
+/* $Id: alcohol.src 87 2006-05-23 19:04:43Z sroyalty $
+ *
+ */
+
+use uo;
+use os;
+use util;
+
+include "include/client";
+include ":timedscripts:timedScripts";
+include "include/say";
+
+function StartScript(mobile, attacker := 0, level := 0)
+   PlaySoundEffect(mobile, 0x205);
+	SendSystemReport(mobile, "Incapaz de se mover.");
+	while (1)
+      PlayStationaryEffect( mobile.x, mobile.y, mobile.z+2, 4317, 7, 10, 1);
+      PlayStationaryEffect( mobile.x, mobile.y, mobile.z+2, 4314, 7, 10, 1);
+      sleepms(420);
+   endwhile
+	return 1;
+endfunction
+
+function EndScript(mobile)
+	return 1;
+endfunction
+
+program TimedScriptInit(params)
+	var mobile := params[1];
+	var type   := params[2];
+	var level  := params[3];
+
+   if (typeof(type) == "String")
+      if (type == "End")
+         return EndScript(mobile);
+      elseif (type == "LogOff")
+         return;
+      endif
+   endif
+
+   return StartScript(mobile, type, level);
+endprogram

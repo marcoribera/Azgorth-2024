@@ -1,0 +1,64 @@
+use uo;
+use os;
+
+include ":spells:tnmagery";
+include "include/client";
+include "include/sounds";
+include "include/say";
+
+program SpellScript(params)
+	var who := params[1];
+	var info := params[2];
+	params := 0; // No longer needed
+
+	SendSysMessageEx(who, "Escolha o alimento para encantar", SSM_REQUEST);
+
+	var targ := Spell_Target(who, TGTOPT_CHECK_LOS);
+	if (!targ)
+		return;
+	endif
+
+	if ( !targ.usescript == ":cooking:eat" )
+		SendSysMessageEx(who, "Voce so pode usar esta magia em alimentos.", SSM_FAIL);
+		return 0;
+	endif
+	if (targ.amount > 1)
+		SendSysMessageEx(who, "Voce deve encantar de 1 em 1", SSM_FAIL);
+		return 0;
+	endif
+	
+	if (targ.objtype == 0x09d0) //apple
+		DestroyItem(targ);
+		CreateItemInBackPack(who, 0x76AC, 1);
+		return;
+	elseif (targ.objtype == 0x09d1) // uva
+		DestroyItem(targ);
+		CreateItemInBackPack(who, 0x76AD, 1);
+		return;
+	elseif (targ.objtype == 0x172d) // pera
+		DestroyItem(targ);
+		CreateItemInBackPack(who, 0x76AE, 1);
+		return;
+	elseif (targ.objtype == 0x0c79) // melao
+		DestroyItem(targ);
+		CreateItemInBackPack(who, 0x76AF, 1);
+		return;
+	elseif (targ.objtype == 0x171f) // banana
+		DestroyItem(targ);
+		CreateItemInBackPack(who, 0xff995, 1);
+		return;
+	elseif (targ.objtype == 0x172c) // pessego
+		DestroyItem(targ);
+		CreateItemInBackPack(who, 0x1950, 1);
+		return;
+	elseif (targ.objtype == 0x3C87) // morgango
+		DestroyItem(targ);
+		CreateItemInBackPack(who, 0x2804, 1);
+		return;
+	else
+		PlaySoundEffect(targ, SFX_SPELL_HEAL);
+		SetObjProperty(targ, "blessedfood", 1);
+		SendSysMEssageEx(who, "Voce encantou os alimentos com sucesso.", SSM_INFO);
+		return 1;
+	endif
+endprogram 

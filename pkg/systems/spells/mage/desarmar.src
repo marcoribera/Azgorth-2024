@@ -1,0 +1,92 @@
+  use uo;
+use os;
+
+include ":spells:tnmagery";
+include "include/client";
+include "include/sounds";
+include "include/say";
+include ":timedscripts:timedScripts";
+include "include/sysEvent";
+
+program SpellScript(params)
+	var who := params[1];
+	var info := params[2];
+	params := 0; // No longer needed
+
+	SendSysMessageEx(who, "Escolha o alvo.", SSM_REQUEST+TGTOPT_HARMFUL);
+	var targ := Spell_Target(who, TGTOPT_CHECK_LOS);
+	if (!targ)
+		SendSysMessageEx(who, "Cencelado", SSM_FAIL);
+		return;
+	endif
+
+	if (!targ.isa(POLCLASS_MOBILE) )
+		SendSysMessageEx(who, "Voce so pode alvejar seres vivos com esta magia.", SSM_FAIL);
+		return;
+	endif
+
+	if (CheckResist(targ, VONTADE, 60+cint(AP_GetSkill(who, MAGICLORE))))
+		SendSysMEssageEx(who, "Voce nota que o alvo nao foi afetado.", SSM_FAIL);
+		SendSysMessageEx(targ, "Voce resistiu a magia.", SSM_INFO);
+		who.frozen := 0;
+		return;
+	endif
+
+
+
+		foreach monster in ListMobilesNearLocationEx(targ.x, targ.y, targ.z, 20, LISTEX_FLAG_NORMAL|LISTEX_FLAG_HIDDEN|LISTEX_FLAG_NPC_ONLY)
+				var event := struct{"type":=0x00000008, "source":=who};
+				if (GetObjProperty(monster, "guild"))
+					var donoGrimorio;
+					if (CheckLineOfSight(monster, who))
+						SendEvent(monster, struct{ "type" := 0x00000013, source := who});
+						foreach item in ( EnumerateItemsInContainer(who.backpack) )
+							if ( item.objtype == 24832 || item.objtype == 0x6101 )
+								donoGrimorio := GetObjProperty(item, "serialDono");
+								if (donoGrimorio && (donoGrimorio == who.serial))
+									MoveObjectToLocation(item, who.x, who.y, who.z, who.realm, MOVEOBJECT_FORCELOCATION);
+									PrintTextAbove(who, "*Deixa o grimorio cair no chao ao tentar usar uma magia*");
+								endif
+							endif
+						endforeach
+					endif
+				else
+					SendEvent(targ, event);
+				endif
+				sleepms(2);
+      	endforeach
+		
+	//if (TemHabilidade(targ, "Nexus"))
+	//	if (GetObjProperty(targ.weapon, "swordmage") ==  targ.serial)//seta com a arma
+	//		SendSysMessageEx(who, "O alvo tem uma ligacao magica com a arma.", SSM_FAIL);
+	//		return 1;
+	//	endif
+	//endif
+
+	var time := Cint(AP_GetSkill(who, MAGICLORE)/10);
+	if (time < 5)
+		time := 5;
+	endif
+
+	TS_StartTimer(targ, "desarmar", CInt(AP_GetSkill(who, MAGICLORE)/4), 0, who);
+	//TS_StartTimer(targ, "dmgreduction", 30, 1, who);
+	var defweapon := targ.weapon;
+	if (defweapon.objtype != 0xF020)
+		var x := targ.x;
+		var y := targ.y;
+		//if (checklosat(targ, x, y, GetWorldHeight(x, y)))
+			var move := MoveObjectToLocation(defweapon, x, y,  GetWorldHeight(x, y), targ.realm, MOVEOBJECT_FORCELOCATION);
+			if (move == error)
+				MoveItemToContainer(defweapon, targ.backpack);
+			endif
+		//else
+		//	SendSysMessage(targ, "los nao deu");
+		//endif
+	else
+		SendSysMessage(targ, "desarmado");
+	endif
+
+	PrintText(targ, "*desarmado*", SSM_FAIL);
+	
+	return 1;
+endprogram  

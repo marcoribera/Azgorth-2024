@@ -1,0 +1,25 @@
+
+
+use uo;
+use os;
+use util;
+
+include ":death:death";
+
+program DeathScript(params)
+	var corpse := params[1];
+	//var npc_cfg := params[2];
+	params := 0; // Not needed anymore
+
+	PrintTextAbove(corpse, "*Solta um grito ensurdecedor enquanto das feridas opulentas surge um horror*");
+	SleepMS(30);
+	var corpse_x := corpse.x;
+	var corpse_y := corpse.y;
+	var corpse_z := corpse.z;
+	var realm := corpse.realm;
+
+	//DestroyItem(corpse);
+	var npc := CreateNPCFromTemplate(":brainAi:horrorumeraque", corpse_x, corpse_y, corpse_z, 0, realm);
+    RestartScript(npc);
+	return 1;
+endprogram 	

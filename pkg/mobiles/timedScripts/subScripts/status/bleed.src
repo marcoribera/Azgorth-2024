@@ -1,0 +1,71 @@
+/* $Id: alcohol.src 87 2006-05-23 19:04:43Z sroyalty $
+ *
+ */
+
+use uo;
+use os;
+use util;
+
+include ":attributes:attributes";
+include "include/client";
+include ":timedscripts:timedScripts";
+include "include/say";
+include ":blood:blood";
+include "include/damage";
+
+function StartScript(mobile, attacker := 0, level := 0)
+	var dmg_dice;
+   case (level)
+      0: dmg_dice := "1d2";
+      1: dmg_dice := "2d2+1";
+      2: dmg_dice := "3d2+2";
+      3: dmg_dice := "4d2+4";
+      4: dmg_dice := "5d4+8";
+   endcase
+
+   SendSystemReport(mobile, "Voce esta com uma grave hemorragia!", mobile);
+   foreach mobile in ( ListMobilesInLineOfSight(mobile, 8) )
+      if( mobile.ip && mobile != mobile )
+         SendSystemReport(mobile, "* " + mobile.name + " esta sangrando muito! *", mobile);
+      endif
+      sleepms(2);
+   endforeach
+
+	while(1)
+      PrintText(mobile, "*sangrando*", SSM_FAIL);
+		DamageFLS(mobile, RandomDiceRoll(dmg_dice), DMG_FORCED);
+		MakeBleed(mobile);
+
+      if (RandomInt(22) > 16 )
+         break;
+      endif
+		
+		sleep(4);
+	endwhile
+
+   return 1;
+endfunction
+
+function EndScript(mobile)
+   return 1;
+endfunction
+
+function LogOffScript(mobile)
+   return 1;
+endfunction
+
+program TimedScriptInit(params)
+	var mobile := params[1];
+	var type   := params[2];
+	var level  := params[3];
+
+   if (typeof(type) == "String")
+      if (type == "End")
+         return EndScript(mobile);
+      elseif (type == "LogOff")
+         return LogOffScript(mobile);
+      endif
+   endif
+
+   return StartScript(mobile, type, level);
+endprogram

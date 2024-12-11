@@ -1,0 +1,155 @@
+
+use uo;
+use util;
+use os;
+
+include ":fls_core:packets";
+include ":fls_core:fls_util";
+include ":attributes:attributeConstants";
+include ":attributes:attributes";
+include ":attributes:skillCheck";
+include ":attributes:stats";
+include ":fls_core:fls_combat";
+include ":blood:blood";
+include "include/damage";
+include ":fls_core:fls_characters";
+include ":fls_core:packets";
+include ":combat:combat";
+include "include/packets";
+include ":timedscripts:timedScripts";
+include "include/client";
+
+
+program backstab(who)
+
+    if (TS_GetCooldown(who, "habilidade um"))
+		return SendSysMessageEX(who, "Habilidade em Cooldown!", SSM_FAIL);
+	endif
+
+	if (GetEquipmentByLayer(who, 0x19))
+		SendSysMessageEx(who, "Voce nao consegue fazer isso montado.", SSM_FAIL);
+		return 0;
+	endif
+	
+    var hidecheck := who.hidden;
+
+    var armainicial := who.weapon;
+
+    if (!hidecheck)
+        SendSysMessageEx(who, "Voce precisa estar escondido para fazer isso", SSM_FAIL);
+		return 0;
+    endif
+
+    var combatskill := AP_GetSkill(who, RANGEDCOMBAT);
+
+    if ( combatskill < 40.0)
+		SendSysMessageEx(who, "Voce nao tem conhecimento suficiente para executar o golpe", SSM_FAIL);
+		return 0;
+    endif
+
+    var ammo := CheckForAmmo(who, who.weapon, 1);
+   
+    if (!ammo) 
+        return SendSysMessageEx(who, "Voce precisa de ao menos uma flecha.", SSM_FAIL); 
+    endif
+
+	SendSysMessageEx(who, "Quem voce deseja atacar?", SSM_REQUEST);
+	var targ := target(who);
+
+    var cfg:=ReadConfigFile(":combat:itemdesc");
+	var elem := FindConfigElem(cfg, who.weapon.objtype);
+
+	if ( !targ.ISA(POLCLASS_MOBILE) )
+		SendSysMessageEx(who, "Voce nao pode atacar isto.", SSM_FAIL);
+		return;
+	elseif (!CheckLOSAt(who, targ.x, targ.y, targ.z))
+		SendSysMessageEx(who, "O Alvo nao esta visivel para voce.", SSM_FAIL);
+		return 1;
+	elseif (CoordinateDistance(who.x, who.y, targ.x, targ.y) > 12)
+		SendSysMessageEx(who, "O Alvo esta muito distante.", SSM_FAIL);
+		return 1;
+    elseif ( who.weapon != armainicial )
+		SendSysMessageEx(who, "Voce nao pode atacar depois de ter trocado a arma.", SSM_FAIL);
+		return;
+    elseif ( targ.serial == who.serial)
+		SendSysMessageEx(who, "Voce conclui que isso nao e uma boa ideia.", SSM_FAIL);
+		return;
+	endif
+
+    TS_StartCooldown(who, "habilidade um", 30);
+
+    var bonusdmg := AP_GetSkill(who, SNEAK);
+	var rawdamage := CalculateRawDamage(who, who.weapon);
+
+    rawdamage := rawdamage + bonusdmg;
+	rawdamage := rawdamage;
+
+	if (rawdamage < 1)
+		rawdamage := 1;
+	endif
+
+	
+
+	if ( rawdamage > 0 )
+        if (!ParryCheck(who, targ, rawdamage));
+            var dmgList := dictionary;
+            dmgList := getNewDamageList(who);
+            var basedamage := CalculateTotalDamageBonus(rawdamage, who, targ);
+            var total := CalculateTotalDamage(targ, basedamage, who, dmgList);
+
+            if (total < 1)
+                total := 1;
+            endif
+
+            PlayHitSounds(who, targ);
+            Performaction(who, elem.Anim);
+            PlayMovingEffectXYZEx( who.x, who.y, who.z+5, targ.x, targ.y, targ.z, who.realm, 0x1BFE, 10, 10, 0, 1051);
+            ApplyRawDamage(targ, total);
+            MostraDano(who, targ, total);
+            MakeBleed(targ);
+            who.hidden := 0;
+            PrintTextAbove(who, "*aparece*");
+
+            if (GetObjProperty(who.weapon, "ammo"))
+                var aljava := GetEquipmentByLayer(who, LAYER_CAPE);
+                var ammo := GetObjProperty(who.weapon, "ammo");
+                foreach arrow in (EnumerateItemsInContainer(aljava))
+                    if (arrow.objtype == ammo)
+                        who.weapon := arrow;
+                    endif
+                endforeach
+        
+                var poisonInfo := GetObjProperty(who.weapon, "poisonInfo" );
+                if (poisonInfo == error)
+                    return 0;
+                endif
+
+                    poisonInfo.dosage := poisonInfo.dosage -1;
+
+                if (poisonInfo.dosage <= 0) //se nao tiver mais cargas de veneno, deleta
+                    EraseObjProperty(who.weapon, "poisonInfo");
+                    return 0;
+                else //se ainda tiver atualiza na arma
+                    SetObjProperty(who.weapon, "poisonInfo", poisonInfo);
+                endif
+        
+                if (IsPoisonImune(targ, poisonInfo.name) )
+                    return 0;
+                endif
+
+                if (poisonInfo.name == "paralyzePoison")
+                    poisonInfo.time := 4;
+                endif
+
+                TS_StartTimer(targ, poisonInfo.name, poisonInfo.time, poisonInfo.level, who);
+
+            endif
+        else
+            PlayHitSounds(who, targ);
+            Performaction(who, elem.Anim);
+            PlayMovingEffectXYZEx( who.x, who.y, who.z+5, targ.x, targ.y, targ.z, who.realm, 0x1BFE, 10, 10, 0, 1051);
+            who.hidden := 0;
+            PrintTextAbove(who, "*aparece*");
+        endif
+    endif
+endprogram
