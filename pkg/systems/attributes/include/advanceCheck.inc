@@ -337,6 +337,9 @@ function GetIncreaseCapFactor(skill)
 endfunction
 
 function CheckVitalSkillCap(mobile, skill)
+
+	/*
+	// Isso Ativa bateria de cap
 	var qtd := costSkill(skill);
 	if (qtd > 0)
 		if (CInt(AP_GetVital(mobile, "SkillCap")) >= qtd )
@@ -345,6 +348,7 @@ function CheckVitalSkillCap(mobile, skill)
 			return 0;
 		endif
 	endif
+	*/
 
 	return 1;
 endfunction
@@ -451,7 +455,7 @@ function limiteportempo (who)
    endif
       
 
-   lim := lim + (CInt(GetObjproperty(who, "nota"))*5); // Influencia de -10 -5 0 +5 +10 dependendo da nota RP
+   //lim := lim + (CInt(GetObjproperty(who, "nota"))*5); // Influencia de -10 -5 0 +5 +10 dependendo da nota RP
 
    if (lim < 2.5)
       lim := 2.5; // Valor m?nimo de 2.5

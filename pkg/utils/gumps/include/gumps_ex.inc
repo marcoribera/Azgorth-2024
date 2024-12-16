@@ -80,6 +80,42 @@ function GFCfgConst(elem_name, prop_name)
 	return value;
 endfunction
 
+/*
+ * GFGetCfgConst(elem_name, prop_name)
+ *
+ * Purpose
+ * Rather than have a lot of CONSTants at the top for
+ * different gump images, they are placed in GumpInfo.cfg
+ * and retrieved with this function.
+ * The idea is that it is easier to update GumpInfo.cfg than
+ * to recompile all scripts that use these includes.
+ *
+ * Parameters
+ * elem_name:	The elem of the config to look at.
+ * prop_name:	The name of the CONSTant to retrieve.
+ *
+ * Return value
+ * An integer for the gump graphical number
+ *
+ */
+function GFGetCfgConst(elem_name, prop_name)
+	var cfg := ReadConfigFile(":gumps:GumpInfo");
+	if ( cfg.errortext )
+		return XGFError("GFGetCfgConst():: Unable to open GumpInfo.cfg -> "+cfg.errortext);
+	endif
+
+	var elem := cfg[elem_name];
+	if ( elem.errortext )
+		return XGFError("GFGetCfgConst():: Unable to find GumpInfo.cfg["+elem_name+"] ->"+elem.errortext);
+	endif
+
+	var value := GetConfigInt(elem, prop_name);
+	if ( !value )
+		return XGFError("GFGetCfgConst():: Unable to find property ["+prop_name+"] in elem ["+elem_name+"]");
+	endif
+
+	return value;
+endfunction
 
 /*
  * GFExtractData(input, data_id)

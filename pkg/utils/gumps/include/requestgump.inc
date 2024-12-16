@@ -7,7 +7,6 @@
 * Austin:
 *  Created include file
 ===============================================================*/
-
 use uo;
 use os;
 
@@ -17,7 +16,7 @@ include ":gumps:gumps_ex";
 CONST CANCEL_BTN_OFF	:= 0x0;
 CONST CANCEL_BTN_ON	:= 0x1;
 
-/* 
+/*
  * RequestGump(mobile, question, option, pre_val, cancel_btn)
  *
  * Purpose
@@ -37,43 +36,43 @@ CONST CANCEL_BTN_ON	:= 0x1;
  *
  */
 function RequestGump(mobile, question, option := "", pre_val := "", cancel_btn:=CANCEL_BTN_OFF)
-	
+
 	if ( !pre_val || pre_val == error )
 		pre_val := "";
 	endif
-	
+
 	var r_gump := GFCreateGump(140, 100);
 	GFClosable(r_gump, 0);
 	GFResizePic(r_gump, 0, 0, GFCfgConst("Defaults", "BackGround"), 400, 205);
 	GFResizePic(r_gump, 15, 15, GFCfgConst("Defaults", "ForeGround"), 370, 175);
-	
+
 	var y_pos := 20;
 	foreach line in (GFWordWrap(question, 370))
 		GFTextLine(r_gump, 20, y_pos, 1153, line);
 		y_pos := y_pos+20;
 		SleepMS(2);
 	endforeach
-	
+
 	y_pos := 75;
 	foreach line in (GFWordWrap(option, 370))
 		GFTextLine(r_gump, 20, y_pos, 1153, line);
 		y_pos := y_pos+20;
 		SleepMS(2);
 	endforeach
-	
+
 	GFResizePic(r_gump, 20, 100, GFCfgConst("BackGrounds", "GOLDTRIM"), 360, 30);
 	var r_txt := GFTextEntry(r_gump, 30, 105, 335, 25, 1153, pre_val);
-	
+
 	if ( cancel_btn )
 		GFAddButton(r_gump, 90, 160, 2128, 2129, GF_CLOSE_BTN, 100);
 		GFAddButton(r_gump, 240, 160, 2119, 2120, GF_CLOSE_BTN, 200);
 	else
 		GFAddButton(r_gump, 180, 160, 2128, 2129, GF_CLOSE_BTN, 100);
 	endif
-	
+
 	var input := GFSendGump(mobile, r_gump);
 	var text_area := GFExtractData(input, r_txt);
-	
+
 	if ( input[200] )
 		return error;
 	elseif ( !text_area || text_area == error )

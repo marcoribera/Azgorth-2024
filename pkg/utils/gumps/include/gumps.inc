@@ -658,20 +658,22 @@ endfunction
 
 
 /*
- * GFTextEntry(byref gump, x, y, width, height, txt_color, ini_text)
+ * GFTextEntry(byref gump, x, y, width, height, txt_color, ini_text, txt_id:=0, lmt := 0)
  *
  * Purpose
  * Adds a text-entry to the gump.
  *
  * Parameters
- * gump:	Reference to the gump
- * x:		The top-left spot of the X axis.
- * y:		The top-left spot of the Y axis.
- * width:	Width of the text area in pixels from point X.
- * height:	Height of the text area in pixels from point Y.
- * hue:		The decimal number representing the text's hue
- * ini_text:	The initial string that is to be exposed.
- * txt_id:	The location of the text entry's input data.
+ * gump:    Reference to the gump
+ * x:       The top-left spot of the X axis.
+ * y:       The top-left spot of the Y axis.
+ * width:   Width of the text area in pixels from point X.
+ * height:  Height of the text area in pixels from point Y.
+ * hue:     The decimal number representing the text's hue
+ * ini_text:    The initial string that is to be exposed.
+ * txt_id:  The location of the text entry's input data.
+ * lmt: The total length of text allowed to be entered into the text entry element.
+ *      ( 0 is unlimited. )
  *
  * Notes:
  * Use GFExtractData() in gumps_ex.inc to easily remove the leading "#: "
@@ -680,22 +682,28 @@ endfunction
  * Text ID number where the text entry is set.
  *
  */
-function GFTextEntry(byref gump, x, y, width, height, txt_color, ini_text:="", txt_id:=0)
+function GFTextEntry(byref gump, x, y, width, height, txt_color, ini_text:="", txt_id:=0, lmt := 0)
 
-	gump.data.Append(""+CStr(ini_text));
-	var index := gump.data.Size()-1;
+    gump.data.Append(""+CStr(ini_text));
+    var index := gump.data.Size()-1;
 
-	txt_id := CInt(txt_id);
-	if ( txt_id < 1 ) // Catch errors (0) and invalid (negative) values
-		gump.data_id := gump.data_id+1;
-		txt_id := gump.data_id;
-	endif
+    txt_id := CInt(txt_id);
+    if ( txt_id < 1 ) // Catch errors (0) and invalid (negative) values
+        gump.data_id += 1;
+        txt_id := gump.data_id;
+    endif
 
-	(gump.layout).Append("TextEntry "+CStr(CInt(x))+" "+CStr(CInt(y))+" "
-				+ CStr(CInt(width))+" "+CStr(CInt(height))+" "
-				+ CStr(CInt(txt_color))+" "+CStr(txt_id)+" "+CStr(index));
-
-	return (txt_id);
+  if ( !lmt )
+    (gump.layout).Append("TextEntry "+CStr(CInt(x))+" "+CStr(CInt(y))+" "
+          + CStr(CInt(width))+" "+CStr(CInt(height))+" "
+          + CStr(CInt(txt_color))+" "+CStr(txt_id)+" "+CStr(index));
+  else
+    (gump.layout).Append("TextEntryLimited "+CStr(CInt(x))+" "+CStr(CInt(y))+" "
+          + CStr(CInt(width))+" "+CStr(CInt(height))+" "
+          + CStr(CInt(txt_color))+" "+CStr(txt_id)+" "+CStr(index)
+          + " "+CStr(CInt(lmt)));
+  endif
+    return (txt_id);
 endfunction
 
 

@@ -7,7 +7,6 @@
 * Austin:
 *  Created include file
 ===============================================================*/
-
 use uo;
 use os;
 
@@ -37,9 +36,9 @@ function SendHTMLGump(mobile, title, text)
 
 	GFResizePic(gump, 15, 45, GFCfgConst("Backgrounds", "GOLDTRIM"), 330, 390);
 	GFHTMLArea(gump, 22, 53, 322, 375, text, 0, 1);
-	
+
 	GFResizePic(gump, 15, 438, GFCfgConst("Defaults", "ForeGround"), 330, 30);
 	GFAddButton(gump, 150, 443, 2128, 2129, GF_CLOSE_BTN);
-	
+
 	return GFSendGump(mobile, gump);
 endfunction

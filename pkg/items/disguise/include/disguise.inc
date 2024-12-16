@@ -227,11 +227,15 @@ function BuildHairDyeGump(cur_color := 0, povo := 0)
 
 	var color_cfg := ReadConfigFile(":hair:config/hairColors");
 	var index_elem;
+
+	index_elem := color_cfg["Index"]; // Controls order colors appear.
+	/*
 	if (povo == "Ferune" || povo == "Bariyano")
 	  index_elem := color_cfg["Index"]; // Controls order colors appear.
 	else
 	  index_elem := color_cfg[povo]; //balmutes, Picto,  cazar e thurioes
 	endif
+	*/
 
 	var categories := GetConfigStringArray(index_elem, "Category");
 

@@ -1189,6 +1189,7 @@ program createchar(who)
 	atributos(who, chardata, 80);
 	BuyKits(who, chardata);
 	BuySkillsgump(who, chardata);
+	signSelection(who);
 	ItemPicker(who,  chardata);	
 
 	//SETA as coisas
@@ -1445,7 +1446,7 @@ program createchar(who)
 
 	ExibeGumpAparencia(who, chardata);
 
-	MoveObjectToLocation( who, 4295, 3650, 10, who.realm, MOVEOBJECT_FORCELOCATION);
+	MoveObjectToLocation( who, 5546,538,15, who.realm, MOVEOBJECT_FORCELOCATION);
 	//SetObjProperty(who, "faccao", "semfaccao");
 
 	HealDamage(who, 200);
@@ -1497,4 +1498,135 @@ function ExibeGumpAparencia(who, chardata)
 		ExibeGumpAparencia(who, chardata);
 	endif
 
+endfunction
+
+
+// ID de Signos
+const CUIDADOR_ID := 0x152;
+const GOVERNADOR_ID := 0x153;
+const HEROI_ID := 0x154;
+const BOBO_ID := 0x155;
+const AMANTE_ID := 0x156;
+const COMUM_ID := 0x157;
+const CRIADOR_ID := 0x158;
+const MAGO_ID := 0x159;
+const EXPLORADOR_ID := 0x15A;
+const FORADALEI_ID := 0x15B;
+const INOCENTE_ID := 0x15C;
+const SABIO_ID := 0x15D;
+
+// Adicione estes textos para cada signo
+
+const cuidadorText := "Constelação do Cuidador<br><br>Altruísta e generoso, busca proteger e cuidar dos outros. Preocupa-se com o bem-estar alheio, colocando as necessidades dos outros acima das suas.";
+
+const governadorText := "Constelação do Governador<br><br>Figura autoritária que busca controle, ordem e estabilidade. O Governador acredita que uma liderança firme é essencial para manter a harmonia e a organização.";
+
+const heroiText := "Constelação do Herói<br><br>Determinado e corajoso, busca enfrentar desafios e superar adversidades para proteger os outros. O Herói valoriza a força, a coragem e a superação.";
+
+const boboText := "Constelação do Bobo<br><br>Alegre, irreverente e brincalhão, busca trazer leveza, humor e questionar o status quo. Tem uma atitude despreocupada e divertida diante da vida.";
+
+const amanteText := "Constelação do Amante<br><br>Movido pela paixão e pelo desejo de conexões emocionais profundas. O Amante busca experiências de beleza, amor e prazer em seus relacionamentos e na vida.";
+
+const comumText := "Constelação da Pessoa Comum<br><br>Relaciona-se com todos, representando a igualdade e a simplicidade. Valoriza o pertencimento e a autenticidade, buscando se conectar com os outros de forma genuína.";
+
+const criadorText := "Constelação do Criador<br><br>Focado na inovação, imaginação e criação de algo novo. O Criador é movido pela necessidade de expressar sua visão e trazer algo original ao mundo.";
+
+const magoText := "Constelação do Mago<br><br>Representa o poder de transformação, o conhecimento e o mistério. O Mago é capaz de transformar a realidade ao seu redor, usando sabedoria e intuição.";
+
+const exploradorText := "Constelação do Explorador<br><br>Aventureiro e curioso, busca descobrir o novo e expandir os limites do que é conhecido. Valoriza a liberdade, a autoexpressão e a jornada para descobrir quem realmente é.";
+
+const foradaleiText := "Constelação do Fora da Lei<br><br>Desafiador, quer quebrar regras e sistemas para trazer mudança. Sente-se atraído pela revolução, pela quebra de paradigmas e pela luta contra injustiças.";
+
+const inocenteText := "Constelação do Inocente<br><br>Otimista e sonhador, acredita na bondade inerente das pessoas e da vida. O Inocente busca a felicidade, simplicidade e um mundo sem malícia.";
+
+const sabioText := "Constelação do Sábio<br><br>Motivado pelo desejo de conhecimento e verdade, o Sábio busca entender o mundo profundamente. Valorizado por sua sabedoria, reflexão e discernimento.";
+
+
+function signSelection(who)
+    var chardata := GetObjProperty(who, "chardata");
+    var sign_pic := CUIDADOR_ID;
+    var btn_value;
+    while (1)
+        var input := SignGump(who, sign_pic);
+        btn_value := input[0];
+
+        if (btn_value == 201)
+            sign_pic++;
+        elseif (btn_value == 210)
+            sign_pic--;
+        elseif (btn_value == 666)
+            break;
+        endif
+
+        if (sign_pic < CUIDADOR_ID)
+            sign_pic := SABIO_ID;
+        elseif (sign_pic > SABIO_ID)
+            sign_pic := CUIDADOR_ID;
+        endif
+    endwhile
+    chardata.+sign := getSignByPictureId(sign_pic);
+    SetObjProperty(who, "chardata", chardata);
+
+    SendSysMessageEX(who, "Seu signo será "+chardata.sign, SSM_INFO);
+    return sign_pic;
+endfunction
+
+function getSignByPictureId(sign_pic)
+    case(sign_pic)
+        CUIDADOR_ID: return "Constelação do Cuidador";
+        GOVERNADOR_ID: return "Constelação do Governador";
+        HEROI_ID: return "Constelação do Herói";
+        BOBO_ID: return "Constelação do Bobo";
+        AMANTE_ID: return "Constelação do Amante";
+        COMUM_ID: return "Constelação da Pessoa Comum";
+        CRIADOR_ID: return "Constelação do Criador";
+        MAGO_ID: return "Constelação do Mago";
+        EXPLORADOR_ID: return "Constelação do Explorador";
+        FORADALEI_ID: return "Constelação do Fora da Lei";
+        INOCENTE_ID: return "Constelação do Inocente";
+        SABIO_ID: return "Constelação do Sábio";
+        default: return "Desconhecido";
+    endcase
+endfunction
+
+function getSignDescriptionByPictureId(sign_pic)
+    case(sign_pic)
+        CUIDADOR_ID: return cuidadorText;
+        GOVERNADOR_ID: return governadorText;
+        HEROI_ID: return heroiText;
+        BOBO_ID: return boboText;
+        AMANTE_ID: return amanteText;
+        COMUM_ID: return comumText;
+        CRIADOR_ID: return criadorText;
+        MAGO_ID: return magoText;
+        EXPLORADOR_ID: return exploradorText;
+        FORADALEI_ID: return foradaleiText;
+        INOCENTE_ID: return inocenteText;
+        SABIO_ID: return sabioText;
+        default: return "Descrição não disponível.";
+    endcase
+endfunction
+
+function SignGump(who, sign_pic)
+    var next_btn := array{"9903", "9904"};
+    var prev_btn := array{"9909", "9910"};
+
+    var gump := GFCreateGump();
+    GFClosable(gump, 0);
+    GFGumpPic(gump, 17, 31, 0x9E6);
+
+    GFHTMLArea(gump, 346, 56, 192, 40, "<BASEFONT Size=55 Color=#999999 >Escolha seu Signo", 0, 0); //shadow
+    GFHTMLArea(gump, 345, 55, 192, 40, "<BASEFONT Size=55 Color=#ffffff >Escolha seu Signo", 0, 0);
+    var x := 63;
+    var y := 100;
+    var i := 0;
+
+    GFHTMLArea(gump, 100, 550, 650, 120, getSignDescriptionByPictureId(sign_pic), 1, 1);
+    GFAddButton(gump, 543, 300, next_btn[1], next_btn[2], GF_CLOSE_BTN, 201);
+    GFAddButton(gump, 273, 300, prev_btn[1], prev_btn[2], GF_CLOSE_BTN, 210);
+    GFAddButton(gump, 653, 680, 4005, 4007, GF_CLOSE_BTN, 666);
+
+    GFGumpPic(gump, 298, 100, sign_pic);
+
+    return GFSendGump(who, gump);
 endfunction

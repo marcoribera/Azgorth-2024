@@ -12,6 +12,7 @@ log
 
 # Data Except pol.txt
 data
+data/*
 *.bak
 
 # POL Server
@@ -48,3 +49,4 @@ muls/
 realm/
 objtypes.txt
 pcs.txt
+objtypes.txt
