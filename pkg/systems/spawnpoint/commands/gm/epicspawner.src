@@ -3,7 +3,7 @@ use datafile;
 use cfgfile;
 
 include ":gumps:gumps";
-include ":gumps:requestGump";
+include ":gumps:requestgump";
 
 program epicspawner(who)
 

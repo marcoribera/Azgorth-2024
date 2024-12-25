@@ -359,8 +359,10 @@ endfunction
 
 function ResetQuest(questname)
 
-  var questdata := OpenDataFile(":tn:questdata" );
-  var elem := questdata.findelement(questname);
+  var questdata := OpenDataFile(":tn:questdata" );
+
+  var elem := questdata.findelement(questname);
+
   var questinfo := elem.getprop("questinfo");
 
 	print("RESETANDO QUEST " + questinfo.type);
@@ -389,11 +391,16 @@ endfunction
 /* essa funcao faz o necessario para a quest existir. ou seja, prepara os eventos
 de recompensas, cria os npcs, cria os bosses, os itens que devem ser trazidos, etc
 */
-function SetupQuest(questname)
-  
-  var questdata := OpenDataFile(":tn:questdata" );
-  var elem := questdata.findelement(questname);
-  var questinfo := elem.getprop("questinfo");
+function SetupQuest(questname)
+
+  
+
+  var questdata := OpenDataFile(":tn:questdata" );
+
+  var elem := questdata.findelement(questname);
+
+  var questinfo := elem.getprop("questinfo");
+
   //print(" " + questdata + " " + elem + " " + questinfo);
 
   foreach premio in (questinfo.recompensas)
@@ -401,70 +408,128 @@ function SetupQuest(questname)
   endforeach
 
 
-
+
+
   if (questinfo.type == "Trazer Item Guardado")
-
-    var numspawns := questinfo.numSpawns;
-    var items := questinfo.items;
-    var i := 1;
+
+
+    var numspawns := questinfo.numSpawns;
+
+    var items := questinfo.items;
+
+    var i := 1;
+
     var spawns := questinfo.npcspawns;
         var npcs := array;
            var boss := 0;
     if (!questinfo.creatures)
 	questinfo.+creatures := array;
-     endif
-    while( i <= numspawns)
-      foreach spawn in spawns
-        var amt := 0;
-        while (amt < spawn.amount)
-            //print("criando npc");
-            //print( " " + spawn.npctemplate + " x " + spawn.x + " y " + spawn.y + " z " + spawn.z + " amount " + spawn.amount);
-            var npc := CreateNpcFromTemplate( cstr(spawn.npctemplate), Cint(spawn.x) + RandomInt(2 * spawn.range) - spawn.range, Cint(spawn.y) + RandomInt(2 * spawn.range) - spawn.range, Cint(spawn.z));
-            //print(" " + npc);
-            if (npc != error)
-              amt := amt + 1;
-              SetObjProperty(npc, "anchor", array{npc.x, npc.y});
-              npcs.append(npc);
-            endif
-          sleepms(2);
-        endwhile
-        
-        if (spawn.bossinfo)
-          var success := 0;
-          //print("tem boss");
-          while ( !success)
-            boss := CreateBoss(spawn.bossinfo, Cint(spawn.x), Cint(spawn.y), Cint(spawn.z), REALM_BRITANNIA);
-            print( "boss " + boss);
-            if (boss)
-                SetObjProperty(boss, "anchor", array{boss.x, boss.y});
-                success := 1;
-                if (spawn.item)
-                  var amt := items[spawn.item].Amount;
-                  if (!amt)
-                    amt := 1;
-                  endif
-                  var item := CreateItemInBackpack(boss, items[spawn.item], amt);
-                  item.movable := 1;
-                endif
-            endif
-            sleepms(2);
-          endwhile
-        else
-          print(" " + items[spawn.item]);
-          if (spawn.item)
-            var selectnpc := npcs[RandomInt(npcs.size())+1];
-            if (!selectnpc.backpack)
-              var backpack := CreateItemAtLocation(selectnpc.x, selectnpc.y, selectnpc.z,  2482,  1, selectnpc.realm);
-              EquipItem(selectnpc, backpack);
-            endif
-            var ret := CreateItemInBackpack(selectnpc, items[spawn.item], items[spawn.item].Amount);
-            ret.movable := 1;
-            print("item criado " + ret);
-          endif
-        endif
-          
-      endforeach
-        i := i + 1;
+     endif
+
+    while( i <= numspawns)
+
+      foreach spawn in spawns
+
+        var amt := 0;
+
+        while (amt < spawn.amount)
+
+            //print("criando npc");
+
+            //print( " " + spawn.npctemplate + " x " + spawn.x + " y " + spawn.y + " z " + spawn.z + " amount " + spawn.amount);
+
+            var npc := CreateNpcFromTemplate( cstr(spawn.npctemplate), Cint(spawn.x) + RandomInt(2 * spawn.range) - spawn.range, Cint(spawn.y) + RandomInt(2 * spawn.range) - spawn.range, Cint(spawn.z));
+
+            //print(" " + npc);
+
+            if (npc != error)
+
+              amt := amt + 1;
+
+              SetObjProperty(npc, "anchor", array{npc.x, npc.y});
+
+              npcs.append(npc);
+
+            endif
+
+          sleepms(2);
+
+        endwhile
+
+        
+
+        if (spawn.bossinfo)
+
+          var success := 0;
+
+          //print("tem boss");
+
+          while ( !success)
+
+            boss := CreateBoss(spawn.bossinfo, Cint(spawn.x), Cint(spawn.y), Cint(spawn.z), REALM_BRITANNIA);
+
+            print( "boss " + boss);
+
+            if (boss)
+
+                SetObjProperty(boss, "anchor", array{boss.x, boss.y});
+
+                success := 1;
+
+                if (spawn.item)
+
+                  var amt := items[spawn.item].Amount;
+
+                  if (!amt)
+
+                    amt := 1;
+
+                  endif
+
+                  var item := CreateItemInBackpack(boss, items[spawn.item], amt);
+
+                  item.movable := 1;
+
+                endif
+
+            endif
+
+            sleepms(2);
+
+          endwhile
+
+        else
+
+          print(" " + items[spawn.item]);
+
+          if (spawn.item)
+
+            var selectnpc := npcs[RandomInt(npcs.size())+1];
+
+            if (!selectnpc.backpack)
+
+              var backpack := CreateItemAtLocation(selectnpc.x, selectnpc.y, selectnpc.z,  2482,  1, selectnpc.realm);
+
+              EquipItem(selectnpc, backpack);
+
+            endif
+
+            var ret := CreateItemInBackpack(selectnpc, items[spawn.item], items[spawn.item].Amount);
+
+            ret.movable := 1;
+
+            print("item criado " + ret);
+
+          endif
+
+        endif
+
+          
+
+      endforeach
+
+        i := i + 1;
+
     endwhile
 
     //salva o que foi spawnado
@@ -474,8 +539,11 @@ function SetupQuest(questname)
     if (boss)
     	questinfo.creatures.append(boss.serial);
     endif
-    elem.SetProp("questinfo", questinfo);
+    elem.SetProp("questinfo", questinfo);
+
   endif
-
-
+
+
+
+
 endfunction
