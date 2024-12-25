@@ -145,7 +145,7 @@ function nukethisgroup(me, regionnum, spawnregion, groupname)
     	  for( y := y1; y < y2; y := y + 16 )
 	    for( z := -60; z <= 60; z := z + 16 )
 		foreach item in ListItemsNearLocation( x, y, z, 32)  
-			if ( GetObjProperty( item, "regspawn" ) = SpawnName )
+			if ( GetObjProperty( item, "regspawn" ) == SpawnName )
 				DestroyItem(item);
 				sleep(2);
 				kills := kills + 1;
