@@ -20,7 +20,7 @@ program daynightsystem()
 	
 	var i;
 	while(1)
-		SeasonRotate();  //muda o dia do ano e estaçao
+		SeasonRotate();  //muda o dia do ano e estaï¿½ao
                 MoonFase();      // muda a fase da lua
                // Temperature();   //mmuda a temperatura local
 		Broadcast("O sol esta nascendo.");
@@ -28,7 +28,7 @@ program daynightsystem()
                 darkness := GeTMoonLightMod();
 		
 		for (i:=darkness;i>=0;i:=i-1)
-			setregionlightlevel("Background", i);
+			setregionlightlevel("Memmar", i);
 			setglobalproperty("lightlevel", i);
 			ApllyLightLevel();
 			sleepms(transspeed);
@@ -40,7 +40,7 @@ program daynightsystem()
 		broadcast("O sol esta se pondo.");
                 SetGlobalProperty("dia", "noite");
 		for (i:=0;i<=darkness;i:=i+1)
-			setregionlightlevel("Background", i);
+			setregionlightlevel("Memmar", i);
 			setglobalproperty("lightlevel", i);
 			ApllyLightLevel();
 			sleepms(transspeed);
