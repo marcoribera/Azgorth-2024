@@ -4,6 +4,7 @@ use uo;
 include ":OrionClient:settings";
 
 Program OrionClientLogon(who)
+/*
 	Start_Script(":OrionClient:clientcheck", who);
 	
 	var res;
@@ -22,5 +23,5 @@ Program OrionClientLogon(who)
 	if (!res)
 		print("SendPacket AssistantFeatures error: " + res.errortext );
 	endif
-
+*/
 endprogram
