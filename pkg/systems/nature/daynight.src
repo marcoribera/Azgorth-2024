@@ -28,7 +28,7 @@ program daynightsystem()
                 darkness := GeTMoonLightMod();
 		
 		for (i:=darkness;i>=0;i:=i-1)
-			setregionlightlevel("Memmar", i);
+			setregionlightlevel("Background", i);
 			setglobalproperty("lightlevel", i);
 			ApllyLightLevel();
 			sleepms(transspeed);
@@ -40,7 +40,7 @@ program daynightsystem()
 		broadcast("O sol esta se pondo.");
                 SetGlobalProperty("dia", "noite");
 		for (i:=0;i<=darkness;i:=i+1)
-			setregionlightlevel("Memmar", i);
+			setregionlightlevel("Background", i);
 			setglobalproperty("lightlevel", i);
 			ApllyLightLevel();
 			sleepms(transspeed);
