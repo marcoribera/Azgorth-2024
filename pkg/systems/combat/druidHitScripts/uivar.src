@@ -23,7 +23,7 @@ program newprogram(who)
 	PlaySoundEffect( who, 231 );
 	PerformAction(who, ANIM_HIT);
 
-	var nearbyPets := ListPetsNear(who, 8);
+	var nearbyPets := ListAllPetsAndSummonedPetsNear(who, 8);
 	foreach lobo in nearbyPets
 		if(lobo.graphic == 225)
 			numLobos := numLobos +1;
