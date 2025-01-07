@@ -4,7 +4,7 @@ use os;
 program checkpkt()
   return 1;
 endprogram
-
+/*
 exported function ClientCheckPkt(who, byref packet)
   var v1 := packet.GetInt32(7);
   SendSysMessage(who, "Checando o pacote");
@@ -15,3 +15,4 @@ exported function ClientCheckPkt(who, byref packet)
     SendSysMessage(who, "Orion client responded with version below 1.0.17.0");
   endif
 endfunction
+*/
