@@ -1,5 +1,7 @@
 use uo;
 
+include ":timedScripts:timedScripts";
+
 function ListTamablePetsNearLocation(x, y, z, range, realm := _DEFAULT_REALM)
 
 	var cfg := ReadConfigFile(":brainAI:npcdesc");
@@ -48,10 +50,10 @@ function GetNumPets(who)
 	if ( !tamed )
 		return 0;
 	endif
-	
+
 	foreach serial in tamed
 		var pet := SystemFindObjectBySerial(serial);
-		if ( pet.master == who )
+		if ( pet.master == who && !GetObjProperty(pet, "summoned")) //se não é summon
 			var cfg := ReadConfigFile(":brainAI:npcdesc");
 			var npctemplate := pet.npctemplate;
 			npctemplate := npctemplate[10, len(npctemplate)-9];
@@ -61,40 +63,89 @@ function GetNumPets(who)
 			else
 				num_tamed := num_tamed + Cint(cfg.petslot);
 			endif
-		elseif ( !pet || pet.master !=who )
+		else
 			tamed.erase(_serial_iter);
 		endif
 		sleepms(2);
 	endforeach
-	
+
+	if(!tamed)
+		tamed := array;
+	endif
 	SetObjProperty(who, "TamedPets", tamed);
 	who.followers := num_tamed;
 	return num_tamed;
 endfunction
 
-//deleta o serial da lista de seriais do char (quando o npc morre ou eh transferido)
-function ErasePet(who, myserial)
-	
-	var tamed := GetObjProperty(who, "TamedPets");
+function GetNumSummons(who)
+	var num_tamed := 0;
+	var tamed := GetObjProperty(who, "SummonedPets");
 	if ( !tamed )
-		return;
+		return 0;
 	endif
-	
+
 	foreach serial in tamed
-		if ( myserial == serial )
-			MP_Unmount(who);
+		var pet := SystemFindObjectBySerial(serial);
+		if ( pet.master == who && GetObjProperty(pet, "summoned")) //se é summon
+			var cfg := ReadConfigFile(":brainAI:npcdesc");
+			var npctemplate := pet.npctemplate;
+			npctemplate := npctemplate[10, len(npctemplate)-9];
+			cfg := cfg[npctemplate];
+			if (!Cint(cfg.petslot))
+				num_tamed := num_tamed+1;
+			else
+				num_tamed := num_tamed + Cint(cfg.petslot);
+			endif
+		else
 			tamed.erase(_serial_iter);
-			SetObjProperty(who, "TamedPets", tamed);
-			var pet := SystemFindObjectBySerial(serial);
-			who.followers := who.followers - GetPetCost(pet);
-			return;
 		endif
 		sleepms(2);
 	endforeach
-
+	if(!tamed)
+		tamed := array;
+	endif
+	SetObjProperty(who, "SummonedPets", tamed);
+	return num_tamed;
 endfunction
 
-//adiciona o serial do pet 
+//deleta o serial da lista de seriais do char (quando o npc morre ou eh transferido)
+function ErasePet(who, myserial)
+
+	var tamed := GetObjProperty(who, "TamedPets");
+	if ( tamed )
+		foreach serial in tamed
+			if ( myserial == serial )
+				MP_Unmount(who);
+				tamed.erase(_serial_iter);
+				SetObjProperty(who, "TamedPets", tamed);
+				var pet := SystemFindObjectBySerial(serial);
+				who.followers := who.followers - GetPetCost(pet);
+				break;
+			endif
+			sleepms(2);
+		endforeach
+	endif
+	tamed := GetObjProperty(who, "SummonedPets");
+	if ( tamed )
+		foreach serial in tamed
+			if ( myserial == serial )
+				var pet := SystemFindObjectBySerial(serial);
+				TS_LowerDuration(pet, "summon", -1);
+				MP_Unmount(who);
+				tamed.erase(_serial_iter);
+				SetObjProperty(who, "SummonedPets", tamed);
+				var timer_num := GetObjProperty(pet, "slot");
+				var timer := "summon_"+timer_num;
+				TS_LowerDuration(who, timer, -1);
+				break;
+			endif
+			sleepms(2);
+		endforeach
+	endif
+	return;
+endfunction
+
+//adiciona o serial do pet
 function AddPet(who, serial)
 	var tamed := GetObjProperty(who, "TamedPets");
 	if ( !tamed )
@@ -109,24 +160,47 @@ endfunction
 
 //numero maximo de pets que alguem pode ter
 function GetMaxPets(who)
-
-	var skill := cint(AP_GetSkill(who, HANDLEANIMAL));
 	var maxpets := 1;
-	
-	if(TemHabilidade(who, "Empatia Com Animais"))
-		maxpets := maxpets + 1;
-	endif
 
+	//Influência da skill na quantidade
+	var skill := cint(AP_GetSkill(who, HANDLEANIMAL));
 	if (skill >= 45 && skill < 75)
 		maxpets := maxpets + 1;
-	elseif (skill >= 75)
+	elseif (skill >= 75 && skill < 90)
 		maxpets := maxpets + 2;
+	elseif (skill >= 90)
+		maxpets := maxpets + 3;
+	endif
+
+	//Influência de Habs na quantidade
+	if(TemHabilidade(who, "Lider do Bando"))
+		maxpets := maxpets + 1;
+	endif
+	if(TemHabilidade(who, "Boiadeiro"))
+		maxpets := maxpets + 2;
+	endif
+	if(TemHabilidade(who, "Rei do Gado"))
+		maxpets := maxpets * 2;
 	endif
 
 	maxpets := maxpets + cint( GetObjProperty(who, "extrapets") );
 
 	return maxpets;
+endfunction
 
+function GetMaxSummons(who)
+	var maxpets := 1;
+
+	//Influência da skill na quantidade
+	var skill := cint(AP_GetSkill(who, MAGICLORE));
+	if (skill >= 45 && skill < 75)
+		maxpets := maxpets + 1;
+	elseif (skill >= 75 && skill < 90)
+		maxpets := maxpets + 2;
+	elseif (skill >= 90)
+		maxpets := maxpets + 3;
+	endif
+	return maxpets;
 endfunction
 
 //desloga os pets, teleportando eles pra um lugar l
@@ -136,7 +210,7 @@ function LogoutPets(who)
 	if ( !tamed )
 		return;
 	endif
-	
+
 	foreach serial in tamed
 		var pet := SystemFindObjectBySerial(serial);
 		if ( (pet.master == who)  && (Distance(pet, who) < 3))
@@ -150,25 +224,70 @@ function LogoutPets(who)
 		endif
 		sleepms(2);
 	endforeach
-		
+
 
 endfunction
 
 //pega os pets da pessoa na area
-function ListPetsNEar(who,  range)
+function ListPetsNear(who,  range)
 
 	var pets := array;
 	var tamed := GetObjProperty(who, "TamedPets");
 	if ( !tamed )
 		return pets;
 	endif
-	
+
 	foreach serial in tamed
 		var pet := SystemFindObjectBySerial(serial);
-		if ( (pet.master == who)  && (Distance(pet, who) < range))
+		if ( (pet.master == who)  && (Distance(pet, who) <= range))
 			pets.append(pet);
 		endif
 		sleepms(2);
+	endforeach
+
+	return pets;
+
+endfunction
+
+//pega os Summoned Pets da pessoa na area
+function ListSummonedPetsNear(who,  range)
+
+	var pets := array;
+	var tamed := GetObjProperty(who, "SummonedPets");
+	if ( !tamed )
+		return pets;
+	endif
+
+	foreach serial in tamed
+		var pet := SystemFindObjectBySerial(serial);
+		var owner := GetObjProperty(pet, "owner");
+		if ( (owner == who || owner == who.serial || cstr(owner) == cstr(who.serial))  && (Distance(pet, who) <= range))
+			pets.append(pet);
+		endif
+		sleepms(2);
+	endforeach
+
+	return pets;
+
+endfunction
+
+//pega os pets e summons da pessoa na area
+function ListAllPetsAndSummonedPetsNear(who,  range)
+
+	var pets := array;
+	var tamedPets := ListPetsNear(who,  range);
+	var summonedPets := ListSummonedPetsNear(who,  range);
+
+	if ( !tamedPets && !summonedPets)
+		return pets;
+	endif
+
+	foreach pet in tamedPets
+		pets.append(pet);
+	endforeach
+
+	foreach pet in summonedPets
+		pets.append(pet);
 	endforeach
 
 	return pets;
@@ -182,7 +301,7 @@ function LogonPets(who)
 	if ( !tamed )
 		return;
 	endif
-	
+
 	foreach serial in tamed
 		var pet := SystemFindObjectBySerial(serial);
 		if ( (pet.master == who)  )
@@ -196,10 +315,10 @@ function LogonPets(who)
 
 endfunction
 
-//igual a untame que tem na IA :ghaia:controlled
+//igual a untame que tem na IA :ghaia:tamed
 function destama(serial)
 
-	var me := SystemFindObjectBySerial(serial);	
+	var me := SystemFindObjectBySerial(serial);
 	me.SetMaster(0);
 	var orig_script := GetObjProperty(me, "script");
 	me.script := orig_script;
@@ -208,6 +327,10 @@ function destama(serial)
 	EraseObjProperty(me, "name");
 	EraseObjproperty(me, "script");
 	EraseObjProperty(me, "happiness");
+	EraseObjProperty(me, "bond");
+	EraseObjProperty(me,"countercheck");
+	EraseObjProperty(me, "NeverRelease");
+	EraseObjProperty(me, "Fidelizar?");
 	RestartScript(me);
 	ErasePetMods(me);
 endfunction
