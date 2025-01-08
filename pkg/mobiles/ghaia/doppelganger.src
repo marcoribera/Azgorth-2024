@@ -227,6 +227,16 @@ program KillPlayers()
 
 endprogram
 
+function HasPlayerNear(who)
+    var nearby := ListMobilesNearLocationEx(who.x, who.y, LIST_IGNORE_Z, 30, LISTEX_FLAG_NORMAL + LISTEX_FLAG_HIDDEN + LISTEX_FLAG_CONCEALED, who.realm);
+    foreach mobile in nearby
+        if (mobile.acctname)
+            return 1;
+        endif
+    endforeach
+    return 0;
+endfunction
+
 function CloseDistance( opponent )
 
   if ( GetObjPRoperty( me, "noclosecombat" ) == 1 )
