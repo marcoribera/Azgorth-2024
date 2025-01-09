@@ -1,6 +1,10 @@
 include ":timedScripts:timedScripts";
 include ":tn:cooldown";
 include "include/say";
+include ":fls_core:fls_characters";
+include ":charactercreation:resists";
+use cfgfile;
+
 
 CONST DRINK_SOUND := 0x32;
 
@@ -40,7 +44,7 @@ function empty_bottle(character, potion, potiontype := 0)
 		endif
 	return 1;
 	endif
-    
+
   PlaySoundEffect(character, DRINK_SOUND);
   PrintText(character, "*usa uma pocao*");
   var goles;
@@ -51,11 +55,11 @@ function empty_bottle(character, potion, potiontype := 0)
 	else
 		goles := cint(GetObjProperty(potion, "goles"));
 	endif
-  
+
 	if(potiontype == 1)  //eh uma poção de 1 so gole
 		goles := 0;
 	endif
-  
+
 	if (goles > 1)
 		goles := goles - 1;
 		SetObjProperty(potion, "goles", goles);
@@ -63,44 +67,57 @@ function empty_bottle(character, potion, potiontype := 0)
 		SetObjProperty(potion, "acabou", 1);
 		SetObjProperty(potion, "goles", 0);
 	endif
-  
+
 endfunction
 
-//essa funcao so se mantem pra checar os kindlings. se nao quiser checar isso use .isReagent();
-function isotherreagent(what)
-	case(what.objtype)
-		0xf7a:  return 1;
-		0xf7b:  return 1;
-		0xf84:  return 1;
-		0xf85:  return 1;
-		0xf86:  return 1;
-		0xf88:  return 1;
-		0xf8c:  return 1;
-		0xf8d:  return 1;
-		0xef1a: return 1;
-		0xef1b: return 1;
-		0xef1c: return 1;
-		0xef1d: return 1;
-		0xf7d: return 1;
-		0xef1e: return 1;
-		0xf87: return 1;
-		0xf79: return 1;
-		0xf91: return 1;
-		0xf89: return 1;
-		0xf82: return 1;
-		0xF81: return 1;
-		0xF78: return 1;
-		0xF8F: return 1;
-		0xF90: return 1;
-    
-		0xee25: return 1;
-		0xee26: return 1;
-		0xee27: return 1;
-		0xee28: return 1;
-		0xfc5:  return 1;
-		0x0dea: return 1;
+function isotherreagent(what) //essa funcao so se mantem pra checar o que não é reagent do próprio UO. se nao quiser checar isso use .isReagent();
+	case(Lower(what.objtype))
+    ///// GRAVETOS /////
+		0xf7a:  
+		0xf7b:  
+		0xf84:  
+		0xf85:  
+		0xf86:  
+		0xf88:  
+		0xf8c:  
+		0xf8d:  
+		0xef1a: 
+		0xef1b: 
+		0xef1c: 
+		0xef1d: 
+		0xf7d: 
+		0xef1e: 
+		0xf87: 
+		0xf79: 
+		0xf91: 
+		0xf89: 
+		0xf82: 
+		0xf81: 
+		0xf78: 
+		0xf8f: 
+		0xf90: 
 
-		0x1F91: return 1;
+		0xee25: 
+		0xee26: 
+		0xee27: 
+		0xee28: 
+		0xfc5:  
+		0x0dea: 
+
+    0xee29: 
+    0xee2a: 
+    0xee2b: 
+    0xee2c: 
+    0xee2d: 
+    0xee2e: 
+
+		0x1f91: //COPO D'ÁGUA
+    0x1f9e: //JARRA D'ÁGUA
+
+    ///// INGOTS /////
+		0x6993: //BARRA DE PRATA LUNAR
+		0x630e: //BARRA DE OURO
+      return 1;
 	endcase
 	return 0;
 endfunction
@@ -158,8 +175,8 @@ function GetReagName(objtype)
   elseif (objtype == 0xF90 )
    return "madeira morta";
   elseif (objtype == 0xf91 )
-   return "coracao do vorme";
-    
+   return "coracao do verme";
+
   elseif ( objtype == 0xef1a)
    return "glandula de wyvern";
   elseif (objtype == 0xef1b)
@@ -168,11 +185,8 @@ function GetReagName(objtype)
    return "glandula de aranha";
   elseif (objtype == 0xef1d)
    return "glandula de cobra";
-  elseif (objtype == 0xef1e)
-   return "po de liche";
-
-  elseif (objtype == 0xF8F )
-   return "poeira de cripta";
+  elseif (objtype == 0xF8F)
+   return "po de tumulo";
   elseif (objtype == 0xee27 )
    return "cascas vermelhas";
   elseif (objtype == 0xee28 )
@@ -187,8 +201,35 @@ function GetReagName(objtype)
    return "cinzas";
   elseif (objtype == 0x1F91 )
    return "copo de agua";
-
   endif
+
+  case(Lower(objtype)) //EvilLink
+    ///// INGOTS /////
+    0x6993: return "barras de prata lunar";
+    0x630e: return "barras de ouro";
+
+    ///// GRAVETOS NUMAJA /////
+    0xee29: return "gravetos numaja preto metálico";
+    0xee2a: return "gravetos numaja verde musgo metálico";
+    0xee2b: return "gravetos numaja dourado";
+    0xee2c: return "gravetos numaja azul metálico";
+    0xee2d: return "gravetos numaja azul lunar";
+    0xee2e: return "gravetos numaja azul penumbra";
+    
+    //pizza dentro do EvilLink
+    0xc020: return "graveto teixo";
+    0xc023: return "graveto imbuia";
+    0xc026: return "graveto mogno";
+    0xc02c: return "graveto cogumelo";
+    0xc02f: return "graveto ebano";
+
+ 
+
+    ///// OTHERS /////
+    0x1f9e: return "Jarra de Água";
+    0x1852: return "Óleo Exótico";
+  endcase
+
 endfunction
 
 
@@ -198,38 +239,43 @@ function is_poison(potion)
 endfunction
 
 function do_poison(who, potion)
-  empty_bottle(who, potion);
-  case (potion.objtype)
-    0xbf00: 
-     var lvl := Cint(GetObjProperty(potion, "strength"));
-     if (lvl)
-      TS_StartTimer(who, "defaultPoison", 120, lvl);
-     else
-        TS_StartTimer(who, "defaultPoison", 120, 1);
-     endif
-		SendSysMessage(who, "Voce foi envenenado", 3, 40);
-    0xbf01:
-		TS_StartTimer(who, "strPoison", 120, 2);
-		SendSysMessage(who, "Voce foi envenenado", 3, 40);
-    0xbf02:
-		TS_StartTimer(who, "staminaPoison", 120, 2);
-		SendSysMessage(who, "Voce foi envenenado", 3, 40);
-    0xbf03:
-		TS_StartTimer(who, "paralyzePoison", 120, 2);
-		SendSysMessage(who, "Voce foi envenenado", 3, 40);
-
-    0xbf04:
-		TS_StartTimer(who, "defaultPoison", 120, 3);
-		SendSysMessage(who, "Voce foi envenenado", 3, 40);
-    0xbf06:
-		TS_StartTimer(who, "manaPoison", 120, 5);
-		SendSysMessage(who, "Voce foi envenenado", 3, 40);
-    0xbf05:
-		TS_StartTimer(who, "defaultPoison", 120, 5);
-		SendSysMessage(who, "Voce foi envenenado", 3, 40);
-    0xdc04:
-		TS_StartTimer(who, "defaultPoison", 120, 2);
-		SendSysMessage(who, "Voce foi envenenado", 2, 40);
+  var level, difficulty, points, poisonType;
+  level := Cint(GetObjProperty(potion, "level"));
+  if (!level)
+    level := RandomDiceRoll("1d5");
+  endif
+  //se for uma poçao que nao a default a formula eh essa:
+  difficulty := 15*level + 10;
+  points := difficulty;
+  case(potion.objtype)
+    0xbf00: level := 1; difficulty := 40; points := 50; poisonType := "defaultPoison";
+    0xbf01: poisonType :="strPoison"; difficulty := 60; points := 70;
+    0xbf07: poisonType :="dexPoison"; difficulty := 60; points := 70;
+    0xbf06: poisonType :="intPoison"; difficulty := 60; points := 70;
+    0xbf02: poisonType:="staminaPoison"; difficulty := 60; points := 70;
+    0xbf03: poisonType:="paralyzePoison"; difficulty := 80; points := 100;
+    0xef54: poisonType :="manaPoison"; difficulty := 40; points := 70;
+    0xbf04: level := 3; difficulty := 80; points := 60; poisonType := "defaultPoison";
+    0xdc04: level := 2; difficulty := 60; points := 40; poisonType := "defaultPoison";
+    0xbf05: level := 4; difficulty := 100; points := 100; poisonType := "defaultPoison";
+    default: difficulty := 0; points := 0; poisonType := "invalid";
   endcase
+  PlaySoundEffect(who, 0x248);
+    SendSysMessageEx(who, "Voce aplicou o veneno com sucesso.", SSM_INFO);
+    var poisonInfo := struct;
+    poisonInfo.+name := poisonType;
+    poisonInfo.+level := level;
+    poisonInfo.+dosage := 20 - (level*2);
+    poisonInfo.+acc := who.acctname;
+    poisonInfo.+time := 40 + level*10;
+    if (temHabilidade(who, "Veneno Puro"))
+      poisonInfo.dosage := CInt(poisonInfo.dosage * 1.5);
+      poisonInfo.time := CInt(poisonInfo.time * 1.25);
+    endif
 
+    if (CheckResist(who, FORTITUDE, 15,-20*poisonInfo.level))
+      SendSysMessageEx(who, "Voce resistiu ao veneno.", SSM_INFO);
+    else
+      TS_StartTimer(who, poisonInfo.name, poisonInfo.time, poisonInfo.level, who);
+    endif
 endfunction

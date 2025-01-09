@@ -9,7 +9,7 @@ include ":loot:magicLoot";
 //include "include/damage";
 include ":charactercreation:habilidades";
 
-program skill_armslore(who)
+program skill_alchemy(who)
 
     SendSysMessageEx(who, "Escolha uma pocao para avaliar.", SSM_REQUEST);
 	var item := Target(who, TGTOPT_CHECK_LOS);
