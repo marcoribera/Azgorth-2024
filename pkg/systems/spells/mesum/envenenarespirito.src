@@ -23,13 +23,45 @@ program SpellScript(params)
 
 	var lvl := cint(AP_GetSkill(who, MAGICLORE)/20);
 
-	if (!CheckResist(targ, VONTADE, 60+cint(AP_GetSkill(who, MAGICLORE))))
-		TS_StartTimer(targ, "manaPoison", cint(AP_GetSkill(who, MAGICLORE)), lvl);
-		Corromper(who, 23, targ);
+	if(TemHabilidade(who, "Vontade Esmagadora"))
+		if (!CheckResist(targ, VONTADE, 70, -CInt(AP_GetSkill(who, MAGICLORE)/2.5))) // Muito mais Difícil de resistir
+			TS_StartTimer(targ, "manaPoison", cint(AP_GetSkill(who, MAGICLORE)), lvl);
+			Corromper(who, 23, targ);
+		else
+			SendSysMessageEx(who, "O alvo  resistiu a magia.", SSM_FAIL);
+			SendSysMessageEx(targ, "Voce resistiu a magia.", SSM_INFO);
+
+			if (GetObjProperty(who, "#magiasilenciosa"))
+                SendSysMessageEx(who,  "O efeito da magia silenciosa acabou.", SSM_INFO);
+            endif
+            //Remove prop de magia silenciosa apos o cast ser completo
+            EraseObjProperty(who, "#magiasilenciosa");
+
+			return;
+		endif
 	else
-		SendSysMessageEx(who, "O alvo  resistiu a magia.", SSM_FAIL);
-		SendSysMessageEx(targ, "Voce resistiu a magia.", SSM_INFO);
+		if (!CheckResist(targ, VONTADE, 30, -CInt(AP_GetSkill(who, MAGICLORE)/2.5)))
+			TS_StartTimer(targ, "manaPoison", cint(AP_GetSkill(who, MAGICLORE)), lvl);
+			Corromper(who, 23, targ);
+		else
+			SendSysMessageEx(who, "O alvo  resistiu a magia.", SSM_FAIL);
+			SendSysMessageEx(targ, "Voce resistiu a magia.", SSM_INFO);
+
+			if (GetObjProperty(who, "#magiasilenciosa"))
+                SendSysMessageEx(who,  "O efeito da magia silenciosa acabou.", SSM_INFO);
+            endif
+            //Remove prop de magia silenciosa apos o cast ser completo
+            EraseObjProperty(who, "#magiasilenciosa");
+
+			return;
+		endif
 	endif
-	
+
+    if (GetObjProperty(who, "#magiasilenciosa"))
+        SendSysMessageEx(who,  "O efeito da magia silenciosa acabou.", SSM_INFO);
+    endif
+    //Remove prop de magia silenciosa apos o cast ser completo
+    EraseObjProperty(who, "#magiasilenciosa");
+
 	return 1;
-endprogram 
+endprogram

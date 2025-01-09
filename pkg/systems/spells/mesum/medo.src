@@ -7,7 +7,6 @@ include "include/sounds";
 include "include/say";
 include ":timedscripts:timedScripts";
 include ":charactercreation:resists";
-include "include/sysEvent";
 
 program SpellScript(params)
 	var who := params[1];
@@ -21,173 +20,59 @@ program SpellScript(params)
 	endif
 
 
-	var lvl := Cint(AP_GetSkill(who, MAGICLORE)/20);
+	var lvl := Cint(AP_GetSkill(who, MAGICLORE)/33);
 	if (lvl < 1)
 		lvl := 1;
 	endif
 
-	if (!CheckResist(targ, VONTADE, 60+cint(AP_GetSkill(who, MAGICLORE))))
-		var last_loc := struct{ "x" := who.x, "z" := who.z, "y" := who.y };
-		if ( !targ.npctemplate )
-			Corromper(who, 32, targ);
-            sleepms(10);
-
-            targ.concealed := 1;
-            targ.frozen := 1 - targ.frozen;
-			targ.squelch((-1)*( 1-targ.squelched));
-       
-            sleepms(10);
-            var npcenfurecido := createnpcfromtemplate(":brainai:humanmale", targ.x, targ.y, targ.z, 0 , who.realm);
-
-			sleepms(10);
-
-			var combat := AP_GetSkill(who, MAGICLORE);
-        
-            sleepms(10);
-
-            AP_SetTrueSkill(npcenfurecido, TACTICS, combat+20);
-            AP_SetTrueSkill(npcenfurecido, MAGERY, combat+20);
-            AP_SetTrueSkill(npcenfurecido, MAGICLORE, combat+20);
-
-            sleepms(10);
-
-            combat := combat/2;
-
-            AP_SetSkillMod(npcenfurecido, WRESTLING, combat);
-
-			var hpatual 	:= AP_GetVital(targ, "HITS");
-			var manaatual 	:= AP_GetVital(targ, "MANA");
-			var vigoratual 	:= AP_GetVital(targ, "STAMINA");
-
-
-			var mypack := GetEquipmentByLayer(npcenfurecido, 0x15);
-                            if (!mypack)
-                                mypack := CreateItemAtLocation(20, 20, 0, 0xe75, 1, npcenfurecido.realm);
-                            else
-                                MoveObjectToLocation(mypack, 20, 20, 0, npcenfurecido.realm, MOVEOBJECT_FORCELOCATION);
-                            endif
-
-                            var itemlist := ListEquippedItems(npcenfurecido);
-                            var y;
-
-                            foreach x in itemlist
-                                MoveItemToContainer(x, mypack);
-                            endforeach
-
-                            itemlist := ListEquippedItems(targ);
-                            foreach x in itemlist
-                                y := CreateItemCopyAtLocation(20, 20, 0, x);
-                                y.color := x.color;
-                                y.name := x.name;
-                                y.desc := x.desc;
-                                EquipItem(npcenfurecido, y);
-                            endforeach
-                            
-                            var desc:=GetObjProperty(targ,"description");
-
-                            if (desc!=error) 
-                                SetObjProperty(npcenfurecido,"description",desc);
-                            else
-                                EraseObjProperty(npcenfurecido,"description");
-                            endif
-
-                            npcenfurecido.gender := targ.gender;
-                            npcenfurecido.graphic := targ.graphic;
-                            npcenfurecido.color := targ.color;
-                            npcenfurecido.title_race:=targ.title_race;
-                            npcenfurecido.title_suffix:=targ.title_suffix;
-                            npcenfurecido.title_prefix:=targ.title_prefix;
-                            npcenfurecido.name := targ.name;
-                            npcenfurecido.TrueColor := targ.TrueColor;
-                            npcenfurecido.trueobjtype := targ.trueobjtype;
-
-
-                            var newpack := GetEquipmentByLayer(npcenfurecido, 0x15);
-                            if (newpack)
-                                DestroyItem(newpack);
-                            endif
-
-                            EquipItem(npcenfurecido, mypack);
-
-							if (targ.graphic == 401)
-                                PlaySoundEffect( npcenfurecido, 0x32F );
-                                PrintTextAbove(npcenfurecido, "*apavorado*");
-                            else
-                                PlaySoundEffect( npcenfurecido, 0x441 );
-                                PrintTextAbove(npcenfurecido, "*apavorado*");
-                            endif
-
-							sleepms(10);
-
-            				Run_Script_To_Completion(":death:npcdeath", {npcenfurecido});
-
-            				TS_StartTimer(npcenfurecido, "summon", GetSpellDuration(AP_GetSkill(who, MAGICLORE)) / 60);
-
-							SendEvent(npcenfurecido, struct{ "type" := 0x3333, source := who, "last_loc" := last_loc});
-
-							AP_SetVital( targ, HITS, hpatual);
-							AP_SetVital( targ, MANA, hpatual);
-							AP_SetVital( targ, STAMINA, hpatual);
-
-							while (npcenfurecido)
-
-								var hpatual2 	:= AP_GetVital(npcenfurecido, "HITS");
-								var manaatual2 	:= AP_GetVital(npcenfurecido, "MANA");
-								var vigoratual2 	:= AP_GetVital(npcenfurecido, "STAMINA");
-
-								MoveObjectToLocation(targ, npcenfurecido.x, npcenfurecido.y, npcenfurecido.z);
-
-								sleepms(10);
-
-								var hpdomob := AP_GetVital(npcenfurecido, "HITS");
-
-								if (hpdomob <= 10)
-									MoveObjectToLocation(targ, npcenfurecido.x, npcenfurecido.y, npcenfurecido.z);
-									targ.concealed := 0;
-									targ.frozen := 1 - targ.frozen;
-									targ.squelch((-1)*( 1-targ.squelched));
-									PrintTextAbove(targ, "*Recupera consciencia*");
-									//ApplyRawDamage(targ, CInt(AP_GetVitalMaximumValue(targ, "HITS")+20));
-									return;
-								elseif (npcenfurecido.dead)
-									MoveObjectToLocation(targ, npcenfurecido.x, npcenfurecido.y, npcenfurecido.z);
-									targ.concealed := 0;
-									targ.frozen := 1 - targ.frozen;
-									targ.squelch((-1)*( 1-targ.squelched));
-									PrintTextAbove(targ, "*Recupera consciencia*");
-									//(targ, CInt(AP_GetVitalMaximumValue(targ, "HITS") +20));
-									return;
-								endif
-
-								sleepms(10);
-
-								AP_SetVital( targ, HITS, hpatual2);
-								AP_SetVital( targ, MANA, hpatual2);
-								AP_SetVital( targ, STAMINA, hpatual2);
-
-							endwhile
-							
-							sleepms(10);
-
-							targ.concealed := 0;
-							targ.frozen := 1 - targ.frozen;
-							targ.squelch((-1)*( 1-targ.squelched));
-
-							PrintTextAbove(targ, "*Recupera consciencia*");
-		else					
+	if(TemHabilidade(who, "Vontade Esmagadora"))
+		if (!CheckResist(targ, VONTADE, 70, -CInt(AP_GetSkill(who, MAGICLORE)/2.5))) // Muito mais Difícil de resistir
 			TS_StartTimer(targ, "dmgreduction", Cint(AP_GetSkill(who, MAGICLORE)), lvl, who, 1);
-			PlaySoundEffect(targ, SFX_SPELL_PROTECTION);
+			if (!GetObjProperty(who, "#magiasilenciosa"))
+                PlaySoundEffect(targ, SFX_SPELL_PROTECTION);
+            endif
 			printText(targ, "*apavorado*");
-			TS_StartTimer(targ, "desmontar", cint(AP_GetSkill(who, MAGICLORE)/6));
-			SendEvent(targ, struct{ "type" := 0x3333, source := who, "last_loc" := last_loc});
-			//SendSysMEssageEx(who, "O alvo esta apavorado.", SSM_INFO);3
+			//SendSysMessageEx(who, "O alvo esta apavorado.", SSM_INFO);3
 			Corromper(who, 32, targ);
-		endif
+		else
+			SendSysMessageEx(who, "O alvo  resistiu a magia.", SSM_FAIL);
+			SendSysMessageEx(targ, "Voce resistiu a magia.", SSM_INFO);
 
+			if (GetObjProperty(who, "#magiasilenciosa"))
+                SendSysMessageEx(who,  "O efeito da magia silenciosa acabou.", SSM_INFO);
+            endif
+            //Remove prop de magia silenciosa apos o cast ser completo
+            EraseObjProperty(who, "#magiasilenciosa");
+
+			return 1;
+		endif
 	else
-		SendSysMessageEx(who, "O alvo resistiu a magia.", SSM_FAIL);
-		SendSysMessageEx(targ, "Voce resistiu a magia.", SSM_INFO);
+		if (!CheckResist(targ, VONTADE, 30, -CInt(AP_GetSkill(who, MAGICLORE)/2.5)))
+			TS_StartTimer(targ, "dmgreduction", Cint(AP_GetSkill(who, MAGICLORE)), lvl, who, 1);
+			if (!GetObjProperty(who, "#magiasilenciosa"))
+                PlaySoundEffect(targ, SFX_SPELL_PROTECTION);
+            endif
+			printText(targ, "*apavorado*");
+			//SendSysMessageEx(who, "O alvo esta apavorado.", SSM_INFO);3
+			Corromper(who, 32, targ);
+		else
+			SendSysMessageEx(who, "O alvo  resistiu a magia.", SSM_FAIL);
+			SendSysMessageEx(targ, "Voce resistiu a magia.", SSM_INFO);
+
+			if (GetObjProperty(who, "#magiasilenciosa"))
+                SendSysMessageEx(who,  "O efeito da magia silenciosa acabou.", SSM_INFO);
+            endif
+            //Remove prop de magia silenciosa apos o cast ser completo
+            EraseObjProperty(who, "#magiasilenciosa");
+
+			return 1;
+		endif
 	endif
-	
-	return 1;
-endprogram     
+
+	if (GetObjProperty(who, "#magiasilenciosa"))
+        SendSysMessageEx(who,  "O efeito da magia silenciosa acabou.", SSM_INFO);
+    endif
+    //Remove prop de magia silenciosa apos o cast ser completo
+    EraseObjProperty(who, "#magiasilenciosa");
+
+endprogram

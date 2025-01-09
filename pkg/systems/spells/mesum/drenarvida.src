@@ -1,4 +1,4 @@
-    use uo;
+use uo;
 use os;
 
 include ":spells:tnmagery";
@@ -17,71 +17,92 @@ program SpellScript(params)
 		return;
 	endif
 
-
-	PlaySoundEffect(targ, SFX_SPELL_WEAKEN);
+    if (!GetObjProperty(who, "#magiasilenciosa"))
+        PlaySoundEffect(targ, SFX_SPELL_WEAKEN);
+    endif
 
 	var time := 0;
 	var oldx := who.x;
 	var oldy := who.y;
 
-	who.frozen := 1;
-	
-	var amt := 10;
+	//who.frozen := 1;
 
-	if (TemHabilidade(who, "Elo com a Morte"))	
-		var manamoment 	:= AP_GetVital(who, "HITS");
-		var manatotal	:= AP_GetVitalMaximumValue(who, "HITS");
-		if 	(manamoment <= manatotal / 2)
-			amt := 15;
-		endif	
-	endif
-/*
-	if (temHabilidade(who, "Elo com a Morte"))
+	var amt := 10;
+	if (temHabilidade(who, "Tocado por Asan"))
 		if (isBloodied(who))
-			amt := 15;
+			amt := CInt(amt*1.5);
 		endif
 	endif
-*/
+
 	Corromper(who, 9, targ);
 
-	if (CheckResist(targ, VONTADE, 40+cint(AP_GetSkill(who, MAGICLORE))))
-		SendSysMEssageEx(who, "Voce nota que o alvo nao foi afetado.", SSM_FAIL);
-		SendSysMessageEx(targ, "Voce resistiu a magia.", SSM_INFO);
-		who.frozen := 0;
-		return;
+	if(TemHabilidade(who, "Vontade Esmagadora"))
+		if (CheckResist(targ, VONTADE, 70, -CInt(AP_GetSkill(who, MAGICLORE)/2.5))) // Muito mais Difícil de resistir
+			SendSysMessageEx(who, "Voce nota que o alvo nao foi afetado.", SSM_FAIL);
+			SendSysMessageEx(targ, "Voce resistiu a magia.", SSM_INFO);
+
+			if (GetObjProperty(who, "#magiasilenciosa"))
+                SendSysMessageEx(who,  "O efeito da magia silenciosa acabou.", SSM_INFO);
+            endif
+            //Remove prop de magia silenciosa apos o cast ser completo
+            EraseObjProperty(who, "#magiasilenciosa");
+			EraseObjProperty(who, "#Casting");
+			return;
+		endif
+	else
+		if (CheckResist(targ, VONTADE, 30, -CInt(AP_GetSkill(who, MAGICLORE)/2.5)))
+			SendSysMessageEx(who, "Voce nota que o alvo nao foi afetado.", SSM_FAIL);
+			SendSysMessageEx(targ, "Voce resistiu a magia.", SSM_INFO);
+
+			if (GetObjProperty(who, "#magiasilenciosa"))
+                SendSysMessageEx(who,  "O efeito da magia silenciosa acabou.", SSM_INFO);
+            endif
+            //Remove prop de magia silenciosa apos o cast ser completo
+            EraseObjProperty(who, "#magiasilenciosa");
+			EraseObjProperty(who, "#Casting");
+			return;
+		endif
 	endif
 
+	SetObjProperty(who, "#Casting",1);
+
 	while  (time < 10)
-
 		if ( (who.x != oldx) || (who.y != oldy))
-			SendSysMEssageEx(who, "Voce se moveu e cancelou a magia.", SSM_FAIL);
-			break;
-		endif
-
-		if (Distance(who, targ) >= 16)
+			time:=10;
+			SendSysMessageEx(who, "Voce se moveu e cancelou a magia.", SSM_FAIL);
+		elseif ( who.frozen )
+			time:=10;
+			SendSysMessageEx(who, "Voce esta incapaz de se mover.", SSM_FAIL);
+		elseif (Distance(who, targ) >= 16)
+			time:=10;
 			SendSysMessageEx(who, "O alvo se distanciou muito.", SSM_FAIL);
-			break;
-		endif
+		elseif(AP_GetVital(targ, HITS)<=0)
+			time:=10;
+		else
+		    if (!GetObjProperty(who, "#magiasilenciosa"))
+                PlayMovingEffectEx(targ, who, 3982, 255, 1, 2117);
+                PerformAction(who, ANIM_CAST_AREA);
+			endif
+			ApplyRawDamage( targ, amt );
+			targ.setAggro(who.serial, 150);
+			if(GetObjProperty(targ, "#sleep"))
+				EraseObjProperty(targ, "#sleep");
+			endif
+			PrintTextAbovePrivate(targ, "-"+amt + " Vida", who, 3, 38); // vermelho
+			HealDamage( who, amt);
+			PrintTextAbovePrivate(who, "+"+amt + " Vida", who, 3, 568); // verde
+			time := time + 1;
+			sleep(1);
 
-		if(targ.dead)
-			break;
+			SetObjProperty(targ, "affected_by_spell", who.serial);
 		endif
-
-		//ApplyRawDamage( targ, 10, 0, DAMAGE_SHOW );
-		ApplyRawDamage( targ, amt );
-		HealDamage( who, amt);
-		
-		if(targ.dead)
-			break;
-		endif
-
-		PlayMovingEffectEx(targ, who, 3982, 255, 1, 2117);
-		PerformAction(who, ANIM_CAST_AREA);
-		time := time + 1;
-		sleep(1);
 	endwhile
 
-	who.frozen := 0;
-	
+	if (GetObjProperty(who, "#magiasilenciosa"))
+        SendSysMessageEx(who,  "O efeito da magia silenciosa acabou.", SSM_INFO);
+    endif
+    //Remove prop de magia silenciosa apos o cast ser completo
+    EraseObjProperty(who, "#magiasilenciosa");
+	EraseObjProperty(who, "#Casting");
 	return 1;
-endprogram 
+endprogram
