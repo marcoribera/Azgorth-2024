@@ -57,7 +57,7 @@ program death(params)
 
 		if ( corpse.x <= 4869 && corpse.y <=  890)
 			corpse.movable := 1;
-			var e := MoveObjectToLocation(corpse, 4859, 876, 1, corpse.realm, MOVEOBJECT_FORCELOCATION);
+			var e := MoveObjectToLocation(corpse, 5152, 1767, 0, corpse.realm, MOVEOBJECT_FORCELOCATION);
 			corpse.movable := 0;
 		//	sendsysmessage(ghost, " " + e);
 		endif
@@ -67,7 +67,7 @@ program death(params)
 
 		if ( corpse.x <= 4933 && corpse.y <=  1066)
 			corpse.movable := 1;
-			var e := MoveObjectToLocation(corpse, 4893, 1014, 1, corpse.realm, MOVEOBJECT_FORCELOCATION);
+			var e := MoveObjectToLocation(corpse, 5152, 1767, 0, corpse.realm, MOVEOBJECT_FORCELOCATION);
 			corpse.movable := 0;
 		//	sendsysmessage(ghost, " " + e);
 		endif

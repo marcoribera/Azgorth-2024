@@ -62,7 +62,7 @@ program core_chrDeath(params)
 	
 	CheckForAutoRes(ghost, corpse);
 
-	MoveObjectToLocation( ghost, 4106, 14, 0);
+	MoveObjectToLocation( ghost, 5152, 1767, 0);
 	Start_Script("deathscripts/players", params);
 
 	
