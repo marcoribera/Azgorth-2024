@@ -224,31 +224,40 @@ function GFCraftNewPage(who, byref gump, skill_config, MenuName, skill_name)
         			continue;
       			endif
       			var itemdesc  := TruncatePlural(objtype);
-	
+
       			if(TypeOf(itemdesc) == "Struct")
         			continue;
       			endif
       			itemdesc := lower(itemdesc);
-	
-			if (craft_config[objtype].difficulty <= (AP_GetTrueSkill(who, craft_skill) + 15))
+      			if(skill_name =="Alchemy")
+      				var config := ReadConfigFile(":*:itemdesc");
+        			config := config[objtype];
+        			if(lower(config.desc) == "pocao")
+      					itemdesc := config.Type;
+      				elseif(lower(config.desc) == "tinta")
+      					itemdesc := config.name;
+      				endif
+      			endif
+
+			if ((craft_config[objtype].skill) <= AP_GetSkill(who, craft_skill)) //PARA O ITEM APARECER NA LISTA DO MENU DE CRAFT
 				if(ItemY >= 243)
-        				ItemY := 63;
-        				GFAddButton(gump, 370, 260, 4005, 4006, GF_PAGE_BTN, (PageNum+1));
-        				GFHTMLArea(gump, 405, 263, 100, 18, "<basefont color=#ffffff>Proxima Pagina");
-        				PageNum := PageNum+1;
-        				GFPage(gump, PageNum);
-        				GFAddButton(gump, 220, 260, 4005, 4006, GF_PAGE_BTN, (PageNum-1));
-        				GFHTMLArea(gump, 255, 263, 100, 20, "<basefont color=#ffffff>Pagina Anterior");
-      				endif
-      				GFHTMLArea(gump, ItemX, ItemY, 220, 18, ("<basefont color=#ffffff>"+itemdesc));
-      				GFAddButton(gump, ButtonX, (ItemY-3), 4005, 4006, GF_CLOSE_BTN, objtype);
-      				if( menu_config["Setup"].Info == 1 )
-        				GFAddButton(gump, ButtonX2, (ItemY-3), 4011, 4012, GF_CLOSE_BTN, arcnt);
-        				arinfo.append(objtype);
-        				arcnt := arcnt + 1;
-      				endif
-      				ItemY := ItemY + 20;
-      				sleepms(1);
+					ItemY := 63;
+					GFAddButton(gump, 370, 260, 4005, 4006, GF_PAGE_BTN, (PageNum+1));
+					GFHTMLArea(gump, 405, 263, 100, 18, "<basefont color=#ffffff>Proxima Pagina");
+					PageNum := PageNum+1;
+					GFPage(gump, PageNum);
+					GFAddButton(gump, 220, 260, 4014, 4015, GF_PAGE_BTN, (PageNum-1));
+					GFHTMLArea(gump, 255, 263, 100, 20, "<basefont color=#ffffff>Pagina Anterior");
+				endif
+				GFHTMLArea(gump, ItemX, ItemY, 220, 18, ("<basefont color=#ffffff>"+itemdesc));
+				GFAddButton(gump, ButtonX, (ItemY-3), 4005, 4006, GF_CLOSE_BTN, objtype);
+				if( menu_config["Setup"].Info == 1 )
+					GFAddButton(gump, ButtonX2, (ItemY-3), 4011, 4012, GF_CLOSE_BTN, arcnt);
+					arinfo.append(objtype);
+					arcnt := arcnt + 1;
+				endif
+				ItemY := ItemY + 20;
+				sleepms(1);
 			endif
     		endforeach
 
