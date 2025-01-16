@@ -1551,9 +1551,9 @@ function signSelection(who)
         btn_value := input[0];
 
         if (btn_value == 201)
-            sign_pic++;
+            sign_pic := + 1;
         elseif (btn_value == 210)
-            sign_pic--;
+            sign_pic := sign_pic-1;
         elseif (btn_value == 666)
             break;
         endif

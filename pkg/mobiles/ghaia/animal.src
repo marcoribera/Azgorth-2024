@@ -45,7 +45,7 @@ program KillPlayers()
 
     foreach player in nearby
       if ( player.acctname )
-        hasPlayerNearMe++;
+        hasPlayerNearMe := hasPlayerNearMe+1;
       endif
     endforeach
     if ( hasPlayerNearMe >= 1 )

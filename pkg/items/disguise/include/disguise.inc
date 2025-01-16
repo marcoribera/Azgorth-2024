@@ -138,7 +138,7 @@ function escolherCabelo(who, byref disfarce, raca := 0)
 		var hairgraphic := cint(style[2]);
 		while (hairname["_"])															hairname["_"] := " ";
 		endwhile
-		numColumn ++;
+		numColumn :=  numColumn+1;
 		if (numColumn > 19)
 			x_pos := 300;
 			if(numColumn == 20)
