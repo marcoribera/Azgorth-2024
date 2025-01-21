@@ -138,11 +138,12 @@ var descmod:={};
 		endcase
 		PrintText(who, "*vestindo "+item.desc+"*");
 		PerformAction( who, 0x0020 );
-		TS_StartTimer(who, "paralysis", 2);
+		TS_StartTimer(who, "paralysis", 1);
 		
 		var timer_list := TS_GetTimerList(who);
 		var names := array;
 
+/*
 		foreach timer in ( timer_list.keys() )
 			timer := lower(timer);
 			if ( timer == "velocidade")
@@ -150,9 +151,8 @@ var descmod:={};
 			elseif (timer == "dmgreturn" )
 				TS_LowerDuration(who, timer, -1);
 			endif
-		
 		endforeach
-
+*/
 			var penal := AP_GetStatMod(who, "Dexterity");
 			if (penal >= -1)
 				SendSysMessageEX(who, "Sua carga esta leve e voce nao tera problemas em se esquivar", SSM_INFO);
