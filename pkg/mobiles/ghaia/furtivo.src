@@ -123,7 +123,7 @@ program KillPlayers()
 endprogram
 
 function HasPlayerNear2(who)
-    var nearby := ListMobilesNearLocationEx(who.x, who.y, LIST_IGNORE_Z, 30, LISTEX_FLAG_NORMAL + LISTEX_FLAG_HIDDEN + LISTEX_FLAG_CONCEALED, who.realm);
+    var nearby := ListMobilesNearLocationEx(who.x, who.y, LIST_IGNORE_Z, 50, LISTEX_FLAG_NORMAL + LISTEX_FLAG_HIDDEN + LISTEX_FLAG_CONCEALED, who.realm);
     foreach mobile in nearby
         if (mobile.acctname)
             return 1;
