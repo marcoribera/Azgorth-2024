@@ -45,26 +45,26 @@ program useContainer(mobile, container)
 	if (!container.IsA(POLCLASS_CORPSE))
 		var vaiquebrar := GetObjProperty(container, "usos");
 
-		//if (vaiquebrar == 20)
-			//SetName(container,container.desc + " [Quebradica] ");
-			//PrintText(mobile, "O recipiente vai quebrar em breve, procure um carpinteiro!", SSM_FAIL);
-		if (vaiquebrar <= 10)
-			PrintText(mobile, "O recipiente vai quebrar em breve, procure um carpinteiro!", SSM_FAIL);
-		endif
-
 		if (vaiquebrar <=0)
-			foreach item in (EnumerateItemsInContainer(container))
-				//if (container in EnumerateItemsInContainer(mobile.backpack))
-					var e := MoveObjectToLocation(item, mobile.x, mobile.y, mobile.z, mobile.realm, MOVEOBJECT_FORCELOCATION | MOVEITEM_IGNOREMOVABLE);
-				//else
-				//	var e := MoveObjectToLocation(item, container.x, container.y, container.z, container.realm, MOVEOBJECT_FORCELOCATION | MOVEITEM_IGNOREMOVABLE);
-				//endif
+			foreach item in (EnumerateItemsInContainer(container,ENUMERATE_ROOT_ONLY))
+				var e := MoveObjectToLocation(item, mobile.x, mobile.y, mobile.z, mobile.realm, MOVEOBJECT_FORCELOCATION | MOVEITEM_IGNOREMOVABLE);
 			endforeach
 			Sleep(1);
+			PlaySoundEffect(container,0xef);
 			PrintText(container, "*Quebrou!*");
 			Sleep(2);
-			createitematlocation(container.x, container.y, container.z, 3119, 1, container.realm);
+			createitematlocation(container.x, container.y, container.z + 1, 3119, 1, container.realm);
 			DesTroyItem(container);
+		elseif (vaiquebrar <= 10)
+			PlaySoundEffect(container, 0x0242);
+			PrintTextAbove(container,"*rangendo ao abrir*");
+			SetName(container,container.desc + " [Quebradica] ");
+			container.maxhp_mod := container.maxhp_mod - (container.maxhp*0.2);
+			PrintText(mobile, "O recipiente danificou pemanentemente, procure um carpinteiro pra não destrui-lo!", SSM_FAIL);
+		elseif (vaiquebrar <= 20)
+			PlaySoundEffect(container, 0x0242);
+			PrintTextAbove(container,"*rangendo ao abrir*");
+			PrintText(mobile, "O recipiente vai quebrar, procure um carpinteiro antes que danifique pemanentemente!", SSM_FAIL);
 		endif
 	endif
 endprogram
