@@ -150,7 +150,7 @@ function ApplyHeatMod(who, mod)
 		RecalcVitals(who);
 	elseif ( mod == 2)
 		var dmg := AP_GetVital(who, HITS) -  GetHP(who);
-        DamageFLS(who, dmg);
+        //DamageFLS(who, dmg);
 		RecalcVitals(who);
 	endif
 endfunction

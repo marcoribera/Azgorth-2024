@@ -174,7 +174,7 @@ function ApplyColdMod(who, mod)
 //		sendsysmessage(who, "dmg " + dmg + "  " + GetPH(who));
 //		if (dmg >= GetPH(who))
 		//	sendsysmessage(who, "dano fls");
-			DamageFLS(who, dmg);
+//			DamageFLS(who, dmg);
 //		endif
 	endif
 	
