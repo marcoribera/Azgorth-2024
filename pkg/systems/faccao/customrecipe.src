@@ -11,6 +11,7 @@ include "include/client";
 include "include/arrays";
 include ":fls_core:fls_crafting";
 include ":crafting:crafting";
+include ":crafting:toolWear";
 include ":gumps:requestgump";
 include ":charactercreation:feats";
 
