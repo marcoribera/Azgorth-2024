@@ -1,7 +1,7 @@
 include ":gumps:gumps";
 include ":attributes:attributes";
 include ":gumps:gumps_ex";
-include ":gumps:requestGump";
+include ":gumps:requestgump";
 include "include/say";
 include ":tn:tngumps";
 include "include/client";
