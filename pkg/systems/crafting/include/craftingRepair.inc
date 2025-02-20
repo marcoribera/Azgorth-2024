@@ -28,13 +28,13 @@ var ver_reparos:=0;
 
 
 if (craft_skill == METALWORKING)
-	cfg := ReadConfigFile(":metalworking:blacksmithy");
+  cfg := ReadConfigFile(":metalworking:blacksmithy");
 elseif (craft_skill == DOMESTICWORK)
-	cfg := ReadConfigFile(":domesticwork:tailoring");
+  cfg := ReadConfigFile(":DomesticWork:tailoring");
 elseif (craft_skill == WOODWORKING)
-	cfg := ReadConfigFile(":woodworking:carpentry");
+  cfg := ReadConfigFile(":woodworking:carpentry");
 else
-	return 0; 
+  return 0;
 endif
 
 
@@ -47,8 +47,8 @@ var hisskill := AP_GetSkill(character, craft_skill);
 ver_reparos:=(GetObjProperty(what,"reparos"));
 
 if (ver_reparos == error)
-	reparos:=(hisskill/2);
-	SetObjProperty(what,"reparos",reparos);
+  reparos:=(hisskill/2);
+  SetObjProperty(what,"reparos",reparos);
 endif
 
 ver_reparos:=(GetObjProperty(what,"reparos"));
@@ -65,40 +65,40 @@ if (cint(hisskill)>=cint(item_skill))
   var damaged := maxhp - thehp;
   var damageamount := 0.0;
   damageamount := (125 -  hisskill)/3000.0;
-  
+
   if(what.hp == what.maxhp)
     SendSysMessage(character, "O item nao esta danificado.");
     return;
   endif
-  
+
   if((what.hp <= 0) || (what.quality <= 0.1) || (!what.quality))
     SendSysMessage(character, "O fragil material quebrou quando voce manipulou ele.");
     DestroyItem(what);
     return;
   endif
-  
+
   if(what.quality <= damageamount)
     SendSysMessage(character, "O fragil material quebrou quando voce manipulou ele.");
     DestroyItem(what);
     return;
   endif
   what.quality := what.quality - damageamount;
-  
+
   if((what.hp <= 0) || (what.quality <= 0.1) || (!what.quality))
     SendSysMessage(character, "O fragil material quebrou quando voce manipulou ele.");
     DestroyItem(what);
     return;
   endif
- 
+
  if (SkillCheck(character, craft_skill, cint(damaged / 3), 0) > 0 )
     var repaired_amount := cint((hisskill + 1)/2);
     //SendSysMessage(character, "rep"+repaired_amount);
     //SendSysMessage(character, "hisskill: "+((randomint(hisskill) + 1))/2);
-    
+
     if (damaged == 1)
       repaired_amount := 1;
     endif
-    
+
     if (thehp + repaired_amount > what.maxhp)
       what.hp := what.maxhp;
       EraseObjProperty(what, "swings");
@@ -107,35 +107,35 @@ if (cint(hisskill)>=cint(item_skill))
       what.hp := thehp + repaired_amount;
       SendSysMessage(character, "Voce consertou o item.");
     endif
-    
+
     if ((what.hp <= 0) || (what.quality <= 0.1) || (!what.quality))
       SendSysMessage(character, "O fragil material quebrou quando voce manipulou ele.");
       DestroyItem(what);
       return;
     endif
-  
+
   else
     var damage_amount := randomint(10);
-    
+
     if (thehp <= damage_amount)
       DestroyItem(what);
       SendSysMessage(character, "Voce falhou e destruiu o item.");
     endif
-    
+
     thehp := thehp - damage_amount;
     what.hp := thehp;
-    
+
     if(randomint(2) == 1)
       what.quality := what.quality - (damaged/100);
     endif
-    
+
     if(thehp <= 0)
       DestroyItem(what);
       SendSysMessage(character, "Voce falhou e destruiu o item.");
     else
       SendSysMessage(character, "Voce falhou e danificou o item.");
     endif
-    
+
     if ((what.hp <= 0) || (what.quality <= 0.1) || (!what.quality))
       SendSysMessage(character, "O fragil material quebrou quando voce manipulou ele.");
       DestroyItem(what);
@@ -144,21 +144,21 @@ if (cint(hisskill)>=cint(item_skill))
 endif
 
 if (GetObjProperty(what, "reparos") == error)
-	reparos:=hisskill/2;
-	reparos:= (reparos  -(11 - (hisskill / 11)));
-	SetObjProperty(what,"reparos",reparos);
+  reparos:=hisskill/2;
+  reparos:= (reparos  -(11 - (hisskill / 11)));
+  SetObjProperty(what,"reparos",reparos);
 else
-	reparos:=GetObjProperty(what, "reparos");
-	reparos:= (reparos  -(11 - (hisskill / 11)));
-	SetObjProperty(what,"reparos",reparos);
+  reparos:=GetObjProperty(what, "reparos");
+  reparos:= (reparos  -(11 - (hisskill / 11)));
+  SetObjProperty(what,"reparos",reparos);
 endif
 
 else
-	SendSysMessage(character, "Voce nao possui habilidades para isto.");
+  SendSysMessage(character, "Voce nao possui habilidades para isto.");
 endif
-	
+
 else
-	SendSysMessage(character, "Este item nao pode ser reparado: " + GetObjProperty(what,"reparos") + " ponto(s) de reparo restante(s).");
+  SendSysMessage(character, "Este item nao pode ser reparado: " + GetObjProperty(what,"reparos") + " ponto(s) de reparo restante(s).");
 endif
 
 endfunction
@@ -167,10 +167,10 @@ function CreateRepairDeed(who, scroll, craft_skill)
 
   var type, title, color;
   case(CInt(craft_skill))
-     METALWORKING: 		type := "Blacksmith"; color := CInt(2107);
-     WOODWORKING: 	type := "Bowyer"; color := CInt(2116);
-     //CARPENTRY: 		type := "Carpenter"; color := CInt(2113);
-     DOMESTICWORK: 		type := "Tailor"; color := CInt(2128);
+     METALWORKING:    type := "Blacksmith"; color := CInt(2107);
+     WOODWORKING:   type := "Bowyer"; color := CInt(2116);
+     //CARPENTRY:     type := "Carpenter"; color := CInt(2113);
+     DOMESTICWORK:    type := "Tailor"; color := CInt(2128);
   endcase
   var ramt := AP_GetSkill(who, craft_skill);
   if(ramt < 50)
@@ -206,82 +206,83 @@ function CreateRepairDeed(who, scroll, craft_skill)
   endif
   SetName(theitem, title);
   return;
-
 endfunction
 
 
 
 function repair_this(who, craft_skill := METALWORKING)
-  
 
   SendSysMessage(who, "Escolha o item para consertar..");
   var use_on := Target(who);
   if(!Accessible(who, use_on))
     return;
   endif
+
   //SendSysMessage(who, "craft_skill: "+craft_skill);
   //SendSysMessage(who, "movable: "+use_on.movable);
   if(use_on.movable == 0)
     SendSysMessage(who, "Voce nao pode consertar isto.");
     return;
   endif
-  if((!Accessible(who, use_on)) or (distance(who, use_on) > 2))
+
+  if((!Accessible(who, use_on)) || (distance(who, use_on) > 2))
     SendSysMessage(who, "Voce nao alcanca o item.");
     return;
   endif
+
   if(CInt(use_on.objtype) == CInt(0xe34))
     case(CInt(craft_skill))
-       METALWORKING:            CreateRepairDeed(who, use_on, craft_skill);
-   //    BOWCRAFT_FLETCHING:    CreateRepairDeed(who, use_on, craft_skill);
-     //  CARPENTRY:   		 CreateRepairDeed(who, use_on, craft_skill);
-       //TAILORING:   		 CreateRepairDeed(who, use_on, craft_skill);
+      METALWORKING:            CreateRepairDeed(who, use_on, craft_skill);
+//    BOWCRAFT_FLETCHING:    CreateRepairDeed(who, use_on, craft_skill);
+  //  CARPENTRY:       CreateRepairDeed(who, use_on, craft_skill);
+    //TAILORING:       CreateRepairDeed(who, use_on, craft_skill);
     endcase
     return;
   endif
   var forge := 0;
   case(craft_skill)
-     METALWORKING: forge := 1;
-     DOMESTICWORK: 
-	if (is_tailor_item(use_on.objtype)) 
-		repair_item( who, use_on, craft_skill);
-	else 
-		SendSysMessage(who, "Voce nao pode consertar isso.");	
-	endif
-	return;
-     WOODWORKING:
-	if (is_carpentry_item(use_on.objtype)) 
-		repair_item( who, use_on, craft_skill);
-	else 
-		SendSysMessage(who, "Voce nao pode consertar isto.");	
-	endif
-	return;
-
+    METALWORKING:
+      forge := 1;
+      break;
+    DOMESTICWORK:
+      if (is_tailor_item(use_on.objtype))
+        repair_item( who, use_on, craft_skill);
+      else
+        SendSysMessage(who, "Voce nao pode consertar isso.");
+      endif
+      return;
+    WOODWORKING:
+      if (is_carpentry_item(use_on.objtype))
+        repair_item( who, use_on, craft_skill);
+      else
+        SendSysMessage(who, "Voce nao pode consertar isto.");
+      endif
+      return;
   endcase
 
   if(!forge)
-    if(is_weapon_armor(use_on.objtype))
-      repair_item( who, use_on, craft_skill);
-    else
-      SendSysMessage(who, "Voce so pode concertar armas ou armaduras.");
-    endif
+   if(is_weapon_armor(use_on.objtype))
+    repair_item( who, use_on, craft_skill);
+   else
+    SendSysMessage(who, "Voce so pode concertar armas ou armaduras.");
+   endif
   else
     if(is_weapon_armor(use_on.objtype))
       var near_items := ListItemsNearLocation(who.x, who.y, who.z,2);
       foreach item in near_items
         if ((item.objtype == UOBJ_ANVIL1) || (item.objtype == UOBJ_ANVIL2))
           repair_item( who, use_on, craft_skill);
-          return;
-        endif
-      endforeach
-      SendSysMessage( who, "Voce precisa estar proximo de uma forja!" );
-      return;
+        return;
+      endif
+    endforeach
+    SendSysMessage( who, "Voce precisa estar proximo de uma forja!" );
+    return;
     else
       SendSysMessage(who, "Voce nao pode consertar isto.");
     endif
   endif
   return;
-
-//SendSysMessage(character,"Voc� n�o possui habilidades para isto");
+//SendSysMessage(character,"Você não possui habilidades para isto");
 endfunction
 
 function is_weapon_armor(what)
@@ -296,12 +297,12 @@ function is_weapon_armor(what)
 endfunction
 
 function is_tailor_item(what)
-  var tailorcfg := ReadConfigFile(":domesticwork:tailoring");
+  var tailorcfg := ReadConfigFile(":DomesticWork:tailoring");
   var elem := FindConfigElem(tailorcfg, what);
-  //var repairable := GetConfigInt(elem, "repairable");  
+  //var repairable := GetConfigInt(elem, "repairable");
   if (elem )
     return 1;
-  else    
+  else
     return 0;
   endif
 endfunction
@@ -309,7 +310,7 @@ endfunction
 function is_carpentry_item(what)
   var carpentrycfg := ReadConfigFile(":woodwork:carpentry");
   var elem := FindConfigElem(carpentrycfg, what);
-  //var repairable := GetConfigInt(elem, "repairable");  
+  //var repairable := GetConfigInt(elem, "repairable");
   if (elem )
     return 1;
   endif
@@ -328,149 +329,149 @@ endfunction
 
 function resmelt(who, the_attribute)
 
-	var near_items := ListItemsNearLocation(who.x, who.y, who.z, 3);
-	var forge_near := 0;
-	foreach forge in near_items
-		if((forge.objtype == 0xfb1) || ((forge.objtype >= 0x197a) && (forge.objtype <= 0x19a9)))
-			forge_near := 1;
-			break;
-		endif
-	endforeach
-	if(forge_near == 0)
-		SendSysMessage(who, "You must be near a forge.");
-		return 0;
-	endif
+  var near_items := ListItemsNearLocation(who.x, who.y, who.z, 3);
+  var forge_near := 0;
+  foreach forge in near_items
+    if((forge.objtype == 0xfb1) || ((forge.objtype >= 0x197a) && (forge.objtype <= 0x19a9)))
+      forge_near := 1;
+      break;
+    endif
+  endforeach
+  if(forge_near == 0)
+    SendSysMessage(who, "You must be near a forge.");
+    return 0;
+  endif
 
-	SendSysMessage(who, "Select the item you wish to melt.");
-	var use_on := Target(who, TGTOPT_CHECK_LOS);
-	if(!use_on || !accessible(who, use_on))
-		return 0;
-	endif
-	if(use_on.container.serial != who.backpack.serial)
-		SendSysMessage(who, "That is not in your backpack.");
-		return 0;
-	endif
-	if(!Accessible(who, use_on) || !ReserveItem( use_on ))
-		SendSysMessage(who, "You cannot use that.");
-		return 0;
-	endif
-	if(use_on.movable == 0)
-		SendSysMessage(who, "You cannot use that while it is locked down.");
-		return 0;
-	endif
-	if(use_on in ListEquippedItems(who))
-		SendSysMessage(who, "You cannot use that.");
-		return 0;
-	endif
+  SendSysMessage(who, "Select the item you wish to melt.");
+  var use_on := Target(who, TGTOPT_CHECK_LOS);
+  if(!use_on || !accessible(who, use_on))
+    return 0;
+  endif
+  if(use_on.container.serial != who.backpack.serial)
+    SendSysMessage(who, "That is not in your backpack.");
+    return 0;
+  endif
+  if(!Accessible(who, use_on) || !ReserveItem( use_on ))
+    SendSysMessage(who, "You cannot use that.");
+    return 0;
+  endif
+  if(use_on.movable == 0)
+    SendSysMessage(who, "You cannot use that while it is locked down.");
+    return 0;
+  endif
+  if(use_on in ListEquippedItems(who))
+    SendSysMessage(who, "You cannot use that.");
+    return 0;
+  endif
 
-	var cfgarray := GetConfigStringKeys(resource_config);
-	var ingot := -1;
-	if(use_on.isA(POLCLASS_CONTAINER))
-		var contitems := EnumerateItemsInContainer(use_on);
-		var skill, amt;
-		var loop_counter := 3;
-		foreach thing in contitems
-			loop_counter := loop_counter + 1;
-			if( loop_counter == 4 )
-				SendSysMessage(who, "Smelting items in container......");
-				loop_counter := 0;
-			endif
-			if(craft_config[thing.objtype])
-				skill := craft_config[thing.objtype].skill;
-				amt := CInt(craft_config[thing.objtype].material);
-				if((!skill) || (!amt))
-					return 0;
-				endif
-				skill := CInt(skill/2);
-				if(skill < 5)
-					skill := 5;
-				endif
-				amt := CInt((amt * AP_GetSkill(who, the_attribute) * 75 ) / 10000);
-				if(amt < 1)
-					amt := 1;
-				endif
-				ingot := -1;
-				var mattype := CInt(GetObjProperty(use_on, "material"));
-				if(mattype > 0)
-					if(mattype != error)
-						ingot := mattype;
-					endif
-				endif
-				if(ingot == -1)
-					foreach entry in cfgarray
-						if(lower(resource_config[entry].Type) == "metal")
-							if(CInt(resource_config[entry].Color) == CInt(thing.color))
-								ingot := entry;
-							endif
-						endif
-					endforeach
-				endif
-				if(ingot == -1)
-					SendSysMessage(who, "You have no idea how to smelt this strange ore!");
-					return 0;
-				endif
-				PlaySoundEffect(who, 0x2c);
-				sleep(1);
-				PlaySoundEffect(who, 0x22);
-				if(DestroyItem(thing))
-					if(SkillCheck(who, the_attribute, skill, 10))
-						CreateItemInContainer(who.backpack, ingot, amt);
-					else
-						SendSysMessage(who, "You destroy the item.");
-					endif
-				endif
-			endif
-			sleepms(500);
-		endforeach
-	else
-		if(!craft_config[use_on.objtype])
-			return 0;
-		endif
-		ingot := -1;
-		var skill := craft_config[use_on.objtype].skill;
-		var amt := CInt(craft_config[use_on.objtype].material);
-		if((!skill) || (!amt))
-			return 0;
-		endif
-		skill := CInt(skill/2);
-		if(skill < 5)
-			skill := 5;
-		endif
-		amt := CInt((amt * AP_GetSkill(who, the_attribute) * 75 ) / 10000);
-		if(amt < 1)
-			amt := 1;
-		endif
-		var mattype := CInt(GetObjProperty(use_on, "material"));
-		if(mattype > 0)
-			if(mattype != error)
-				ingot := mattype;
-			endif
-		endif
-		if(ingot == -1)
-			foreach entry in cfgarray
-				if(lower(resource_config[entry].Type) == "metal")
-					if(CInt(resource_config[entry].Color) == CInt(use_on.color))
-						ingot := entry;
-					endif
-				endif
-			endforeach
-		endif
-		if(ingot == -1)
-			SendSysMessage(who, "You have no idea how to smelt this strange ore!");
-			return 0;
-		endif
-		PlaySoundEffect(who, 0x2c);
-		sleep(1);
-		if( DestroyItem(use_on) )
-			PlaySoundEffect(who, 0x22);
-			if(SkillCheck(who, the_attribute, skill, 10))
-				CreateItemInContainer(who.backpack, ingot, amt);
-			else
-				SendSysMessage(who, "You destroy the item.");
-			endif
-		else
-			SendSysMessage(who, "Couldn't destroy "+ use_on.name);
-		endif
-	endif
+  var cfgarray := GetConfigStringKeys(resource_config);
+  var ingot := -1;
+  if(use_on.isA(POLCLASS_CONTAINER))
+    var contitems := EnumerateItemsInContainer(use_on);
+    var skill, amt;
+    var loop_counter := 3;
+    foreach thing in contitems
+      loop_counter := loop_counter + 1;
+      if( loop_counter == 4 )
+        SendSysMessage(who, "Smelting items in container......");
+        loop_counter := 0;
+      endif
+      if(craft_config[thing.objtype])
+        skill := craft_config[thing.objtype].skill;
+        amt := CInt(craft_config[thing.objtype].material);
+        if((!skill) || (!amt))
+          return 0;
+        endif
+        skill := CInt(skill/2);
+        if(skill < 5)
+          skill := 5;
+        endif
+        amt := CInt((amt * AP_GetSkill(who, the_attribute) * 75 ) / 10000);
+        if(amt < 1)
+          amt := 1;
+        endif
+        ingot := -1;
+        var mattype := CInt(GetObjProperty(use_on, "material"));
+        if(mattype > 0)
+          if(mattype != error)
+            ingot := mattype;
+          endif
+        endif
+        if(ingot == -1)
+          foreach entry in cfgarray
+            if(lower(resource_config[entry].Type) == "metal")
+              if(CInt(resource_config[entry].Color) == CInt(thing.color))
+                ingot := entry;
+              endif
+            endif
+          endforeach
+        endif
+        if(ingot == -1)
+          SendSysMessage(who, "You have no idea how to smelt this strange ore!");
+          return 0;
+        endif
+        PlaySoundEffect(who, 0x2c);
+        sleep(1);
+        PlaySoundEffect(who, 0x22);
+        if(DestroyItem(thing))
+          if(SkillCheck(who, the_attribute, skill, 10))
+            CreateItemInContainer(who.backpack, ingot, amt);
+          else
+            SendSysMessage(who, "You destroy the item.");
+          endif
+        endif
+      endif
+      sleepms(500);
+    endforeach
+  else
+    if(!craft_config[use_on.objtype])
+      return 0;
+    endif
+    ingot := -1;
+    var skill := craft_config[use_on.objtype].skill;
+    var amt := CInt(craft_config[use_on.objtype].material);
+    if((!skill) || (!amt))
+      return 0;
+    endif
+    skill := CInt(skill/2);
+    if(skill < 5)
+      skill := 5;
+    endif
+    amt := CInt((amt * AP_GetSkill(who, the_attribute) * 75 ) / 10000);
+    if(amt < 1)
+      amt := 1;
+    endif
+    var mattype := CInt(GetObjProperty(use_on, "material"));
+    if(mattype > 0)
+      if(mattype != error)
+        ingot := mattype;
+      endif
+    endif
+    if(ingot == -1)
+      foreach entry in cfgarray
+        if(lower(resource_config[entry].Type) == "metal")
+          if(CInt(resource_config[entry].Color) == CInt(use_on.color))
+            ingot := entry;
+          endif
+        endif
+      endforeach
+    endif
+    if(ingot == -1)
+      SendSysMessage(who, "You have no idea how to smelt this strange ore!");
+      return 0;
+    endif
+    PlaySoundEffect(who, 0x2c);
+    sleep(1);
+    if( DestroyItem(use_on) )
+      PlaySoundEffect(who, 0x22);
+      if(SkillCheck(who, the_attribute, skill, 10))
+        CreateItemInContainer(who.backpack, ingot, amt);
+      else
+        SendSysMessage(who, "You destroy the item.");
+      endif
+    else
+      SendSysMessage(who, "Couldn't destroy "+ use_on.name);
+    endif
+  endif
 
 endfunction

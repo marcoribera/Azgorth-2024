@@ -4,6 +4,7 @@ use cfgfile;
 include ":attributes:attributes";
 include ":charactercreation:chargumps";
 include ":charactercreation:habilidades";
+include "include/client";
 
 function SetEquipmentMods(who, item)
 
@@ -12,13 +13,30 @@ function SetEquipmentMods(who, item)
 	var itemdesc := ReadConfigFile("::itemdesc");
 
 	var restrict := Cint(itemdesc[item.objtype].GenderSpecific);
-	if((restrict == 1) and (who.graphic == 400))
+	if((restrict == 1) && (who.graphic == 400))
 		SendSysMessage(who, "Apenas mulheres podem vestir isto.");
 		return 0;
 	endif
 
-	if (item.isa(POLCLASS_ARMOR))
+/* //Bugado: Retirar os bonus normais do item.
+	if (item.isa(POLCLASS_ARMOR) && (item.tile_layer == LAYER_HAND2))
 		EraseObjProperty(who, "twohanded");
+		var mod_percentual := 0.0;
+		var parryskill := AP_GetSkill(who, PARRY);
+
+		mod_percentual := (parryskill-80.0) /100.0; //Acima de 0 o cara consegue mais proteção que o item base oferece e abaixo, menos.
+
+		SendSysMessage(who, "Eficiencia do escudo: " + CStr((1.0 + mod_percentual)*100.0) +"%.");
+		SetObjProperty(item, "parry_mod_percentual", mod_percentual);
+		item.resist_physical_mod := CInt(item.resist_physical * mod_percentual);
+		item.resist_fire_mod := CInt(item.resist_fire * mod_percentual);
+		item.resist_cold_mod := CInt(item.resist_cold * mod_percentual);
+		item.resist_poison_mod := CInt(item.resist_poison * mod_percentual);
+		item.resist_energy_mod := CInt(item.resist_energy * mod_percentual);
+	endif
+*/
+	if (item.isa(POLCLASS_WEAPON))
+		item.speed_mod := CInt(GetObjProperty(item,"attackspeedbonus"));
 	endif
 
 	var penalty  := CInt(itemdesc[item.objtype].DexPenalty);
@@ -28,21 +46,21 @@ function SetEquipmentMods(who, item)
 		penalty := 0;
 	endif
 	AP_ModifyStatMod(who, DEXTERITY, (0-penalty));
-  
+
 	//sneak
 	penalty := CInt(itemdesc[item.objtype].SneakPenalty);
 	if (TemHabilidade(who, "Ignorar Armadura"))
 		penalty := cint(penalty*0.5);
 	endif
 	AP_ModifySkillMod(who, SNEAK, penalty);
-  
+
 	//mechanical apitude
 	penalty := CInt(itemdesc[item.objtype].MechanicalApitudePenalty);
 	if (TemHabilidade(who, "Ignorar Armadura"))
 		penalty := cint(penalty*0.5);
 	endif
 	AP_ModifySkillMod(who, MECHANICALAPITUDE, penalty);
-  
+
 	//awareness
 	penalty := CInt(itemdesc[item.objtype].AwarenessPenalty);
 	if (TemHabilidade(who, "Ignorar Armadura"))
@@ -52,12 +70,14 @@ function SetEquipmentMods(who, item)
 
 	//magery
 	penalty := CInt(itemdesc[item.objtype].MageryPenalty);
-	AP_ModifySkillMod(who, MAGERY, penalty);
+	if (!(TemHabilidade(who, "Aura de Corrupcao") || TemHabilidade(who, "Devocao")))
+        AP_ModifySkillMod(who, MAGERY, penalty);
+    endif
 
 	//verifica se eh magico
 	var mods := GetObjProperty(item, "equip");
 //	SendSysMessage(who, " " + mods + " " + mods.keys().size());
-	if (mods.keys().size() >= 1) 
+	if (mods.keys().size() >= 1)
     		foreach mod in (mods.keys())
       			if ((mod == "strmod") &&(GetObjProperty(item,"magic")!=1))
         			AP_ModifyStatMod(who, STRENGTH, Cint( mods["strmod"] ) );
@@ -66,7 +86,7 @@ function SetEquipmentMods(who, item)
       			elseif ((mod == "intmod")&&(GetObjProperty(item,"magic")!=1))
         			AP_ModifyStatMod(who, INTELLIGENCE, Cint( mods["intmod"] ) );
       			elseif ((mod == "setprop" )&&(GetObjProperty(item,"magic")!=1))
-        			SetObjProperty(who, ("#" + GetObjProperty(item, "propname")), GetObjPRoperty(item, "propvalue"));
+        			SetObjProperty(who, ("#" + GetObjProperty(item, "propname")), GetObjProperty(item, "propvalue"));
       			elseif ((mod == "manamod")&&(GetObjProperty(item,"magic")!=1))
         			SetObjProperty(who, "#manamod", Cint(GetObjProperty(who, "#manamod")) + Cint(mods["manamod"] ) );
         			RecalcVitals(who);
@@ -123,8 +143,18 @@ function RemoveEquipmentMods(who, item)
 		penalty := 0;
 	endif
 
+/* Bugado: bagunça os itens
+	if (item.isa(POLCLASS_ARMOR) && (item.tile_layer == LAYER_HAND2))
+		SetObjProperty(item, "parry_mod_percentual", 0.0);
+		item.resist_physical_mod := 0;
+		item.resist_fire_mod := 0;
+		item.resist_cold_mod := 0;
+		item.resist_poison_mod := 0;
+		item.resist_energy_mod := 0;
+	endif
+*/
 	if (item.isa(POLCLASS_WEAPON))
-		EraseObjProperty(who, "twohanded");
+		item.speed_mod := 0;
 	endif
 
 	AP_ModifyStatMod(who, DEXTERITY, (penalty));
@@ -135,7 +165,7 @@ function RemoveEquipmentMods(who, item)
 		penalty := cint(penalty*0.5);
 	endif
   	AP_ModifySkillMod(who, SNEAK, (-1)*penalty);
-  
+
 	//mechanical  apitude
   	penalty := CInt(itemdesc[item.objtype].MechanicalApitudePenalty);
 	if (TemHabilidade(who, "Ignorar Armadura"))
@@ -150,12 +180,13 @@ function RemoveEquipmentMods(who, item)
 	endif
   	AP_ModifySkillMod(who, AWARENESS, (-1)*penalty);
 
-	//magery
-  	penalty := CInt(itemdesc[item.objtype].MageryPenalty);
-  	AP_ModifySkillMod(who, MAGERY, (-1)*penalty);
+	penalty := CInt(itemdesc[item.objtype].MageryPenalty);
+	if (!(TemHabilidade(who, "Aura de Corrupcao") || TemHabilidade(who, "Devocao")))
+	  	AP_ModifySkillMod(who, MAGERY, (-1)*penalty);
+	endif
 
 	var mods := GetObjProperty(item, "equip");
-	if (mods.keys().size() >= 1) 
+	if (mods.keys().size() >= 1)
     		foreach mod in (mods.keys())
       			if ((mod == "strmod" ) && (GetObjProperty(item,"magic") !=1))
         			AP_ModifyStatMod(who, STRENGTH, (-1)*Cint( mods["strmod"] ));
@@ -194,13 +225,12 @@ endfunction
 
 function coverFace(item)
 	case(item.graphic)
-		0x1408: 0x1409: 0x1412: 
-		0x1419: 0x1451: 0x1F0B: 
-		0x140C: 0x140D: 0x1456: 
-		0x1F0C: 0x1549: 0x154A: 
-		0x154B: 0x154C:	0x278E: 
-		0x278F: 0x1388:	0x2CDD:
-		0x2CDF: 0x1f0d:
+		0x1408: 0x1409: 0x1412:
+		0x1419: 0x1451: 0x1F0B:
+		0x140C: 0x140D: 0x1456:
+		0x1F0C: 0x1549: 0x154A:
+		0x154B: 0x154C:	0x278E:
+		0x278F: 0x1388:
 			return 1;
 		default:
 			return 0;
@@ -247,7 +277,7 @@ function UnequipArmor(who)
 endfunction
 
 function UnequipWeapons(who)
-	
+
 	var equips := EnumeratePhysicalItems(who);
 
 	foreach equip in equips
@@ -255,6 +285,4 @@ function UnequipWeapons(who)
 			MoveItemToContainer(equip, who.backpack);
 		endif
 	endforeach
-
-
 endfunction

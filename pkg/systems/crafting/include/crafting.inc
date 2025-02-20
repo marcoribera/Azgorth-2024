@@ -11,9 +11,11 @@ include "include/damage";
 include ":PacketConfig:settings";
 include "include/say";
 include ":tn:recipes";
-include ":gumps:yesno";
-include ":gumps:requestgump";
-include "toolWear";
+include ":gumps:yesNo";
+include ":gumps:requestGump";
+
+include ":charactercreation:habilidades";
+include ":attributes:attributes";
 
 const UOBJ_BOLT_START   := 0x0f95;
 const UOBJ_BOLT_END     := 0x0f9c;
@@ -42,25 +44,23 @@ var makermark := 1;
 // in the cprop, and is used to get it's "ResourceList" reference.
 function MaterialSelection(who, craft_skill, type, chk)
 
- 	SendSysMessage(who, "Escolha o "+lower(type)+" que voce deseja trabalhar.");
+	SendSysMessage(who, "Escolha o "+lower(type)+" que voce deseja trabalhar.");
 	var material := Target(who);
 
 	if(!material)
 		SendSysMessage(who, "Cancelado.");
 		return 0;
 	endif
-	
 	if(material.container.serial != who.backpack.serial)
-		SendSysMessage(who, "O material nao esta na sua mochila.");
+		SendSysMessageEx(who, "O material nao esta na sua mochila.", SSM_FAIL);
 		return 0;
 	endif
-	
 	if( (!Accessible(who, material)) || (Distance(who, material) > 2)
-       || (material.movable == 0) || (!ReserveItem(material)))
+	   || (material.movable == 0) || (!ReserveItem(material)))
 		SendSysMessage(who, "Voce nao pode usar isto.");
 		return 0;
 	endif
-	
+
 	var materialobjtype := 0;
 	if(chk)
 		if(GetObjProperty(material, chk))
@@ -71,12 +71,12 @@ function MaterialSelection(who, craft_skill, type, chk)
 	else
 		materialobjtype := material.objtype;
 	endif
-	
+
 	if(!canUseMaterial(who, materialobjtype, craft_skill))
-		SendSysMessage(who, "Voce nao possui conhecimento suficiente para fazer algo com isso.");
+		SendSysMessageEx(who, "Voce nao possui conhecimento suficiente para fazer algo com isso.", SSM_FAIL);
 		return 0;
 	endif
-	
+
 	var rtype := lower(resource_config[materialobjtype].Type);
 	var materialchk := 0;
 	if(rtype == type)
@@ -86,7 +86,7 @@ function MaterialSelection(who, craft_skill, type, chk)
 		SendSysMessage(who, "Esse nao e o material certo.");
 		return 0;
 	endif
-	
+
 	if((material.objtype >= UOBJ_BOLT_START) && (material.objtype <= UOBJ_BOLT_END))
 		var totalcloth := material.amount * 50;
 		var cloth;
@@ -123,88 +123,135 @@ function CraftItem(who, craft_skill, tool, objtype, amt, canFix, anvil, more := 
  	craft_loops := cint(craft_loops);
 
 	var theitemElem := FindconfigElem(craft_config, objtype);
-	
+
 	var materials := GetConfigStringDictionary(theitemElem, "materials");
 	var principalMaterial := GetconfigString(theitemElem, "principalMaterial");
 
-	var skill := craft_config[objtype].skill;
+	//var skill := craft_config[objtype].skill;
 	var theitem;
 	var mainSkill := CInt(AP_GetSkill(who, craft_skill));
+
+	var skillreq := craft_config[objtype].skill; //Valor necessário pra aparecer no MENU
+	//SendSysMessage(who, "DEBUG: SKILL PLAYER:" +mainSkill);
+	//SendSysMessage(who, "DEBUG: REQUER:" +skillreq);
+	if (TypeOf(skillreq) == "String")
+		PrintTextAbove(who, "Item " +objtype+ "/" +Hex(objtype)+ " fora dos padroes de dificuldade. Favor comunicar a staff!");
+		return 0;
+	endif
+	var diff := skillreq + 10; //Dificuldade para craftar o item
+	//SendSysMessage(who, "DEBUG: DIFICULDADE:" +diff);
+	var pts  := diff + 5; //Potência de UP do item
+
+	if(mainSkill >= skillreq)
+		pts += diff;
+	endif
+
+/*
 	var modpts := 0;
 	if(mainSkill >= skill)
 		modpts := (mainSkill - (skill - 10));
 	endif
 	var diff := Cint(craft_config[objtype].difficulty);
+	var skillreq := Cint(craft_config[objtype].skill);
 	var pts  := Cint(craft_config[objtype].points);
 	pts := pts + modpts;
+*/
 	var chk := 0;
 
 	//verifica se tem os objtypes na bag
 	var targMaterials := dictionary;
 	var chosenPrincipalMaterial := 0;
 	var materialColor := 0;
-	foreach thing in (materials.keys())
-		if (thing == "metal" || thing == "wood" || thing == "glass" 
-			|| thing == "cloth" || thing == "leather" || thing == "stone"
-			|| thing == "arrowhead")
-
-			var ret := MaterialSelection(who, craft_skill, thing, 0);
-			if (!ret)
-				SendSysMessageEx(who, "Voce nao possui os materiais necessarios.", SSM_FAIL);
-				return OUT_OF_MATERIALS;
-			else
-				if (ret[1].amount < materials[thing] )
-					SendSysMessageEx(who, "Voce nao possui os materiais necessarios." , SSM_FAIL);
-					return OUT_OF_MATERIALS;			
-				else
-					if (thing == "arrowhead")
-						var arrowtype := GetconfigInt(theitemElem, "arrowtype");
-						if (cint(GetObjProperty(ret[1], "material")) != arrowtype)
-							SendSysMessageEx(who, "Voce nao pode fabricar estas flechas com a ponta escolhida." , SSM_FAIL);
-							return OUT_OF_MATERIALS;
-						endif
-					endif
-					targMaterials[ret[1].objtype] := materials[thing];
-					if (thing == principalMaterial)
-						materialColor := ret[1].color;
-						chosenPrincipalMaterial := ret[1].objtype;
-					endif
-				endif
-			endif
-		else
-			foreach item in (EnumerateItemsInContainer(who.backpack))
-					//sendsysmessage(who, " " + item.objtype + " " + cint(thing));
-				if (item.objtype == cint(thing))
-					if (targMaterials[thing])
-						targMaterials[thing] := targMaterials[thing] + item.amount;
-					else
-						targMaterials[thing] :=  item.amount;
-					endif
-				endif
-			endforeach
-			if ( targMaterials[thing] < (materials[thing] + more))
-				SendSysMessageEx(who, "Voce nao possui os materiais necessarios." , SSM_FAIL);
-				return OUT_OF_MATERIALS;
-			else
-				targMaterials[thing] := materials[thing];
-			endif
-		endif
-
-	endforeach
 
 	var counter := 0;
 	var theitems := array;
-
 	var initialX := who.x;
 	var initialY := who.y;
-	while (counter < amt)
+	var item;
+	var arrowtype;
+	var check;
+	var ret := dictionary;
+	var hisskill;
+
+	while (counter < amt)	//executa o craft o numero de vezes solicitadas ou ate acabar algum dos materiais
 		counter := counter + 1;
+		//SendSysMessage(who, "Tentativa numero " + Cstr(counter) + " de fazer o item.", 0, 133);
+		foreach thing in (materials.keys())	//Comeca a verificar se os materiais tem tipos variados (Exemplo: Barra de Ferro, Barra de Aço, etc.)
+			if (thing == "metal" || thing == "wood" || thing == "glass"
+				|| thing == "cloth" || thing == "leather" || thing == "stone"
+				|| thing == "arrowhead")	//os materiais que tem tipos variados
+				if(counter == 1)	//na primeira iteração pergunta quais materiais de tipos variados serao usados.
+					ret[thing] := MaterialSelection(who, craft_skill, thing, 0); //seleciona os tipos de cada material de tipo variado, apenas na primeira iteracao.
+				endif
+				if (!ret[thing])	//quando a selecao de material falhar, exibe mensagem de erro.
+					SendSysMessageEx(who, "Cancelado.", SSM_FAIL);
+					return OUT_OF_MATERIALS;
+				else	//se um material valido foi escolhido, verifica se ele tem quantidade suficiente
+					//SendSysMessageEx(who, "DEBUG: " + cstr(ret[thing][1].amount) + " < " + cstr(materials[thing]) + " - BETA", SSM_FAIL);	//quando a quantidade de um material for insuficiente, exibe mensagem de erro.
+					if (ret[thing][1].amount < materials[thing]) //caso em que ha menos material que o necessario para fabricar o item
+						SendSysMessageEx(who, "nao possui materiais suficientes." , SSM_FAIL);	//quando a quantidade de um material for insuficiente, exibe mensagem de erro.
+						return OUT_OF_MATERIALS;
+					else	//caso em que ha o material necessario para fabricar o item
+						if (thing == "arrowhead") //verificacao diferenciada para pontas de flechas
+							arrowtype := GetconfigInt(theitemElem, "arrowtype");
+							//SendSysMessage(who, "DEBUG (arrowtype): " + GetObjProperty(ret[thing][1], "material") +"->"+ cstr(arrowtype));
+							if (cint(GetObjProperty(ret[thing][1], "material")) != arrowtype)
+								SendSysMessageEx(who, "Voce nao pode fabricar estas flechas com a ponta escolhida." , SSM_FAIL);
+								return OUT_OF_MATERIALS;
+							endif
+						endif
+						targMaterials[ret[thing][2]] := materials[thing];  //Alteracao da quantidade de materiais de tipos variados a serem utilizados ocorre aqui
+						if (thing == principalMaterial)
+							materialColor := ret[thing][1].color;
+							chosenPrincipalMaterial := ret[thing][2];
+						endif
+					endif
+				endif
+			else	//os materiais que nao tem tipos variados
+				//SendSysMessageEx(who, "Procurando " + cstr(thing) + ")" , SSM_FAIL);
+				foreach item in (EnumerateItemsInContainer(who.backpack)) //Checa os itens na mochila para contabilizar o material
+					//sendsysmessage(who, " " + item.objtype + " " + cint(thing));
+					if (item.objtype == cint(thing))	//acha os itens do tipo do material pedido
+						if (targMaterials[thing])
+							targMaterials[thing] := targMaterials[thing] + item.amount;
+							//SendSysMessageEx(who, "Achou " + thing + ")" , SSM_FAIL);
+						else
+							//SendSysMessageEx(who, "Achou B", SSM_FAIL);
+							targMaterials[thing] :=  item.amount;
+						endif
+					endif
+				endforeach
+				//SendSysMessage(who, "Não achou o material.", 0, 133);
+				if ( targMaterials[thing] < ( ( materials[thing] * ( 1 + more ) ) ) )
+					SendSysMessageEx(who, "Faltou "+ TruncatePlural(thing) + "." , SSM_FAIL);
+					if((craft_skill == "WoodWorking") && (TemHabilidade(who,"Recursos Improvisados")))
+						if(RandomInt(100) < 10) //10% de chance
+							SendSysMessageEx(who, "Voce improvisou um dos materiais." , SSM_INFO);
+							targMaterials[thing] := materials[thing];
+						else
+							SendSysMessageEx(who, "Tentou Improvisar um dos materiais, mas nao deu certo." , SSM_FAIL);
+							SubtractMaterial(who, targMaterials, 0.5); //consome metade do material
+							return OUT_OF_MATERIALS;
+						endif
+					else
+						//SendSysMessageEx(who, "DEBUG: " + cstr(targMaterials[thing]) + " < " + cstr((materials[thing] + more)) + " - GAMA", SSM_FAIL);	//quando a quantidade de um material for insuficiente, exibe mensagem de erro.
+						SendSysMessageEx(who, "Voce nao possui os materiais necessarios." , SSM_FAIL);
+						return OUT_OF_MATERIALS;
+					endif
+				else
+					//SendSysMessageEx(who, "Nao faltou material." , SSM_FAIL);
+					targMaterials[thing] := materials[thing];
+				endif
+			endif
+		endforeach
+
+
 		if ( (who.x != initialX) || (who.y != initialY) )
 			SendSysMessageEx(who, "Voce parou de se concentrar no que estava fazendo.", SSM_FAIL);
 			return 1;
 		endif
 
-		var item := 0;
+		item := 0;
 		if (anvil)
 			item := CreateItemAtLocation(anvil.x, anvil.y, anvil.z, objtype, 1, anvil.realm);
 			item.movable := 0;
@@ -212,36 +259,48 @@ function CraftItem(who, craft_skill, tool, objtype, amt, canFix, anvil, more := 
 			PrintTextAbove(item, "*item em brasa*");
 			MoveObjectToLocation(anvil.x, anvil.y, (anvil.z+7), anvil.realm);
 		endif
-		playCraftWork(who, craft_sound, craft_loops, craft_delay, craft_action);
+
+		//Caso saia do lugar durante o trabalho, para;
+		if(!playCraftWork(who, craft_sound, craft_loops, craft_delay, craft_action))
+			if (item)
+				DestroyItem(item);
+			endif
+			return 1;
+		endif
+
 		if (item)
 			DestroyItem(item);
 		endif
 
-		var check := Skillcheck(who, craft_skill, diff, pts) ;
+		check := SkillCheck(who, craft_skill, diff, pts);
 
 		if(check > 0)
 			if (!SubtractMaterial(who, targMaterials, 1+more))
-				SendSysMessageEx(who, "Voce nao possui todos os materiais.", SSM_FAIL);
-				return theitems;
+				if(craft_skill == "WoodWorking" && TemHabilidade(who,"Recursos Improvisados"))
+					SendSysMessageEx(who, "Seu improviso deu certo." , SSM_INFO);
+				else
+					SendSysMessageEx(who, "Voce nao possui todos os materiais.", SSM_FAIL);
+					return theitems;
+				endif
 			endif
-			theitem := CreateItem(who, objtype, more);
+			theitem := CreateItem(who, objtype, chosenPrincipalMaterial, more);
 			if(!theitem)
 				SendSysMessageEx(who, "Voce nao tem espaco suficiente na sua mochila!", SSM_FAIL);
 				return theitems;
 			endif
-			CheckToolWear (who, tool, craft_skill);
+			CheckToolWear(who, tool, craft_skill);
 			theitem.movable := 1;
 
 			//passando a cor pra materiais coloridos que nao tem Id proprio (como madeira)
-			AddMaterialMod(who, theitem, chosenPrincipalMaterial, materialColor);
-			CraftExceptional(who, theitem,craft_skill);
+			AddMaterialMod(who, craft_skill, theitem, chosenPrincipalMaterial, materialColor);
+			CraftExceptional(who, theitem, craft_skill, skillreq);
 			CraftLockable(who, theitem);
 
 			SendSysMessageEx(who, "Voce criou o item o colocou na mochila.", SSM_INFO);
-		
-			var hisskill := AP_GetSkill(who, craft_skill);
 
-			if (theitem.isa(POLCLASS_WEAPON) || theitem.isa(POLCLASS_ARMOR))	
+			hisskill := AP_GetSkill(who, craft_skill);
+
+			if (theitem.isa(POLCLASS_WEAPON) || theitem.isa(POLCLASS_ARMOR))
 				SetObjProperty(theitem,"reparos",(hisskill/2));
 			endif
 
@@ -257,28 +316,52 @@ function CraftItem(who, craft_skill, tool, objtype, amt, canFix, anvil, more := 
 				SetObjProperty(theitem, "canfix", 1);
 			endif
 
+			//Modificada a nomeação dos excepcionais para o término da criação do item, pra possibilitar ver o resultado final antes de nomear.
+			theitem.SetName(theitem.name);
+			sleepms(200);
+			if(theitem.quality >= 2.0)
+				if ( YesNo(who, "Voce fez um item obra prima, deseja renomea-lo?"))
+					var name := RequestGump(who, "Qual o nome do item?");
+					if (name != error)
+						SetName(theitem, name);
+					endif
+					if ( YesNo(who, "Deseja adicionar uma descricao no item?"))
+						AddItemDescription(who, theitem);
+					endif
+				endif
+			endif
+
 			theitems.append( theitem);
+
 		else
 			SubtractMaterial(who, targMaterials, 0.5); //consome metade do material
 			SendSysMessageEx(who, "Voce falhou ao fazer o item e perdeu material." , SSM_FAIL);
-			//return 0;
 		endif
 		sleepms(100);
 	endwhile
 
-	return theitems;	
+	//atualiza o life do item
+	theitem.hp := theitem.maxhp;
 
+	//essa mudança de nove força o cliente a atualizar os dados do item
+	//if(GetObjProperty(theitem, "material"))
+		//SendSysMessage(who, resource_config[GetObjProperty(theitem, "material")]);
+		//SetName(theitem, theitem.name + " [" + resource_config[GetObjProperty(theitem, "material")].name + "]");
+	//else
+		SetName(theitem, theitem.name);
+	//endif
+	return theitems;
 endfunction
 
-function CreateItem(who, objtype, more:=0)
+function CreateItem(who, objtype, material, more:=0)
 	var theitem := 0;
 	var cfg:=ReadConfigFile(":crafting:stackingitens");
 	var elem := FindConfigElem(cfg, "stacks");
 	var stackingitens:=ListConfigElemProps( elem );
 	if(cstr(objtype) in stackingitens)
 		var stacknow := FindObjtypeInContainer( who.backpack, objtype );
-		if (objtype == 7124 || objtype == 0x9087)
-			more := more + 4;
+		if (objtype == 0x1bd4 || objtype == 0x9087) //Pontas e shafts
+			more := more + 9;
 		endif
 		if ( stacknow )
 			AddAmount (stacknow, 1+more);
@@ -293,88 +376,297 @@ function CreateItem(who, objtype, more:=0)
 endfunction
 
 
-function AddMaterialMod(who, theitem, principalMaterial, materialColor)
+function AddMaterialMod(who, craft_skill, theitem, principalMaterial, materialColor)
 
 	if (!principalMaterial)
 		return;
-	endif	
+	endif
 
 	var elem  := FindConfigElem(resource_config, principalMaterial);
 	if((craft_config[theitem.objtype].retain == 1))
 		if(resource_config[principalMaterial].Color)
 			theitem.color := resource_config[principalMaterial].Color;
 		else
-		
 			theitem.color := materialColor;
 		endif
 	endif
+
 	SetObjProperty(theitem, "material", principalMaterial);
 
+	//Insere modificadores de dano e resistencia
 	var DmgMods := GetConfigString(elem, "AoSDamageMod");
 	DmgMods := SplitWords(DmgMods);
 	var ResistMods := GetConfigString(elem, "AoSResistMod");
 	ResistMods := SplitWords(ResistMods);
-	var hpmod := GetConfigInt(elem, "hpmod");
-
-    var totalhp;
-    totalhp:= hpmod;
-    theitem.maxhp_mod := totalhp;
+    var hpmod := GetConfigInt(elem, "hpmod"); //modificador de durabilidade do item pelo material
 
 	if(theitem.isA(POLCLASS_WEAPON))
-		theitem.damage_physical_mod := Cint(DmgMods[1]);
-		var cfg:=ReadConfigFile(":combat:itemdesc");
-		var elem := FindConfigElem(cfg, theitem.objtype);
-		if (elem.Attribute != "RangedCombat")
-			theitem.damage_fire_mod := Cint(DmgMods[2]);
-			theitem.damage_cold_mod := Cint(DmgMods[3]);
-			theitem.damage_poison_mod := Cint(DmgMods[4]);
-			theitem.damage_energy_mod := Cint(DmgMods[5]);
+        var cfg:=ReadConfigFile(":combat:itemdesc");
+        var elem := FindConfigElem(cfg, theitem.objtype);
+		theitem.damage_physical_mod := theitem.damage_physical_mod + Cint(DmgMods[1]);
+		theitem.damage_fire_mod := theitem.damage_fire_mod + Cint(DmgMods[2]);
+		theitem.damage_cold_mod := theitem.damage_cold_mod + Cint(DmgMods[3]);
+		theitem.damage_poison_mod := theitem.damage_poison_mod + Cint(DmgMods[4]);
+		theitem.damage_energy_mod := theitem.damage_energy_mod + Cint(DmgMods[5]);
+
+		sendsysmessage(who,craft_skill);
+		if(craft_skill == "MetalWorking")
+			sendsysmessage(who,"Usou MetalWorking");
+			//Aplica velocidade extra em armas de metal
+			if(TemHabilidade(who,"Armas Velozes"))
+				SetObjProperty(theitem,"attackspeedbonus", CInt(elem.Speed*0.1));
+				//theitem.speed_mod := CInt(elem.Speed*0.1);
+			endif
+
+			if(TemHabilidade(who,"Amolador de Laminas") && (elem.TipoAtaque == "Cortante"))
+				theitem.dmg_mod := theitem.dmg_mod + CInt(elem.MaxDam * 0.1);
+			endif
+			if(TemHabilidade(who,"Ponta Temperada") && (elem.TipoAtaque == "Perfurante"))
+				theitem.dmg_mod := theitem.dmg_mod + CInt(elem.MaxDam * 0.1);
+			endif
+			if(TemHabilidade(who,"Densidade Esmagadora") && (elem.TipoAtaque == "Contusivo"))
+				theitem.dmg_mod := theitem.dmg_mod + CInt(elem.MaxDam * 0.1);
+			endif
+		elseif(craft_skill == "WoodWorking")
+			if(TemHabilidade(who,"Entalhe para Combate"))
+				theitem.speed_mod := CInt(elem.Speed*0.1);
+			endif
+			if(TemHabilidade(who,"Flexao da Madeira") && (Cint(elem.maxrange) > 2))
+				theitem.dmg_mod := theitem.dmg_mod + CInt(elem.MaxDam * 0.1);
+			endif
 		endif
 	elseif(theitem.isA(POLCLASS_ARMOR))
-		theitem.resist_physical_mod := Cint(ResistMods[1]);
-		theitem.resist_fire_mod := Cint(ResistMods[2]);	
-		theitem.resist_cold_mod := Cint(ResistMods[3]);
-		theitem.resist_poison_mod := Cint(ResistMods[4]);	
-		theitem.resist_energy_mod := Cint(ResistMods[5]);
+        var cfg:=ReadConfigFile(":combat:itemdesc");
+        var elem := FindConfigElem(cfg, theitem.objtype);
+        //ESSA HAB NÃO MODIFICA A RESISTENCIA FISICA PARA NAO DESBALANCEAR AS ARMADURAS NO GERAL.
+        if((craft_skill == "DomesticWork") && TemHabilidade(who,"Realce de Material"))
+	        //theitem.resist_physical_mod := theitem.resist_physical_mod + Cint(ResistMods[1]);
+	        theitem.resist_fire_mod := theitem.resist_fire_mod + 2 * Cint(ResistMods[2]);
+	        theitem.resist_cold_mod := theitem.resist_cold_mod + 2 * Cint(ResistMods[3]);
+	        theitem.resist_poison_mod := theitem.resist_poison_mod + 2 * Cint(ResistMods[4]);
+	        theitem.resist_energy_mod := theitem.resist_energy_mod + 2 * Cint(ResistMods[5]);
+	    else
+	    	//theitem.resist_physical_mod := theitem.resist_physical_mod + Cint(ResistMods[1]);
+	        theitem.resist_fire_mod := theitem.resist_fire_mod + Cint(ResistMods[2]);
+	        theitem.resist_cold_mod := theitem.resist_cold_mod + Cint(ResistMods[3]);
+	        theitem.resist_poison_mod := theitem.resist_poison_mod + Cint(ResistMods[4]);
+	        theitem.resist_energy_mod := theitem.resist_energy_mod + Cint(ResistMods[5]);
+	    endif
+
+        if ((CInt(elem.parrybonus) != 0) || CInt(elem.parrydelay) != 0) //aplica o modificador de durabilidade do material nos escudos
+        	hpmod :=  hpmod*5;
+    	endif
+
+		if(craft_skill == "MetalWorking")
+			//sendsysmessage(who,"Usou MetalWorking");
+	    	if(TemHabilidade(who,"Armaduras Articuladas"))
+	    		var DexPenBonus := Cint(elem.DexPenalty);
+	    		if(DexPenBonus > 0)
+		    		case (DexPenBonus)
+		    			1:
+		    				DexPenBonus := 1;
+		    				break;
+		    			2:
+		    				DexPenBonus := 1;
+		    				break;
+		    			3:
+		    				DexPenBonus := 2;
+		    				break;
+	    				default:
+	    					DexPenBonus := CInt(DexPenBonus/2);
+		    		endcase
+		    		SetObjProperty(theitem, "penaltybonus", DexPenBonus);
+		    	endif
+			endif
+
+			if(TemHabilidade(who,"Armaduras sem Brechas"))
+				//SendSysMessage(who, "Faz Armaduras sem Brechas: ");
+				if(theitem.resist_fire != 0)
+					theitem.resist_fire_mod := theitem.resist_fire_mod + 1;
+				endif
+				if(theitem.resist_cold != 0)
+		        	theitem.resist_cold_mod := theitem.resist_cold_mod + 1;
+		        endif
+		        if(theitem.resist_poison != 0)
+		        	theitem.resist_poison_mod := theitem.resist_poison_mod + 1;
+		    	endif
+		        if(theitem.resist_energy != 0)
+		        	theitem.resist_energy_mod := theitem.resist_energy_mod + 1;
+		        endif
+		        if(theitem.resist_physical != 0)
+		        	theitem.resist_physical_mod := theitem.resist_physical_mod + 1;
+				endif
+			endif
+
+			if((CInt(elem.parrybonus) != 0) || CInt(elem.parrydelay) != 0) //Verifica se é escudo
+				if(TemHabilidade(who,"Suportes Balanceados"))
+					var parrybonus := Cint(elem.parrybonus);
+		    		if(parrybonus == 0)
+		    			parrybonus := 5;
+		    		else
+		    			parrybonus := CInt(parrybonus*1.5) + 5;
+		    		endif
+		    		SetObjProperty(theitem, "parrybonus", parrybonus);
+				endif
+				if(TemHabilidade(who,"Escudos Dissipadores"))
+					var parrydelay_mod := Cint(elem.parrydelay);
+					//Não afeta escudos com parrydelay já otimizado como o buckler
+		    		if(parrydelay_mod > 0)
+			    		case (parrydelay_mod)
+			    			1:
+			    				parrydelay_mod := 1;
+			    				break;
+			    			2:
+			    				parrydelay_mod := 1;
+			    				break;
+			    			3:
+			    				parrydelay_mod := 2;
+			    				break;
+		    				default:
+		    					parrydelay_mod := CInt(parrydelay_mod/2);
+			    		endcase
+			    		SetObjProperty(theitem, "parrydelay_mod", parrydelay_mod);
+			    	endif
+				endif
+			endif
+		elseif(craft_skill == "WoodWorking")
+			if(TemHabilidade(who,"Entalhe para Combate"))
+	    		var DexPenBonus := Cint(elem.DexPenalty);
+	    		if(DexPenBonus > 0)
+		    		case (DexPenBonus)
+		    			1:
+		    				DexPenBonus := 1;
+		    				break;
+		    			2:
+		    				DexPenBonus := 1;
+		    				break;
+		    			3:
+		    				DexPenBonus := 2;
+		    				break;
+	    				default:
+	    					DexPenBonus := CInt(DexPenBonus/2);
+		    		endcase
+		    		SetObjProperty(theitem, "penaltybonus", DexPenBonus);
+		    	endif
+		    	if((CInt(elem.parrybonus) != 0) || CInt(elem.parrydelay) != 0) //Verifica se é escudo
+					var parrybonus := Cint(elem.parrybonus);
+		    		if(parrybonus == 0)
+		    			parrybonus := 5;
+		    		else
+		    			parrybonus := CInt(parrybonus*1.5) + 5;
+		    		endif
+		    		SetObjProperty(theitem, "parrybonus", parrybonus);
+				endif
+			endif
+		elseif(craft_skill == "DomesticWork")
+			if((CInt(theitem.resist_physical)==0)) //Não é armadura
+				if(TemHabilidade(who,"Tratar Tecido"))
+					var ct := 0;
+					var randomDmg;
+					while(ct < 4)
+						randomDmg := RandomInt(2) + 1;
+						case(randomDmg)
+							1: theitem.damage_fire_mod := theitem.damage_fire_mod + 1; break;
+							2: theitem.damage_cold_mod := theitem.damage_cold_mod + 1; break;
+						endcase
+						ct := ct + 1;
+					endwhile
+				endif
+			else
+				if(TemHabilidade(who,"Tratar Couro"))
+					var ct := 0;
+					var randomDmg;
+					while(ct < 4)
+						randomDmg := RandomInt(2) + 1;
+						case(randomDmg)
+							1: theitem.damage_energy_mod := theitem.damage_energy_mod + 1; break;
+							2: theitem.damage_poison_mod := theitem.damage_poison_mod + 1; break;
+						endcase
+						ct := ct + 1;
+					endwhile
+				endif
+
+			endif
+		endif
+
+        //endif
 	//flechas e virotes de guerra
 	elseif (theitem.objtype == 0x9088 || theitem.objtype == 0x9098)
 		SetObjProperty(theitem, "dmgmods", DmgMods);
 	endif
 
-	var maximohp := theitem.maxhp;
-	var thehp := theitem.hp;
-	var maxhp;
+	//Adiciona modificador do material
+	theitem.maxhp_mod := theitem.maxhp_mod + hpmod;
 
-  	theitem.maxhp := maximohp + totalhp;
+	if(craft_skill == "MetalWorking")
+		//Adiciona modificador de Habilidade de nível
+		if(TemHabilidade(who,"Preparo do Metal"))
+			//(HP total x 1.5) x (HP total - HP inicial)
+			var temp := (theitem.maxhp * 1.5) - (theitem.maxhp-theitem.maxhp_mod);
+			theitem.maxhp_mod := CInt(temp);
+		endif
+	elseif(craft_skill == "WoodWorking")
+		if(TemHabilidade(who,"Secagem da Madeira"))
+			//(HP total x 1.5) x (HP total - HP inicial)
+			var temp := (theitem.maxhp * 1.5) - (theitem.maxhp-theitem.maxhp_mod);
+			theitem.maxhp_mod := CInt(temp);
+		endif
+	elseif(craft_skill == "DomesticWork")
+		if(TemHabilidade(who,"Alta Costura"))
+			//(HP total x 1.5) x (HP total - HP inicial)
+			var temp := (theitem.maxhp * 1.5) - (theitem.maxhp-theitem.maxhp_mod);
+			theitem.maxhp_mod := CInt(temp);
+		endif
+
+	endif
+	//Atualiza o HP
 	theitem.hp := theitem.maxhp;
-
 endfunction
 
-function CraftExceptional(who, theitem, craft_skill)
-	if((craft_config[theitem.objtype].Exceptional == 1) && (ExceptionalCraft(who, AP_GetSkill(who, craft_skill) ) ) )
-		SetObjProperty(theitem, "Exceptional", 1);
-		if ( YesNo(who, "Voce fez um item obra prima, deseja renomea-lo?"))
-			var name := RequestGump(who, "Qual o nome do item?");
-			if (name != error)
-				SetName(theitem, name);
-			endif
-			if ( YesNo(who, "Deseja adicionar uma descricao no item?"))
-				AddItemDescription(who, theitem);
-			endif
+function CraftExceptional(who, byref theitem, craft_skill, skillreq)
+	if(craft_config[theitem.objtype].Exceptional == 1)
+		//var qualidade := ExceptionalCraft(who, craft_skill, theitem, AP_GetSkill(who, craft_skill), skillreq);
+		var skillvalue := AP_GetSkill(who, craft_skill);
+		var qualidade := 1.0 + 2.0*(skillvalue-30.0)/100.0 + (RandomFloat(skillvalue)-40.0)/100.0;
+		if(skillvalue > 70.0)
+			qualidade := qualidade + RandomFloat(skillvalue-70.0)/30.0;
 		endif
+		theitem.quality := qualidade;
+
+		//Evita qualidades que deixem o item inutilizável
+		if (theitem.quality < 0.4)
+			theitem.quality := 0.4;
+		endif
+
+		//Modifica o HP do item com base na qualidade
+			//sendsysmessage(who,"Excepcional");
+			//sendsysmessage(who,theitem.maxhp+" "+theitem.maxhp_mod);
+		theitem.maxhp_mod := Cint((20+theitem.maxhp_mod) * (theitem.quality - 1.0) / 2.0);
+
+		if(qualidade >= 2.0)
+			SetObjProperty(theitem, "Exceptional", 1);
+		endif
+
 		if(theitem.isA(POLCLASS_WEAPON))
-			AddQualityDamageMod(theitem, EXCEP );
+
+			//
+			AddQualityDamageMod(who, craft_skill, theitem, qualidade);
 		elseif(theitem.isA(POLCLASS_ARMOR))
-			AddQualityResistMod(theitem, EXCEP);
+            //var cfg:=ReadConfigFile(":combat:itemdesc");
+            //var elem := FindConfigElem(cfg, theitem.objtype);
+            //if (elem.parrydelay == error) //se for escudo nao aplica o resistmod
+            AddQualityResistMod(who, craft_skill, theitem, qualidade);
+            //endif
 		endif
-		theitem.quality := 1.2;
 
-		var maxhp;
-		var thehp := theitem.hp;
-  		maxhp := theitem.maxhp;
-		theitem.maxhp := cint(maxhp * theitem.quality);
+
+		var temp := (theitem.maxhp * theitem.quality) - (theitem.maxhp-theitem.maxhp_mod);
+		theitem.maxhp_mod := temp;
+//			sendsysmessage(who,"Temp "+temp);
+//			sendsysmessage(who,"Aplicada Qualidade "+theitem.maxhp+" "+theitem.maxhp_mod);
 		theitem.hp := theitem.maxhp;
-
+//			sendsysmessage(who,"Final Qualidade"+theitem.maxhp+" "+theitem.maxhp_mod);
+	//endif
 	endif
 endfunction
 
@@ -416,9 +708,7 @@ function SubtractMaterial(who, targMaterials, amountMod)
 			if (targMaterials[thing] > 0)
 				return 0;
 			endif
-
 	endforeach
-  
 	return 1;
 endfunction
 
@@ -434,7 +724,7 @@ function CreateCraftedMap(who, craft_skill, use_on, objtype, amount, itemname, r
 	var theitem := CreateItemInBackpack(who, objtype, 1);
 	if(theitem)
 		if( !SubtractAmount(use_on, amount) )
-			SendSysMessage(who, "Voce não possui materiais suficientes em sua mochila!");
+			SendSysMessage(who, "You don't have enough materials in your backpack!");
 			DestroyItem(theitem);
 			return -1;
 		endif
@@ -445,13 +735,13 @@ function CreateCraftedMap(who, craft_skill, use_on, objtype, amount, itemname, r
 			reqd := 3;
 		endif
 		if(rint < reqd)
-			SendSysMessage(who, "Voce teve dificuldades para fazer este item. Sua qualidade e abaixo da media.");
+			SendSysMessage(who, "You were barely able to make this item.  Its quality is below average.");
 		else
-			SendSysMessage(who, "Você cria o item e o guarda em sua mochila.");
+			SendSysMessage(who, "You create the item and put it in your backpack.");
 		endif
 		SetName(theitem, itemname);
 	else
-		SendSysMessage(who, "Voce nao possui espaco suficiente em sua mochila!");
+		SendSysMessage(who, "You don't have enough room in your backpack!");
 		return 0;
 	endif
 	if (theitem.objtype != 0x9923)
@@ -490,29 +780,33 @@ endfunction
 // (none) if none sent. Who is who the info is to be sent to.
 // All delays are in seconds.
 function playCraftWork(who, craftSound, loops:=0, delay:=2, craftAction:=0)
-
-
-  if(loops)
-    for i := 1 to loops
-      if(craftAction)
-        PerformAction( who, craftAction );
-      endif
-      PlaySoundEffect(who, craftSound);
-      sleep(delay);
-    endfor
-  else
-    PlaySoundEffect(who, craftSound);
-    sleep(delay);
-  endif
-
-  return;
+	var initialX:= who.x;
+	var initialY:= who.y;
+	if(loops)
+		for i := 1 to loops
+			if ( (who.x != initialX) || (who.y != initialY) )
+				SendSysMessageEx(who, "Voce parou de se concentrar no que estava fazendo.", SSM_FAIL);
+				return 0;
+			endif
+			if(craftAction)
+				PerformAction( who, craftAction );
+			endif
+				PlaySoundEffect(who, craftSound);
+				sleep(delay);
+		endfor
+	else
+		PlaySoundEffect(who, craftSound);
+		sleep(delay);
+	endif
+	return 1;
+return;
 
 endfunction
 
 function CheckAnvil(who)
 	var anvil_near;
 	foreach item in ListItemsNearLocation(who.x, who.y, who.z, 3)
-		if((item.objtype == 0x0faf) || (item.objtype == 0x0fb0))
+		if((item.objtype == 0xe1e) || (item.objtype == 0x0fb0))
 			anvil_near := 1;
 			break;
 		endif

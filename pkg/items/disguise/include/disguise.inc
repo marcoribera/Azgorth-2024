@@ -1,13 +1,12 @@
 include ":gumps:gumps";
 include ":attributes:attributes";
 include ":gumps:gumps_ex";
-include ":gumps:requestgump";
+include ":gumps:requestGump";
 include "include/say";
 include ":tn:tngumps";
 include "include/client";
 include ":charactercreation:habilidades";
 include ":timedscripts:timedScripts";
-
 
 function removeDisguise(who)
 	var original := GetObjProperty(who, "disfarce");
@@ -16,9 +15,11 @@ function removeDisguise(who)
 		sendsysmessage(who, "Nao foi possivel achar sua configuracao inicial.");
 		return 1;
 	endif
+	EraseObjProperty(who, "disfarce");
+	EraseObjProperty(who, "FakeID");
 
 	if (original.barba)
-                var fakebarba := GetEquipmentByLayer(who, LAYER_BEARD);
+		var fakebarba := GetEquipmentByLayer(who, LAYER_BEARD);
 		var newbarba := CreateItemAtLocation(who.x, who.y, who.z, original.barba, 1, who.realm);
 		if (fakebarba)
 			DestroyItem(fakebarba);
@@ -60,14 +61,6 @@ function removeDisguise(who)
 		who.truecolor := original.corpele;
 	endif
 
-	if (original.aparencia)
-		if (who.name == "Desconhecido")
-			SetObjProperty(who, "realname", original.aparencia);
-		else
-			setname(who, original.aparencia);
-		endif
-	endif
-
 	if (original.sexo)
 		who.graphic := original.sexo;
 		who.trueobjtype := original.sexo;
@@ -78,7 +71,16 @@ function removeDisguise(who)
 		who.title_race := original.raca;
 	endif
 
-	eraseobjproperty(who, "disfarce");
+	if (original.aparencia != "")
+		if (who.name == "Desconhecido")
+			SetObjProperty(who, "realname", original.aparencia);
+			SetName(who, original.aparencia);
+		else
+			SetName(who, who.name);
+		endif
+	else
+		SetName(who, who.name);
+	endif
 
 	return 1;
 
@@ -93,7 +95,7 @@ function removedisfarce(who)
 		return 1;
 	endif
 
-	if (TemHabilidade(who, "Disfarce Aprimorado"))
+	if (TemHabilidade(who, "Dissimulacao"))
 		removeDisguise(who);
 	else
 		TS_LowerDuration(who, "kitdisfarce", -1);
@@ -104,28 +106,56 @@ function removedisfarce(who)
 endfunction
 
 function escolherCabelo(who, byref disfarce, raca := 0)
-
-
 	UnloadConfigFile(":fls_core:config/hairtypes");
 	var config := ReadConfigFile(":fls_core:config/hairtypes");
 	var hair;
 	var sizey1 := 670;
 	var sizey2 := 640;
 	var sizey3 := 600;
-	if (raca == "Cazar")
-		hair := config["head"];
-	else
-		hair := config["head"];
-	endif
+	var sizeh := 270;
+	var grande;
+	// if (raca == "Aquilrano" || raca == "Orc")
+	// 	hair := config["Aquilrano"];
+	// 	sizey1 := 350;
+	// 	sizey2 := 320;
+	// 	sizey3 := 200;
+	// elseif (raca =="Vanirio")
+	// 	hair := config["Vanirio"];
+	// 	sizey1 := 670;
+	// 	sizey2 := 640;
+	// 	sizey3 := 600;
+	// 	sizeh := 600;
+	// 	grande := 1;
+	// elseif (raca == "Numajene")
+	// 	hair := config["Numajene"];
+	// 	sizey1 := 670;
+	// 	sizey2 := 640;
+	// 	sizey3 := 600;
+	// 	sizeh := 600;
+	// 	grande := 1;
+	// elseif (raca == "Qualquer")
+		hair := config["todos"];
+		sizey1 := 670;
+		sizey2 := 640;
+		sizey3 := 600;
+		sizeh := 600;
+		grande := 1;
+	// else
+	// 	hair := config["head"];
+	// 	sizeh := 600;
+	// 	grande := 1;
+	// endif
 	var hairgumps := config["hairgump"];
 
 	var gump := GfCreateGump();
-	GFResizePic(gump, 0, 0, 3600, 600, sizey1);
-	GFResizePic(gump, 15, 15, 0x13be, 575, sizey2);
+	GFResizePic(gump, 0, 0, 3600, 300, sizey1);
+	GFResizePic(gump, 15, 15, 0x13be, sizeh, sizey2);
 	GFTextMid(gump, 15, 25, 270, 1153, "Escolha o cabelo");
-	GFResizePic(gump, 240, 55, 2620, 50, sizey3);
-	GFResizePic(gump, 520, 55, 2620, 50, sizey3-100);
+	GFResizePic(gump, 220, 55, 2620, 50, sizey3);
 
+	if (grande == 1)
+		GFResizePic(gump, 520, 55, 2620, 50, sizey3-50);
+	endif
 
 	GFSetRadioGroup(gump, 1);
 	var y_pos := 65;
@@ -138,9 +168,9 @@ function escolherCabelo(who, byref disfarce, raca := 0)
 		var hairgraphic := cint(style[2]);
 		while (hairname["_"])															hairname["_"] := " ";
 		endwhile
-		numColumn :=  numColumn+1;
+		numColumn ++;
 		if (numColumn > 19)
-			x_pos := 300;
+			x_pos := 320;
 			if(numColumn == 20)
 				y_pos := 65;
 			endif
@@ -153,7 +183,7 @@ function escolherCabelo(who, byref disfarce, raca := 0)
 		hairnames.append(hairname);
 		GFTextline(gump, x_pos + 55, y_pos+5, 1153, hairname);
 		var gumppic := GetConfigString(hairgumps, style[1]);
-		GFGumpPic(gump, x_pos+155, y_pos-45, gumppic);
+		GFGumpPic(gump, x_pos+135, y_pos-45, gumppic);
 		y_pos := y_pos + 30;
 
 	endforeach
@@ -180,9 +210,9 @@ function escolherCabelo(who, byref disfarce, raca := 0)
 	endif
 endfunction
 
-function escolheCorCabelo(who, byref disfarce, cordocabelo :=  0, povo :=0, retorna := 0)
+function escolheCorCabelo(who, byref disfarce, cordocabelo :=  0, raca :=0, retorna := 0)
 
-	var gump2 := BuildHairDyeGump(cordocabelo, povo);
+	var gump2 := BuildHairDyeGump(cordocabelo, raca, who);
 	var input2 := GFSendGump(who, gump2);
 
 	if ( input2[0] == 0 || input2[0xA00001] )
@@ -212,30 +242,43 @@ function escolheCorCabelo(who, byref disfarce, cordocabelo :=  0, povo :=0, reto
 
 endfunction
 
-function BuildHairDyeGump(cur_color := 0, povo := 0)
+function BuildHairDyeGump(cur_color := 0, raca := 0, who)
 	var gump := GFCreateGump();
 
 	GFPage(gump, 0);
 	//GFClosable(gump, 0);
-	GFResizePic(gump, 0, 0, GFCfgConst("Defaults", "BackGround"), 420, 550);
-	GFResizePic(gump, 15, 15, GFCfgConst("Defaults", "ForeGround"), 120, 520);
-	GFResizePic(gump, 140, 15, GFCfgConst("Defaults", "ForeGround"), 265, 486);
+	if (raca == RACA.HUMANO)
+		GFResizePic(gump, 0, 0, GFCfgConst("Defaults", "BackGround"), 420, 550 * 2);
+		GFResizePic(gump, 15, 15, GFCfgConst("Defaults", "ForeGround"), 120, 520 * 2);
+		GFResizePic(gump, 140, 15, GFCfgConst("Defaults", "ForeGround"), 265, 486 * 2);
+	else
+		GFResizePic(gump, 0, 0, GFCfgConst("Defaults", "BackGround"), 420, 550);
+		GFResizePic(gump, 15, 15, GFCfgConst("Defaults", "ForeGround"), 120, 520);
+		GFResizePic(gump, 140, 15, GFCfgConst("Defaults", "ForeGround"), 265, 486);
+	endif
 
 	GFAddButton(gump, 190, 509, 2128, 2129, GF_CLOSE_BTN, 1);
 	GFAddButton(gump, 265, 509, 2119, 2120, GF_CLOSE_BTN, 2);
 
-
+	var chardata := GetObjProperty(who, "chardata");
+	var cultura := chardata.culture;
 	var color_cfg := ReadConfigFile(":hair:config/hairColors");
 	var index_elem;
-
-	index_elem := color_cfg["Index"]; // Controls order colors appear.
-	/*
-	if (povo == "Ferune" || povo == "Bariyano")
+	if (cultura == "Björska")
+	  index_elem := color_cfg["Bjorska"]; // Antigos thurioes
+    elseif (raca == "Orc")
+        index_elem := color_cfg["Orc"];
+    elseif (raca == "Drow")
+        index_elem := color_cfg["Drow"];
+	elseif (raca == "Elfo")
+        index_elem := color_cfg["Elfo"];
+	elseif (raca == "Anão")
+        index_elem := color_cfg["Anao"];
+	elseif (raca == "Qualquer")
 	  index_elem := color_cfg["Index"]; // Controls order colors appear.
 	else
-	  index_elem := color_cfg[povo]; //balmutes, Picto,  cazar e thurioes
+	  index_elem := color_cfg["Imperial"]; // Antigos zharkianos
 	endif
-	*/
 
 	var categories := GetConfigStringArray(index_elem, "Category");
 
@@ -338,22 +381,24 @@ function escolherBarba(who, byref disfarce)
 	endif
 endfunction
 
-function SkinGump(who, byref new_look, povo := 0, sempreretorna := 0)
+function SkinGump(who, byref new_look, raca := 0, sempreretorna := 0)
 
 	var gump := GFCreateGump();
 	GFResizePic(gump, 0, 0, 3600, 300, 420);
 	GFResizePic(gump, 15, 15, 0x13be, 270, 390);
 	GFTextMid(gump, 15, 25, 270, 1153, "Cor da Pele");
 	GfTextLine(gump, 45, 380, 1153, "Pronto");
-        GfAddButton(gump, 25, 382, 2117, 2118, 1, 10);
+	GfAddButton(gump, 25, 382, 2117, 2118, 1, 10);
 	var skin_cfg := ReadConfigFile(":fls_core:config/skincolors");
 	if ( !skin_cfg )
 		SendSysMessage(who, "Error: Could not open :fls_core:config/skincolors.cfg -> "+skin_cfg.errortext);
 	endif
-	if  (povo == "Norde" || povo == "Picto")
-		skin_cfg := skin_cfg["brancos"];
-	elseif (povo == "Cazar");
-		skin_cfg := skin_cfg["negros"];
+	if  (raca == "Elfo")
+		skin_cfg := skin_cfg["elfo"];
+    elseif (raca == "Drow")
+        skin_cfg := skin_cfg["drow"];
+    elseif (raca == "Orc")
+        skin_cfg := skin_cfg["orc"];
 	else
 		skin_cfg := skin_cfg["list"];
 	endif
@@ -364,7 +409,7 @@ function SkinGump(who, byref new_look, povo := 0, sempreretorna := 0)
 	var page_num := 1;
 	var line := 1;
 
-  var colors := GetConfigStringArray(skin_cfg, "color");
+	var colors := GetConfigStringArray(skin_cfg, "color");
 	foreach color in colors;
 		color := CInt(color);
 		if (color == new_look.corpele)

@@ -6,6 +6,9 @@ use cfgfile;
 include ":nature:tremor";
 
 program terremoto(params)
+   //Marcknight: Desconhecido pediu pra desativas pra não ter que acertar as regions
+   //Para usar descomente o código abaixo
+   /*
 
         var who := params[1];
         var regname := params[2];
@@ -51,4 +54,5 @@ program terremoto(params)
                  
               endif
         endwhile;
+   */
 endprogram
