@@ -31,7 +31,7 @@ function CraftCheckSkill(who, craft_skill, difficulty, points, report:=0)
   else
     chance := ((difficulty-10)-effective)*(-(difficulty/10));
   endif
-  SendSysMessage(who, "DEBUG: VALORES: DIFFI" +difficulty+ "- EFFEC: " +effective+ "- CHANCE: " +chance);
+  //SendSysMessage(who, "DEBUG: VALORES: DIFFI" +difficulty+ "- EFFEC: " +effective+ "- CHANCE: " +chance);
 /*
   if(chance < 0)
     chance := 0;
