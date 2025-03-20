@@ -1,5 +1,6 @@
 use uo;
 use cfgfile;
+use util;
 
 include ":attributes:attributes";
 include ":charactercreation:chargumps";
@@ -35,6 +36,41 @@ function SetEquipmentMods(who, item)
 		item.resist_energy_mod := CInt(item.resist_energy * mod_percentual);
 	endif
 */
+
+	// Apply material based bonuses
+	var material := GetObjProperty(item, "material");
+	if (material)
+		var resource_config := ReadConfigFile(":crafting:config/resourceList");
+		var material_elem := FindConfigElem(resource_config, material);
+		
+		if (material_elem)
+			if (item.isa(POLCLASS_WEAPON))
+				// Apply weapon-specific material bonuses
+				var DmgMods := GetConfigString(material_elem, "AoSDamageMod");
+				if (DmgMods)
+					DmgMods := SplitWords(DmgMods);
+					item.damage_physical_mod := item.damage_physical_mod + CInt(DmgMods[1]);
+					item.damage_fire_mod := item.damage_fire_mod + CInt(DmgMods[2]);
+					item.damage_cold_mod := item.damage_cold_mod + CInt(DmgMods[3]);
+					item.damage_poison_mod := item.damage_poison_mod + CInt(DmgMods[4]);
+					item.damage_energy_mod := item.damage_energy_mod + CInt(DmgMods[5]);
+				endif
+				
+			elseif (item.isa(POLCLASS_ARMOR))
+				// Apply armor-specific material bonuses
+				var ResistMods := GetConfigString(material_elem, "AoSResistMod");
+				if (ResistMods)
+					ResistMods := SplitWords(ResistMods);
+					item.resist_physical_mod := item.resist_physical_mod + CInt(ResistMods[1]);
+					item.resist_fire_mod := item.resist_fire_mod + CInt(ResistMods[2]);
+					item.resist_cold_mod := item.resist_cold_mod + CInt(ResistMods[3]);
+					item.resist_poison_mod := item.resist_poison_mod + CInt(ResistMods[4]);
+					item.resist_energy_mod := item.resist_energy_mod + CInt(ResistMods[5]);
+				endif
+			endif
+		endif
+	endif
+
 	if (item.isa(POLCLASS_WEAPON))
 		item.speed_mod := CInt(GetObjProperty(item,"attackspeedbonus"));
 	endif
@@ -153,6 +189,41 @@ function RemoveEquipmentMods(who, item)
 		item.resist_energy_mod := 0;
 	endif
 */
+
+	// Remove material based bonuses
+	var material := GetObjProperty(item, "material");
+	if (material)
+		var resource_config := ReadConfigFile(":crafting:config/resourceList");
+		var material_elem := FindConfigElem(resource_config, material);
+		
+		if (material_elem)
+			if (item.isa(POLCLASS_WEAPON))
+				// Remove weapon-specific material bonuses
+				var DmgMods := GetConfigString(material_elem, "AoSDamageMod");
+				if (DmgMods)
+					DmgMods := SplitWords(DmgMods);
+					item.damage_physical_mod := item.damage_physical_mod - CInt(DmgMods[1]);
+					item.damage_fire_mod := item.damage_fire_mod - CInt(DmgMods[2]);
+					item.damage_cold_mod := item.damage_cold_mod - CInt(DmgMods[3]);
+					item.damage_poison_mod := item.damage_poison_mod - CInt(DmgMods[4]);
+					item.damage_energy_mod := item.damage_energy_mod - CInt(DmgMods[5]);
+				endif
+				
+			elseif (item.isa(POLCLASS_ARMOR))
+				// Remove armor-specific material bonuses
+				var ResistMods := GetConfigString(material_elem, "AoSResistMod");
+				if (ResistMods)
+					ResistMods := SplitWords(ResistMods);
+					item.resist_physical_mod := item.resist_physical_mod - CInt(ResistMods[1]);
+					item.resist_fire_mod := item.resist_fire_mod - CInt(ResistMods[2]);
+					item.resist_cold_mod := item.resist_cold_mod - CInt(ResistMods[3]);
+					item.resist_poison_mod := item.resist_poison_mod - CInt(ResistMods[4]);
+					item.resist_energy_mod := item.resist_energy_mod - CInt(ResistMods[5]);
+				endif
+			endif
+		endif
+	endif
+
 	if (item.isa(POLCLASS_WEAPON))
 		item.speed_mod := 0;
 	endif
@@ -285,4 +356,30 @@ function UnequipWeapons(who)
 			MoveItemToContainer(equip, who.backpack);
 		endif
 	endforeach
+endfunction
+
+function SplitWords(text)
+    if (!text)
+        return array{};
+    endif
+    
+    var words := array{};
+    var word := "";
+    
+    foreach character in (text)
+        if (character == " ")
+            if (word)
+                words.append(word);
+                word := "";
+            endif
+        else
+            word := word + character;
+        endif
+    endforeach
+    
+    if (word)
+        words.append(word);
+    endif
+    
+    return words;
 endfunction
