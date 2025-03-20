@@ -191,7 +191,6 @@ function AddQualityDamageMod(who, craft_skill, byref theitem, quality )
 endfunction
 
 function AddQualityResistMod(who, craft_skill, byref theitem, quality)
-
 //Define quantos bonus Opcionais serão incluídos nas armaduras
 	var num_bonus := 0.0;
 	if(quality >= 3.6) //dois bonus completos
@@ -210,8 +209,19 @@ function AddQualityResistMod(who, craft_skill, byref theitem, quality)
 	endif
 
 	var bonus_principal := (Randomint(64937)+1)%2;
-	//SendSysMessage(who,"Rolagem: "+ bonus_principal);
 	var itemdesc := ReadConfigFile(":combat:itemdesc");
+
+	// Check if this is leather armor
+	var isLeather := 0;
+	if (craft_skill == "Tailoring")
+		var leatherTypes := array(0x13C7, 0x13C5, 0x13CD, 0x13C6, 0x1DB9, 0x13CB, 0x13CC, 0x13D3, 0x1C06, 0x1C08, 0x1C0A, 0x1C00);
+		foreach type in leatherTypes
+			if (theitem.objtype == type)
+				isLeather := 1;
+				break;
+			endif
+		endforeach
+	endif
 
 	var i;
 	for(i:= num_bonus; i >= 0.5; i:=i-1.0)
@@ -220,18 +230,14 @@ function AddQualityResistMod(who, craft_skill, byref theitem, quality)
 			var base_DexPenalty := Cint(itemdesc[theitem.objtype].DexPenalty);
 			var bonus_DexPenalty := Cdbl(base_DexPenalty*(quality-1.0)/3.2);
 			if (i >= 1.0)
-				//Reduz peso caso o item já não tenha penalidade de dex
-				//SendSysMessage(who,"bonus DexPenalty cheio");
 				if((base_DexPenalty == 0) && (quality > 1.0))
-					theitem.weight_multiplier_mod := Max(0.2, 1-((quality-1.0)/3.2)); //reduz o peso
+					theitem.weight_multiplier_mod := Max(0.2, 1-((quality-1.0)/3.2));
 				else
 					SetObjProperty(theitem,"penaltybonus", Floor(bonus_DexPenalty));
 				endif
 			elseif(i >= 0.5)
-				//Reduz peso caso o item já não tenha penalidade de dex
-				//SendSysMessage(who,"bonus DexPenalty metade");
 				if((base_DexPenalty == 0) && (quality > 1.0))
-					theitem.weight_multiplier_mod:= Max(0.2, 1-((quality-1.0)/6.4)); //reduz o peso em metade do que reduziria
+					theitem.weight_multiplier_mod:= Max(0.2, 1-((quality-1.0)/6.4));
 				else
 					SetObjProperty(theitem,"penaltybonus", Floor(bonus_DexPenalty/2.0));
 				endif
@@ -241,109 +247,60 @@ function AddQualityResistMod(who, craft_skill, byref theitem, quality)
 		elseif(bonus_principal == 1)
 			var bonus_prot := (quality-1.0)*2.0;
 			if (i >= 1.0)
-				//mantém o bonus cheio
-				//SendSysMessage(who,"bonus Prot cheio");
+				// Full bonus
 			elseif(i >= 0.5)
-				//muda o bonus para metade
-				//SendSysMessage(who,"bonus Prot metade");
 				bonus_prot := bonus_prot/2.0;
 			endif
-			//Aplica os bonus com base nas propriedades da armadura
+
+			// Apply physical resistance bonus for leather armor
+			if (isLeather)
+				var leather_bonus := bonus_prot * 1.5; // Leather gets 50% more physical resistance bonus
+				theitem.resist_physical_mod := theitem.resist_physical_mod + Floor(leather_bonus);
+			endif
+
+			// Apply elemental resistances
 			var cont := 1;
 			var sorteio;
-			//Aplica bonus em tipos de resistencias que armadura já tenha, seja pelo item base, ou seja pelo material. Não aplica física
-			if(theitem.resist_fire > 0 || theitem.resist_cold > 0 || theitem.resist_energy > 0 || theitem.resist_poison > 0)
-				while (cont <= CInt(bonus_prot))
-					sorteio := RandomInt(4)+1;
-					case(sorteio)
-						1:
-							if (theitem.resist_fire)
-								theitem.resist_fire_mod := theitem.resist_fire_mod +1;
-								cont:=cont+1;
-								break;
-							endif
-						2:
-							if (theitem.resist_cold)
-								theitem.resist_cold_mod := theitem.resist_cold_mod +1;
-								cont:=cont+1;
-								break;
-							endif
-						3:
-							if (theitem.resist_energy)
-								theitem.resist_energy_mod := theitem.resist_energy_mod +1;
-								cont:=cont+1;
-								break;
-							endif
-						4:
-							if (theitem.resist_poison)
-								theitem.resist_poison_mod := theitem.resist_poison_mod +1;
-								cont:=cont+1;
-								break;
-							endif
-					endcase
-					sleepms(7);
-				endwhile
-			else
-				//quando a armadura não tem nenhuma proteção elemental, adiciona aleatórias
-				while (cont <= CInt(bonus_prot))
-					sorteio := RandomInt(4) + 1;
-					case(sorteio)
-						1:
-							theitem.resist_fire_mod := theitem.resist_fire_mod +1;
-							cont := cont+1;
-							break;
-						2:
-							theitem.resist_cold_mod := theitem.resist_cold_mod +1;
-							cont := cont+1;
-							break;
-						3:
-
-							theitem.resist_energy_mod := theitem.resist_energy_mod +1;
-							cont := cont+1;
-							break;
-						4:
-							theitem.resist_poison_mod := theitem.resist_poison_mod +1;
-							cont := cont+1;
-							break;
-					endcase
-					sleepms(7);
-				endwhile
-			endif
-			bonus_principal := 0;
+			while (cont <= CInt(bonus_prot))
+				sorteio := RandomInt(5) + 1;
+				case(sorteio)
+					1:
+						if (theitem.resist_physical)
+							theitem.resist_physical_mod := theitem.resist_physical_mod + 1;
+							cont:=cont+1;
+						endif
+						break;
+					2:
+						if (theitem.resist_fire)
+							theitem.resist_fire_mod := theitem.resist_fire_mod + 1;
+							cont:=cont+1;
+						endif
+						break;
+					3:
+						if (theitem.resist_cold)
+							theitem.resist_cold_mod := theitem.resist_cold_mod + 1;
+							cont:=cont+1;
+						endif
+						break;
+					4:
+						if (theitem.resist_poison)
+							theitem.resist_poison_mod := theitem.resist_poison_mod + 1;
+							cont:=cont+1;
+						endif
+						break;
+					5:
+						if (theitem.resist_energy)
+							theitem.resist_energy_mod := theitem.resist_energy_mod + 1;
+							cont:=cont+1;
+						endif
+						break;
+				endcase
+				sleepms(7);
+			endwhile
+			bonus_principal:=0;
 		endif
 	endfor
-
-/*
-//Retirado porque estava desbalanceado
-	var i;
-	if (quality >= 1.2)
-		var randomDmg;
-		var maxBonus := CInt(quality);
-		//SendSysMessage(who,"Adicionando resistencia do excepcional");
-
-		//Soma um bonus em todas as resistencias que o item já dá
-		for (i := 1; i <= maxBonus; i := i + 1)
-			if (theitem.resist_physical_mod)
-				theitem.resist_physical_mod := theitem.resist_physical_mod +1; break;
-			endif
-			if (theitem.resist_fire_mod)
-				theitem.resist_fire_mod := theitem.resist_fire_mod +1; break;
-			endif
-			if (theitem.resist_cold_mod)
-				theitem.resist_cold_mod := theitem.resist_cold_mod +1; break;
-			endif
-			if (theitem.resist_energy_mod)
-				theitem.resist_energy_mod := theitem.resist_energy_mod +1; break;
-			endif
-			if (theitem.resist_poison_mod)
-				theitem.resist_poison_mod := theitem.resist_poison_mod +1; break;
-			endif
-		endfor
-	else
-		return;
-	endif
-
-*/
+	return;
 endfunction
 
  function AddItemDescription(who, item)
