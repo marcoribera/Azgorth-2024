@@ -1300,7 +1300,7 @@ program createchar(who)
 		ganheispell := 1;*/
 	/*if  (chardata.kit == "Acolito")
 		var robe := CreateItemInBackpack(who, 0x1F03, 1); //Manto
-		SetObjProperty(robe, "description", "Robe com bordado do simbolo do Sol Invicto");
+		SetObjProperty(robe, "description", "Robe com bordado do simbolo de Luminara");
 		SetObjProperty(robe, "cannotdye", 1);
 		SetObjProperty(robe, "descmod", "Acólito");
 		createiteminbackpack(who, "runaarmasagrada");
@@ -1380,9 +1380,9 @@ program createchar(who)
 
 			if (input2 == 10)
 				var robe := CreateItemInBackpack(who, 0x1F03, 1); //Manto
-				SetObjProperty(robe, "description", "Robe do Clero Menor");
+				SetObjProperty(robe, "description", "Robe com bordado do simbolo de Luminara");
 				SetObjProperty(robe, "cannotdye", 1);
-				SetObjProperty(robe, "descmod", "Clérigo");
+				SetObjProperty(robe, "descmod", "Acólito");
 				createiteminbackpack(who, "runaarmasagrada");
 				createiteminbackpack(who, "runacuraleve");
 				createiteminbackpack(who, "runadescanso");
@@ -1517,29 +1517,29 @@ const SABIO_ID := 0x15D;
 
 // Adicione estes textos para cada signo
 
-const cuidadorText := "Dragão de Ébano<br><br>Aqueles nascidos sob a constelação do Dragão de Ébano são líderes naturais, corajosos e cheios de energia. São conhecidos por sua determinação e habilidade de iniciar projetos com entusiasmo";
+const cuidadorText := "Constelação do Cuidador<br><br>Altruísta e generoso, busca proteger e cuidar dos outros. Preocupa-se com o bem-estar alheio, colocando as necessidades dos outros acima das suas.";
 
-const governadorText := "Touro de Prata<br><br>Aqueles nascidos sob a constelação do Touro de Prata são persistentes, leais e apreciadores das coisas boas da vida. Valorizam a estabilidade e o conforto, e são conhecidos por sua determinação e paciência.";
+const governadorText := "Constelação do Governador<br><br>Figura autoritária que busca controle, ordem e estabilidade. O Governador acredita que uma liderança firme é essencial para manter a harmonia e a organização.";
 
-const heroiText := "Gêmeos da Tempestade<br><br>Aqueles nascidos sob a constelação dos Gêmeos da Tempestade são versáteis, inteligentes e comunicativos. Têm uma curiosidade insaciável e se adaptam rapidamente a novas situações, sempre buscando aprender e explorar.";
+const heroiText := "Constelação do Herói<br><br>Determinado e corajoso, busca enfrentar desafios e superar adversidades para proteger os outros. O Herói valoriza a força, a coragem e a superação.";
 
-const boboText := "Caranguejo do Oceano<br><br>Aqueles nascidos sob a constelação do Caranguejo do Oceano são emocionais, protetores e profundamente intuitivos. Valorizam a família e os laços afetivos, e são conhecidos por sua empatia e sensibilidade.";
+const boboText := "Constelação do Bobo<br><br>Alegre, irreverente e brincalhão, busca trazer leveza, humor e questionar o status quo. Tem uma atitude despreocupada e divertida diante da vida.";
 
-const amanteText := "Leão de Ouro<br><br>Aqueles nascidos sob a constelação do Leão de Ouro são carismáticos, confiantes e generosos. Amam estar no centro das atenções e são líderes naturais, com uma presença magnética que atrai os outros.";
+const amanteText := "Constelação do Amante<br><br>Movido pela paixão e pelo desejo de conexões emocionais profundas. O Amante busca experiências de beleza, amor e prazer em seus relacionamentos e na vida.";
 
-const comumText := "Donzela das Estrelas<br><br>Aqueles nascidos sob a constelação da Donzela das Estrelas são práticos, detalhistas e analíticos. Têm uma mente afiada e são conhecidos por sua capacidade de organização e seu desejo de ajudar os outros.";
+const comumText := "Constelação da Pessoa Comum<br><br>Relaciona-se com todos, representando a igualdade e a simplicidade. Valoriza o pertencimento e a autenticidade, buscando se conectar com os outros de forma genuína.";
 
-const criadorText := "Balança Celestial<br><br>Aqueles nascidos sob a constelação da Balança Celestial são diplomáticos, justos e apreciadores da beleza. Buscam a harmonia e o equilíbrio em suas vidas e são conhecidos por seu charme e habilidade social.";
+const criadorText := "Constelação do Criador<br><br>Focado na inovação, imaginação e criação de algo novo. O Criador é movido pela necessidade de expressar sua visão e trazer algo original ao mundo.";
 
-const magoText := "Escorpião das Sombras<br><br>Aqueles nascidos sob a constelação do Escorpião das Sombras são intensos, apaixonados e misteriosos. Possuem uma profundidade emocional significativa e são conhecidos por sua determinação e habilidade de transformação.";
+const magoText := "Constelação do Mago<br><br>Representa o poder de transformação, o conhecimento e o mistério. O Mago é capaz de transformar a realidade ao seu redor, usando sabedoria e intuição.";
 
-const exploradorText := "Arqueiro do Fogo<br><br>Aqueles nascidos sob a constelação do Arqueiro do Fogo são aventureiros, otimistas e filosóficos. Amam a liberdade e estão sempre em busca de novas experiências e conhecimentos.";
+const exploradorText := "Constelação do Explorador<br><br>Aventureiro e curioso, busca descobrir o novo e expandir os limites do que é conhecido. Valoriza a liberdade, a autoexpressão e a jornada para descobrir quem realmente é.";
 
-const foradaleiText := "Capricórnio de Pedra<br><br>Aqueles nascidos sob a constelação do Capricórnio de Pedra são disciplinados, ambiciosos e realistas. Valorizam o trabalho árduo e a perseverança, e são conhecidos por sua capacidade de alcançar seus objetivos.";
+const foradaleiText := "Constelação do Fora da Lei<br><br>Desafiador, quer quebrar regras e sistemas para trazer mudança. Sente-se atraído pela revolução, pela quebra de paradigmas e pela luta contra injustiças.";
 
-const inocenteText := "Portador das Marés<br><br>Aqueles nascidos sob a constelação do Portador das Marés são inovadores, independentes e humanitários. Possuem uma mente aberta e são conhecidos por suas ideias progressistas e seu desejo de melhorar o mundo.";
+const inocenteText := "Constelação do Inocente<br><br>Otimista e sonhador, acredita na bondade inerente das pessoas e da vida. O Inocente busca a felicidade, simplicidade e um mundo sem malícia.";
 
-const sabioText := "Peixe Lunar<br><br>Aqueles nascidos sob a constelação do Peixe Lunar são sensíveis, intuitivos e compassivos. Têm uma imaginação rica e são conhecidos por sua empatia e habilidade de se conectar emocionalmente com os outros.";
+const sabioText := "Constelação do Sábio<br><br>Motivado pelo desejo de conhecimento e verdade, o Sábio busca entender o mundo profundamente. Valorizado por sua sabedoria, reflexão e discernimento.";
 
 
 function signSelection(who)
@@ -1551,9 +1551,9 @@ function signSelection(who)
         btn_value := input[0];
 
         if (btn_value == 201)
-            sign_pic := + 1;
+            sign_pic++;
         elseif (btn_value == 210)
-            sign_pic := sign_pic-1;
+            sign_pic--;
         elseif (btn_value == 666)
             break;
         endif
