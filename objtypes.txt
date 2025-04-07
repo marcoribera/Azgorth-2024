@@ -1651,7 +1651,9 @@
 0x2658 DragonArms2 combat
 # 0x2659 - 0x2682 unused
 0x2683 mortalha combat
-# 0x2684 - 0x26b4 unused
+# 0x2684 - 0x26a3 unused
+0x26a4 bandanarosto domesticwork
+# 0x26a5 - 0x26b4 unused
 0x26b5 quitina survival
 # 0x26b6 unused
 0x26b7 cogumelocurativo medicine
@@ -1738,25 +1740,11 @@
 0x2b70 circlet3 metalworking
 # 0x2b71 - 0x2be0 unused
 0x2be1 biscuit food
-# 0x2be2 - 0x2cd3 unused
-0x2cd4 escudowazif combat
-# 0x2cd5 unused
+# 0x2be2 - 0x2cd5 unused
 0x2cd6 CapaPeles domesticwork
-# 0x2cd7 - 0x2cdc unused
-0x2cdd bandanarosto domesticwork
+# 0x2cd7 - 0x2cdd unused
 0x2cde mascaratribal combat
-0x2cdf capaceteclerigo combat
-0x2ce0 bustoclerigo combat
-0x2ce1 pernasclerigo combat
-0x2ce2 bracosclerigo combat
-0x2ce3 luvasclerigo combat
-# 0x2ce4 unused
-0x2ce5 pescococlerigo combat
-0x2ce6 bracadeirasbariya combat
-0x2ce7 bustobariya combat
-0x2ce8 luvasbariya combat
-0x2ce9 pescoceirabariya combat
-0x2cea pernasbariya combat
+# 0x2cdf - 0x2cea unused
 0x2ceb botasbariya combat
 # 0x2cec - 0x2d29 unused
 0x2d2a ArcoLongoPicto combat
@@ -1771,13 +1759,9 @@
 0x2d33 CimitarradeUnnam combat
 0x2d34 MachadodeBatalhaAnao combat
 0x2d35 FacaodaCaveira combat
-# 0x2d36 - 0x2daa unused
-0x2dab bustoferun combat
-0x2dac bracosferun combat
-0x2dad pernasferun combat
+# 0x2d36 - 0x2dad unused
 0x2dae wolfmask domesticwork
-0x2daf luvasferun combat
-0x2db0 pescocoferun combat
+# 0x2daf - 0x2db0 unused
 0x2db1 TunicaGala domesticwork
 0x2db2 mantoclerigo domesticwork
 # 0x2db3 - 0x2db4 unused
@@ -2061,7 +2045,7 @@
 0x6074 malletandchisel gathering
 0x6075 Sand gathering
 0x6076 armadilhadechao traps
-0x6077 SpawnPointgolem spawnpoint
+# 0x6077 unused
 0x6078 logcabin house
 0x6079 FilledSaltWaterBucket water
 0x607a twostoryvilla house
@@ -2532,7 +2516,7 @@
 0xa36a magicfish3 survival
 0xa36b magicfish4 survival
 0xa36c magicfish5 survival
-0xa36d magicfish6 survival
+0xa36d aljavacintura woodworking
 0xa36e magicfish7 survival
 0xa36f magicfish8 survival
 0xa370 acid acid
@@ -2626,7 +2610,28 @@
 0xbffd TintaAzulClaro1 alchemy
 # 0xbffe - 0xc198 unused
 0xc199 levedura cooking
-# 0xc19a - 0xc7ff unused
+# 0xc19a - 0xc679 unused
+0xc67a bustoferun combat
+0xc67b bracosferun combat
+0xc67c luvasferun combat
+0xc67d pernasferun combat
+0xc67e pescocoferun combat
+# 0xc67f unused
+0xc680 bracadeirasbariya combat
+0xc681 pernasbariya combat
+0xc682 pescoceirabariya combat
+0xc683 luvasbariya combat
+0xc684 bustobariya combat
+0xc685 bracosclerigo combat
+0xc686 bustoclerigo combat
+0xc687 capaceteclerigo combat
+0xc688 luvasclerigo combat
+0xc689 pernasclerigo combat
+0xc68a pescococlerigo combat
+# 0xc68b unused
+0xc68c malhaferune combat
+0xc68d escudowazif combat
+# 0xc68e - 0xc7ff unused
 0xc800 cornmeal cooking
 0xc801 sweetdough cooking
 0xc802 cakebatter cooking
@@ -2857,9 +2862,7 @@
 0xffe3 bracadeiradewazif combat
 0xffe4 saiadewazif combat
 0xffe5 armaduracouropicta combat
-0xffe6 malhaferune combat
-0xffe7 aljavacintura woodworking
-# 0xffe8 - 0x10fff unused
+# 0xffe6 - 0x10fff unused
 0x11000 SmallBoat boat
 # 0x11001 - 0x11003 unused
 0x11004 SmallDragonBoat boat
