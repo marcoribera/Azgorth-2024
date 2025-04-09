@@ -152,7 +152,7 @@ var descmod:={};
 				TS_LowerDuration(who, timer, -1);
 			endif
 		endforeach
-/*
+*/
 
 			var penal := AP_GetStatMod(who, "Dexterity");
 			if (penal >= -1)
