@@ -27,9 +27,13 @@ program SpellScript(params)
 	var level := (CInt(AP_GetSkill(who, MAGICLORE))/5)+5;
 	TS_StartTimer(targ, "phmod", GetSpellDuration(AP_GetSkill(who, MAGICLORE)), level, who, 1); //5 min
 
-	PlaySoundEffect(targ, SFX_SPELL_STRENGTH);
-	PlayStationaryEffect(targ.x, targ.y, targ.z, FX_SPARK_EFFECT, 2, 2);
+
+	PlayObjectCenteredEffect(targ, 0xCE32, 0, 16); 
 	SendSysMEssageEx(targ, "Voce esta protegido.", SSM_INFO);
+	PlaySoundEffect(targ, SFX_SPELL_PROTECTION);
+
 	SendStatus(targ);	
+
 	return 1;
+	
 endprogram 

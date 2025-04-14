@@ -18,42 +18,39 @@ program SpellScript(params)
 		return;
 	endif
 
+	var lvl := Cint(AP_GetSkill(who, MAGICLORE)/20);
+	if (lvl < 1)
+		lvl := 1;
+	endif
+
 	var amt;
-	if(TemHabilidade(who, "Vontade Esmagadora"))
-		if (!CheckResist(targ, VONTADE, 70, -CInt(AP_GetSkill(who, MAGICLORE)/2.5))) // Muito mais Difícil de resistir
-			amt := Cint(AP_GetSkill(who, MAGICLORE)*0.5);
-		else
-			amt := Cint(AP_GetSkill(who, MAGICLORE)*0.25);
-		endif
+	if (!CheckResist(targ, VONTADE, 40+cint(AP_GetSkill(who, MAGICLORE))))
+		amt := Cint(AP_GetSkill(who, MAGICLORE)*0.5);
+		TS_StartTimer(targ, "dmgreduction", cint(AP_GetSkill(who, MAGICLORE)), lvl, who, 1);
 	else
-		if (!CheckResist(targ, VONTADE, 30, -CInt(AP_GetSkill(who, MAGICLORE)/2.5)))
-			amt := Cint(AP_GetSkill(who, MAGICLORE)*0.5);
-		else
-			amt := Cint(AP_GetSkill(who, MAGICLORE)*0.25);
-		endif
+		amt := Cint(AP_GetSkill(who, MAGICLORE)*0.25);
+		SendSysMessageEx(targ, "Voce resistiu parcialmente a magia.", SSM_INFO);
 	endif
 
-	if (temHabilidade(who, "Tocado por Asan"))
+	if (TemHabilidade(who, "Elo com a Morte"))	
+		var manamoment 	:= AP_GetVital(who, "HITS");
+		var manatotal	:= AP_GetVitalMaximumValue(who, "HITS");
+		if 	(manamoment <= manatotal / 2)
+			amt := cint(amt*0.3);
+		endif	
+	endif
+/*
+	if (temHabilidade(who, "Elo com a Morte"))
 		if (isBloodied(who))
-			amt := CInt(amt*1.5);
+			amt := cint(amt*0.3);
 		endif
 	endif
-
+*/
 
 	TS_StartTimer(targ, "weaken", cint(AP_GetSkill(who, MAGICLORE)), amt, who, 1); //20 min
-	PrintTextAbovePrivate(targ, "-"+amt + " Str", who, 3, 38); // vermelho
-	if (!GetObjProperty(who, "#magiasilenciosa"))
-	    SysLog("valor magia silenciosa dentro do script de enfraquecer: " + GetObjProperty(who, "#magiasilenciosa"));
-        PlaySoundEffect(targ, SFX_SPELL_WEAKEN);
-    endif
-	SendSysMessageEx(who, "Voce deixou o alvo mais fraco.", SSM_INFO);
+	PlaySoundEffect(targ, SFX_SPELL_WEAKEN);
+	SendSysMEssageEx(who, "Voce deixou o alvo mais fraco.", SSM_INFO);
 	Corromper(who, 1, targ);
-
-    if (GetObjProperty(who, "#magiasilenciosa"))
-        SendSysMessageEx(who,  "O efeito da magia silenciosa acabou.", SSM_INFO);
-    endif
-    //Remove prop de magia silenciosa apos o cast ser completo
-    EraseObjProperty(who, "#magiasilenciosa");
-
+	
 	return 1;
-endprogram
+endprogram 
