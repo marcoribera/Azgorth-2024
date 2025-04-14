@@ -14,14 +14,14 @@ program SpellScript(params)
 	params := 0; // No longer needed
 	var skill := Cint(AP_GetSkill(who, "Magery"));
 	var nuvemarray := array;
-	Set_Critical(1);
+	
 	nuvemarray.append(CreateItemAtLocation(targ.x, targ.y, targ.z , 14624, 1 , targ.realm));
-	if (skill > 55)
+	if (skill > 55)	
 	nuvemarray.append(CreateItemAtLocation(targ.x - 1, targ.y, targ.z , 14624, 1 , targ.realm));
 	nuvemarray.append(CreateItemAtLocation(targ.x, targ.y - 1, targ.z , 14624, 1 , targ.realm));
 	nuvemarray.append(CreateItemAtLocation(targ.x - 1, targ.y - 1, targ.z , 14624, 1 , targ.realm));
 	endif
-	if (skill > 60)
+	if (skill > 60)	
 	nuvemarray.append(CreateItemAtLocation(targ.x - 1, targ.y + 1, targ.z , 14624, 1 , targ.realm));
 	nuvemarray.append(CreateItemAtLocation(targ.x, targ.y + 1, targ.z , 14624, 1 , targ.realm));
 	endif
@@ -43,7 +43,7 @@ program SpellScript(params)
 	endif
 	Corromper(who, 21, 0);
 
-	foreach item in nuvemarray
+	foreach item in nuvemarray 
 		item.graphic := 14120;
 		item.name := "Nuvem Nefasta";
 		item.color := 563;
@@ -53,14 +53,7 @@ program SpellScript(params)
 			lvl := 1;
 		endif
 		SetObjProperty(item, "PoisonLevel", lvl);
-	endforeach
-	Set_Critical(0);
-
-	if (GetObjProperty(who, "#magiasilenciosa"))
-        SendSysMessageEx(who,  "O efeito da magia silenciosa acabou.", SSM_INFO);
-    endif
-    //Remove prop de magia silenciosa apos o cast ser completo
-    EraseObjProperty(who, "#magiasilenciosa");
-
+	endforeach	
+	
 	return 1;
-endprogram
+endprogram 

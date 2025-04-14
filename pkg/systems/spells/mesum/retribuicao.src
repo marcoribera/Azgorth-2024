@@ -1,4 +1,4 @@
-use uo;
+    use uo;
 use os;
 
 include ":spells:tnmagery";
@@ -28,6 +28,6 @@ program SpellScript(params)
 	Corromper(who, 28, targ);
 	SendSysMEssageEx(targ, "Olho por olho..", SSM_INFO);
 	TS_StartTimer(targ, "dmgreturn", time, lvl);
-
+	
 	return 1;
-endprogram
+endprogram 

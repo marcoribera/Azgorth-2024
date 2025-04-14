@@ -37,7 +37,7 @@ program use_TinkerTool(who, tool)
 
 	var rinfo := sendCraftGump(who, "Tinkering");
 
-	// OK was pressed, close it on out
+	// OK was pressed, close it on out.
 	if(rinfo == 0)
 		return 0;
 	endif

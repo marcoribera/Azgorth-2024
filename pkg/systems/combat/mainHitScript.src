@@ -865,7 +865,7 @@ function ParryCheck(attacker, defender, byref rawdamage)
 
 	//pega a skill e calcula a chance final e delay
 	var skill := CDbl(AP_GetSkill(defender, PARRY));
-	var parryDelay := CInt((item_cfg[shield.objtype]).parrydelay) - CInt(GetObjProperty(shield, "parrydelay_mod"))  - CInt(skill/20) + 8;
+	var parryDelay := 8 - cint(( AP_GetSkill(defender, PARRY)/20 )) +  Cint((item_cfg[shield.objtype]).parrydelay);
 	if ( TemHabilidade(defender.party.leader, "Inspirar Defesas"))
 		parryDelay := parryDelay - 1;
 	endif

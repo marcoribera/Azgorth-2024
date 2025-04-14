@@ -17,60 +17,44 @@ program SpellScript(params)
 		return;
 	endif
 
-    if (!GetObjProperty(who, "#magiasilenciosa"))
-        PlaySoundEffect(targ, SFX_SPELL_WEAKEN);
-    endif
+
+	PlaySoundEffect(targ, SFX_SPELL_WEAKEN);
 
 	var time := 0;
 	var oldx := who.x;
 	var oldy := who.y;
 
-	//who.frozen := 1;
+	who.frozen := 1;
 
 	var amt := 10;
 
-	if (temHabilidade(who, "Tocado por Asan"))
+	if (TemHabilidade(who, "Elo com a Morte"))	
+		var manamoment 	:= AP_GetVital(who, "HITS");
+		var manatotal	:= AP_GetVitalMaximumValue(who, "HITS");
+		if 	(manamoment <= manatotal / 2)
+			amt := 15;
+		endif	
+	endif
+/*
+	if (temHabilidade(who, "Elo com a Morte"))
 		if (isBloodied(who))
-			amt := Cint(amt*1.5);
+			amt := 15;
 		endif
 	endif
-
+*/
 	Corromper(who, 10, targ);
 
-	if(TemHabilidade(who, "Vontade Esmagadora"))
-		if (CheckResist(targ, VONTADE, 70, -CInt(AP_GetSkill(who, MAGICLORE)/2.5))) // Muito mais Difícil de resistir
-			SendSysMessageEx(who, "Voce nota que o alvo nao foi afetado.", SSM_FAIL);
-			SendSysMessageEx(targ, "Voce resistiu a magia.", SSM_INFO);
-
-			if (GetObjProperty(who, "#magiasilenciosa"))
-                SendSysMessageEx(who,  "O efeito da magia silenciosa acabou.", SSM_INFO);
-            endif
-            //Remove prop de magia silenciosa apos o cast ser completo
-            EraseObjProperty(who, "#magiasilenciosa");
-
-			return;
-		endif
-	else
-		if (CheckResist(targ, VONTADE, 30, -CInt(AP_GetSkill(who, MAGICLORE)/2.5)))
-			SendSysMessageEx(who, "Voce nota que o alvo nao foi afetado.", SSM_FAIL);
-			SendSysMessageEx(targ, "Voce resistiu a magia.", SSM_INFO);
-
-			if (GetObjProperty(who, "#magiasilenciosa"))
-                SendSysMessageEx(who,  "O efeito da magia silenciosa acabou.", SSM_INFO);
-            endif
-            //Remove prop de magia silenciosa apos o cast ser completo
-            EraseObjProperty(who, "#magiasilenciosa");
-
-			return;
-		endif
+	if (CheckResist(targ, VONTADE, 40+cint(AP_GetSkill(who, MAGICLORE))))
+		SendSysMEssageEx(who, "Voce nota que o alvo nao foi afetado.", SSM_FAIL);
+		SendSysMessageEx(targ, "Voce resistiu a magia.", SSM_INFO);
+		who.frozen := 0;
+		return;
 	endif
-
-	SetObjProperty(who, "#Casting",1);
 
 	while  (time < 10)
 
 		if ( (who.x != oldx) || (who.y != oldy))
-			SendSysMessageEx(who, "Voce se moveu e cancelou a magia.", SSM_FAIL);
+			SendSysMEssageEx(who, "Voce se moveu e cancelou a magia.", SSM_FAIL);
 			break;
 		endif
 
@@ -89,7 +73,6 @@ program SpellScript(params)
 		endif
 
 		AP_SetVital(targ, STAMINA, (targmana-amt));
-		PrintTextAbovePrivate(targ, "-"+amt + " Stamina", who, 3, 38); // vermelho
 
 		var mymana := AP_GetVital(who, STAMINA) + amt;
 		var maxmana := AP_GetVitalMaximumValue(who, STAMINA);
@@ -99,21 +82,14 @@ program SpellScript(params)
 		endif
 
 		AP_SetVital(who, STAMINA, mymana);
-		PrintTextAbovePrivate(who, "+"+amt + " Stamina", who, 3, 568); // verde
 
-        if (!GetObjProperty(who, "#magiasilenciosa"))
-            PlayMovingEffect(targ, who, 3982, 255, 1);
-            time := time + 1;
-            PerformAction(who, ANIM_CAST_AREA);
-            sleep(1);
-        endif
+		PlayMovingEffect(targ, who, 3982, 255, 1);	
+		time := time + 1;
+		PerformAction(who, ANIM_CAST_AREA);
+		sleep(1);
 	endwhile
 
-	if (GetObjProperty(who, "#magiasilenciosa"))
-        SendSysMessageEx(who,  "O efeito da magia silenciosa acabou.", SSM_INFO);
-    endif
-    //Remove prop de magia silenciosa apos o cast ser completo
-    EraseObjProperty(who, "#magiasilenciosa");
-	EraseObjProperty(who, "#Casting");
+	who.frozen := 0;
+	
 	return 1;
-endprogram
+endprogram 

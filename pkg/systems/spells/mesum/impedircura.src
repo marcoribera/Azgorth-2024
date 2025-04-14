@@ -21,9 +21,7 @@ program SpellScript(params)
 
 	var duration := AP_GetSkill(who, MAGICLORE);
 	TS_StartTimer(targ, "nocure", duration, targ.color, who, 0); //20 min
-	if (!GetObjProperty(who, "#magiasilenciosa"))
-        PlaySoundEffect(targ, SFX_SPELL_WEAKEN);
-    endif
+	PlaySoundEffect(targ, SFX_SPELL_WEAKEN);
 	Corromper(who, 91, targ);
 	return 1;
 endprogram 

@@ -36,7 +36,7 @@ enum TILE_EFFECTS
 	FX_FIRE_F_NS      :=  0x3996,  // Fire field.
 	FX_SLEEP_EFFECT   :=  0x3C1F, //Sleeping effect
 	FX_BIRDS_EFFECT   :=  0x3C27, //Birds moving around effect
-	FX_HEALING_EFFECT :=  0x3C2B, //Healing effect
+	FX_HEALING_EFFECT :=  0x375A, //Healing effect
 	FX_PWINGS_EFFECT  :=  0x3C3B, //Phoenix wing effect
-	FX_POISON_GAS     := 0x113a
+	FX_POISON_GAS     :=  0x113a
 endenum
