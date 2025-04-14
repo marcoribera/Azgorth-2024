@@ -362,9 +362,9 @@ function CraftExceptional(who, theitem, craft_skill)
 			endif
 		endif
 		if(theitem.isA(POLCLASS_WEAPON))
-			AddQualityDamageMod(theitem, EXCEP );
+			AddQualityDamageMod(who, craft_skill, theitem, EXCEP );
 		elseif(theitem.isA(POLCLASS_ARMOR))
-			AddQualityResistMod(theitem, EXCEP);
+			AddQualityDamageMod(who, craft_skill, theitem, EXCEP );
 		endif
 		theitem.quality := 1.2;
 

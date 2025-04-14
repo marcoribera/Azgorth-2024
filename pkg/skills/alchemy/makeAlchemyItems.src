@@ -27,7 +27,7 @@ const SOUND_EFFECT_BUBBLE :=  0x4f;
 const UOBJECT_EMPTY_BOTTLE := 0x0f0e;
 
 program use_Alchemy(who, tool)
-	if (!Accessible (who, tool) )
+	/*if (!Accessible (who, tool) )
 		SendSysMessage (who, "Voce nao alcanca aquilo!");
 		return;
 	endif
@@ -37,10 +37,10 @@ program use_Alchemy(who, tool)
 		return;
 	endif
 
-	var rinfo := sendCraftGump(who, "Alchemy");
+	var rinfo := sendCraftGump(who, "Alchemy");*/
 
 	// OK was pressed, close it on out
-	if(rinfo == 0)
+	/*if(rinfo == 0)
 		return 0;
 	endif
 
@@ -53,13 +53,13 @@ program use_Alchemy(who, tool)
 		else
 		makeAlchemyItems(who, the_objtype, amt, tool);
 		endif
-	endif
+	endif*/
 
 endprogram
 
 function makeAlchemyItems(who, what, amt, tool )
 
-	if(!what)
+	/*if(!what)
 		SendSysMessageEx(who, "Cancelado.", SSM_FAIL);
 		return 0;
 	endif
@@ -85,7 +85,7 @@ function makeAlchemyItems(who, what, amt, tool )
 		endif
 	endif
 
-	return 1;
+	return 1;*/
 
 endfunction
  

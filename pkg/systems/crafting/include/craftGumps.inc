@@ -401,9 +401,9 @@ function GFCraftInfoPage(who, objtype, skill_config)
 
 	// Exception % chance wording.
 	var echance   := 0;
-	if(elem.Exceptional == 1)
+	/*if(elem.Exceptional == 1)
 		echance := ExceptionalCraftChance(who, craft_skill, temp1, diff, thisitem);
-	endif
+	endif*/
 
 	var gump := GFCreateGump(50, 25);
 	GFResizePic(gump, 2, 0, BKGND_SILVERTRIM, 521, 420);
